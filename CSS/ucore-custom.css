@@ -6183,6 +6183,12 @@ ul.course-lists > li > h4:nth-child(2) {
 ul.course-lists > li > h4:nth-child(2) + * {
   margin-top: 0.5rem;
 }
+ul.course-lists > li > h5 {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  background-color: rgba(173, 164, 0, 0.33);
+  color: #72652a;
+}
 ul.course-lists > li > p {
   font-size: inherit !important;
   text-align: left;
@@ -6194,8 +6200,7 @@ ul.course-lists > li > p + ol {
   margin-top: 0.33333333rem !important;
 }
 ul.course-lists > li > p > span.about-requirements {
-  line-height: 2.2em;
-  font-size: 1.2em;
+  margin-bottom: 0.5em;
   font-weight: bold;
   font-style: italic;
 }
