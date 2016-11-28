@@ -5860,6 +5860,9 @@ header.main-header {
 body.page:not(.home) main.spine-blank-template > header.main-header {
   height: 85px;
 }
+body.page:not(.home) main.spine-blank-template > header.main-header > div.header-group {
+  padding-bottom: 0 !important;
+}
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ARTICLE/PAGE-HEADER layouts ##################################################################### ║
  *  ╠========================================================================================================╣
