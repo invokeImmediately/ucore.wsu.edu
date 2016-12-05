@@ -412,231 +412,7 @@ function isJQuery($obj) {
 			$('div.column.one').first().parent('section').before('<section class="row single gutter pad-top"><div class="column one"><section class="article-header header-newsEvents"><div class="header-content"><h2>News</h2><h3>What We and Our Students Have Accomplished</h3></div></section></div></section>');
 			break;
 		}
-		
-		initNiloaPortal(".niloa-portal");
 	});
-	
-	function HexagonalButton($fromElem) {
-		var validArg = isJQuery($fromElem);
-		var tan30 = Math.tan(30 / 180 * Math.PI);
-		this.origin = {
-			x: validArg ? $fromElem.offset().left : undefined,
-			y: validArg ? $fromElem.offset().top : undefined
-		};
-		this.apotherm = $fromElem.width() / 2;
-		this.vertices = [
-			{
-				x: (validArg)
-					? this.origin.x + this.apotherm
-					: undefined,
-				y: (validArg)
-					? this.origin.y
-					: undefined
-			},
-			{
-				x: (validArg)
-					? this.origin.x + this.apotherm * 2
-					: undefined,
-				y: (validArg)
-					? this.origin.y + tan30 * this.apotherm
-					: undefined
-			},
-			{
-				x: (validArg)
-					? this.origin.x + this.apotherm * 2
-					: undefined,
-				y: (validArg)
-					? this.origin.y + 3 * tan30 * this.apotherm
-					: undefined
-			},
-			{
-				x: (validArg) ?
-					this.origin.x + this.apotherm
-					: undefined,
-				y: (validArg)
-					? this.origin.y + 4 * tan30 * this.apotherm
-					: undefined
-			},
-			{
-				x: (validArg)
-					? this.origin.x
-					: undefined,
-				y: (validArg)
-					? this.origin.y + 3 * tan30 * this.apotherm
-					: undefined
-			},
-			{
-				x: (validArg)
-					? this.origin.x
-					: undefined,
-				y: (validArg)
-					? this.origin.y + tan30 * this.apotherm
-					: undefined
-			}
-		];
-		this.keySegments = [
-			{
-				slope: (validArg)
-					? -tan30
-					: undefined,
-				intercept: (validArg)
-					? this.vertices[5].y - (-tan30 * this.vertices[5].x)
-					: undefined
-			},
-			{
-				slope: (validArg)
-					? tan30
-					: undefined,
-				intercept: (validArg)
-					? this.vertices[4].y - tan30 * this.vertices[4].x
-					: undefined
-			},
-			{
-				slope: (validArg)
-					? tan30
-					: undefined,
-				intercept: (validArg)
-					? this.vertices[0].y - tan30 * this.vertices[0].x
-					: undefined
-			},
-			{
-				slope: (validArg)
-					? -tan30
-					: undefined,
-				intercept: (validArg)
-					? this.vertices[3].y - (-tan30 * this.vertices[3].x)
-					: undefined
-			}
-		];
-	}
-
-	HexagonalButton.prototype.getSegmentY = function(whichSgmnt, pageX) {
-		var pageY = undefined;
-		if (whichSgmnt >= 0 && whichSgmnt <=3) {
-			pageY = this.keySegments[whichSgmnt].slope * pageX + this.keySegments[whichSgmnt].intercept;
-		}
-		return pageY;
-	}
-	
-	HexagonalButton.prototype.isWithinArea = function(pageX, pageY) {
-		var result = false;
-		if (pageX >= this.vertices[5].x && pageX <= this.vertices[1].x) {
-			if (pageX <= this.vertices[0].x) {
-				var sgmnt0Y = this.getSegmentY(0, pageX);
-				var sgmnt1Y = this.getSegmentY(1, pageX);
-				result = pageY >= sgmnt0Y && pageY <= sgmnt1Y;
-			}
-			else {
-				var sgmnt2Y = this.getSegmentY(2, pageX);
-				var sgmnt3Y = this.getSegmentY(3, pageX);
-				result = pageY >= sgmnt2Y && pageY <= sgmnt3Y;
-			}
-		}
-		return result;
-	}
-	
-	function handleNiloaClick($whichBttn, bttnCoords, clickEvent) {
-		if (isJQuery($whichBttn) && bttnCoords && bttnCoords instanceof HexagonalButton) {
-			if (bttnCoords.isWithinArea(clickEvent.pageX, clickEvent.pageY)) {
-				var bttnHref = $whichBttn.data("href");
-				if (bttnHref) {
-					// TODO: add Regular Expressions check on href formatting.
-					window.location.href = bttnHref;
-				}
-			}
-		}
-	}
-
-	function handleNiloaLeave($whichBttn) {
-		if (isJQuery($whichBttn)) {
-			$whichBttn.removeClass("hovered");
-		}
-	}
-	
-	function handleNiloaMouseMove($whichBttn, bttnCoords, moveEvent) {
-		var destHref = "";
-		if (isJQuery($whichBttn) && bttnCoords && bttnCoords instanceof HexagonalButton) {
-			if (bttnCoords.isWithinArea(moveEvent.pageX, moveEvent.pageY)) {
-				destHref = $whichBttn.data("href");
-				$whichBttn.addClass("hovered");
-			}
-			else {
-				$whichBttn.removeClass("hovered");
-			}
-		}
-		return destHref;
-	}
-	
-	function initNiloaPortal(slctrPortal) {
-		var $portal = $(slctrPortal);
-		if ($portal.length == 1) {
-			/** TODO: Use jQuery.data(…, …) to store coordinates with elements; this will minimize unnecessary
-			 *  repeated calculations. Note that the addition of a $(window).resize(…) will be necessary to
-			 *  recalculate coordinates if the user changes the size of the browser window. */
-			var $bttnsToCheck = $portal.find("li.panel");
-			$bttnsToCheck.each(function () {
-				var $thisBttn = $(this);
-				var bttnHref = $thisBttn.data("href");
-				if (!bttnHref) {
-					var $childLink = $thisBttn.find("a");
-					if ($childLink.length == 1) {
-						bttnHref = $childLink.attr("href");
-						$thisBttn.data("href", bttnHref);
-					}
-				}
-			});
-			var $statusBarToCheck = $("div#simulated-status-bar");
-			if ($statusBarToCheck.length != 1) {
-				if ($statusBarToCheck.length > 1) {
-					$statusBarToCheck.remove();
-				}
-				$statusBarToCheck = $("<div></div>", {
-					id: "simulated-status-bar"
-				});
-				$statusBarToCheck.insertAfter($portal);
-			}
-			$portal.mousemove(function(moveEvent) {
-				var bttnHref = "";
-				var destHref = "";
-				var $bttns = $portal.find("li.panel");
-				$bttns.each(function () {
-					var $thisBttn = $(this);
-					var hxgnlBttn = new HexagonalButton($(this));
-					destHref = handleNiloaMouseMove($thisBttn, hxgnlBttn, moveEvent);
-					if (destHref != "") {
-						bttnHref = destHref;
-					}
-				});
-				var $statusBar = $("div#simulated-status-bar");
-				if ($statusBar.length == 1) {
-					if (bttnHref) {
-						$statusBar.text(bttnHref);
-						$statusBar.stop().fadeIn(200);
-					}
-					else {
-						$statusBar.stop().fadeOut(200);
-					}
-				}
-			}).click(function(clickEvent) {
-				var $bttns = $portal.find("li.panel");
-				$bttns.each(function () {
-					var $thisBttn = $(this);
-					var hxgnlBttn = new HexagonalButton($(this));
-					handleNiloaClick($thisBttn, hxgnlBttn, clickEvent);
-				});
-			}).mouseleave(function() {
-				var $bttns = $portal.find("li.panel");
-				$bttns.each(function () {
-					var $thisBttn = $(this);
-					handleNiloaLeave($thisBttn);
-				});
-				var $statusBar = $("div#simulated-status-bar");
-				if ($statusBar.length == 1) {
-					$statusBar.stop().fadeOut(200);
-				}
-			});
-		}
-	}
 })(jQuery);
 /**********************************************************************************************************************
  JQUERY QTIP TOOL TIPS PLUGIN
@@ -892,7 +668,128 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
     });
 })(jQuery);
 // 14.4px;
-/*!
+/* jQuery Cookie Plugin v1.4.1
+ * --> https://github.com/carhartl/jquery-cookie
+ * Copyright 2013 Klaus Hartl, released under the MIT license
+ */
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // CommonJS
+        factory(require('jquery'));
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
+    var pluses = /\+/g;
+    function encode(s) {
+        return config.raw ? s : encodeURIComponent(s);
+    }
+    function decode(s) {
+        return config.raw ? s : decodeURIComponent(s);
+    }
+    function stringifyCookieValue(value) {
+        return encode(config.json ? JSON.stringify(value) : String(value));
+    }
+    function parseCookieValue(s) {
+        if (s.indexOf('"') === 0) {
+            // This is a quoted cookie as according to RFC2068, unescape...
+            s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+        }
+        try {
+            // Replace server-side written pluses with spaces.
+            s = decodeURIComponent(s.replace(pluses, ' '));
+            return config.json ? JSON.parse(s) : s;
+        } catch(e) {
+            // If we can't decode or parse the cookie, ignore it; it's unusable.
+        }
+    }
+    function read(s, converter) {
+        var value = config.raw ? s : parseCookieValue(s);
+        return $.isFunction(converter) ? converter(value) : value;
+    }
+    var config = $.cookie = function (key, value, options) {
+        // Write the cookie
+        if (value !== undefined && !$.isFunction(value)) {
+            options = $.extend({}, config.defaults, options);
+            if (typeof options.expires === 'number') {
+                var days = options.expires, t = options.expires = new Date();
+                t.setTime(+t + days * 864e+5);
+            }
+            return (document.cookie = [
+                encode(key), '=', stringifyCookieValue(value),
+                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                options.path    ? '; path=' + options.path : '',
+                options.domain  ? '; domain=' + options.domain : '',
+                options.secure  ? '; secure' : ''
+            ].join(''));
+        }
+        // Read the cookie
+        var result = key ? undefined : {};
+        // To prevent the for loop in the first place assign an empty array
+        // in case there are no cookies at all. Also prevents odd result when
+        // calling $.cookie().
+        var cookies = document.cookie ? document.cookie.split('; ') : [];
+        for (var i = 0, l = cookies.length; i < l; i++) {
+            var parts = cookies[i].split('=');
+            var name = decode(parts.shift());
+            var cookie = parts.join('=');
+            if (key && key === name) {
+                // If second argument (value) is a function it's a converter...
+                result = read(cookie, value);
+                break;
+            }
+            // Prevent storing a cookie that we couldn't decode.
+            if (!key && (cookie = read(cookie)) !== undefined) {
+                result[name] = cookie;
+            }
+        }
+        return result;
+    };
+    config.defaults = {};
+    $.removeCookie = function (key, options) {
+        if ($.cookie(key) === undefined) {
+            return false;
+        }
+        // Must not alter options, thus extending a fresh object...
+        $.cookie(key, '', $.extend({}, options, { expires: -1 }));
+        return !$.cookie(key);
+    };
+}));
+
+/* Utilization of the jQuery Cookie Plugin v1.4.1 to implement a page-covering notice that
+ * is dismissed upon user click or tap.
+ */
+(function ($) {
+    $(document).ready(function () {
+        if ($('.page-covering-notice-js').length !== 0) {
+            if ($.cookie('wsuVpuePageNoticeViewed03') === undefined) {
+                // Determine the expiration time of the cookie (i.e. time until midnight)
+                var rightNow = new Date();
+                var tomorrowMidnight = new Date(rightNow.getTime());
+                tomorrowMidnight.setDate(tomorrowMidnight.getDate() + 1);
+                tomorrowMidnight.setHours(0);
+                tomorrowMidnight.setMinutes(0);
+                tomorrowMidnight.setSeconds(0);
+                tomorrowMidnight.setMilliseconds(0);
+                // Set the cookie to prevent further notice invokations 
+                $.cookie('wsuVpuePageNoticeViewed03', 1, {
+                    expires: (tomorrowMidnight.getTime() - rightNow.getTime()) / 86400000
+                });
+                $('.page-covering-notice-js').fadeIn(1000);
+                $('.page-covering-notice-js').click(function () {
+                    $(this).fadeOut(333);
+                });
+            }
+			else {
+				console.log($.cookie('wsuVpuePageNoticeViewed03'));
+			}
+        }
+    });
+})(jQuery);/*!
  * imagesLoaded PACKAGED v4.1.0
  * JavaScript is all like "You images are done yet or what?"
  * MIT License
