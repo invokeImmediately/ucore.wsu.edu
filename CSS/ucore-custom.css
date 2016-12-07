@@ -1035,7 +1035,8 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
   transition: all 0.3s linear;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after,
-section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
+section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after,
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after {
   content: "";
   position: absolute;
   top: 0;
