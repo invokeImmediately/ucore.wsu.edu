@@ -1052,7 +1052,7 @@ section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
   background: linear-gradient(to bottom, rgba(239, 240, 241, 0.1), rgba(239, 240, 241, 0.9));
 }
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after {
-  background: linear-gradient(to bottom, rgba(255, 184, 28, 0.1), rgba(255, 184, 28, 0.9));
+  background: linear-gradient(to bottom, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0) 50%, rgba(255, 184, 28, 0.1) 50%, rgba(255, 184, 28, 0.9));
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
