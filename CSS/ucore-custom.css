@@ -1007,15 +1007,6 @@ section.has-linked-columns:not(.gutter) div.column {
 				rgba(red(@hex-bright-gray), green(@hex-bright-gray), blue(@hex-bright-gray),0.90));
 		}*/
 }
-section.has-linked-columns:not(.gutter) div.column:hover {
-  background-size: 110% auto;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  transition: all 1s ease;
-}
-section.has-linked-columns:not(.gutter) div.column * {
-  text-align: inherit;
-}
 section.has-linked-columns:not(.gutter) div.column > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column > header:first-child + * {
   position: absolute;
@@ -1025,6 +1016,19 @@ section.has-linked-columns:not(.gutter) div.column > header:first-child + * {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+section.has-linked-columns:not(.gutter) div.column:hover {
+  background-size: 110% auto;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
+section.has-linked-columns:not(.gutter) div.column:hover > :first-child:not(header),
+section.has-linked-columns:not(.gutter) div.column:hover > header:first-child + * {
+  color: #c60c30;
+}
+section.has-linked-columns:not(.gutter) div.column * {
+  text-align: inherit;
 }
 section.has-linked-columns:not(.gutter) div.column a {
   display: none;
@@ -1041,6 +1045,7 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
 section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-type:hover {
   color: rgba(255, 255, 255, 0.33);
   background-color: rgba(255, 255, 255, 0.33);
+  text-shadow: none;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   transition: all 0.3s linear;
