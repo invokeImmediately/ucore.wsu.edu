@@ -1092,6 +1092,10 @@ section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after {
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before {
   background: linear-gradient(to top, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0.1) 70%, rgba(255, 184, 28, 0.9));
 }
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover > :first-child:not(header),
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover > header:first-child + * {
+  color: #ffb81c;
+}
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
