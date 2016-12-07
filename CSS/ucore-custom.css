@@ -991,7 +991,8 @@ section.has-linked-columns:not(.gutter) div.column:hover {
 section.has-linked-columns:not(.gutter) div.column * {
   text-align: inherit;
 }
-section.has-linked-columns:not(.gutter) div.column > :first-child {
+section.has-linked-columns:not(.gutter) div.column > :first-child:not(header),
+section.has-linked-columns:not(.gutter) div.column > header:first-child + * {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1027,10 +1028,10 @@ section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
   pointer-events: none;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after {
-  background-color: linear-gradient(to bottom, rgba(152, 30, 50, 0.1), rgba(152, 30, 50, 0.9));
+  background: linear-gradient(to bottom, rgba(152, 30, 50, 0.1), rgba(152, 30, 50, 0.9));
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
-  background-color: linear-gradient(to bottom, rgba(239, 240, 241, 0.1), rgba(239, 240, 241, 0.9));
+  background: linear-gradient(to bottom, rgba(239, 240, 241, 0.1), rgba(239, 240, 241, 0.9));
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
