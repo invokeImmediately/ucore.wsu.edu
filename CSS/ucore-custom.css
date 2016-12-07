@@ -1039,6 +1039,8 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
   color: transparent;
 }
 section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-type:hover {
+  color: rgba(255, 255, 255, 0.33);
+  background-color: rgba(255, 255, 255, 0.33);
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   transition: all 0.3s linear;
