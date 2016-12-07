@@ -984,6 +984,28 @@ section.has-linked-columns:not(.gutter) div.column {
   background-position: center top;
   background-size: 100% auto;
   text-align: center;
+  /*&.has-crimson-bg,
+		&.has-gray-bg {
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				pointer-events: none;
+			}
+		}
+		&.has-crimson-bg:after {
+			background: linear-gradient(to bottom,
+				rgba(red(@hex-crimson), green(@hex-crimson), blue(@hex-crimson),0.10),
+				rgba(red(@hex-crimson), green(@hex-crimson), blue(@hex-crimson),0.90));
+		}
+		&.has-gray-bg:after {
+			background: linear-gradient(to bottom,
+				rgba(red(@hex-bright-gray), green(@hex-bright-gray), blue(@hex-bright-gray),0.10),
+				rgba(red(@hex-bright-gray), green(@hex-bright-gray), blue(@hex-bright-gray),0.90));
+		}*/
 }
 section.has-linked-columns:not(.gutter) div.column:hover {
   background-size: 110% auto;
@@ -1020,22 +1042,6 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   transition: all 0.3s linear;
-}
-section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after,
-section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-}
-section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after {
-  background: linear-gradient(to bottom, rgba(152, 30, 50, 0.1), rgba(152, 30, 50, 0.9));
-}
-section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
-  background: linear-gradient(to bottom, rgba(239, 240, 241, 0.1), rgba(239, 240, 241, 0.9));
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
