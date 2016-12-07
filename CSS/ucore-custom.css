@@ -980,7 +980,8 @@ section.has-linked-columns:not(.gutter) {
 }
 section.has-linked-columns:not(.gutter) div.column {
   position: relative;
-  height: 494px;
+  height: 0;
+  padding-top: 100%;
   background-position: center top;
   background-size: 100% auto;
   text-align: center;
