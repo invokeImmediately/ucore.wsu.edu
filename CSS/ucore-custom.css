@@ -980,7 +980,8 @@ section.has-linked-columns:not(.gutter) {
 }
 section.has-linked-columns:not(.gutter) div.column {
   position: relative;
-  height: 494px;
+  height: 0;
+  padding-bottom: calc(50% - 2rem);
   background-position: center top;
   background-size: 100% auto;
   text-align: center;
@@ -1048,6 +1049,9 @@ section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after {
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
   background: linear-gradient(to bottom, rgba(239, 240, 241, 0.1), rgba(239, 240, 241, 0.9));
+}
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after {
+  background: linear-gradient(to bottom, rgba(255, 184, 28, 0.1), rgba(255, 184, 28, 0.9));
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
