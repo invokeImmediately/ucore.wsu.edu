@@ -975,6 +975,63 @@ main section.row > div.column table > tbody > tr > td > section > ol:last-child 
     padding-left: 0.25rem;
   }
 }
+section.has-linked-columns:not(.gutter) div.column {
+  position: relative;
+  height: 494px;
+  background-position: center top;
+  background-size: 100% auto;
+  text-align: center;
+}
+section.has-linked-columns:not(.gutter) div.column:hover {
+  background-size: 110% auto;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
+section.has-linked-columns:not(.gutter) div.column * {
+  text-align: inherit;
+}
+section.has-linked-columns:not(.gutter) div.column > :first-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%;
+  -moz-transform: translate(-50%, -50%;
+  transform: translate(-50%, -50%;
+}
+section.has-linked-columns:not(.gutter) div.column a {
+  display: none;
+}
+section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-type {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: transparent;
+}
+section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-type:hover {
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after,
+section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after {
+  background-color: linear-gradient(to bottom, rgba(152, 30, 50, 0.1), rgba(152, 30, 50, 0.9));
+}
+section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
+  background-color: linear-gradient(to bottom, rgba(239, 240, 241, 0.1), rgba(239, 240, 241, 0.9));
+}
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
