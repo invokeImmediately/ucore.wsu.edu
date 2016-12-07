@@ -1074,10 +1074,10 @@ section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:before {
   opacity: 1;
 }
-section.has-linked-columns:not(.gutter) div.column.has-crimson-bg :after {
+section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after {
   background: linear-gradient(to bottom, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.1) 70%, rgba(152, 30, 50, 0.9));
 }
-section.has-linked-columns:not(.gutter) div.column.has-crimson-bg :before {
+section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:before {
   background: linear-gradient(to top, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.1) 70%, rgba(152, 30, 50, 0.9));
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
