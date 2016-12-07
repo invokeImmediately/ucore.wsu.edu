@@ -1016,6 +1016,8 @@ section.has-linked-columns:not(.gutter) div.column > header:first-child + * {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
 }
 section.has-linked-columns:not(.gutter) div.column:hover {
   background-size: 110% auto;
@@ -1026,6 +1028,9 @@ section.has-linked-columns:not(.gutter) div.column:hover {
 section.has-linked-columns:not(.gutter) div.column:hover > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column:hover > header:first-child + * {
   color: #c60c30;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 section.has-linked-columns:not(.gutter) div.column * {
   text-align: inherit;
@@ -1041,6 +1046,7 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
   height: 100%;
   width: 100%;
   color: transparent;
+  z-index: 1;
 }
 section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-type:hover {
   color: rgba(255, 255, 255, 0.33);
