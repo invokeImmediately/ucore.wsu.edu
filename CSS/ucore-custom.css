@@ -1024,7 +1024,9 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
   left: 0;
   height: 100%;
   width: 100%;
+  border-bottom: none;
   color: transparent;
+  box-shadow: none;
   z-index: 1;
 }
 section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-type:hover {
