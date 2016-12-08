@@ -981,7 +981,7 @@ section.has-linked-columns:not(.gutter) {
 section.has-linked-columns:not(.gutter) div.column {
   position: relative;
   height: 0;
-  padding-bottom: calc(50% - 2rem);
+  padding-bottom: calc(50% - 2rem) !important;
   background-position: center top;
   background-size: 100% auto;
   text-align: center;
