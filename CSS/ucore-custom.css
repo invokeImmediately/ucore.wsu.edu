@@ -4517,6 +4517,11 @@ span.has-tooltip:hover {
     display: none;
   }
 }
+span.quote-source {
+  font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+}
 cite.article-author {
   display: none;
 }
