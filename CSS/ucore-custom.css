@@ -4520,6 +4520,7 @@ span.has-tooltip:hover {
 span.quote-source {
   font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
   font-size: 1.2em;
+  line-height: 1.275em;
   font-weight: 400;
 }
 cite.article-author {
