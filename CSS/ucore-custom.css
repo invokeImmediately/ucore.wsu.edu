@@ -6473,6 +6473,16 @@ ul.learning-goals > li {
     font-size: 0.82529367em;
   }
 }
+ul.learning-goals > li > :not(ol):not(ul) {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+ul.learning-goals > li > :first-child {
+  padding-top: 0.5rem;
+}
+ul.learning-goals > li > :last-child {
+  padding-bottom: 0.5rem;
+}
 ul.learning-goals > li > p + p {
   margin-top: 0.5rem;
 }
