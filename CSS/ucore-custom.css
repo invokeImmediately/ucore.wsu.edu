@@ -6402,6 +6402,9 @@ ul.course-lists > li > *:not(:first-child) {
 ul.course-lists > li > *:last-child {
   padding-bottom: 0.5rem;
 }
+ul.learning-goals {
+  margin-top: 1rem;
+}
 ul.learning-goals > li {
   float: left;
   min-height: 198px;
