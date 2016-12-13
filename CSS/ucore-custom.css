@@ -6420,8 +6420,18 @@ ul.learning-goals > li {
     overflow-x: auto;
   }
 }
-ul.learning-goals > li + li {
-  margin-top: 0;
+ul.learning-goals > li > :not(ol):not(ul) {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+ul.learning-goals > li > :first-child {
+  padding-top: 1rem;
+}
+ul.learning-goals > li > :last-child {
+  padding-bottom: 1rem;
+}
+ul.learning-goals > li > * + * {
+  margin-top: 1rem;
 }
 @media all {
   section.row.single div.column ul.learning-goals > li > p,
@@ -6640,19 +6650,6 @@ ul.learning-goals > li > ul,
 ul.learning-goals > li > ol {
   padding-left: 3rem;
 }
-ul.learning-goals > li > :not(ol):not(ul) {
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-ul.learning-goals > li > :first-child {
-  padding-top: 1rem;
-}
-ul.learning-goals > li > :last-child {
-  padding-bottom: 1rem;
-}
-ul.learning-goals > li > p + p {
-  margin-top: 1rem;
-}
 ul.learning-goals > li > p > em {
   font-family: 'Roboto Slab', serif;
 }
@@ -6662,6 +6659,9 @@ ul.learning-goals > li img {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
+}
+ul.learning-goals > li + li {
+  margin-top: 0;
 }
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### TABLE layouts ################################################################################### ║
