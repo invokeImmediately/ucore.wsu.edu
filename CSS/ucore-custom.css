@@ -6638,20 +6638,20 @@ ul.learning-goals > li + li {
 }
 ul.learning-goals > li > ul,
 ul.learning-goals > li > ol {
-  padding-left: 3em;
+  padding-left: 3rem;
 }
 ul.learning-goals > li > :not(ol):not(ul) {
-  padding-right: 1em;
-  padding-left: 1em;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 ul.learning-goals > li > :first-child {
-  padding-top: 1em;
+  padding-top: 1rem;
 }
 ul.learning-goals > li > :last-child {
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 }
 ul.learning-goals > li > p + p {
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 ul.learning-goals > li > p > em {
   font-family: 'Roboto Slab', serif;
