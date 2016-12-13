@@ -6403,7 +6403,7 @@ ul.course-lists > li > *:last-child {
   padding-bottom: 0.5rem;
 }
 ul.learning-goals {
-  margin-top: 1rem;
+  margin-top: 1rem !important;
 }
 ul.learning-goals > li {
   float: left;
