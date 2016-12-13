@@ -6424,67 +6424,234 @@ ul.learning-goals > li + li {
   margin-top: 0;
 }
 @media all {
-  ul.learning-goals > li > p,
-  ul.learning-goals > li > ul li,
-  ul.learning-goals > li > ol li {
+  section.row.single div.column ul.learning-goals > li > p,
+  section.row.single div.column ul.learning-goals > li > ul li,
+  section.row.single div.column ul.learning-goals > li > ol li {
     line-height: 1.275em;
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 1073px) {
-  ul.learning-goals > li > p,
-  ul.learning-goals > li > ul li,
-  ul.learning-goals > li > ol li {
+  section.row.single div.column ul.learning-goals > li > p,
+  section.row.single div.column ul.learning-goals > li > ul li,
+  section.row.single div.column ul.learning-goals > li > ol li {
     font-size: 1em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
-  ul.learning-goals > li > p,
-  ul.learning-goals > li > ul li,
-  ul.learning-goals > li > ol li {
+  section.row.single div.column ul.learning-goals > li > p,
+  section.row.single div.column ul.learning-goals > li > ul li,
+  section.row.single div.column ul.learning-goals > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
-  ul.learning-goals > li > p,
-  ul.learning-goals > li > ul li,
-  ul.learning-goals > li > ol li {
+  section.row.single div.column ul.learning-goals > li > p,
+  section.row.single div.column ul.learning-goals > li > ul li,
+  section.row.single div.column ul.learning-goals > li > ol li {
     font-size: 1em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
-  ul.learning-goals > li > p,
-  ul.learning-goals > li > ul li,
-  ul.learning-goals > li > ol li {
+  section.row.single div.column ul.learning-goals > li > p,
+  section.row.single div.column ul.learning-goals > li > ul li,
+  section.row.single div.column ul.learning-goals > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
-  ul.learning-goals > li > p,
-  ul.learning-goals > li > ul li,
-  ul.learning-goals > li > ol li {
+  section.row.single div.column ul.learning-goals > li > p,
+  section.row.single div.column ul.learning-goals > li > ul li,
+  section.row.single div.column ul.learning-goals > li > ol li {
     font-size: 0.879844em;
   }
 }
 @media all and (max-width: 360px) {
-  ul.learning-goals > li > p,
-  ul.learning-goals > li > ul li,
-  ul.learning-goals > li > ol li {
+  section.row.single div.column ul.learning-goals > li > p,
+  section.row.single div.column ul.learning-goals > li > ul li,
+  section.row.single div.column ul.learning-goals > li > ol li {
     font-size: 0.82529367em;
   }
 }
+@media all {
+  section.row.side-right div.column ul.learning-goals > li > p,
+  section.row.side-right div.column ul.learning-goals > li > ul li,
+  section.row.side-right div.column ul.learning-goals > li > ol li,
+  section.row.side-left div.column ul.learning-goals > li > p,
+  section.row.side-left div.column ul.learning-goals > li > ul li,
+  section.row.side-left div.column ul.learning-goals > li > ol li,
+  section.row.halves div.column ul.learning-goals > li > p,
+  section.row.halves div.column ul.learning-goals > li > ul li,
+  section.row.halves div.column ul.learning-goals > li > ol li {
+    line-height: 1.275em;
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 1073px) {
+  section.row.side-right div.column ul.learning-goals > li > p,
+  section.row.side-right div.column ul.learning-goals > li > ul li,
+  section.row.side-right div.column ul.learning-goals > li > ol li,
+  section.row.side-left div.column ul.learning-goals > li > p,
+  section.row.side-left div.column ul.learning-goals > li > ul li,
+  section.row.side-left div.column ul.learning-goals > li > ol li,
+  section.row.halves div.column ul.learning-goals > li > p,
+  section.row.halves div.column ul.learning-goals > li > ul li,
+  section.row.halves div.column ul.learning-goals > li > ol li {
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 990px) and (max-width: 1072px) {
+  section.row.side-right div.column ul.learning-goals > li > p,
+  section.row.side-right div.column ul.learning-goals > li > ul li,
+  section.row.side-right div.column ul.learning-goals > li > ol li,
+  section.row.side-left div.column ul.learning-goals > li > p,
+  section.row.side-left div.column ul.learning-goals > li > ul li,
+  section.row.side-left div.column ul.learning-goals > li > ol li,
+  section.row.halves div.column ul.learning-goals > li > p,
+  section.row.halves div.column ul.learning-goals > li > ul li,
+  section.row.halves div.column ul.learning-goals > li > ol li {
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 792px) and (max-width: 989px) {
+  section.row.side-right div.column ul.learning-goals > li > p,
+  section.row.side-right div.column ul.learning-goals > li > ul li,
+  section.row.side-right div.column ul.learning-goals > li > ol li,
+  section.row.side-left div.column ul.learning-goals > li > p,
+  section.row.side-left div.column ul.learning-goals > li > ul li,
+  section.row.side-left div.column ul.learning-goals > li > ol li,
+  section.row.halves div.column ul.learning-goals > li > p,
+  section.row.halves div.column ul.learning-goals > li > ul li,
+  section.row.halves div.column ul.learning-goals > li > ol li {
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 791px) {
+  section.row.side-right div.column ul.learning-goals > li > p,
+  section.row.side-right div.column ul.learning-goals > li > ul li,
+  section.row.side-right div.column ul.learning-goals > li > ol li,
+  section.row.side-left div.column ul.learning-goals > li > p,
+  section.row.side-left div.column ul.learning-goals > li > ul li,
+  section.row.side-left div.column ul.learning-goals > li > ol li,
+  section.row.halves div.column ul.learning-goals > li > p,
+  section.row.halves div.column ul.learning-goals > li > ul li,
+  section.row.halves div.column ul.learning-goals > li > ol li {
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 361px) and (max-width: 480px) {
+  section.row.side-right div.column ul.learning-goals > li > p,
+  section.row.side-right div.column ul.learning-goals > li > ul li,
+  section.row.side-right div.column ul.learning-goals > li > ol li,
+  section.row.side-left div.column ul.learning-goals > li > p,
+  section.row.side-left div.column ul.learning-goals > li > ul li,
+  section.row.side-left div.column ul.learning-goals > li > ol li,
+  section.row.halves div.column ul.learning-goals > li > p,
+  section.row.halves div.column ul.learning-goals > li > ul li,
+  section.row.halves div.column ul.learning-goals > li > ol li {
+    font-size: 0.879844em;
+  }
+}
+@media all and (max-width: 360px) {
+  section.row.side-right div.column ul.learning-goals > li > p,
+  section.row.side-right div.column ul.learning-goals > li > ul li,
+  section.row.side-right div.column ul.learning-goals > li > ol li,
+  section.row.side-left div.column ul.learning-goals > li > p,
+  section.row.side-left div.column ul.learning-goals > li > ul li,
+  section.row.side-left div.column ul.learning-goals > li > ol li,
+  section.row.halves div.column ul.learning-goals > li > p,
+  section.row.halves div.column ul.learning-goals > li > ul li,
+  section.row.halves div.column ul.learning-goals > li > ol li {
+    font-size: 0.82529367em;
+  }
+}
+@media all {
+  section.row.thirds div.column ul.learning-goals > li > p,
+  section.row.thirds div.column ul.learning-goals > li > ul li,
+  section.row.thirds div.column ul.learning-goals > li > ol li,
+  section.row.quarters div.column ul.learning-goals > li > p,
+  section.row.quarters div.column ul.learning-goals > li > ul li,
+  section.row.quarters div.column ul.learning-goals > li > ol li {
+    line-height: 1.275em;
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 1073px) {
+  section.row.thirds div.column ul.learning-goals > li > p,
+  section.row.thirds div.column ul.learning-goals > li > ul li,
+  section.row.thirds div.column ul.learning-goals > li > ol li,
+  section.row.quarters div.column ul.learning-goals > li > p,
+  section.row.quarters div.column ul.learning-goals > li > ul li,
+  section.row.quarters div.column ul.learning-goals > li > ol li {
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 990px) and (max-width: 1072px) {
+  section.row.thirds div.column ul.learning-goals > li > p,
+  section.row.thirds div.column ul.learning-goals > li > ul li,
+  section.row.thirds div.column ul.learning-goals > li > ol li,
+  section.row.quarters div.column ul.learning-goals > li > p,
+  section.row.quarters div.column ul.learning-goals > li > ul li,
+  section.row.quarters div.column ul.learning-goals > li > ol li {
+    font-size: 0.879844em;
+  }
+}
+@media all and (min-width: 792px) and (max-width: 989px) {
+  section.row.thirds div.column ul.learning-goals > li > p,
+  section.row.thirds div.column ul.learning-goals > li > ul li,
+  section.row.thirds div.column ul.learning-goals > li > ol li,
+  section.row.quarters div.column ul.learning-goals > li > p,
+  section.row.quarters div.column ul.learning-goals > li > ul li,
+  section.row.quarters div.column ul.learning-goals > li > ol li {
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 791px) {
+  section.row.thirds div.column ul.learning-goals > li > p,
+  section.row.thirds div.column ul.learning-goals > li > ul li,
+  section.row.thirds div.column ul.learning-goals > li > ol li,
+  section.row.quarters div.column ul.learning-goals > li > p,
+  section.row.quarters div.column ul.learning-goals > li > ul li,
+  section.row.quarters div.column ul.learning-goals > li > ol li {
+    font-size: 0.879844em;
+  }
+}
+@media all and (min-width: 361px) and (max-width: 480px) {
+  section.row.thirds div.column ul.learning-goals > li > p,
+  section.row.thirds div.column ul.learning-goals > li > ul li,
+  section.row.thirds div.column ul.learning-goals > li > ol li,
+  section.row.quarters div.column ul.learning-goals > li > p,
+  section.row.quarters div.column ul.learning-goals > li > ul li,
+  section.row.quarters div.column ul.learning-goals > li > ol li {
+    font-size: 0.82529367em;
+  }
+}
+@media all and (max-width: 360px) {
+  section.row.thirds div.column ul.learning-goals > li > p,
+  section.row.thirds div.column ul.learning-goals > li > ul li,
+  section.row.thirds div.column ul.learning-goals > li > ol li,
+  section.row.quarters div.column ul.learning-goals > li > p,
+  section.row.quarters div.column ul.learning-goals > li > ul li,
+  section.row.quarters div.column ul.learning-goals > li > ol li {
+    font-size: 0.82529367em;
+  }
+}
+ul.learning-goals > li > ul,
+ul.learning-goals > li > ol {
+  padding-left: 3em;
+}
 ul.learning-goals > li > :not(ol):not(ul) {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 ul.learning-goals > li > :first-child {
-  padding-top: 0.5rem;
+  padding-top: 1em;
 }
 ul.learning-goals > li > :last-child {
-  padding-bottom: 0.5rem;
+  padding-bottom: 1em;
 }
 ul.learning-goals > li > p + p {
-  margin-top: 0.5rem;
+  margin-top: 1em;
 }
 ul.learning-goals > li > p > em {
   font-family: 'Roboto Slab', serif;
