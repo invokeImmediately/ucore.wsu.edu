@@ -1035,6 +1035,9 @@ section.has-linked-columns:not(.gutter) div.column:hover > .shift-to-bottom:firs
   -moz-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
+section.has-linked-columns:not(.gutter) div.column:hover > .shift-to-bottom:first-of-type {
+  border-top: 1px solid #c60c30;
+}
 section.has-linked-columns:not(.gutter) div.column * {
   text-align: inherit;
 }
