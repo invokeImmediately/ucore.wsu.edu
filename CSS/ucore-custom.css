@@ -999,6 +999,13 @@ section.has-linked-columns:not(.gutter) div.column > header:first-child + * {
   pointer-events: none;
   z-index: 2;
 }
+section.has-linked-columns:not(.gutter) div.column > :first-child:not(header).shift-to-top,
+section.has-linked-columns:not(.gutter) div.column > header:first-child + *.shift-to-top {
+  top: 2rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 section.has-linked-columns:not(.gutter) div.column > .shift-to-bottom:first-of-type {
   position: absolute;
   bottom: 2rem;
