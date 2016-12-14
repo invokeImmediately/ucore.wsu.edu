@@ -1028,7 +1028,8 @@ section.has-linked-columns:not(.gutter) div.column:hover {
   transition: all 1s ease;
 }
 section.has-linked-columns:not(.gutter) div.column:hover > :first-child:not(header),
-section.has-linked-columns:not(.gutter) div.column:hover > header:first-child + * {
+section.has-linked-columns:not(.gutter) div.column:hover > header:first-child + *,
+section.has-linked-columns:not(.gutter) div.column:hover > .shift-to-bottom:first-of-type {
   color: #c60c30;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
