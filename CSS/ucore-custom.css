@@ -1067,6 +1067,12 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
   -moz-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
+section.has-linked-columns:not(.gutter) div.column.bg-pinned-at-left {
+  background-position: left top;
+}
+section.has-linked-columns:not(.gutter) div.column.bg-pinned-at-right {
+  background-position: right top;
+}
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after,
@@ -1135,10 +1141,18 @@ section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:before {
   background: linear-gradient(to top, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.1) 70%, rgba(152, 30, 50, 0.9));
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
-  background: linear-gradient(to bottom, rgba(239, 240, 241, 0), rgba(239, 240, 241, 0.1) 70%, rgba(239, 240, 241, 0.9));
+  background: linear-gradient(to bottom, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.1) 70%, rgba(181, 186, 190, 0.9));
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:before {
-  background: linear-gradient(to top, rgba(239, 240, 241, 0), rgba(239, 240, 241, 0.1) 70%, rgba(239, 240, 241, 0.9));
+  background: linear-gradient(to top, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.1) 70%, rgba(181, 186, 190, 0.9));
+}
+section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > :first-child:not(header),
+section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > header:first-child + *,
+section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > .shift-to-bottom:first-of-type {
+  color: #b5babe;
+}
+section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > .shift-to-bottom:first-of-type {
+  border-top: 1px solid #b5babe;
 }
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after {
   background: linear-gradient(to bottom, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0.1) 70%, rgba(255, 184, 28, 0.9));
