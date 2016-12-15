@@ -1066,9 +1066,11 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after,
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:before,
-section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before {
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before,
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:before {
   content: "";
   position: absolute;
   top: 0;
@@ -1080,27 +1082,32 @@ section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before {
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:before,
-section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before {
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before,
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:before {
   opacity: 0;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:after,
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover:before,
-section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:before {
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:before,
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover:before {
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover:after,
-section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:after {
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:after,
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover:after {
   opacity: 0;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover:before,
-section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:before {
+section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:before,
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover:before {
   opacity: 1;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after {
