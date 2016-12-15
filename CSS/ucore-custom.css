@@ -1127,6 +1127,7 @@ section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover > header:
 }
 section.has-linked-columns:not(.gutter).thirds div.column {
   padding-bottom: calc(40% - 2rem) !important;
+  background-size: 650px 270px;
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
