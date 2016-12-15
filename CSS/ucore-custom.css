@@ -1125,6 +1125,16 @@ section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover > :first-
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover > header:first-child + * {
   color: #ffb81c;
 }
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:after {
+  background: linear-gradient(to bottom, rgba(0, 165, 189, 0), rgba(0, 165, 189, 0.1) 70%, rgba(0, 165, 189, 0.9));
+}
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:before {
+  background: linear-gradient(to top, rgba(0, 165, 189, 0), rgba(0, 165, 189, 0.1) 70%, rgba(0, 165, 189, 0.9));
+}
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover > :first-child:not(header),
+section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover > header:first-child + * {
+  color: #00a5bd;
+}
 section.has-linked-columns:not(.gutter).thirds div.column {
   padding-bottom: calc(40% - 2rem) !important;
   background-size: auto 100%;
