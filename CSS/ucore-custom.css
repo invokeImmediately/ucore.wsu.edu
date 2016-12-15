@@ -998,7 +998,7 @@ section.has-linked-columns:not(.gutter) div.column > .shift-to-bottom:first-of-t
   max-width: 480px;
   word-break: break-word;
   color: #fff;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0 #000, 2px 2px 2px rgba(0, 0, 0, 0.5), 0 0 18px rgba(0, 0, 0, 0.9);
   pointer-events: none;
   z-index: 2;
 }
@@ -1144,7 +1144,7 @@ section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
   background: linear-gradient(to bottom, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.1) 70%, rgba(181, 186, 190, 0.9));
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:before {
-  background: linear-gradient(to top, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.1) 70%, rgba(181, 186, 190, 0.9));
+  background: linear-gradient(to top, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.1) 60%, rgba(181, 186, 190, 0.9));
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > header:first-child + *,
