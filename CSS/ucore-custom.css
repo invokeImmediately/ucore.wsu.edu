@@ -1182,6 +1182,9 @@ section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover > .shift-
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover > .shift-to-bottom:first-of-type {
   border-top: 1px solid #f6861f;
 }
+section.has-linked-columns:not(.gutter).thirds + section.has-linked-columns:not(.gutter).thirds.thirds {
+  margin-top: 0 !important;
+}
 section.has-linked-columns:not(.gutter).thirds div.column {
   padding-bottom: calc(33% - 2rem) !important;
   background-size: auto 100%;
