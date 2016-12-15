@@ -1155,6 +1155,11 @@ section.has-linked-columns:not(.gutter).thirds div.column {
     padding-bottom: calc(40% - 2rem) !important;
   }
 }
+@media all and (max-width: 693px) {
+  section.has-linked-columns:not(.gutter).thirds div.column {
+    background-size: 100% auto;
+  }
+}
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
