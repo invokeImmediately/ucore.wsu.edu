@@ -989,8 +989,15 @@ section.has-linked-columns:not(.gutter) div.column {
   background-size: 100% auto;
   text-align: center;
 }
-section.has-linked-columns:not(.gutter) div.column:not(:first-child) {
-  border-left: 1px solid rgba(255, 255, 255, 0.7);
+@media all and (min-width: 694px) and (max-width: 791px) {
+  section.has-linked-columns:not(.gutter) div.column:not(:first-child) {
+    border-left: 1px solid rgba(255, 255, 255, 0.7);
+  }
+}
+@media all and (max-width: 693px) {
+  section.has-linked-columns:not(.gutter) div.column:not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+  }
 }
 section.has-linked-columns:not(.gutter) div.column > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column > header:first-child + *,
