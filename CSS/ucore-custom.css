@@ -989,6 +989,9 @@ section.has-linked-columns:not(.gutter) div.column {
   background-size: 100% auto;
   text-align: center;
 }
+section.has-linked-columns:not(.gutter) div.column:not(:first-child) {
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+}
 section.has-linked-columns:not(.gutter) div.column > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column > header:first-child + *,
 section.has-linked-columns:not(.gutter) div.column > .shift-to-bottom:first-of-type {
@@ -1145,13 +1148,13 @@ section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after {
   background: linear-gradient(to bottom, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 50%, #981e32);
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:before {
-  background: linear-gradient(to top, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 50%, #981e32 80%);
+  background: linear-gradient(to top, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 50%, #981e32);
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after {
-  background: linear-gradient(to bottom, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.2) 50%, #b5babe 80%);
+  background: linear-gradient(to bottom, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.2) 50%, #b5babe);
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:before {
-  background: linear-gradient(to top, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.2) 50%, #b5babe 80%);
+  background: linear-gradient(to top, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.2) 50%, #b5babe);
 }
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > header:first-child + *,
@@ -1162,10 +1165,10 @@ section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover > .shift-to
   border-top: 1px solid #b5babe;
 }
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after {
-  background: linear-gradient(to bottom, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0.2) 50%, #ffb81c 80%);
+  background: linear-gradient(to bottom, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0.2) 50%, #ffb81c);
 }
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before {
-  background: linear-gradient(to top, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0.2) 50%, #ffb81c 80%);
+  background: linear-gradient(to top, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0.2) 50%, #ffb81c);
 }
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover > header:first-child + *,
@@ -1176,10 +1179,10 @@ section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover > .shift-
   border-top: 1px solid #ffb81c;
 }
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:after {
-  background: linear-gradient(to bottom, rgba(0, 165, 189, 0), rgba(0, 165, 189, 0.2) 50%, #00a5bd 80%);
+  background: linear-gradient(to bottom, rgba(0, 165, 189, 0), rgba(0, 165, 189, 0.2) 50%, #00a5bd);
 }
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:before {
-  background: linear-gradient(to top, rgba(0, 165, 189, 0), rgba(0, 165, 189, 0.2) 50%, #00a5bd 80%);
+  background: linear-gradient(to top, rgba(0, 165, 189, 0), rgba(0, 165, 189, 0.2) 50%, #00a5bd);
 }
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover > header:first-child + *,
@@ -1190,10 +1193,10 @@ section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover > .shift-to
   border-top: 1px solid #00a5bd;
 }
 section.has-linked-columns:not(.gutter) div.column.has-green-bg:after {
-  background: linear-gradient(to bottom, rgba(173, 164, 0, 0), rgba(173, 164, 0, 0.2) 50%, #ada400 80%);
+  background: linear-gradient(to bottom, rgba(173, 164, 0, 0), rgba(173, 164, 0, 0.2) 50%, #ada400);
 }
 section.has-linked-columns:not(.gutter) div.column.has-green-bg:before {
-  background: linear-gradient(to top, rgba(173, 164, 0, 0), rgba(173, 164, 0, 0.2) 50%, #ada400 80%);
+  background: linear-gradient(to top, rgba(173, 164, 0, 0), rgba(173, 164, 0, 0.2) 50%, #ada400);
 }
 section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover > header:first-child + *,
@@ -1204,10 +1207,10 @@ section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover > .shift-t
   border-top: 1px solid #ada400;
 }
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:after {
-  background: linear-gradient(to bottom, rgba(246, 134, 31, 0), rgba(246, 134, 31, 0.2) 50%, #f6861f 80%);
+  background: linear-gradient(to bottom, rgba(246, 134, 31, 0), rgba(246, 134, 31, 0.2) 50%, #f6861f);
 }
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:before {
-  background: linear-gradient(to top, rgba(246, 134, 31, 0), rgba(246, 134, 31, 0.2) 50%, #f6861f 80%);
+  background: linear-gradient(to top, rgba(246, 134, 31, 0), rgba(246, 134, 31, 0.2) 50%, #f6861f);
 }
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover > header:first-child + *,
@@ -1218,10 +1221,10 @@ section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover > .shift-
   border-top: 1px solid #f6861f;
 }
 section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:after {
-  background: linear-gradient(to bottom, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4 80%);
+  background: linear-gradient(to bottom, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4);
 }
 section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:before {
-  background: linear-gradient(to top, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4 80%);
+  background: linear-gradient(to top, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4);
 }
 section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:hover > :first-child:not(header),
 section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:hover > header:first-child + *,
@@ -1232,6 +1235,7 @@ section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:hover > .shift-to
   border-top: 1px solid #00ada4;
 }
 section.has-linked-columns:not(.gutter).thirds + section.has-linked-columns:not(.gutter).thirds.thirds {
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
   margin-top: 0 !important;
 }
 section.has-linked-columns:not(.gutter).thirds div.column {
@@ -1247,6 +1251,48 @@ section.has-linked-columns:not(.gutter).thirds div.column {
   section.has-linked-columns:not(.gutter).thirds div.column {
     background-size: 100% auto;
   }
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-crimson-bg:after {
+  background: linear-gradient(to bottom, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 50%, #981e32 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-crimson-bg:before {
+  background: linear-gradient(to top, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 50%, #981e32 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-gray-bg:after {
+  background: linear-gradient(to bottom, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.2) 50%, #b5babe 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-gray-bg:before {
+  background: linear-gradient(to top, rgba(181, 186, 190, 0), rgba(181, 186, 190, 0.2) 50%, #b5babe 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-yellow-bg:after {
+  background: linear-gradient(to bottom, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0.2) 50%, #ffb81c 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-yellow-bg:before {
+  background: linear-gradient(to top, rgba(255, 184, 28, 0), rgba(255, 184, 28, 0.2) 50%, #ffb81c 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-blue-bg:after {
+  background: linear-gradient(to bottom, rgba(0, 165, 189, 0), rgba(0, 165, 189, 0.2) 50%, #00a5bd 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-blue-bg:before {
+  background: linear-gradient(to top, rgba(0, 165, 189, 0), rgba(0, 165, 189, 0.2) 50%, #00a5bd 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-green-bg:after {
+  background: linear-gradient(to bottom, rgba(173, 164, 0, 0), rgba(173, 164, 0, 0.2) 50%, #ada400 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-green-bg:before {
+  background: linear-gradient(to top, rgba(173, 164, 0, 0), rgba(173, 164, 0, 0.2) 50%, #ada400 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-orange-bg:after {
+  background: linear-gradient(to bottom, rgba(246, 134, 31, 0), rgba(246, 134, 31, 0.2) 50%, #f6861f 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-orange-bg:before {
+  background: linear-gradient(to top, rgba(246, 134, 31, 0), rgba(246, 134, 31, 0.2) 50%, #f6861f 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-cyan-bg:after {
+  background: linear-gradient(to bottom, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4 80%);
+}
+section.has-linked-columns:not(.gutter).thirds div.column.has-cyan-bg:before {
+  background: linear-gradient(to top, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4 80%);
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
