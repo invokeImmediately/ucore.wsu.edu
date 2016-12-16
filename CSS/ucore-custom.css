@@ -4743,6 +4743,11 @@ span.has-tooltip:hover {
     display: none;
   }
 }
+@media all and (max-width: 481px) {
+  span.shrink-text-on-mobile {
+    font-size: 0.9em;
+  }
+}
 cite.article-author {
   display: none;
 }
