@@ -1079,12 +1079,14 @@ section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-green-bg:after,
+section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:before,
-section.has-linked-columns:not(.gutter) div.column.has-green-bg:before {
+section.has-linked-columns:not(.gutter) div.column.has-green-bg:before,
+section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:before {
   content: "";
   position: absolute;
   top: 0;
@@ -1099,7 +1101,8 @@ section.has-linked-columns:not(.gutter) div.column.has-gray-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:before,
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:before,
-section.has-linked-columns:not(.gutter) div.column.has-green-bg:before {
+section.has-linked-columns:not(.gutter) div.column.has-green-bg:before,
+section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:before {
   opacity: 0;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:hover:after,
@@ -1108,12 +1111,14 @@ section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover:after,
+section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover:before,
-section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover:before {
+section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover:before,
+section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:hover:before {
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -1123,7 +1128,8 @@ section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover:after,
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover:after,
-section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover:after {
+section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover:after,
+section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:hover:after {
   opacity: 0;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:hover:before,
@@ -1131,7 +1137,8 @@ section.has-linked-columns:not(.gutter) div.column.has-gray-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-yellow-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-blue-bg:hover:before,
 section.has-linked-columns:not(.gutter) div.column.has-orange-bg:hover:before,
-section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover:before {
+section.has-linked-columns:not(.gutter) div.column.has-green-bg:hover:before,
+section.has-linked-columns:not(.gutter) div.column.has-cyan-bg:hover:before {
   opacity: 1;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after {
