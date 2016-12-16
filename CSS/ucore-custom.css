@@ -4743,8 +4743,13 @@ span.has-tooltip:hover {
     display: none;
   }
 }
-@media all and (max-width: 481px) {
+@media all and (max-width: 480px) {
   span.shrink-text-on-mobile {
+    font-size: 0.9em;
+  }
+}
+@media all and (max-width: 791px) {
+  span.shrink-text-on-tablet {
     font-size: 0.9em;
   }
 }
