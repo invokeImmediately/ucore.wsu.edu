@@ -989,7 +989,7 @@ section.has-linked-columns:not(.gutter) div.column {
   background-size: 100% auto;
   text-align: center;
 }
-@media all and (min-width: 694px) and (max-width: 791px) {
+@media all and (min-width: 694px) {
   section.has-linked-columns:not(.gutter) div.column:not(:first-child) {
     border-left: 1px solid rgba(255, 255, 255, 0.7);
   }
