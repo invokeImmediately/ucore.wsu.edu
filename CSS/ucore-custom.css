@@ -1260,6 +1260,7 @@ section.has-linked-columns:not(.gutter).thirds div.column {
   }
 }
 @media all and (max-width: 400px) {
+  section.has-linked-columns:not(.gutter).thirds div.column > :first-child:not(header).shift-to-top,
   section.has-linked-columns:not(.gutter).thirds div.column > header:first-child + *.shift-to-top {
     top: 0.5rem;
   }
