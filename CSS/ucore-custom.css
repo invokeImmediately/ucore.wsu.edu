@@ -1259,6 +1259,14 @@ section.has-linked-columns:not(.gutter).thirds div.column {
     background-size: 100% auto;
   }
 }
+@media all and (max-width: 400px) {
+  section.has-linked-columns:not(.gutter).thirds div.column > header:first-child + *.shift-to-top {
+    top: 0.5rem;
+  }
+  section.has-linked-columns:not(.gutter).thirds div.column > .shift-to-bottom:first-of-type {
+    bottom: 0.5rem;
+  }
+}
 section.has-linked-columns:not(.gutter).thirds div.column.has-crimson-bg:after {
   background: linear-gradient(to bottom, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 50%, #981e32 80%);
 }
