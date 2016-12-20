@@ -4109,7 +4109,7 @@ div.column ul li.no-bottom-pad {
   padding-bottom: 0;
 }
 @prnt p + & {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 ul.content-boxes,
 ul.course-lists,
@@ -4503,7 +4503,7 @@ div.column dl.faq dd > p + p {
 }
 div.column dl.faq dd > p + ul,
 div.column dl.faq dd > p + ol {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 div.column dl.faq dd:not(:last-child) > :last-child {
   margin-bottom: 1rem;
