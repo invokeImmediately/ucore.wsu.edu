@@ -4493,6 +4493,9 @@ div.column dl.faq.blue dt.activated {
 div.column dl.faq.blue dt.activated:hover {
   background-color: #725764;
 }
+div.column dl.faq dd > p + p {
+  margin-top: 1rem;
+}
 div.column dl.faq dd:not(:last-child) > p:last-child {
   margin-bottom: 1rem;
 }
