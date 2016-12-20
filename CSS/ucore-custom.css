@@ -4493,6 +4493,10 @@ div.column dl.faq.blue dt.activated {
 div.column dl.faq.blue dt.activated:hover {
   background-color: #725764;
 }
+div.column dl.faq dd {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
 div.column dl.faq dd > p + p {
   margin-top: 1rem;
 }
