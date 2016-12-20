@@ -4495,7 +4495,8 @@ div.column dl.faq.blue dt.activated:hover {
 }
 div.column dl.faq dd {
   padding-right: 1rem;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
 }
 div.column dl.faq dd > p + p {
   margin-top: 1rem;
