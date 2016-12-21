@@ -1345,6 +1345,19 @@ section.has-linked-columns:not(.gutter).thirds div.column.has-cyan-bg:after {
 section.has-linked-columns:not(.gutter).thirds div.column.has-cyan-bg:before {
   background: linear-gradient(to top, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4 80%);
 }
+@media all and (min-width: 694px) {
+  section.has-linked-columns:not(.gutter).for-faculty div.column:not(:first-child) {
+    border-left: 10px solid rgba(255, 255, 255, 0.7);
+  }
+}
+@media all and (max-width: 693px) {
+  section.has-linked-columns:not(.gutter).for-faculty div.column:not(:first-child) {
+    border-top: 10px solid rgba(255, 255, 255, 0.7);
+  }
+}
+section.has-linked-columns:not(.gutter).for-faculty + section.has-linked-columns:not(.gutter).for-faculty.thirds {
+  border-top: 10px solid rgba(255, 255, 255, 0.7);
+}
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
