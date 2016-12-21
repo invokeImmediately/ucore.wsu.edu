@@ -1355,6 +1355,12 @@ section.has-linked-columns:not(.gutter).thirds div.column.has-cyan-bg:before {
     border-top: 10px solid #ffffff;
   }
 }
+section.has-linked-columns:not(.gutter).for-faculty div.column > :first-child:not(header),
+section.has-linked-columns:not(.gutter).for-faculty div.column > header:first-child + *,
+section.has-linked-columns:not(.gutter).for-faculty div.column > .shift-to-bottom:first-of-type {
+  color: #000;
+  text-shadow: none;
+}
 section.has-linked-columns:not(.gutter).for-faculty + section.has-linked-columns:not(.gutter).for-faculty.thirds {
   border-top: 10px solid #ffffff;
 }
