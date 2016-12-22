@@ -331,13 +331,21 @@ function isJQuery($obj) {
 			var $tocClone = $toc.clone().addClass("floating").removeAttr("id").insertAfter($toc);
 			$tocClone.find("span.title + br").remove();
 			$tocClone.find("span.title").remove();
+			var counter = 1;
+			$tocClone.find("br").each(function () {
+				if (counter % 2 != 0) {
+					$(this).before(" //");
+				}
+				$(this).remove();
+				counter++;
+			});
 			if($linkToTop.length === 1) {
 				var linkText = $linkToTop.text();
 				var idxMatched = linkText.search(/\u2014Back to ([^\u2014]+)\u2014/);
 				if(idxMatched != -1) {
 					var $linkToTopClone = $linkToTop.clone();
 					$linkToTopClone.text(linkText.replace(/\u2014Back to ([^\u2014]+)\u2014/, "$1"));
-					$tocClone.prepend(" &bull; ");
+					$tocClone.prepend(" //&nbsp;");
 					$linkToTopClone.prependTo($tocClone);
 					$backToToc.remove();
 				}
@@ -796,6 +804,9 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
                 });
                 $pageNotice.fadeIn(1000);
                 $pageNotice.click(function () {
+                    $(this).fadeOut(333);
+                });
+                $pageNotice.keydown(function () {
                     $(this).fadeOut(333);
                 });
             }
