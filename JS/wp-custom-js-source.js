@@ -82,7 +82,7 @@
 	 * DOCUMENT READY BINDINGS                                                                          *
 	 ****************************************************************************************************/
     $(document).ready(function () {
-		var params = {};
+		var params = new Object();
 		var myParams;
 		params.fixDogears = {
 			slctrSiteNav: "#spine-sitenav",
