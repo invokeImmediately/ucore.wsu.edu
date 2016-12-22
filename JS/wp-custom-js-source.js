@@ -822,8 +822,9 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 		}
     });
 	
-	function closeNoticeOnKeydown() {
+	function closeNoticeOnKeydown(e) {
 		if (noticeRunning) {
+			e.preventDefault();
 			$pageNotice.fadeOut(333);
 			noticeRunning = false;
 			$(document).off("keydown", closeNoticeOnKeydown);	
