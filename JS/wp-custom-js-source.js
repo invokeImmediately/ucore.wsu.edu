@@ -775,14 +775,6 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 	var noticeRunning = false;
 	var $pageNotice;
 	
-	function closeNoticeOnKeydown() {
-		if (noticeRunning) {
-			$pageNotice.fadeOut(333);
-			noticeRunning = false;
-			$(document).off("keydown", closeNoticeOnKeydown);	
-		}
-	}
-	
     $(document).ready(function () {
 		$pageNotice = $('.page-covering-notice-js')
         if ($pageNotice.length === 1) {
@@ -830,7 +822,13 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 		}
     });
 	
-	function 
+	function closeNoticeOnKeydown() {
+		if (noticeRunning) {
+			$pageNotice.fadeOut(333);
+			noticeRunning = false;
+			$(document).off("keydown", closeNoticeOnKeydown);	
+		}
+	}
 })(jQuery);/*!
  * imagesLoaded PACKAGED v4.1.0
  * JavaScript is all like "You images are done yet or what?"
