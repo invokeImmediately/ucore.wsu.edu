@@ -90,8 +90,8 @@
 			removedClasses: "current active dogeared"
 		};
 		params.addBlankTargetAttributes = {
-			slctrSpine = "#spine",
-			slctrExternalLinks = "a.external"
+			slctrSpine: "#spine",
+			slctrExternalLinks: "a.external"
 		};
 		params.checkForLrgFrmtSingle = {
 			slctrSingle: ".single.large-format-friendly",
