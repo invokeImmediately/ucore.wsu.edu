@@ -207,7 +207,7 @@
 		if (typeof slctrSpine === "string" && typeof slctrExternalLinks === "string") {
 			var $spine = $(slctrSpine);
 			if ($spine.length === 1) {
-				var $links = $spine.find(slctrSpine);
+				var $links = $spine.find(slctrExternalLinks);
 				$links.each(function () {
 					$thisLink = $(this);
 					if ($thisLink.attr("target") != "_blank") {
