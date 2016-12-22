@@ -89,7 +89,7 @@
 			slctrDogeared: "li.current.active.dogeared",
 			removedClasses: "current active dogeared"
 		};
-		params.addBlankTargetAttributes {
+		params.addBlankTargetAttributes = {
 			slctrSpine = "#spine",
 			slctrExternalLinks = "a.external"
 		};
