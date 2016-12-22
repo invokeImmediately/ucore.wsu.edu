@@ -772,8 +772,19 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
  * is dismissed upon user click or tap.
  */
 (function ($) {
+	var noticeRunning = false;
+	var $pageNotice;
+	
+	function closeNoticeOnKeydown() {
+		if (noticeRunning) {
+			$pageNotice.fadeOut(333);
+			noticeRunning = false;
+			$(document).off("keydown", closeNoticeOnKeydown);	
+		}
+	}
+	
     $(document).ready(function () {
-		var $pageNotice = $('.page-covering-notice-js')
+		$pageNotice = $('.page-covering-notice-js')
         if ($pageNotice.length === 1) {
 			// Check for a cookie name specified by the page designer
 			var defaultCookieName = "wsuVpuePageNoticeViewed";
@@ -802,9 +813,13 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
                 $.cookie(cookieName, 1, {
                     expires: (tomorrowMidnight.getTime() - rightNow.getTime()) / 86400000
                 });
+				noticeRunning = true;
                 $pageNotice.fadeIn(1000);
+				$(document).on("keydown", closeNoticeOnKeydown);
                 $pageNotice.click(function () {
                     $(this).fadeOut(333);
+					noticeRunning = false;
+					$(document).off("keydown", closeNoticeOnKeydown);
                 });
                 $pageNotice.keydown(function () {
                     $(this).fadeOut(333);
@@ -814,6 +829,8 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 			console.log('Error in jQuery.cookieObjs.js: more than one page covering notice was encountered in the DOM.');
 		}
     });
+	
+	function 
 })(jQuery);/*!
  * imagesLoaded PACKAGED v4.1.0
  * JavaScript is all like "You images are done yet or what?"
