@@ -209,7 +209,7 @@
 			if ($spine.length === 1) {
 				var $links = $spine.find(slctrExternalLinks);
 				$links.each(function () {
-					$thisLink = $(this);
+					var $thisLink = $(this);
 					if ($thisLink.attr("target") != "_blank") {
 						$thisLink.attr("target", "_blank");
 					}
