@@ -1080,8 +1080,14 @@ section.has-linked-columns:not(.gutter) div.column > :last-child > a:first-of-ty
 section.has-linked-columns:not(.gutter) div.column.bg-pinned-at-left {
   background-position: left top;
 }
+section.has-linked-columns:not(.gutter) div.column.bg-pinned-toward-left {
+  background-position: 25% top;
+}
 section.has-linked-columns:not(.gutter) div.column.bg-pinned-at-right {
   background-position: right top;
+}
+section.has-linked-columns:not(.gutter) div.column.bg-pinned-toward-right {
+  background-position: 75% top;
 }
 section.has-linked-columns:not(.gutter) div.column.has-crimson-bg:after,
 section.has-linked-columns:not(.gutter) div.column.has-gray-bg:after,
@@ -1401,7 +1407,7 @@ section.has-linked-columns:not(.gutter).for-faculty div.column.has-black-bg:afte
 }
 @media (max-width: 480px) {
   section.has-linked-columns:not(.gutter).for-faculty div.column.has-black-bg:after {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.7) 67%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.7) 67%);
   }
 }
 section.has-linked-columns:not(.gutter).for-faculty div.column.has-black-bg:before {
@@ -1409,7 +1415,7 @@ section.has-linked-columns:not(.gutter).for-faculty div.column.has-black-bg:befo
 }
 @media (max-width: 480px) {
   section.has-linked-columns:not(.gutter).for-faculty div.column.has-black-bg:before {
-    background: linear-gradient(to bottom, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 40%, rgba(152, 30, 50, 0.7) 67%);
+    background: linear-gradient(to top, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 40%, rgba(152, 30, 50, 0.7) 67%);
   }
 }
 section.has-linked-columns:not(.gutter).for-faculty + section.has-linked-columns:not(.gutter).for-faculty.thirds,
