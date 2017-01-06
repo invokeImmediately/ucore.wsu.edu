@@ -7195,16 +7195,16 @@ section:not(.quick-tabs) > div.column > table > tbody > tr:not(:last-child):nth-
 .tablepress thead th {
   padding-right: .5em;
   padding-left: .5em;
-  background-color: #b5babe;
+  background-color: #c4e3f3;
   color: #000;
-  border-bottom: 1px solid #606e7a;
+  border-bottom: 1px solid #3fa8df;
 }
 .tablepress thead th:not(:last-child) {
-  border-right: 1px solid #666e74;
+  border-right: 1px solid #45a7d9;
 }
 .tablepress thead th:not(:first-child) {
-  border-top: 1px solid #c0c7cd;
-  border-left: 1px solid #c3c7ca;
+  border-top: 1px solid #d8edf8;
+  border-left: 1px solid #d9edf7;
 }
 @media all {
   .tablepress thead th {
@@ -7263,6 +7263,9 @@ section:not(.quick-tabs) > div.column > table > tbody > tr:not(:last-child):nth-
 .tablepress tbody td:first-child {
   border-right: 1px solid #b3b3b3;
 }
+.tablepress tbody td[colspan] {
+  background-color: #d9edf7;
+}
 @media all {
   .tablepress tbody td {
     line-height: 1.275em;
@@ -7305,23 +7308,23 @@ section:not(.quick-tabs) > div.column > table > tbody > tr:not(:last-child):nth-
   font-size: inherit;
 }
 .tablepress tbody .odd td {
-  background-color: #f9f4e7;
+  background-color: #eef7fb;
 }
 .tablepress tbody .odd td:not(:last-child) {
-  border-right: 1px solid #dabc6d;
+  border-right: 1px solid #72bdde;
 }
 .tablepress tbody .odd td:not(:first-child) {
-  border-left: 1px solid #fefdfb;
+  border-left: 1px solid #ffffff;
 }
 .tablepress tbody .odd td:first-child {
   background-color: #f9f4e7;
   border-right: 1px solid #dabc6d;
 }
 .tablepress tbody .odd:not(:first-child) td {
-  border-top: 1px solid #fefdfb;
+  border-top: 1px solid #ffffff;
 }
 .tablepress tbody .odd:not(:last-child) td {
-  border-bottom: 1px solid #dfbe68;
+  border-bottom: 1px solid #6ebee2;
 }
 .tablepress tbody .even td {
   background-color: #fff;
@@ -7342,7 +7345,7 @@ section:not(.quick-tabs) > div.column > table > tbody > tr:not(:last-child):nth-
   background-color: #fffbf1;
 }
 .tablepress .row-hover tr.odd:hover td {
-  background-color: #fbf1da;
+  background-color: #f5f4e9;
 }
 .tablepress .row-hover tr.odd:hover td:first-child {
   background-color: #fbf1da;
@@ -7368,7 +7371,7 @@ div.column h2.tablepress-table-name {
   text-transform: none;
 }
 div.column h2.tablepress-table-name + table.tablepress {
-  border-top: 1px solid #606e7a;
+  border-top: 1px solid #3fa8df;
 }
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CUSTOM layouts ################################################################################## ║
