@@ -1427,15 +1427,15 @@ section.has-linked-columns:not(.gutter).for-faculty + section.has-linked-columns
     background-size: auto 100%;
   }
   section.has-linked-columns:not(.gutter).for-faculty.quarters div.column:nth-child(2) {
-    border-top: none;
+    border-top: none !important;
   }
   section.has-linked-columns:not(.gutter).for-faculty.quarters div.column:nth-child(3),
   section.has-linked-columns:not(.gutter).for-faculty.quarters div.column:nth-child(4) {
-    border-top: 10px solid #ffffff;
+    border-top: 10px solid #ffffff !important;
   }
   section.has-linked-columns:not(.gutter).for-faculty.quarters div.column:nth-child(2),
   section.has-linked-columns:not(.gutter).for-faculty.quarters div.column:nth-child(4) {
-    border-left: 10px solid #ffffff;
+    border-left: 10px solid #ffffff !important;
   }
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
