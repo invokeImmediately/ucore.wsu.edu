@@ -1422,8 +1422,10 @@ section.has-linked-columns:not(.gutter).for-faculty + section.has-linked-columns
 section.has-linked-columns:not(.gutter).for-faculty + section.has-linked-columns:not(.gutter).for-faculty.quarters {
   border-top: 10px solid #ffffff;
 }
-section.has-linked-columns:not(.gutter).for-faculty.quarters {
-  background-size: auto 100%;
+@media (max-width: 693px) {
+  section.has-linked-columns:not(.gutter).for-faculty.quarters {
+    background-size: auto 100%;
+  }
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
