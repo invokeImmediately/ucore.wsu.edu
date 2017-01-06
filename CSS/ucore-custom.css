@@ -1423,7 +1423,7 @@ section.has-linked-columns:not(.gutter).for-faculty + section.has-linked-columns
   border-top: 10px solid #ffffff;
 }
 @media (max-width: 693px) {
-  section.has-linked-columns:not(.gutter).for-faculty.quarters {
+  section.has-linked-columns:not(.gutter).for-faculty.quarters div.column {
     background-size: auto 100%;
   }
 }
