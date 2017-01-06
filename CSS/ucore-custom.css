@@ -7218,11 +7218,11 @@ ul.learning-goals > li + li {
 .tablepress tbody td:not(:first-child) {
   border-left: 1px solid #ffffff;
 }
-.tablepress tbody td:first-child {
+.tablepress tbody td:first-child:not(:last-child) {
   border-right: 1px solid #b3b3b3;
 }
 .tablepress tbody td[colspan] {
-  background-color: #d9edf7;
+  font-weight: bold;
 }
 @media all {
   .tablepress tbody td {
@@ -7274,6 +7274,9 @@ ul.learning-goals > li + li {
 .tablepress tbody .odd td:not(:first-child) {
   border-left: 1px solid #ffffff;
 }
+.tablepress tbody .odd td[colspan] {
+  background-color: #d9edf7;
+}
 .tablepress tbody .odd:not(:first-child) td {
   border-top: 1px solid #ffffff;
 }
@@ -7282,6 +7285,9 @@ ul.learning-goals > li + li {
 }
 .tablepress tbody .even td {
   background-color: #fff;
+}
+.tablepress tbody .even td[colspan] {
+  background-color: #d9edf7;
 }
 .tablepress tbody .even:not(:first-child) td {
   border-top: 1px solid #ffffff;
