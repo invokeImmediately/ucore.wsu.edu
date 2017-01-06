@@ -7274,10 +7274,6 @@ ul.learning-goals > li + li {
 .tablepress tbody .odd td:not(:first-child) {
   border-left: 1px solid #ffffff;
 }
-.tablepress tbody .odd td:first-child {
-  background-color: #f9f4e7;
-  border-right: 1px solid #dabc6d;
-}
 .tablepress tbody .odd:not(:first-child) td {
   border-top: 1px solid #ffffff;
 }
@@ -7285,9 +7281,6 @@ ul.learning-goals > li + li {
   border-bottom: 1px solid #6ebee2;
 }
 .tablepress tbody .even td {
-  background-color: #fff;
-}
-.tablepress tbody .even td:first-child {
   background-color: #fff;
 }
 .tablepress tbody .even:not(:first-child) td {
