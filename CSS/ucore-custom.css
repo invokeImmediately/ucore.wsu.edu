@@ -5780,6 +5780,7 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   border-radius: 4px;
   font-size: 1em;
   line-height: 1em;
+  text-align: center;
   background-color: #981e32;
   color: #fff;
   -webkit-transform: translate(-50%, -50%);
@@ -5791,7 +5792,7 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   opacity: 1;
 }
 .drop-down-toggle.boxed:before {
-  content: "‒";
+  content: "&#8722;";
   opacity: 0;
 }
 .drop-down-toggle.boxed.activated:after {
