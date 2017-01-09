@@ -5772,9 +5772,6 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   margin-bottom: 0 !important;
   background-color: rgba(198, 12, 48, 0.1);
 }
-.drop-down-toggle.boxed:hover {
-  background-color: rgba(198, 12, 48, 0.3);
-}
 .drop-down-toggle.boxed:after,
 .drop-down-toggle.boxed:before {
   content: "+";
@@ -5802,6 +5799,13 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
 .drop-down-toggle.boxed:before {
   content: "-";
   opacity: 0;
+}
+.drop-down-toggle.boxed:hover {
+  background-color: rgba(198, 12, 48, 0.3);
+}
+.drop-down-toggle.boxed:hover:after,
+.drop-down-toggle.boxed:hover:before {
+  background-color: #c17884;
 }
 .drop-down-toggle.boxed.activated {
   background-color: rgba(198, 12, 48, 0.2);
