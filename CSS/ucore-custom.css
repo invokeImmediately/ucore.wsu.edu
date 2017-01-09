@@ -5795,7 +5795,7 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   opacity: 1;
 }
 .drop-down-toggle.boxed:before {
-  content: "–";
+  content: "-";
   opacity: 0;
 }
 .drop-down-toggle.boxed.activated:after {
