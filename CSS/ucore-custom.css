@@ -5783,6 +5783,8 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   border-radius: 4px;
   font-size: 1em;
   line-height: 1em;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-weight: 300;
   text-align: center;
   background-color: #981e32;
   color: #fff;
