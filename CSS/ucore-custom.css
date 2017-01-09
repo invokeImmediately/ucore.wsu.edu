@@ -5767,7 +5767,8 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   padding-left: 100px;
   background-color: rgba(219, 120, 121, 0.3);
 }
-.drop-down-toggle.boxed:after .drop-down-toggle.boxed:before {
+.drop-down-toggle.boxed:after,
+.drop-down-toggle.boxed:before {
   content: "+";
   left: 50px;
   top: 50%;
