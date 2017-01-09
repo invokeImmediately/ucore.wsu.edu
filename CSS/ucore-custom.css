@@ -5764,7 +5764,9 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   border-left: 8px solid transparent;
 }
 .drop-down-toggle.boxed {
-  padding-left: 100px;
+  padding-left: calc(20px + 1.5em);
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: rgba(219, 120, 121, 0.2);
 }
 .drop-down-toggle.boxed:after,
