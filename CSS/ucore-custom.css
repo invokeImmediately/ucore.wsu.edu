@@ -1294,6 +1294,10 @@ section.has-linked-columns:not(.gutter).quarters div.column {
     bottom: 0.5rem;
   }
 }
+section.has-linked-columns:not(.gutter).thirds div.column:hover,
+section.has-linked-columns:not(.gutter).quarters div.column:hover {
+  background-size: auto 110%;
+}
 section.has-linked-columns:not(.gutter).thirds div.column.has-crimson-bg:after,
 section.has-linked-columns:not(.gutter).quarters div.column.has-crimson-bg:after {
   background: linear-gradient(to bottom, rgba(152, 30, 50, 0), rgba(152, 30, 50, 0.2) 50%, #981e32 80%);
@@ -1425,6 +1429,9 @@ section.has-linked-columns:not(.gutter).for-faculty + section.has-linked-columns
 @media (max-width: 693px) {
   section.has-linked-columns:not(.gutter).for-faculty.quarters div.column {
     background-size: auto 100%;
+  }
+  section.has-linked-columns:not(.gutter).for-faculty.quarters div.column:hover {
+    background-size: auto 110%;
   }
   section.has-linked-columns:not(.gutter).for-faculty.quarters div.column:nth-child(2) {
     border-top: none !important;
@@ -5699,11 +5706,13 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   top: 50%;
   width: 0;
   height: 0;
-  transform: translateY(-50%);
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #981e32;
   border-left: 8px solid transparent;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -5753,6 +5762,35 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   border-right: 8px solid transparent;
   border-bottom: none;
   border-left: 8px solid transparent;
+}
+.drop-down-toggle.boxed {
+  padding-left: 100px;
+  background-color: rgba(219, 120, 121, 0.3);
+}
+.drop-down-toggle.boxed:after .drop-down-toggle.boxed:before {
+  content: "+";
+  left: 50px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.drop-down-toggle.boxed:after {
+  content: "+";
+  opacity: 1;
+}
+.drop-down-toggle.boxed:before {
+  content: "-";
+  opacity: 0;
+}
+.drop-down-toggle.boxed.activated:after {
+  opacity: 0;
+}
+.drop-down-toggle.boxed.activated:before {
+  opacity: 1;
 }
 .flipped-content-back {
   display: none;
