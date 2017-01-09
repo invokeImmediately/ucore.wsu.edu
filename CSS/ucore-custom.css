@@ -5805,7 +5805,7 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
 }
 .drop-down-toggle.boxed:hover:after,
 .drop-down-toggle.boxed:hover:before {
-  background-color: #c17884;
+  background-color: #b35a69;
 }
 .drop-down-toggle.boxed.activated {
   background-color: rgba(198, 12, 48, 0.2);
