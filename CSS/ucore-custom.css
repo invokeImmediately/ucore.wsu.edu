@@ -5775,7 +5775,7 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
 .drop-down-toggle.boxed:after,
 .drop-down-toggle.boxed:before {
   content: "+";
-  left: calc(20px + 0.5em);
+  left: 18px;
   top: 50%;
   width: 18px;
   height: 18px;
@@ -5828,7 +5828,7 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   padding-top: 1rem !important;
 }
 .drop-down-toggle.boxed + .toggled-panel > :last-child {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 .drop-down-toggle.boxed + .drop-down-toggle.boxed,
 .drop-down-toggle.boxed + .toggled-panel + .drop-down-toggle.boxed {
