@@ -5765,16 +5765,21 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
 }
 .drop-down-toggle.boxed {
   padding-left: 100px;
-  background-color: rgba(219, 120, 121, 0.3);
+  background-color: rgba(219, 120, 121, 0.2);
 }
 .drop-down-toggle.boxed:after,
 .drop-down-toggle.boxed:before {
   content: "+";
-  left: 50px;
+  left: calc(20px + 0.5em);
   top: 50%;
   width: 20px;
-  height: 20px;
+  height: 1em;
   border: none;
+  border-radius: 4px;
+  font-size: 1px;
+  line-height: 1em;
+  background-color: #981e32;
+  color: #fff;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -5784,7 +5789,7 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
   opacity: 1;
 }
 .drop-down-toggle.boxed:before {
-  content: "-";
+  content: "‒";
   opacity: 0;
 }
 .drop-down-toggle.boxed.activated:after {
@@ -5792,6 +5797,11 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required span.address_lin
 }
 .drop-down-toggle.boxed.activated:before {
   opacity: 1;
+}
+.drop-down-toggle.boxed + .toggled-panel {
+  border-right: 1px solid rgba(198, 12, 48, 0.2);
+  border-bottom: 1px solid rgba(198, 12, 48, 0.2);
+  border-left: 1px solid rgba(198, 12, 48, 0.2);
 }
 .flipped-content-back {
   display: none;
