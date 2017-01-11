@@ -2818,9 +2818,6 @@ div.column p.article-tagline.sans > span.lead-in {
   font-weight: 700;
   letter-spacing: normal;
 }
-p.article-tagline:not(.has-no-bordering) {
-  margin-top: 0.33333333rem;
-}
 p.article-tagline:not(.has-no-bordering):not(.alt) {
   position: relative;
   padding-top: 0.33333333rem !important;
