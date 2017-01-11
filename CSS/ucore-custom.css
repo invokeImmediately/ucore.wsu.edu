@@ -208,7 +208,7 @@ div.column .soft-gray-border {
   margin-top: 2rem;
 }
 .has-pull-quote-bordering:not(.alt):first-child,
-header:first-child + .has-pull-quote-bordering:not(.alt) {
+header:first-child + .has-pull-quote-bordering:not(.alt):not(:first-child) {
   margin-top: 0.33333333rem;
 }
 .has-pull-quote-bordering:not(.alt):before,
@@ -2828,7 +2828,7 @@ div.column p.article-tagline:not(.has-no-bordering):not(.alt):not(:first-child) 
   margin-top: 2rem;
 }
 div.column p.article-tagline:not(.has-no-bordering):not(.alt):first-child,
-header:first-child + div.column p.article-tagline:not(.has-no-bordering):not(.alt) {
+header:first-child + div.column p.article-tagline:not(.has-no-bordering):not(.alt):not(:first-child) {
   margin-top: 0.33333333rem;
 }
 div.column p.article-tagline:not(.has-no-bordering):not(.alt):before,
