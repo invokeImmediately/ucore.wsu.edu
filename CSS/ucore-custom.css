@@ -204,11 +204,12 @@ div.column .soft-gray-border {
   padding-top: 0.33333333rem !important;
   padding-bottom: 0.33333333rem !important;
 }
-.has-pull-quote-bordering:not(.alt):first-child {
-  margin-top: 0.33333333rem;
-}
 .has-pull-quote-bordering:not(.alt):not(:first-child) {
   margin-top: 2rem;
+}
+.has-pull-quote-bordering:not(.alt):first-child,
+header:first-child + .has-pull-quote-bordering:not(.alt) {
+  margin-top: 0.33333333rem;
 }
 .has-pull-quote-bordering:not(.alt):before,
 .has-pull-quote-bordering:not(.alt):after {
@@ -2823,11 +2824,12 @@ div.column p.article-tagline:not(.has-no-bordering):not(.alt) {
   padding-top: 0.33333333rem !important;
   padding-bottom: 0.33333333rem !important;
 }
-div.column p.article-tagline:not(.has-no-bordering):not(.alt):first-child {
-  margin-top: 0.33333333rem;
-}
 div.column p.article-tagline:not(.has-no-bordering):not(.alt):not(:first-child) {
   margin-top: 2rem;
+}
+div.column p.article-tagline:not(.has-no-bordering):not(.alt):first-child,
+header:first-child + div.column p.article-tagline:not(.has-no-bordering):not(.alt) {
+  margin-top: 0.33333333rem;
 }
 div.column p.article-tagline:not(.has-no-bordering):not(.alt):before,
 div.column p.article-tagline:not(.has-no-bordering):not(.alt):after {
