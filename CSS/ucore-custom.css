@@ -207,8 +207,7 @@ div.column .soft-gray-border {
 .has-pull-quote-bordering:not(.alt):not(:first-child) {
   margin-top: 2rem;
 }
-.has-pull-quote-bordering:not(.alt):first-child,
-header:first-child + .has-pull-quote-bordering:not(.alt):not(:first-child) {
+.has-pull-quote-bordering:not(.alt):first-child {
   margin-top: 0.33333333rem;
 }
 .has-pull-quote-bordering:not(.alt):before,
@@ -2819,56 +2818,58 @@ div.column p.article-tagline.sans > span.lead-in {
   font-weight: 700;
   letter-spacing: normal;
 }
-div.column p.article-tagline:not(.has-no-bordering):not(.alt) {
+p.article-tagline:not(.has-no-bordering) {
+  margin-top: 0.33333333rem;
+}
+p.article-tagline:not(.has-no-bordering):not(.alt) {
   position: relative;
   padding-top: 0.33333333rem !important;
   padding-bottom: 0.33333333rem !important;
 }
-div.column p.article-tagline:not(.has-no-bordering):not(.alt):not(:first-child) {
+p.article-tagline:not(.has-no-bordering):not(.alt):not(:first-child) {
   margin-top: 2rem;
 }
-div.column p.article-tagline:not(.has-no-bordering):not(.alt):first-child,
-header:first-child + div.column p.article-tagline:not(.has-no-bordering):not(.alt):not(:first-child) {
+p.article-tagline:not(.has-no-bordering):not(.alt):first-child {
   margin-top: 0.33333333rem;
 }
-div.column p.article-tagline:not(.has-no-bordering):not(.alt):before,
-div.column p.article-tagline:not(.has-no-bordering):not(.alt):after {
+p.article-tagline:not(.has-no-bordering):not(.alt):before,
+p.article-tagline:not(.has-no-bordering):not(.alt):after {
   content: "";
   position: absolute;
   left: 0;
   width: 67%;
 }
-div.column p.article-tagline:not(.has-no-bordering):not(.alt):before {
+p.article-tagline:not(.has-no-bordering):not(.alt):before {
   top: -0.33333333rem;
   height: 5px;
   border-top: 5px solid #464e54;
 }
-div.column p.article-tagline:not(.has-no-bordering):not(.alt):after {
+p.article-tagline:not(.has-no-bordering):not(.alt):after {
   bottom: -0.33333333rem;
   height: 1px;
   width: 33%;
   border-top: 1px solid rgba(70, 78, 84, 0.75757576);
 }
-div.column p.article-tagline:not(.has-no-bordering).alt {
+p.article-tagline:not(.has-no-bordering).alt {
   position: relative;
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
   border-right: 1px solid rgba(70, 78, 84, 0.18939394);
   border-left: 5px solid #464e54;
 }
-div.column p.article-tagline:not(.has-no-bordering).alt:before,
-div.column p.article-tagline:not(.has-no-bordering).alt:after {
+p.article-tagline:not(.has-no-bordering).alt:before,
+p.article-tagline:not(.has-no-bordering).alt:after {
   content: "";
   position: absolute;
   top: 0;
   width: 1px;
   height: 100%;
 }
-div.column p.article-tagline:not(.has-no-bordering).alt:before {
+p.article-tagline:not(.has-no-bordering).alt:before {
   right: 1px;
   background-color: rgba(70, 78, 84, 0.37878788);
 }
-div.column p.article-tagline:not(.has-no-bordering).alt:after {
+p.article-tagline:not(.has-no-bordering).alt:after {
   right: 3px;
   background-color: rgba(70, 78, 84, 0.75757576);
 }
