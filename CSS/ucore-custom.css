@@ -207,7 +207,8 @@ div.column .soft-gray-border {
 .has-pull-quote-bordering:not(.alt):not(:first-child) {
   margin-top: 2rem;
 }
-.has-pull-quote-bordering:not(.alt):first-child {
+.has-pull-quote-bordering:not(.alt):first-child,
+header:first-child + .has-pull-quote-bordering:not(.alt) {
   margin-top: 0.33333333rem;
 }
 .has-pull-quote-bordering:not(.alt):before,
@@ -2826,7 +2827,8 @@ p.article-tagline:not(.has-no-bordering):not(.alt) {
 p.article-tagline:not(.has-no-bordering):not(.alt):not(:first-child) {
   margin-top: 2rem;
 }
-p.article-tagline:not(.has-no-bordering):not(.alt):first-child {
+p.article-tagline:not(.has-no-bordering):not(.alt):first-child,
+header:first-child + p.article-tagline:not(.has-no-bordering):not(.alt) {
   margin-top: 0.33333333rem;
 }
 p.article-tagline:not(.has-no-bordering):not(.alt):before,
