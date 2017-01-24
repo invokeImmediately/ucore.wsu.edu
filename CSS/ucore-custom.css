@@ -4826,6 +4826,7 @@ ul.cascaded-layout > li.gutter-sizer {
   border: 1px solid #afb5b7;
   background-color: #d7dadb;
   font-weight: bold;
+  cursor: pointer;
   -webkit-transition: all 0.25s linear;
   -moz-transition: all 0.25s linear;
   transition: all 0.25s linear;
@@ -4956,6 +4957,7 @@ ul.cascaded-layout > li.gutter-sizer {
   font-weight: 300;
   font-size: 12px;
   line-height: 12px;
+  cursor: pointer;
   -webkit-transform: translateY(-100%) translateY(-5px);
   -moz-transform: translateY(-100%) translateY(-5px);
   transform: translateY(-100%) translateY(-5px);
