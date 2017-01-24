@@ -406,7 +406,7 @@
 		// Display expand/collapse all buttons
 		// TODO: write code here
 		$lists.css({
-			marginTop: "+=27px"
+			marginTop: "+=29px"
 		}, animSlideDrtn);
 		$expandAlls.slideToggle(animSlideDrtn);
 		$collapseAlls.slideToggle(animSlideDrtn);
