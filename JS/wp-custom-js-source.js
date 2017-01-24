@@ -102,61 +102,61 @@
 		params.checkForLrgFrmtSingle = {
 			slctrSingle: ".single.large-format-friendly",
 			slctrMainHdr: "header.main-header",
-			slctrHdrGroup: "div.header-group",
+			slctrHdrGroup: ".header-group",
 			centeringClass: "centered"
-		}
+		};
 		params.initHrH2Motif = {
 			slctrStandardH2: ".column > h2:not(.fancy), .column > section > h2:not(.fancy)",
 			slctrPrevHr: "hr:not(.subSection)",
 			h2ClassesAdded: "no-top-margin",
 			hrClassesAdded: "narrow-bottom-margin dark-gray thicker",
 			animAddDrtn: 250
-		}
+		};
 		params.initFancyHrH2Motif = {
 			slctrFancyH2: ".column > h2.fancy, .column > section > h2.fancy",
 			slctrPrevHr: "hr:not(.subSection)",
 			hrClassesAdded: "no-bottom-margin dark-gray thicker encroach-horizontal",
 			animAddDrtn: 250
-		}
+		};
 		params.initHrH3Motif = {
 			slctrStandardH3: ".column > h3:not(.fancy), .column > section > h3:not(.fancy)",
 			slctrPrevHr: "hr:not(.subSection)",
 			hrClassesAdded: "narrow-bottom-margin crimson",
 			animAddDrtn: 250
-		}
+		};
 		params.initFancyHrH3Motif = {
 			slctrFancyH3: ".column > h3.fancy, .column > section > h3.fancy",
 			slctrPrevHr: "hr:not(.subSection)",
 			hrClassesAdded: "no-bottom-margin crimson encroach-horizontal",
 			animAddDrtn: 250
-		}
+		};
 		params.initDropDownToggles = {
 			slctrToggle: ".drop-down-toggle",
 			slctrWhatsToggled: ".toggled-panel",
 			activatingClass: "activated",
 			animDuration: 500
-		}
+		};
 		params.initReadMoreToggles = {
 			slctrToggleIn: ".read-more-toggle-in-ctrl",
 			slctrToggleOut: ".read-more-toggle-out-ctrl",
 			slctrPanel: ".read-more-panel",
 			animDuration: 500
-		}
+		};
 		params.initContentFlippers = {
 			slctrCntntFlppr: ".content-flipper",
 			slctrFlppdFront: ".flipped-content-front",
 			slctrFlppdBack: ".flipped-content-back",
 			animDuration: 500
-		}
+		};
 		params.initDefinitionLists = {
 			slctrDefList: "dl.toggled",
 			slctrLrgFrmtSection: ".large-format-friendly",
-			slctrColOne: "div.column.one",
-			slctrColTwo: "div.column.two",
+			slctrColOne: ".column.one",
+			slctrColTwo: ".column.two",
 			activatingClass: "activated",
 			animSlideDrtn: 400,
 			animHghtDrtn: 100
-		}
+		};
 		params.addDefinitionListButtons = {
 			slctrDefList: params.initDefinitionLists.slctrDefList,
 			expandAllClass: "expand-all-button",
@@ -164,27 +164,27 @@
 			btnDisablingClass: "disabled",
 			dtActivatingClass: params.initDefinitionLists.activatingClass,
 			animSlideDrtn: params.initDefinitionLists.animSlideDrtn
-		}
+		};
 		params.initQuickTabs = {
 			slctrQtSctn: "section.row.single.quick-tabs"
-		}
+		};
 		params.initTocFloating = {
 			slctrToc: "p.vpue-jump-bar",
 			slctrBackToToc: "p.vpue-jump-back"
-		}
+		};
 		params.initTriggeredByHover = {
 			slctrTrggrdOnHvr: ".triggered-on-hover",
 			slctrCntntRvld: ".content-revealed",
 			slctrCntntHddn: ".content-hidden",
 			animDuration: 200
-		}
+		};
 		params.initWelcomeMessage = {
 			slctrWlcmMsg: "#welcome-message",
 			slctrPostWlcmMsg: "#post-welcome-message",
 			msgDelay: 1000,
 			fadeOutDuration: 500,
 			fadeInDuration: 500
-		}
+		};
 		
 		// Call document initialization functions
 		theseParams = params.fixDogears;
@@ -322,8 +322,41 @@
 	 * WINDOW LOAD EVENT BINDINGS                                                                       *
 	 ****************************************************************************************************/
     $(window).on("load", function () {
-        finalizeLrgFrmtSideRight(".side-right.large-format-friendly", "div.column.one", "div.column.two",
-         1051, 100);
+		var params = new Object();
+		var theseParams;
+		
+		// Setup parameters for loaded window function calls
+		params.finalizeLrgFrmtSideRight = {
+			slctrSideRight: ".side-right.large-format-friendly",
+			slctrColOne: ".column.one",
+			slctrColTwo: ".column.two",
+			trggrWidth: 1051,
+			animDuration: 100
+		};
+		params.showDefinitionListButtons = {
+			slctrDefList: "dl.toggled",
+			expandAllClass: "expand-all-button",
+			collapseAllClass: "collapse-all-button",
+			animFadeInDrtn: 400
+		};
+		
+		// Call loaded window functions
+		theseParams = params.finalizeLrgFrmtSideRight;
+        finalizeLrgFrmtSideRight(
+			theseParams.slctrSideRight,
+			theseParams.slctrColOne,
+			theseParams.slctrColTwo,
+			theseParams.trggrWidth,
+			theseParams.animDuration
+		);
+		
+		theseParams = params.showDefinitionListButtons;
+		showDefinitionListButtons(
+			theseParams.slctrDefList,
+			theseParams.expandAllClass,
+			theseParams.collapseAllClass,
+			theseParams.animFadeInDrtn
+		);
     });
     
     $(window).resize(function () {
@@ -368,16 +401,15 @@
 	 *   += collapseAllClass: CSS class for controlling the layout of collapse all buttons
 	 *   += btnDisablingClass: CSS class applied to disable expand/collapse all buttons
 	 *   += dtActivatingClass: CSS class used to indicate an active/expanded state for definition terms
-	 *   += animSlideDrtn: the animation speed for definitions 
+	 *   += animSlideDrtn: the animation speed by which definitions slide down into view
 	 */
     function addDefinitionListButtons(slctrDefList, expandAllClass, collapseAllClass, btnDisablingClass,
 	 dtActivatingClass, animSlideDrtn) {
-		// TODO: Finish writing this function.
 		var thisFuncName = "addDefinitionListButtons";
 		var thisFuncDesc = "Automatically creates and binds events to expand/collapse all buttons designed for improving UX of OUE site definition lists";
-		var $lists = $(slctrDefList);
 		
 		// Find and remove any pre-existing expand/collapse all buttons
+		var $lists = $(slctrDefList);
 		var $existingExpandAlls = $lists.children("." + expandAllClass);
 		var $existingCollapseAlls = $lists.children("." + collapseAllClass);
 		if ($existingExpandAlls.length > 0) {
@@ -402,14 +434,6 @@
 		var $expandAlls = $(slctrExpandAll);
 		var slctrCollapseAll = slctrDefList + " > ." + collapseAllClass;
 		var $collapseAlls = $(slctrCollapseAll);
-		
-		// Display expand/collapse all buttons
-		// TODO: write code here
-		$lists.css({
-			marginTop: "+=29px"
-		}, animSlideDrtn);
-		$expandAlls.slideToggle(animSlideDrtn);
-		$collapseAlls.slideToggle(animSlideDrtn);
 		
 		// Bind handling functions to button click events
 		$expandAlls.click(function() {
@@ -460,18 +484,6 @@
 				}
 			}
 		});
-		
-		// (Code below was coppied from initDefinitionListButtons; should modify it as needed.)
-        /*$(slctrDefList + " dt").click(function() {
-            var $this = $(this);
-            $this.toggleClass(activatingClass);
-            $this.next("dd").slideToggle(animSlideDrtn, function () {
-                var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
-                var $prntNxt = $parent.next(slctrColTwo);
-                $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
-            });
-        });
-        $(slctrDefList + " dd").hide(); // Definitions should be hidden by default.*/
     }
     
     function checkForLrgFrmtSingle(slctrSingle, slctrMainHdr, slctrHdrGroup, centeringClass) {
@@ -736,7 +748,7 @@
     }
 
 	/****************************************************************************************************
-	 * WINDOW INITIALIZATION FUNCTIONS                                                                  *
+	 * LOADED WINDOW FUNCTIONS                                                                          *
 	 ****************************************************************************************************/
     function finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
         if($(window).width() >= trggrWidth) {
@@ -753,11 +765,37 @@
             });
         }
     }
-    
+	
+	/**
+	 * showDefinitionListButtons
+	 * DESCRIPTION: Display expand/collapse all buttons, which were initially hidden
+	 * PARAMETERS:
+	 *   += slctrDefList: selector string for locating definition list elements within the DOM that contain collapsible definitions
+	 *   += expandAllClass: CSS class for controlling the layout of expand all buttons
+	 *   += collapseAllClass: CSS class for controlling the layout of collapse all buttons
+	 *   += animFadeInDrtn: the animation speed by which definitions fade into view
+	 */
+	function showDefinitionListButtons(slctrDefList, expandAllClass, collapseAllClass, animFadeInDrtn) {
+		var thisFuncName = "addDefinitionListButtons";
+		var thisFuncDesc = "Display expand/collapse all buttons, which were initially hidden";
+		
+		// Display expand/collapse all buttons
+		var $lists = $(slctrDefList);
+		var $existingExpandAlls = $lists.children("." + expandAllClass);
+		var $existingCollapseAlls = $lists.children("." + collapseAllClass);
+		$lists.css({
+			marginTop: "+=29px"
+		}, animFadeInDrtn);
+		$expandAlls.slideToggle(animFadeInDrtn);
+		$collapseAlls.slideToggle(animFadeInDrtn);
+	}
+		
+	/****************************************************************************************************
+	 * WINDOW-RESIZE TRIGGERED FUNCTIONS                                                                *
+	 ****************************************************************************************************/
     function resizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
         finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration);
     }
-
 })(jQuery);
 // See [https://github.com/invokeImmediately/distinguishedscholarships.wsu.edu] for repository of source code
 /************************************************************************************************************
