@@ -379,7 +379,7 @@
 		
 		// Find and remove any pre-existing expand/collapse all buttons
 		var $existingExpandAlls = $lists.children("." + expandAllClass);
-		var $existingCollapseAlls = $lists.children("." + slctrExpandAllClass);
+		var $existingCollapseAlls = $lists.children("." + collapseAllClass);
 		if ($existingExpandAlls.length > 0) {
 			$existingExpandAlls.remove();
 			$.logError(
