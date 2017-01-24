@@ -4,6 +4,8 @@
 "use strict";
 
 (function ($) {
+	var thisFileName = "jQuery.oue-custom.js";
+
 	/****************************************************************************************************
 	 * ADDITION OF FUNCTIONS TO JQUERY                                                                  *
 	 ****************************************************************************************************/
@@ -25,6 +27,8 @@
 	 *   += errorMsg: the message that describes what went wrong within the calling function
 	 */
 	$.logError = function (fileName, fnctnName, fnctnDesc, errorMsg) {
+		var thisFuncName = "jQuery.logError";
+		var thisFuncDesc = "Log an error using the browser console in JSON notation.";
 		var bitMask;
 		
 		bitMask = typeof fileName === "string";
@@ -70,9 +74,9 @@
 
 			// Recursively call jQuery.logError with the new error message.
 			$.logError(
-				"jQuery.oue-custom.js",
-				"jQuery.logError",
-				"Log an error using the browser console in JSON notation.",
+				thisFileName,
+				thisFuncName,
+				thisFuncDesc,
 				newErrorMsg
 			);
 		}
@@ -152,6 +156,14 @@
 			activatingClass: "activated",
 			animSlideDrtn: 400,
 			animHghtDrtn: 100
+		}
+		params.addDefinitionListButtons = {
+			slctrDefList: params.initDefinitionLists.slctrDefList,
+			expandAllClass: "expand-all-button",
+			collapseAllClass: "collapse-all-button",
+			btnDisablingClass: "disabled",
+			dtActivatingClass: params.initDefinitionLists.activatingClass,
+			animSlideDrtn: params.initDefinitionLists.animSlideDrtn
 		}
 		params.initQuickTabs = {
 			slctrQtSctn: "section.row.single.quick-tabs"
@@ -236,7 +248,8 @@
 			theseParams.activatingClass,
 			theseParams.animDuration
 		);
-		
+
+	
 		theseParams = params.initReadMoreToggles;
         initReadMoreToggles(
 			theseParams.slctrToggleIn,
@@ -262,6 +275,16 @@
 			theseParams.activatingClass,
 			theseParams.animSlideDrtn,
 			theseParams.animHghtDrtn
+		);
+
+		theseParams = params.addDefinitionListButtons;
+        addDefinitionListButtons(
+			theseParams.slctrDefList,
+			theseParams.expandAllClass,
+			theseParams.collapseAllClass,
+			theseParams.btnDeactivatingClass,
+			theseParams.dtActivatingClass,
+			theseParams.animSlideDrtn
 		);
 		
 		theseParams = params.initQuickTabs;
@@ -336,6 +359,116 @@
 		}
 	}
 	
+	/**
+	 * addDefinitionListButtons
+	 * DESCRIPTION: Automatically creates and binds events to expand/collapse all buttons designed for improving UX of OUE site definition lists.
+	 * PARAMETERS:
+	 *   += slctrDefList: selector string for locating definition list elements within the DOM that contain collapsible definitions
+	 *   += expandAllClass: CSS class for controlling the layout of expand all buttons
+	 *   += collapseAllClass: CSS class for controlling the layout of collapse all buttons
+	 *   += btnDisablingClass: CSS class applied to disable expand/collapse all buttons
+	 *   += dtActivatingClass: CSS class used to indicate an active/expanded state for definition terms
+	 *   += animSlideDrtn: the animation speed for definitions 
+	 */
+    function addDefinitionListButtons(slctrDefList, expandAllClass, collapseAllClass, btnDisablingClass,
+	 dtActivatingClass, animSlideDrtn) {
+		// TODO: Finish writing this function.
+		var thisFuncName = "addDefinitionListButtons";
+		var thisFuncDesc = "Automatically creates and binds events to expand/collapse all buttons designed for improving UX of OUE site definition lists";
+		var $lists = $(slctrDefList);
+		
+		// Find and remove any pre-existing expand/collapse all buttons
+		var $existingExpandAlls = $lists.children("." + expandAllClass);
+		var $existingCollapseAlls = $lists.children("." + slctrExpandAllClass);
+		if ($existingExpandAlls.length > 0) {
+			$existingExpandAlls.remove();
+			$.logError(
+				thisFileName, thisFuncName, thisFuncDesc,
+				"Expand all buttons were already discovered in the DOM upon document initialization; please remove all buttons from the HTML source code to avoid wasting computational resources."
+			);
+		}
+		if ($existingCollapseAlls.length > 0) {
+			$existingCollapseAlls.remove();
+			$.logError(
+				thisFileName, thisFuncName, thisFuncDesc,
+				"Collapse all buttons were already discovered in the DOM upon document initialization; please remove all buttons from the HTML source code to avoid wasting computational resources."
+			);
+		}
+		
+		// Add initially hidden (via CSS) expand/collapse all buttons to definition lists
+		$lists.prepend("<div class=""collapse-all-button"">Collapse All</div>");
+		$lists.prepend("<div class=""expand-all-button"">Expand All</div>");
+		var slctrExpandAll = slctrDefList + expandAllClass;
+		var $expandAlls = $(slctrExpandAll);
+		var slctrCollapseAll = slctrDefList + collapseAllClass;
+		var $collapseAlls = $(slctrCollapseAll);
+		
+		// Display expand/collapse all buttons
+		// TODO: write code here
+		
+		// Bind handling functions to button click events
+		$expandAlls.click(function() {
+			var $thisExpand = $(this);
+			if (!$thisExpand.hasClass(btnDisablingClass)) {
+				var $nextCollapse = $thisExpand.next("." + collapseAllClass);
+				var $parentList = $this.parent(slctrDefList);
+				if ($parentList.length == 1) {
+					// TODO: Disable buttons
+					var $defTerms = $parentList.children("dt");
+					$defTerms.each(function() {
+						var $thisDefTerm = $(this);
+						if (!$thisDefTerm.hasClass(activatingClass)) {
+							$thisDefTerm.addClass(activatingClass);
+							$thisDefTerm.next("dd").stop().slideToggle(animSlideDrtn);
+						}
+					});
+					// TODO: Enable buttons
+				} else {
+					$.logError(
+						thisFileName, thisFuncName, thisFunDesc,
+						"When trying to bind a click event on an expand all button to a handling function, could not locate the parental definition list within DOM."
+					);
+				}
+			}
+		});
+		$collapseAlls.click(function() {
+			var $thisCollapse = $(this);
+			if (!$thisCollapse.hasClass(btnDisablingClass)) {
+				var $prevExpand = $thisCollapse.prev("." + expandAllClass);
+				var $parentList = $this.parent(slctrDefList);
+				if ($parentList.length == 1) {
+					// TODO: Disable buttons
+					var $defTerms = $parentList.children("dt");
+					$defTerms.each(function() {
+						var $thisDefTerm = $(this);
+						if ($thisDefTerm.hasClass(activatingClass)) {
+							$thisDefTerm.removeClass(activatingClass);
+							$thisDefTerm.next("dd").stop().slideToggle(animSlideDrtn);
+						}
+					});
+					// TODO: Enable buttons
+				} else {
+					$.logError(
+						thisFileName, thisFuncName, thisFunDesc,
+						"When trying to bind a click event on collapse all button #" + $thisCollapse.index() + "to a handling function, could not locate the parental definition list within DOM."
+					);
+				}
+			}
+		});
+		
+		// (Code below was coppied from initDefinitionListButtons; should modify it as needed.)
+        /*$(slctrDefList + " dt").click(function() {
+            var $this = $(this);
+            $this.toggleClass(activatingClass);
+            $this.next("dd").slideToggle(animSlideDrtn, function () {
+                var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
+                var $prntNxt = $parent.next(slctrColTwo);
+                $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
+            });
+        });
+        $(slctrDefList + " dd").hide(); // Definitions should be hidden by default.*/
+    }
+    
     function checkForLrgFrmtSingle(slctrSingle, slctrMainHdr, slctrHdrGroup, centeringClass) {
         var $lrgFrmtSnglSctns = $(slctrSingle);
         if ($lrgFrmtSnglSctns.length > 0) {
@@ -379,22 +512,6 @@
         });
     }
     
-    function initTriggeredByHover(slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration) {
-        $(slctrTrggrdOnHvr).mouseenter(function () {
-            var $this = $(this);
-            var $rvldCntnt = $this.find(slctrCntntRvld);
-            var $hddnCntnt = $this.find(slctrCntntHddn);
-            $rvldCntnt.stop().show(animDuration);
-            $hddnCntnt.stop().hide(animDuration);
-        }).mouseleave(function () {
-            var $this = $(this);
-            var $rvldCntnt = $this.find(slctrCntntRvld);
-            var $hddnCntnt = $this.find(slctrCntntHddn);
-            $rvldCntnt.stop().hide(animDuration);
-            $hddnCntnt.stop().show(animDuration);
-        });
-    }
-    
     function initDefinitionLists(slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo, activatingClass,
      animSlideDrtn, animHghtDrtn) {
         $(slctrDefList + " dt").click(function() {
@@ -417,6 +534,18 @@
         });
     }
     
+    function initFancyHrH2Motif(slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn) {
+        $(slctrFancyH2).each(function () {
+                $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+    function initFancyHrH3Motif(slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn) {
+        $(slctrFancyH3).each(function () {
+            $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
     function initHrH2Motif(slctrStandardH2, slctrPrevHr, h2ClassesAdded, hrClassesAdded, animAddDrtn) {
         $(slctrStandardH2).each(function () {
                 var $this = $(this);
@@ -428,20 +557,8 @@
         });
     }
     
-    function initFancyHrH2Motif(slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn) {
-        $(slctrFancyH2).each(function () {
-                $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
-        });
-    }
-    
     function initHrH3Motif(slctrStandardH3, slctrPrevHr, hrClassesAdded, animAddDrtn) {
         $(slctrStandardH3).each(function () {
-            $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
-        });
-    }
-    
-    function initFancyHrH3Motif(slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn) {
-        $(slctrFancyH3).each(function () {
             $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
         });
     }
@@ -589,6 +706,22 @@
 			}
 		}
 	}
+    
+    function initTriggeredByHover(slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration) {
+        $(slctrTrggrdOnHvr).mouseenter(function () {
+            var $this = $(this);
+            var $rvldCntnt = $this.find(slctrCntntRvld);
+            var $hddnCntnt = $this.find(slctrCntntHddn);
+            $rvldCntnt.stop().show(animDuration);
+            $hddnCntnt.stop().hide(animDuration);
+        }).mouseleave(function () {
+            var $this = $(this);
+            var $rvldCntnt = $this.find(slctrCntntRvld);
+            var $hddnCntnt = $this.find(slctrCntntHddn);
+            $rvldCntnt.stop().hide(animDuration);
+            $hddnCntnt.stop().show(animDuration);
+        });
+    }
     
     function initWelcomeMessage(slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration,
      fadeInDuration) {
