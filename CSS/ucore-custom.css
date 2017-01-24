@@ -4963,8 +4963,8 @@ ul.cascaded-layout > li.gutter-sizer {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.column dl.faq > .expand-all-button.hover,
-.column dl.faq > .collapse-all-button.hover {
+.column dl.faq > .expand-all-button:hover,
+.column dl.faq > .collapse-all-button:hover {
   background-color: #5e6a71;
   color: #fff;
 }
