@@ -416,7 +416,7 @@
 			var $thisExpand = $(this);
 			if (!$thisExpand.hasClass(btnDisablingClass)) {
 				var $nextCollapse = $thisExpand.next("." + collapseAllClass);
-				var $parentList = $this.parent(slctrDefList);
+				var $parentList = $thisExpand.parent(slctrDefList);
 				if ($parentList.length == 1) {
 					// TODO: Disable buttons
 					var $defTerms = $parentList.children("dt");
@@ -440,7 +440,7 @@
 			var $thisCollapse = $(this);
 			if (!$thisCollapse.hasClass(btnDisablingClass)) {
 				var $prevExpand = $thisCollapse.prev("." + expandAllClass);
-				var $parentList = $this.parent(slctrDefList);
+				var $parentList = $thisCollapse.parent(slctrDefList);
 				if ($parentList.length == 1) {
 					// TODO: Disable buttons
 					var $defTerms = $parentList.children("dt");
