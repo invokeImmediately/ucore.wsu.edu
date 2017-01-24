@@ -4961,9 +4961,9 @@ ul.cascaded-layout > li.gutter-sizer {
   -webkit-transform: translateY(-100%) translateY(-5px);
   -moz-transform: translateY(-100%) translateY(-5px);
   transform: translateY(-100%) translateY(-5px);
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
 }
 .column dl.faq > .expand-all-button:hover,
 .column dl.faq > .collapse-all-button:hover {
