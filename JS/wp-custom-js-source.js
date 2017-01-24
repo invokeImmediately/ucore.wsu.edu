@@ -422,8 +422,8 @@
 					var $defTerms = $parentList.children("dt");
 					$defTerms.each(function() {
 						var $thisDefTerm = $(this);
-						if (!$thisDefTerm.hasClass(activatingClass)) {
-							$thisDefTerm.addClass(activatingClass);
+						if (!$thisDefTerm.hasClass(dtActivatingClass)) {
+							$thisDefTerm.addClass(dtActivatingClass);
 							$thisDefTerm.next("dd").stop().slideToggle(animSlideDrtn);
 						}
 					});
@@ -446,8 +446,8 @@
 					var $defTerms = $parentList.children("dt");
 					$defTerms.each(function() {
 						var $thisDefTerm = $(this);
-						if ($thisDefTerm.hasClass(activatingClass)) {
-							$thisDefTerm.removeClass(activatingClass);
+						if ($thisDefTerm.hasClass(dtActivatingClass)) {
+							$thisDefTerm.removeClass(dtActivatingClass);
 							$thisDefTerm.next("dd").stop().slideToggle(animSlideDrtn);
 						}
 					});
