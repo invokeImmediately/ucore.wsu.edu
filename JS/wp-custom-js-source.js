@@ -781,13 +781,13 @@
 		
 		// Display expand/collapse all buttons
 		var $lists = $(slctrDefList);
-		var $existingExpandAlls = $lists.children("." + expandAllClass);
-		var $existingCollapseAlls = $lists.children("." + collapseAllClass);
+		var $expandAlls = $lists.children("." + expandAllClass);
+		var $collapseAlls = $lists.children("." + collapseAllClass);
 		$lists.css({
 			marginTop: "+=29px"
 		}, animFadeInDrtn);
-		$expandAlls.slideToggle(animFadeInDrtn);
-		$collapseAlls.slideToggle(animFadeInDrtn);
+		$expandAlls.fadeIn(animFadeInDrtn);
+		$collapseAlls.fadeIn(animFadeInDrtn);
 	}
 		
 	/****************************************************************************************************
