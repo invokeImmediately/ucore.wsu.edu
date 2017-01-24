@@ -4486,26 +4486,26 @@ div.recent-updates p.recent-update-3 {
     font-size: 0.879844em;
   }
 }
-div.column ul {
+.column ul {
   padding-bottom: 0;
 }
-div.column ul ol,
-div.column ul ul {
+.column ul ol,
+.column ul ul {
   font-size: inherit  !important;
 }
-div.column ul.centered {
+.column ul.centered {
   text-align: center;
 }
-div.column ul + p {
+.column ul + p {
   margin-top: 1rem;
 }
-div.column ul li {
+.column ul li {
   line-height: inherit;
 }
-div.column ul li.no-bottom-pad {
+.column ul li.no-bottom-pad {
   padding-bottom: 0;
 }
-@prnt p + & {
+.column p + ul {
   margin-top: 0.5rem;
 }
 ul.content-boxes,
@@ -4597,9 +4597,9 @@ ul.learning-goals > li > img {
   left: 10px;
   width: 106px;
 }
-ul.content-boxes > li > div.content,
-ul.course-lists > li > div.content,
-ul.learning-goals > li > div.content {
+ul.content-boxes > li > .content,
+ul.course-lists > li > .content,
+ul.learning-goals > li > .content {
   position: relative;
   left: 121px;
   width: calc(100% - 136px);
@@ -4795,27 +4795,30 @@ ul.cascaded-layout > li.gutter-sizer {
     font-size: 0.879844em;
   }
 }
-div.column ol {
+.column ol {
   padding-bottom: 0;
 }
-div.column ol li {
+.column ol li {
   line-height: inherit;
 }
-div.column ol ol,
-div.column ol ul {
+.column ol ol,
+.column ol ul {
   font-size: inherit !important;
 }
-div.column ol ol {
+.column ol ol {
   list-style-type: lower-alpha;
 }
-div.column ol ol ol {
+.column ol ol ol {
   list-style-type: lower-roman;
 }
 /*         ┌-----------------------------------------------------------------------------------------┐
  *         │ ···· DEFINITION list elements and children ············································ │
  *         └-----------------------------------------------------------------------------------------┘
  */
-div.column dl.faq dt {
+.column dl.faq {
+  position: relative;
+}
+.column dl.faq dt {
   position: relative;
   width: calc(100% - 50px);
   padding: 5px 40px 5px 10px;
@@ -4828,42 +4831,42 @@ div.column dl.faq dt {
   transition: all 0.25s linear;
 }
 @media all {
-  div.column dl.faq dt {
+  .column dl.faq dt {
     line-height: 1.275em;
     font-size: 1em;
   }
 }
 @media all and (min-width: 1073px) {
-  div.column dl.faq dt {
+  .column dl.faq dt {
     font-size: 1.06609808em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
-  div.column dl.faq dt {
+  .column dl.faq dt {
     font-size: 1em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
-  div.column dl.faq dt {
+  .column dl.faq dt {
     font-size: 1.06609808em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
-  div.column dl.faq dt {
+  .column dl.faq dt {
     font-size: 1em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
-  div.column dl.faq dt {
+  .column dl.faq dt {
     font-size: 0.938em;
   }
 }
 @media all and (max-width: 360px) {
-  div.column dl.faq dt {
+  .column dl.faq dt {
     font-size: 0.879844em;
   }
 }
-div.column dl.faq dt:after {
+.column dl.faq dt:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -4881,67 +4884,106 @@ div.column dl.faq dt:after {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-div.column dl.faq dt:hover {
+.column dl.faq dt:hover {
   background-color: #5e6a71;
   color: #fff;
 }
-div.column dl.faq dt:hover:after {
+.column dl.faq dt:hover:after {
   border-top: 8px solid #fff;
   border-right: 8px solid transparent;
   border-bottom: none;
   border-left: 8px solid transparent;
 }
-div.column dl.faq dt.activated {
+.column dl.faq dt.activated {
   background-color: #d3b0b8;
   color: #464e54;
   border-color: #b87f8c;
 }
-div.column dl.faq dt.activated:after {
+.column dl.faq dt.activated:after {
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #5e6a71;
   border-left: 8px solid transparent;
 }
-div.column dl.faq dt.activated:hover {
+.column dl.faq dt.activated:hover {
   background-color: #725764;
   color: #fff;
 }
-div.column dl.faq dt.activated:hover:after {
+.column dl.faq dt.activated:hover:after {
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #fff;
   border-left: 8px solid transparent;
 }
-div.column dl.faq.blue dt {
+.column dl.faq.blue dt {
   background-color: #d8ecf3;
   border-color: #9ed0e1;
 }
-div.column dl.faq.blue dt:hover {
+.column dl.faq.blue dt:hover {
   background-color: #3f6b72;
 }
-div.column dl.faq.blue dt.activated {
+.column dl.faq.blue dt.activated {
   background-color: #d3b0b8;
   border-color: #b87f8c;
 }
-div.column dl.faq.blue dt.activated:hover {
+.column dl.faq.blue dt.activated:hover {
   background-color: #725764;
 }
-div.column dl.faq dd {
+.column dl.faq dd {
   padding-right: 1rem;
   padding-left: 1rem;
   margin-top: 0.25rem;
 }
-div.column dl.faq dd > p + p {
+.column dl.faq dd > p + p {
   margin-top: 1rem;
 }
-div.column dl.faq dd > p + ul,
-div.column dl.faq dd > p + ol {
+.column dl.faq dd > p + ul,
+.column dl.faq dd > p + ol {
   margin-top: 0.5rem;
 }
-div.column dl.faq dd:not(:last-child) > :last-child {
+.column dl.faq dd:not(:last-child) > :last-child {
   margin-bottom: 1rem;
 }
-div.column dl.faq.toggled dd {
+.column dl.faq > .expand-all-button,
+.column dl.faq > .collapse-all-button {
+  display: none;
+  position: absolute;
+  top: 0;
+  padding: 5px;
+  border: 1px solid #afb5b7;
+  background-color: #d7dadb;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 12px;
+  -webkit-transform: translateY(-100%) translateY(-3px);
+  -moz-transform: translateY(-100%) translateY(-3px);
+  transform: translateY(-100%) translateY(-3px);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.column dl.faq > .expand-all-button.hover,
+.column dl.faq > .collapse-all-button.hover {
+  background-color: #5e6a71;
+  color: #fff;
+}
+.column dl.faq.blue > .expand-all-button,
+.column dl.faq.blue > .collapse-all-button {
+  background-color: #d8ecf3;
+  border-color: #9ed0e1;
+}
+.column dl.faq.blue > .expand-all-button:hover,
+.column dl.faq.blue > .collapse-all-button:hover {
+  background-color: #3f6b72;
+}
+.column dl.faq > .expand-all-button {
+  left: 0;
+}
+.column dl.faq > .collapse-all-button {
+  right: 0;
+}
+.column dl.faq.toggled dd {
   display: none;
 }
 /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
