@@ -783,11 +783,12 @@
 		var $lists = $(slctrDefList);
 		var $expandAlls = $lists.children("." + expandAllClass);
 		var $collapseAlls = $lists.children("." + collapseAllClass);
-		$lists.css({
+		$lists.animate({
 			marginTop: "+=29px"
-		}, animFadeInDrtn);
-		$expandAlls.fadeIn(animFadeInDrtn);
-		$collapseAlls.fadeIn(animFadeInDrtn);
+		}, animFadeInDrtn, function() {
+			$expandAlls.fadeIn(animFadeInDrtn);
+			$collapseAlls.fadeIn(animFadeInDrtn);
+		});
 	}
 		
 	/****************************************************************************************************
