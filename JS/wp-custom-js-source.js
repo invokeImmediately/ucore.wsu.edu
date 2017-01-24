@@ -396,8 +396,8 @@
 		}
 		
 		// Add initially hidden (via CSS) expand/collapse all buttons to definition lists
-		$lists.prepend("<div class=""collapse-all-button"">Collapse All</div>");
-		$lists.prepend("<div class=""expand-all-button"">Expand All</div>");
+		$lists.prepend('<div class="collapse-all-button">Collapse All</div>');
+		$lists.prepend('<div class="expand-all-button">Expand All</div>');
 		var slctrExpandAll = slctrDefList + expandAllClass;
 		var $expandAlls = $(slctrExpandAll);
 		var slctrCollapseAll = slctrDefList + collapseAllClass;
