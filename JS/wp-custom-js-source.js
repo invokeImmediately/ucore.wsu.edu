@@ -536,17 +536,19 @@
         $listDts.click(function() {
             var $this = $(this);
             $this.toggleClass(activatingClass);
-            $this.next("dd").slideToggle(animSlideDrtn, function () {
+            $this.next("dd").stop().slideToggle(animSlideDrtn, function () {
                 var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
                 var $prntNxt = $parent.next(slctrColTwo);
                 $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
             });
         });
 		$listDts.on("keydown", function(e) {
-			if (e.key != "Tab") {
+			var regExMask = \Enter| \
+			if (regExMask.exec(e.key) != null) {
+				e.preventDefault();
 				var $this = $(this);
 				$this.toggleClass(activatingClass);
-				$this.next("dd").slideToggle(animSlideDrtn, function () {
+				$this.next("dd").stop().slideToggle(animSlideDrtn, function () {
 					var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
 					var $prntNxt = $parent.next(slctrColTwo);
 					$prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
