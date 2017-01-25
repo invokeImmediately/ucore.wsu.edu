@@ -531,7 +531,9 @@
     
     function initDefinitionLists(slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo, activatingClass,
      animSlideDrtn, animHghtDrtn) {
-        $(slctrDefList + " dt").click(function() {
+		var $listDts = $(slctrDefList + " dt");
+		$listDts.attr("tabindex", 0);
+        $listDts.click(function() {
             var $this = $(this);
             $this.toggleClass(activatingClass);
             $this.next("dd").slideToggle(animSlideDrtn, function () {
@@ -540,7 +542,7 @@
                 $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
             });
         });
-        $(slctrDefList + " dd").hide(); // Definitions should be hidden by default.
+        $(slctrDefList + " dd").hide(); // TODO: change implementation to height + overflow based approach
     }
     
     function initDropDownToggles(slctrToggle, slctrWhatsToggled, activatingClass, animDuration) {
