@@ -543,7 +543,7 @@
             });
         });
 		$listDts.on("keydown", function(e) {
-			var regExMask = \Enter| \
+			var regExMask = /Enter| /g;
 			if (regExMask.exec(e.key) != null) {
 				e.preventDefault();
 				var $this = $(this);
