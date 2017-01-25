@@ -542,7 +542,7 @@
                 $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
             });
         });
-		$listsDts.on("keydown", function() {
+		$listDts.on("keydown", function() {
             var $this = $(this);
             $this.toggleClass(activatingClass);
             $this.next("dd").slideToggle(animSlideDrtn, function () {
