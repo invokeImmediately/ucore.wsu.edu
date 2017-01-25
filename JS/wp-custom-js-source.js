@@ -542,14 +542,16 @@
                 $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
             });
         });
-		$listDts.on("keydown", function() {
-            var $this = $(this);
-            $this.toggleClass(activatingClass);
-            $this.next("dd").slideToggle(animSlideDrtn, function () {
-                var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
-                var $prntNxt = $parent.next(slctrColTwo);
-                $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
-            });
+		$listDts.on("keydown", function(e) {
+			if (e.key != "Tab") {
+				var $this = $(this);
+				$this.toggleClass(activatingClass);
+				$this.next("dd").slideToggle(animSlideDrtn, function () {
+					var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
+					var $prntNxt = $parent.next(slctrColTwo);
+					$prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
+				});
+			}
 		});
         $(slctrDefList + " dd").hide(); // TODO: change implementation to height + overflow based approach
     }
