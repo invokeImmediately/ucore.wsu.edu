@@ -5035,9 +5035,6 @@ ul.cascaded-layout > li.gutter-sizer {
 .column dl.faq > .collapse-all-button {
   right: 0;
 }
-.column dl.faq.toggled dd {
-  display: none;
-}
 /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
  *         │ ···· HYPERLINK elements contained within div.column elements ·························· │
  *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
