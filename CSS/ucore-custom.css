@@ -4931,21 +4931,18 @@ ul.cascaded-layout > li.gutter-sizer {
   background-color: #725764;
 }
 .column dl.faq dd {
-  height: 0;
+  max-height: 0;
   padding-right: 1rem;
   padding-left: 1rem;
   margin-top: 0;
   overflow: hidden;
-  -webkit-transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
-  -moz-transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
-  transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
 }
 .column dl.faq dd.revealed {
-  height: auto;
+  max-height: 1000px;
   margin-top: 0.25rem;
-  -webkit-transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
-  -moz-transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
-  transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
+}
+.column dl.faq dd.revealed:not(:last-child) > :last-child {
+  margin-bottom: 1rem;
 }
 .column dl.faq dd > p + p {
   margin-top: 1rem;
@@ -4953,9 +4950,6 @@ ul.cascaded-layout > li.gutter-sizer {
 .column dl.faq dd > p + ul,
 .column dl.faq dd > p + ol {
   margin-top: 0.5rem;
-}
-.column dl.faq dd:not(:last-child) > :last-child {
-  margin-bottom: 1rem;
 }
 .column dl.faq > .expand-all-button,
 .column dl.faq > .collapse-all-button {
