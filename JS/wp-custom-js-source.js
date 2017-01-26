@@ -153,8 +153,8 @@
 			slctrLrgFrmtSection: ".large-format-friendly",
 			slctrColOne: ".column.one",
 			slctrColTwo: ".column.two",
-			activatingClass: "activated",
-			animSlideDrtn: 400,
+			dtActivatingClass: "activated",
+			ddRevealingClass: "revealed",
 			animHghtDrtn: 100
 		};
 		params.addDefinitionListButtons = {
@@ -162,8 +162,8 @@
 			expandAllClass: "expand-all-button",
 			collapseAllClass: "collapse-all-button",
 			btnDisablingClass: "disabled",
-			dtActivatingClass: params.initDefinitionLists.activatingClass,
-			animSlideDrtn: params.initDefinitionLists.animSlideDrtn
+			dtActivatingClass: params.initDefinitionLists.dtActivatingClass,
+			ddRevealingClass: params.initDefinitionLists.ddReavealingClass,
 		};
 		params.initQuickTabs = {
 			slctrQtSctn: "section.row.single.quick-tabs"
@@ -272,8 +272,8 @@
 			theseParams.slctrLrgFrmtSection,
 			theseParams.slctrColOne,
 			theseParams.slctrColTwo,
-			theseParams.activatingClass,
-			theseParams.animSlideDrtn,
+			theseParams.dtActivatingClass,
+			theseParams.ddRevealingClass,
 			theseParams.animHghtDrtn
 		);
 
@@ -284,7 +284,7 @@
 			theseParams.collapseAllClass,
 			theseParams.btnDeactivatingClass,
 			theseParams.dtActivatingClass,
-			theseParams.animSlideDrtn
+			theseParams.ddRevealingClass
 		);
 		
 		theseParams = params.initQuickTabs;
@@ -401,10 +401,10 @@
 	 *   += collapseAllClass: CSS class for controlling the layout of collapse all buttons
 	 *   += btnDisablingClass: CSS class applied to disable expand/collapse all buttons
 	 *   += dtActivatingClass: CSS class used to indicate an active/expanded state for definition terms
-	 *   += animSlideDrtn: the animation speed by which definitions slide down into view
+	 *   += ddRevealingClass: CSS class used to realize a revealed, visible state on definitions
 	 */
     function addDefinitionListButtons(slctrDefList, expandAllClass, collapseAllClass, btnDisablingClass,
-	 dtActivatingClass, animSlideDrtn) {
+	 dtActivatingClass, ddRevealingClass) {
 		var thisFuncName = "addDefinitionListButtons";
 		var thisFuncDesc = "Automatically creates and binds events to expand/collapse all buttons designed for improving UX of OUE site definition lists";
 		
@@ -448,7 +448,7 @@
 						var $thisDefTerm = $(this);
 						if (!$thisDefTerm.hasClass(dtActivatingClass)) {
 							$thisDefTerm.addClass(dtActivatingClass);
-							$thisDefTerm.next("dd").stop().slideToggle(animSlideDrtn);
+							$thisDefTerm.next("dd").addClass(ddRevealingClass);
 						}
 					});
 					// TODO: Enable buttons
@@ -472,7 +472,7 @@
 						var $thisDefTerm = $(this);
 						if ($thisDefTerm.hasClass(dtActivatingClass)) {
 							$thisDefTerm.removeClass(dtActivatingClass);
-							$thisDefTerm.next("dd").stop().slideToggle(animSlideDrtn);
+							$thisDefTerm.next("dd").removeClass(ddRevealingClass);
 						}
 					});
 					// TODO: Enable buttons
@@ -529,33 +529,31 @@
         });
     }
     
-    function initDefinitionLists(slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo, activatingClass,
-     animSlideDrtn, animHghtDrtn) {
+    function initDefinitionLists(slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo,
+     dtActivatingClass, ddRevealingClass, animHghtDrtn) {
 		var $listDts = $(slctrDefList + " dt");
 		$listDts.attr("tabindex", 0);
         $listDts.click(function() {
             var $this = $(this);
-            $this.toggleClass(activatingClass);
-            $this.next("dd").stop().slideToggle(animSlideDrtn, function () {
-                var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
-                var $prntNxt = $parent.next(slctrColTwo);
-                $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
-            });
+            $this.toggleClass(dtActivatingClass);
+            $this.next("dd").toggleClass(ddRevealingClass);
+			var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
+			var $prntNxt = $parent.next(slctrColTwo);
+			$prntNxt.delay(400).animate({height: $parent.css('height')}, animHghtDrtn);
         });
 		$listDts.on("keydown", function(e) {
 			var regExMask = /Enter| /g;
 			if (regExMask.exec(e.key) != null) {
 				e.preventDefault();
 				var $this = $(this);
-				$this.toggleClass(activatingClass);
-				$this.next("dd").stop().slideToggle(animSlideDrtn, function () {
-					var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
-					var $prntNxt = $parent.next(slctrColTwo);
-					$prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
-				});
+				$this.toggleClass(dtActivatingClass);
+				$this.next("dd").toggleClass(ddRevealingClass);
+				var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
+				var $prntNxt = $parent.next(slctrColTwo);
+				$prntNxt.delay(400).animate({height: $parent.css('height')}, animHghtDrtn);
 			}
 		});
-        $(slctrDefList + " dd").hide(); // TODO: change implementation to height + overflow based approach
+        $(slctrDefList + " dd").removeClass(ddRevealingClass); // TODO: change implementation to height + overflow based approach
     }
     
     function initDropDownToggles(slctrToggle, slctrWhatsToggled, activatingClass, animDuration) {
@@ -812,6 +810,10 @@
     function resizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
         finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration);
     }
+	
+	/****************************************************************************************************
+	 * EFFECTS FUNCTIONS                                                                                *
+	 ****************************************************************************************************/
 })(jQuery);
 // See [https://github.com/invokeImmediately/distinguishedscholarships.wsu.edu] for repository of source code
 /************************************************************************************************************
