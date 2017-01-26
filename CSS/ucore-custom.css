@@ -4931,14 +4931,12 @@ ul.cascaded-layout > li.gutter-sizer {
   background-color: #725764;
 }
 .column dl.faq dd {
+  display: block;
   max-height: 0;
   padding-right: 1rem;
   padding-left: 1rem;
   margin-top: 0;
   overflow: hidden;
-}
-.column dl.faq dd *:not(.revealed) {
-  height: 0;
 }
 .column dl.faq dd.revealed {
   max-height: 1000px;
