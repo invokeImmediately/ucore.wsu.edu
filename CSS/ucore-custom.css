@@ -4941,6 +4941,11 @@ ul.cascaded-layout > li.gutter-sizer {
   -moz-transition: margin 0.4s cubic-bezier(.02, .01, .47, 1);
   transition: margin 0.4s cubic-bezier(.02, .01, .47, 1);
 }
+.column dl.faq dd:not(:last-child) > :last-child {
+  -webkit-transition: margin 0.4s cubic-bezier(.02, .01, .47, 1);
+  -moz-transition: margin 0.4s cubic-bezier(.02, .01, .47, 1);
+  transition: margin 0.4s cubic-bezier(.02, .01, .47, 1);
+}
 .column dl.faq dd.revealed {
   margin-top: 0.25rem;
 }
