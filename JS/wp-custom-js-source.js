@@ -408,7 +408,7 @@
 	 *   += ddRevealingClass: CSS class used to realize a revealed, visible state on definitions
 	 */
     function addDefinitionListButtons(slctrDefList, expandAllClass, collapseAllClass, btnDisablingClass,
-	 dtActivatingClass, ddRevealingClass) {
+	 dtActivatingClass, ddRevealingClass, animSldDrtn) {
 		var thisFuncName = "addDefinitionListButtons";
 		var thisFuncDesc = "Automatically creates and binds events to expand/collapse all buttons designed for improving UX of OUE site definition lists";
 		
@@ -452,7 +452,11 @@
 						var $thisDefTerm = $(this);
 						if (!$thisDefTerm.hasClass(dtActivatingClass)) {
 							$thisDefTerm.addClass(dtActivatingClass);
-							$thisDefTerm.next("dd").addClass(ddRevealingClass);
+							var $thisDefTermNext = $thisDefTerm.next("dd");
+							$thisDefTermNext.addClass(ddRevealingClass);
+							$thisDefTermNext.stop().animate({
+								maxHeight: $thisDefTermNext[0].scrollHeight
+							}, animSldDrtn);
 						}
 					});
 					// TODO: Enable buttons
@@ -476,7 +480,11 @@
 						var $thisDefTerm = $(this);
 						if ($thisDefTerm.hasClass(dtActivatingClass)) {
 							$thisDefTerm.removeClass(dtActivatingClass);
-							$thisDefTerm.next("dd").removeClass(ddRevealingClass);
+							var $thisDefTermNext = $thisDefTerm.next("dd");
+							$thisDefTermNext.removeClass(ddRevealingClass);
+							$thisDefTermNext.stop().animate({
+								maxHeight: 0
+							}, animSldDrtn);
 						}
 					});
 					// TODO: Enable buttons
