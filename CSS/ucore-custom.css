@@ -4939,7 +4939,6 @@ ul.cascaded-layout > li.gutter-sizer {
   overflow: hidden;
 }
 .column dl.faq dd.revealed {
-  max-height: 1000px;
   margin-top: 0.25rem;
 }
 .column dl.faq dd.revealed:not(:last-child) > :last-child {
