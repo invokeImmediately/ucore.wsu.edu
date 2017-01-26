@@ -544,7 +544,7 @@
             $thisNext.toggleClass(ddRevealingClass);
 			if ($thisNext.hasClass(ddRevealingClass)) {
 				$thisNext.stop().animate({
-					maxHeight: $this.next.css("height")
+					maxHeight: $thisNext[0].scrollHeight
 				});
 			} else {
 				$thisNext.stop().animate({
@@ -565,7 +565,7 @@
 				$thisNext.toggleClass(ddRevealingClass);
 				if ($thisNext.hasClass(ddRevealingClass)) {
 					$thisNext.stop().animate({
-						maxHeight: $this.next.css("height")
+						maxHeight: $thisNext[0].scrollHeight
 					});
 				} else {
 					$thisNext.stop().animate({
