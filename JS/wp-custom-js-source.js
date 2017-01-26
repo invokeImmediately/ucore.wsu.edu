@@ -540,7 +540,7 @@
         $listDts.click(function() {
             var $this = $(this);
             $this.toggleClass(dtActivatingClass);
-			$thisNext = $this.next("dd")
+			$thisNext = $this.next("dd");
             $thisNext.toggleClass(ddRevealingClass);
 			if ($thisNext.hasClass(ddRevealingClass)) {
 				$thisNext.stop().animate({
@@ -561,7 +561,7 @@
 				e.preventDefault();
 				var $this = $(this);
 				$this.toggleClass(dtActivatingClass);
-				$thisNext = $this.next("dd")
+				$thisNext = $this.next("dd");
 				$thisNext.toggleClass(ddRevealingClass);
 				if ($thisNext.hasClass(ddRevealingClass)) {
 					$thisNext.stop().animate({
