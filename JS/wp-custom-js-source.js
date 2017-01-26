@@ -155,6 +155,7 @@
 			slctrColTwo: ".column.two",
 			dtActivatingClass: "activated",
 			ddRevealingClass: "revealed",
+			animSldDrtn: 400,
 			animHghtDrtn: 100
 		};
 		params.addDefinitionListButtons = {
@@ -163,7 +164,8 @@
 			collapseAllClass: "collapse-all-button",
 			btnDisablingClass: "disabled",
 			dtActivatingClass: params.initDefinitionLists.dtActivatingClass,
-			ddRevealingClass: params.initDefinitionLists.ddReavealingClass,
+			ddRevealingClass: params.initDefinitionLists.ddRevealingClass,
+			animSldDrtn: params.initDefinitionLists.animSldDrtn
 		};
 		params.initQuickTabs = {
 			slctrQtSctn: "section.row.single.quick-tabs"
@@ -274,6 +276,7 @@
 			theseParams.slctrColTwo,
 			theseParams.dtActivatingClass,
 			theseParams.ddRevealingClass,
+			theseParams.animSldDrtn,
 			theseParams.animHghtDrtn
 		);
 
@@ -284,7 +287,8 @@
 			theseParams.collapseAllClass,
 			theseParams.btnDeactivatingClass,
 			theseParams.dtActivatingClass,
-			theseParams.ddRevealingClass
+			theseParams.ddRevealingClass,
+			theseParams.animSldDrtn
 		);
 		
 		theseParams = params.initQuickTabs;
@@ -536,7 +540,17 @@
         $listDts.click(function() {
             var $this = $(this);
             $this.toggleClass(dtActivatingClass);
-            $this.next("dd").toggleClass(ddRevealingClass);
+			$thisNext = $this.next("dd")
+            $thisNext.toggleClass(ddRevealingClass);
+			if ($thisNext.hasClass(ddRevealingClass)) {
+				$thisNext.stop().animate({
+					maxHeight: $this.next.css("height")
+				});
+			} else {
+				$thisNext.stop().animate({
+					maxHeight: 0
+				});
+			}
 			var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
 			var $prntNxt = $parent.next(slctrColTwo);
 			$prntNxt.delay(400).animate({height: $parent.css('height')}, animHghtDrtn);
@@ -547,7 +561,17 @@
 				e.preventDefault();
 				var $this = $(this);
 				$this.toggleClass(dtActivatingClass);
-				$this.next("dd").toggleClass(ddRevealingClass);
+				$thisNext = $this.next("dd")
+				$thisNext.toggleClass(ddRevealingClass);
+				if ($thisNext.hasClass(ddRevealingClass)) {
+					$thisNext.stop().animate({
+						maxHeight: $this.next.css("height")
+					});
+				} else {
+					$thisNext.stop().animate({
+						maxHeight: 0
+					});
+				}
 				var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
 				var $prntNxt = $parent.next(slctrColTwo);
 				$prntNxt.delay(400).animate({height: $parent.css('height')}, animHghtDrtn);
