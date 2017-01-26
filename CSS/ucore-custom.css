@@ -4943,6 +4943,9 @@ ul.cascaded-layout > li.gutter-sizer {
 .column dl.faq dd.revealed {
   height: auto;
   margin-top: 0.25rem;
+  -webkit-transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
+  -moz-transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
+  transition: height 0.4s cubic-bezier(.02, .01, .47, 1), margin 0.4s cubic-bezier(.02, .01, .47, 1);
 }
 .column dl.faq dd > p + p {
   margin-top: 1rem;
