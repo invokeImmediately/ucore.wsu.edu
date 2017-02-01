@@ -7357,7 +7357,7 @@ div.recent-posts + div.recent-posts {
 .learning-goals > li:first-child > :first-child,
 .graduation-requirements > li:first-child > :first-child {
   padding-bottom: 21.058%;
-  background: #fff url(/wp-content/uploads/sites/50/2017/02/graphic_university-building-trace.png) center bottom / 100% auto;
+  background: #fff url(/wp-content/uploads/sites/50/2017/02/graphic_university-building-trace.png) center bottom / 100% auto no-repeat;
 }
 .learning-goals > li > :not(ol):not(ul),
 .graduation-requirements > li > :not(ol):not(ul) {
