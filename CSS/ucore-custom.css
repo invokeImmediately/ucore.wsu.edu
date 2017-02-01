@@ -21,7 +21,7 @@ div.column,
 .has-alt-font,
 .column p.article-tagline.sans,
 span.accentuated-text,
-ul.course-lists > li > h4:nth-child(2) {
+.course-lists > li > h4:nth-child(2) {
   font-family: 'Open Sans Condensed', 'Lucida Sans', sans-serif;
 }
 .has-subst-font {
@@ -4516,14 +4516,16 @@ div.recent-updates p.recent-update-3 {
   margin-top: 0.5rem;
 }
 ul.content-boxes,
-ul.course-lists,
-ul.learning-goals {
+.course-lists,
+.learning-goals,
+.graduation-requirements {
   padding-right: 0;
   padding-left: 0;
 }
 ul.content-boxes > li,
-ul.course-lists > li,
-ul.learning-goals > li {
+.course-lists > li,
+.learning-goals > li,
+.graduation-requirements > li {
   position: relative;
   min-height: 320px;
   border-radius: 4px;
@@ -4535,78 +4537,89 @@ ul.learning-goals > li {
 }
 @media all and (max-width: 1205px) {
   ul.content-boxes > li,
-  ul.course-lists > li,
-  ul.learning-goals > li {
+  .course-lists > li,
+  .learning-goals > li,
+  .graduation-requirements > li {
     overflow-x: auto;
   }
 }
 @media all {
   ul.content-boxes > li p,
-  ul.course-lists > li p,
-  ul.learning-goals > li p {
+  .course-lists > li p,
+  .learning-goals > li p,
+  .graduation-requirements > li p {
     line-height: 1.275em;
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 1073px) {
   ul.content-boxes > li p,
-  ul.course-lists > li p,
-  ul.learning-goals > li p {
+  .course-lists > li p,
+  .learning-goals > li p,
+  .graduation-requirements > li p {
     font-size: 1em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
   ul.content-boxes > li p,
-  ul.course-lists > li p,
-  ul.learning-goals > li p {
+  .course-lists > li p,
+  .learning-goals > li p,
+  .graduation-requirements > li p {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
   ul.content-boxes > li p,
-  ul.course-lists > li p,
-  ul.learning-goals > li p {
+  .course-lists > li p,
+  .learning-goals > li p,
+  .graduation-requirements > li p {
     font-size: 1em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
   ul.content-boxes > li p,
-  ul.course-lists > li p,
-  ul.learning-goals > li p {
+  .course-lists > li p,
+  .learning-goals > li p,
+  .graduation-requirements > li p {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
   ul.content-boxes > li p,
-  ul.course-lists > li p,
-  ul.learning-goals > li p {
+  .course-lists > li p,
+  .learning-goals > li p,
+  .graduation-requirements > li p {
     font-size: 0.879844em;
   }
 }
 @media all and (max-width: 360px) {
   ul.content-boxes > li p,
-  ul.course-lists > li p,
-  ul.learning-goals > li p {
+  .course-lists > li p,
+  .learning-goals > li p,
+  .graduation-requirements > li p {
     font-size: 0.82529367em;
   }
 }
 ul.content-boxes > li p.email,
-ul.course-lists > li p.email,
-ul.learning-goals > li p.email {
+.course-lists > li p.email,
+.learning-goals > li p.email,
+.graduation-requirements > li p.email {
   font-size: 0.9em;
   font-weight: bold;
 }
 ul.content-boxes > li > img,
-ul.course-lists > li > img,
-ul.learning-goals > li > img {
+.course-lists > li > img,
+.learning-goals > li > img,
+.graduation-requirements > li > img {
   position: absolute;
   top: 10px;
   left: 10px;
   width: 106px;
 }
 ul.content-boxes > li > .content,
-ul.course-lists > li > .content,
-ul.learning-goals > li > .content {
+.course-lists > li > .content,
+.learning-goals > li > .content,
+.graduation-requirements > li > .content {
   position: relative;
   left: 121px;
   width: calc(100% - 136px);
@@ -4614,8 +4627,9 @@ ul.learning-goals > li > .content {
   padding: 10px 10px 10px 5px;
 }
 ul.content-boxes > li + li,
-ul.course-lists > li + li,
-ul.learning-goals > li + li {
+.course-lists > li + li,
+.learning-goals > li + li,
+.graduation-requirements > li + li {
   margin-top: 2rem;
 }
 ul.external-links li {
@@ -7224,31 +7238,31 @@ div.recent-posts + div.recent-posts {
  *  ║  ╘═» Customized here for use on the UCORE Assessment website.                                          ║
  *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-ul.course-lists {
+.course-lists {
   margin-top: 1rem !important;
 }
-ul.course-lists > li {
+.course-lists > li {
   float: left;
   width: 49%;
   min-height: 198px;
   margin-bottom: 2%;
 }
 @media all and (max-width: 693px) {
-  ul.course-lists > li {
+  .course-lists > li {
     width: 98%;
     margin-bottom: 4%;
   }
 }
 @media all and (max-width: 1205px) {
-  ul.course-lists > li {
+  .course-lists > li {
     overflow-x: visible;
   }
 }
-ul.course-lists > li + li {
+.course-lists > li + li {
   margin-top: 0;
 }
-ul.course-lists > li.cascade-sizer,
-ul.course-lists > li.gutter-sizer {
+.course-lists > li.cascade-sizer,
+.course-lists > li.gutter-sizer {
   height: 0;
   min-height: 0;
   padding: 0;
@@ -7256,10 +7270,10 @@ ul.course-lists > li.gutter-sizer {
   background: none;
   box-shadow: none;
 }
-ul.course-lists > li.gutter-sizer {
+.course-lists > li.gutter-sizer {
   width: 2%;
 }
-ul.course-lists > li > h3:first-child {
+.course-lists > li > h3:first-child {
   padding: 0.5rem;
   margin: 0;
   background-color: rgba(173, 164, 0, 0.5);
@@ -7269,10 +7283,10 @@ ul.course-lists > li > h3:first-child {
   color: #72652a;
   text-transform: none;
 }
-ul.course-lists > li > h3:first-child strong {
+.course-lists > li > h3:first-child strong {
   text-transform: uppercase;
 }
-ul.course-lists > li > h4:nth-child(2) {
+.course-lists > li > h4:nth-child(2) {
   padding: 0.3rem 0.5rem;
   margin-top: 0;
   margin-bottom: 0;
@@ -7281,40 +7295,42 @@ ul.course-lists > li > h4:nth-child(2) {
   font-weight: 700;
   color: #f4f2eb;
 }
-ul.course-lists > li > h4:nth-child(2) + * {
+.course-lists > li > h4:nth-child(2) + * {
   margin-top: 0.5rem;
 }
-ul.course-lists > li > h5 {
+.course-lists > li > h5 {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   background-color: rgba(173, 164, 0, 0.33);
   color: #72652a;
 }
-ul.course-lists > li > p {
+.course-lists > li > p {
   font-size: inherit !important;
   text-align: left;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
-ul.course-lists > li > p + ul,
-ul.course-lists > li > p + ol {
+.course-lists > li > p + ul,
+.course-lists > li > p + ol {
   margin-top: 0.33333333rem !important;
 }
-ul.course-lists > li > p > span.about-requirements {
+.course-lists > li > p > span.about-requirements {
   margin-bottom: 0.5em;
   font-weight: bold;
   font-style: italic;
 }
-ul.course-lists > li > *:not(:first-child) {
+.course-lists > li > *:not(:first-child) {
   margin-top: 1rem;
 }
-ul.course-lists > li > *:last-child {
+.course-lists > li > *:last-child {
   padding-bottom: 0.5rem;
 }
-ul.learning-goals {
+.learning-goals,
+.graduation-requirements {
   margin-top: 1rem !important;
 }
-ul.learning-goals > li {
+.learning-goals > li,
+.graduation-requirements > li {
   float: left;
   min-height: 198px;
   width: 49%;
@@ -7322,307 +7338,474 @@ ul.learning-goals > li {
   list-style-type: none;
 }
 @media all and (max-width: 693px) {
-  ul.learning-goals > li {
+  .learning-goals > li,
+  .graduation-requirements > li {
     width: 98%;
     margin-bottom: 4%;
   }
 }
 @media all and (max-width: 1205px) {
-  ul.learning-goals > li {
+  .learning-goals > li,
+  .graduation-requirements > li {
     overflow-x: auto;
   }
 }
-ul.learning-goals > li > :not(ol):not(ul) {
+.learning-goals > li:first-child,
+.graduation-requirements > li:first-child {
+  width: 98%;
+}
+.learning-goals > li:first-child > :first-child,
+.graduation-requirements > li:first-child > :first-child {
+  padding-bottom: 21.058%;
+  background: #fff url(/wp-content/uploads/sites/50/2017/02/graphic_university-building-trace.png) center bottom / 100% auto;
+}
+.learning-goals > li > :not(ol):not(ul),
+.graduation-requirements > li > :not(ol):not(ul) {
   padding-right: 1rem;
   padding-left: 1rem;
 }
-ul.learning-goals > li > :first-child {
+.learning-goals > li > :first-child,
+.graduation-requirements > li > :first-child {
   padding-top: 1rem;
 }
-ul.learning-goals > li > :last-child {
+.learning-goals > li > :last-child,
+.graduation-requirements > li > :last-child {
   padding-bottom: 1rem;
 }
-ul.learning-goals > li > * + * {
+.learning-goals > li > * + *,
+.graduation-requirements > li > * + * {
   margin-top: 1rem;
 }
 @media all {
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > p,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ul li,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ol li {
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ol li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ol li {
     line-height: 1.275em;
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 1073px) {
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > p,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ul li,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ol li {
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ol li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ol li {
     font-size: 1em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > p,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ul li,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ol li {
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ol li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > p,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ul li,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ol li {
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ol li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ol li {
     font-size: 1em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > p,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ul li,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ol li {
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ol li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > p,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ul li,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ol li {
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ol li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ol li {
     font-size: 0.879844em;
   }
 }
 @media all and (max-width: 360px) {
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > p,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ul li,
-  .row.single:not(.mimic-multi-column-sections) .column ul.learning-goals > li > ol li {
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > p,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ul li,
+  .row.single:not(.mimic-multi-column-sections) .column .learning-goals > li > ol li,
+  .row.single:not(.mimic-multi-column-sections) .column .graduation-requirements > li > ol li {
     font-size: 0.82529367em;
   }
 }
 @media all {
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > p,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ul li,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ol li {
+  .row.single.mimic-two-column-sections .column .learning-goals > li > p,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > p,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ul li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ul li,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ol li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ol li {
     line-height: 1.275em;
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 1073px) {
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > p,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ul li,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ol li {
+  .row.single.mimic-two-column-sections .column .learning-goals > li > p,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > p,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ul li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ul li,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ol li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > p,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ul li,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ol li {
+  .row.single.mimic-two-column-sections .column .learning-goals > li > p,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > p,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ul li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ul li,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ol li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > p,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ul li,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ol li {
+  .row.single.mimic-two-column-sections .column .learning-goals > li > p,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > p,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ul li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ul li,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ol li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > p,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ul li,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ol li {
+  .row.single.mimic-two-column-sections .column .learning-goals > li > p,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > p,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ul li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ul li,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ol li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > p,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ul li,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ol li {
+  .row.single.mimic-two-column-sections .column .learning-goals > li > p,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > p,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ul li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ul li,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ol li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ol li {
     font-size: 0.879844em;
   }
 }
 @media all and (max-width: 360px) {
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > p,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ul li,
-  .row.single.mimic-two-column-sections .column ul.learning-goals > li > ol li {
+  .row.single.mimic-two-column-sections .column .learning-goals > li > p,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > p,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ul li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ul li,
+  .row.single.mimic-two-column-sections .column .learning-goals > li > ol li,
+  .row.single.mimic-two-column-sections .column .graduation-requirements > li > ol li {
     font-size: 0.82529367em;
   }
 }
 @media all {
-  .row.side-right.column ul.learning-goals > li > p,
-  .row.side-right.column ul.learning-goals > li > ul li,
-  .row.side-right.column ul.learning-goals > li > ol li,
-  .row.side-left .column ul.learning-goals > li > p,
-  .row.side-left .column ul.learning-goals > li > ul li,
-  .row.side-left .column ul.learning-goals > li > ol li,
-  .row.halves .column ul.learning-goals > li > p,
-  .row.halves .column ul.learning-goals > li > ul li,
-  .row.halves .column ul.learning-goals > li > ol li {
+  .row.side-right.column .learning-goals > li > p,
+  .row.side-right.column .graduation-requirements > li > p,
+  .row.side-right.column .learning-goals > li > ul li,
+  .row.side-right.column .graduation-requirements > li > ul li,
+  .row.side-right.column .learning-goals > li > ol li,
+  .row.side-right.column .graduation-requirements > li > ol li,
+  .row.side-left .column .learning-goals > li > p,
+  .row.side-left .column .graduation-requirements > li > p,
+  .row.side-left .column .learning-goals > li > ul li,
+  .row.side-left .column .graduation-requirements > li > ul li,
+  .row.side-left .column .learning-goals > li > ol li,
+  .row.side-left .column .graduation-requirements > li > ol li,
+  .row.halves .column .learning-goals > li > p,
+  .row.halves .column .graduation-requirements > li > p,
+  .row.halves .column .learning-goals > li > ul li,
+  .row.halves .column .graduation-requirements > li > ul li,
+  .row.halves .column .learning-goals > li > ol li,
+  .row.halves .column .graduation-requirements > li > ol li {
     line-height: 1.275em;
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 1073px) {
-  .row.side-right.column ul.learning-goals > li > p,
-  .row.side-right.column ul.learning-goals > li > ul li,
-  .row.side-right.column ul.learning-goals > li > ol li,
-  .row.side-left .column ul.learning-goals > li > p,
-  .row.side-left .column ul.learning-goals > li > ul li,
-  .row.side-left .column ul.learning-goals > li > ol li,
-  .row.halves .column ul.learning-goals > li > p,
-  .row.halves .column ul.learning-goals > li > ul li,
-  .row.halves .column ul.learning-goals > li > ol li {
+  .row.side-right.column .learning-goals > li > p,
+  .row.side-right.column .graduation-requirements > li > p,
+  .row.side-right.column .learning-goals > li > ul li,
+  .row.side-right.column .graduation-requirements > li > ul li,
+  .row.side-right.column .learning-goals > li > ol li,
+  .row.side-right.column .graduation-requirements > li > ol li,
+  .row.side-left .column .learning-goals > li > p,
+  .row.side-left .column .graduation-requirements > li > p,
+  .row.side-left .column .learning-goals > li > ul li,
+  .row.side-left .column .graduation-requirements > li > ul li,
+  .row.side-left .column .learning-goals > li > ol li,
+  .row.side-left .column .graduation-requirements > li > ol li,
+  .row.halves .column .learning-goals > li > p,
+  .row.halves .column .graduation-requirements > li > p,
+  .row.halves .column .learning-goals > li > ul li,
+  .row.halves .column .graduation-requirements > li > ul li,
+  .row.halves .column .learning-goals > li > ol li,
+  .row.halves .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
-  .row.side-right.column ul.learning-goals > li > p,
-  .row.side-right.column ul.learning-goals > li > ul li,
-  .row.side-right.column ul.learning-goals > li > ol li,
-  .row.side-left .column ul.learning-goals > li > p,
-  .row.side-left .column ul.learning-goals > li > ul li,
-  .row.side-left .column ul.learning-goals > li > ol li,
-  .row.halves .column ul.learning-goals > li > p,
-  .row.halves .column ul.learning-goals > li > ul li,
-  .row.halves .column ul.learning-goals > li > ol li {
+  .row.side-right.column .learning-goals > li > p,
+  .row.side-right.column .graduation-requirements > li > p,
+  .row.side-right.column .learning-goals > li > ul li,
+  .row.side-right.column .graduation-requirements > li > ul li,
+  .row.side-right.column .learning-goals > li > ol li,
+  .row.side-right.column .graduation-requirements > li > ol li,
+  .row.side-left .column .learning-goals > li > p,
+  .row.side-left .column .graduation-requirements > li > p,
+  .row.side-left .column .learning-goals > li > ul li,
+  .row.side-left .column .graduation-requirements > li > ul li,
+  .row.side-left .column .learning-goals > li > ol li,
+  .row.side-left .column .graduation-requirements > li > ol li,
+  .row.halves .column .learning-goals > li > p,
+  .row.halves .column .graduation-requirements > li > p,
+  .row.halves .column .learning-goals > li > ul li,
+  .row.halves .column .graduation-requirements > li > ul li,
+  .row.halves .column .learning-goals > li > ol li,
+  .row.halves .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
-  .row.side-right.column ul.learning-goals > li > p,
-  .row.side-right.column ul.learning-goals > li > ul li,
-  .row.side-right.column ul.learning-goals > li > ol li,
-  .row.side-left .column ul.learning-goals > li > p,
-  .row.side-left .column ul.learning-goals > li > ul li,
-  .row.side-left .column ul.learning-goals > li > ol li,
-  .row.halves .column ul.learning-goals > li > p,
-  .row.halves .column ul.learning-goals > li > ul li,
-  .row.halves .column ul.learning-goals > li > ol li {
+  .row.side-right.column .learning-goals > li > p,
+  .row.side-right.column .graduation-requirements > li > p,
+  .row.side-right.column .learning-goals > li > ul li,
+  .row.side-right.column .graduation-requirements > li > ul li,
+  .row.side-right.column .learning-goals > li > ol li,
+  .row.side-right.column .graduation-requirements > li > ol li,
+  .row.side-left .column .learning-goals > li > p,
+  .row.side-left .column .graduation-requirements > li > p,
+  .row.side-left .column .learning-goals > li > ul li,
+  .row.side-left .column .graduation-requirements > li > ul li,
+  .row.side-left .column .learning-goals > li > ol li,
+  .row.side-left .column .graduation-requirements > li > ol li,
+  .row.halves .column .learning-goals > li > p,
+  .row.halves .column .graduation-requirements > li > p,
+  .row.halves .column .learning-goals > li > ul li,
+  .row.halves .column .graduation-requirements > li > ul li,
+  .row.halves .column .learning-goals > li > ol li,
+  .row.halves .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
-  .row.side-right.column ul.learning-goals > li > p,
-  .row.side-right.column ul.learning-goals > li > ul li,
-  .row.side-right.column ul.learning-goals > li > ol li,
-  .row.side-left .column ul.learning-goals > li > p,
-  .row.side-left .column ul.learning-goals > li > ul li,
-  .row.side-left .column ul.learning-goals > li > ol li,
-  .row.halves .column ul.learning-goals > li > p,
-  .row.halves .column ul.learning-goals > li > ul li,
-  .row.halves .column ul.learning-goals > li > ol li {
+  .row.side-right.column .learning-goals > li > p,
+  .row.side-right.column .graduation-requirements > li > p,
+  .row.side-right.column .learning-goals > li > ul li,
+  .row.side-right.column .graduation-requirements > li > ul li,
+  .row.side-right.column .learning-goals > li > ol li,
+  .row.side-right.column .graduation-requirements > li > ol li,
+  .row.side-left .column .learning-goals > li > p,
+  .row.side-left .column .graduation-requirements > li > p,
+  .row.side-left .column .learning-goals > li > ul li,
+  .row.side-left .column .graduation-requirements > li > ul li,
+  .row.side-left .column .learning-goals > li > ol li,
+  .row.side-left .column .graduation-requirements > li > ol li,
+  .row.halves .column .learning-goals > li > p,
+  .row.halves .column .graduation-requirements > li > p,
+  .row.halves .column .learning-goals > li > ul li,
+  .row.halves .column .graduation-requirements > li > ul li,
+  .row.halves .column .learning-goals > li > ol li,
+  .row.halves .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
-  .row.side-right.column ul.learning-goals > li > p,
-  .row.side-right.column ul.learning-goals > li > ul li,
-  .row.side-right.column ul.learning-goals > li > ol li,
-  .row.side-left .column ul.learning-goals > li > p,
-  .row.side-left .column ul.learning-goals > li > ul li,
-  .row.side-left .column ul.learning-goals > li > ol li,
-  .row.halves .column ul.learning-goals > li > p,
-  .row.halves .column ul.learning-goals > li > ul li,
-  .row.halves .column ul.learning-goals > li > ol li {
+  .row.side-right.column .learning-goals > li > p,
+  .row.side-right.column .graduation-requirements > li > p,
+  .row.side-right.column .learning-goals > li > ul li,
+  .row.side-right.column .graduation-requirements > li > ul li,
+  .row.side-right.column .learning-goals > li > ol li,
+  .row.side-right.column .graduation-requirements > li > ol li,
+  .row.side-left .column .learning-goals > li > p,
+  .row.side-left .column .graduation-requirements > li > p,
+  .row.side-left .column .learning-goals > li > ul li,
+  .row.side-left .column .graduation-requirements > li > ul li,
+  .row.side-left .column .learning-goals > li > ol li,
+  .row.side-left .column .graduation-requirements > li > ol li,
+  .row.halves .column .learning-goals > li > p,
+  .row.halves .column .graduation-requirements > li > p,
+  .row.halves .column .learning-goals > li > ul li,
+  .row.halves .column .graduation-requirements > li > ul li,
+  .row.halves .column .learning-goals > li > ol li,
+  .row.halves .column .graduation-requirements > li > ol li {
     font-size: 0.879844em;
   }
 }
 @media all and (max-width: 360px) {
-  .row.side-right.column ul.learning-goals > li > p,
-  .row.side-right.column ul.learning-goals > li > ul li,
-  .row.side-right.column ul.learning-goals > li > ol li,
-  .row.side-left .column ul.learning-goals > li > p,
-  .row.side-left .column ul.learning-goals > li > ul li,
-  .row.side-left .column ul.learning-goals > li > ol li,
-  .row.halves .column ul.learning-goals > li > p,
-  .row.halves .column ul.learning-goals > li > ul li,
-  .row.halves .column ul.learning-goals > li > ol li {
+  .row.side-right.column .learning-goals > li > p,
+  .row.side-right.column .graduation-requirements > li > p,
+  .row.side-right.column .learning-goals > li > ul li,
+  .row.side-right.column .graduation-requirements > li > ul li,
+  .row.side-right.column .learning-goals > li > ol li,
+  .row.side-right.column .graduation-requirements > li > ol li,
+  .row.side-left .column .learning-goals > li > p,
+  .row.side-left .column .graduation-requirements > li > p,
+  .row.side-left .column .learning-goals > li > ul li,
+  .row.side-left .column .graduation-requirements > li > ul li,
+  .row.side-left .column .learning-goals > li > ol li,
+  .row.side-left .column .graduation-requirements > li > ol li,
+  .row.halves .column .learning-goals > li > p,
+  .row.halves .column .graduation-requirements > li > p,
+  .row.halves .column .learning-goals > li > ul li,
+  .row.halves .column .graduation-requirements > li > ul li,
+  .row.halves .column .learning-goals > li > ol li,
+  .row.halves .column .graduation-requirements > li > ol li {
     font-size: 0.82529367em;
   }
 }
 @media all {
-  .row.thirds .column ul.learning-goals > li > p,
-  .row.thirds .column ul.learning-goals > li > ul li,
-  .row.thirds .column ul.learning-goals > li > ol li,
-  .row.quarters .column ul.learning-goals > li > p,
-  .row.quarters .column ul.learning-goals > li > ul li,
-  .row.quarters .column ul.learning-goals > li > ol li {
+  .row.thirds .column .learning-goals > li > p,
+  .row.thirds .column .graduation-requirements > li > p,
+  .row.thirds .column .learning-goals > li > ul li,
+  .row.thirds .column .graduation-requirements > li > ul li,
+  .row.thirds .column .learning-goals > li > ol li,
+  .row.thirds .column .graduation-requirements > li > ol li,
+  .row.quarters .column .learning-goals > li > p,
+  .row.quarters .column .graduation-requirements > li > p,
+  .row.quarters .column .learning-goals > li > ul li,
+  .row.quarters .column .graduation-requirements > li > ul li,
+  .row.quarters .column .learning-goals > li > ol li,
+  .row.quarters .column .graduation-requirements > li > ol li {
     line-height: 1.275em;
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 1073px) {
-  .row.thirds .column ul.learning-goals > li > p,
-  .row.thirds .column ul.learning-goals > li > ul li,
-  .row.thirds .column ul.learning-goals > li > ol li,
-  .row.quarters .column ul.learning-goals > li > p,
-  .row.quarters .column ul.learning-goals > li > ul li,
-  .row.quarters .column ul.learning-goals > li > ol li {
+  .row.thirds .column .learning-goals > li > p,
+  .row.thirds .column .graduation-requirements > li > p,
+  .row.thirds .column .learning-goals > li > ul li,
+  .row.thirds .column .graduation-requirements > li > ul li,
+  .row.thirds .column .learning-goals > li > ol li,
+  .row.thirds .column .graduation-requirements > li > ol li,
+  .row.quarters .column .learning-goals > li > p,
+  .row.quarters .column .graduation-requirements > li > p,
+  .row.quarters .column .learning-goals > li > ul li,
+  .row.quarters .column .graduation-requirements > li > ul li,
+  .row.quarters .column .learning-goals > li > ol li,
+  .row.quarters .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
-  .row.thirds .column ul.learning-goals > li > p,
-  .row.thirds .column ul.learning-goals > li > ul li,
-  .row.thirds .column ul.learning-goals > li > ol li,
-  .row.quarters .column ul.learning-goals > li > p,
-  .row.quarters .column ul.learning-goals > li > ul li,
-  .row.quarters .column ul.learning-goals > li > ol li {
+  .row.thirds .column .learning-goals > li > p,
+  .row.thirds .column .graduation-requirements > li > p,
+  .row.thirds .column .learning-goals > li > ul li,
+  .row.thirds .column .graduation-requirements > li > ul li,
+  .row.thirds .column .learning-goals > li > ol li,
+  .row.thirds .column .graduation-requirements > li > ol li,
+  .row.quarters .column .learning-goals > li > p,
+  .row.quarters .column .graduation-requirements > li > p,
+  .row.quarters .column .learning-goals > li > ul li,
+  .row.quarters .column .graduation-requirements > li > ul li,
+  .row.quarters .column .learning-goals > li > ol li,
+  .row.quarters .column .graduation-requirements > li > ol li {
     font-size: 0.879844em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
-  .row.thirds .column ul.learning-goals > li > p,
-  .row.thirds .column ul.learning-goals > li > ul li,
-  .row.thirds .column ul.learning-goals > li > ol li,
-  .row.quarters .column ul.learning-goals > li > p,
-  .row.quarters .column ul.learning-goals > li > ul li,
-  .row.quarters .column ul.learning-goals > li > ol li {
+  .row.thirds .column .learning-goals > li > p,
+  .row.thirds .column .graduation-requirements > li > p,
+  .row.thirds .column .learning-goals > li > ul li,
+  .row.thirds .column .graduation-requirements > li > ul li,
+  .row.thirds .column .learning-goals > li > ol li,
+  .row.thirds .column .graduation-requirements > li > ol li,
+  .row.quarters .column .learning-goals > li > p,
+  .row.quarters .column .graduation-requirements > li > p,
+  .row.quarters .column .learning-goals > li > ul li,
+  .row.quarters .column .graduation-requirements > li > ul li,
+  .row.quarters .column .learning-goals > li > ol li,
+  .row.quarters .column .graduation-requirements > li > ol li {
     font-size: 0.938em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
-  .row.thirds .column ul.learning-goals > li > p,
-  .row.thirds .column ul.learning-goals > li > ul li,
-  .row.thirds .column ul.learning-goals > li > ol li,
-  .row.quarters .column ul.learning-goals > li > p,
-  .row.quarters .column ul.learning-goals > li > ul li,
-  .row.quarters .column ul.learning-goals > li > ol li {
+  .row.thirds .column .learning-goals > li > p,
+  .row.thirds .column .graduation-requirements > li > p,
+  .row.thirds .column .learning-goals > li > ul li,
+  .row.thirds .column .graduation-requirements > li > ul li,
+  .row.thirds .column .learning-goals > li > ol li,
+  .row.thirds .column .graduation-requirements > li > ol li,
+  .row.quarters .column .learning-goals > li > p,
+  .row.quarters .column .graduation-requirements > li > p,
+  .row.quarters .column .learning-goals > li > ul li,
+  .row.quarters .column .graduation-requirements > li > ul li,
+  .row.quarters .column .learning-goals > li > ol li,
+  .row.quarters .column .graduation-requirements > li > ol li {
     font-size: 0.879844em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
-  .row.thirds .column ul.learning-goals > li > p,
-  .row.thirds .column ul.learning-goals > li > ul li,
-  .row.thirds .column ul.learning-goals > li > ol li,
-  .row.quarters .column ul.learning-goals > li > p,
-  .row.quarters .column ul.learning-goals > li > ul li,
-  .row.quarters .column ul.learning-goals > li > ol li {
+  .row.thirds .column .learning-goals > li > p,
+  .row.thirds .column .graduation-requirements > li > p,
+  .row.thirds .column .learning-goals > li > ul li,
+  .row.thirds .column .graduation-requirements > li > ul li,
+  .row.thirds .column .learning-goals > li > ol li,
+  .row.thirds .column .graduation-requirements > li > ol li,
+  .row.quarters .column .learning-goals > li > p,
+  .row.quarters .column .graduation-requirements > li > p,
+  .row.quarters .column .learning-goals > li > ul li,
+  .row.quarters .column .graduation-requirements > li > ul li,
+  .row.quarters .column .learning-goals > li > ol li,
+  .row.quarters .column .graduation-requirements > li > ol li {
     font-size: 0.82529367em;
   }
 }
 @media all and (max-width: 360px) {
-  .row.thirds .column ul.learning-goals > li > p,
-  .row.thirds .column ul.learning-goals > li > ul li,
-  .row.thirds .column ul.learning-goals > li > ol li,
-  .row.quarters .column ul.learning-goals > li > p,
-  .row.quarters .column ul.learning-goals > li > ul li,
-  .row.quarters .column ul.learning-goals > li > ol li {
+  .row.thirds .column .learning-goals > li > p,
+  .row.thirds .column .graduation-requirements > li > p,
+  .row.thirds .column .learning-goals > li > ul li,
+  .row.thirds .column .graduation-requirements > li > ul li,
+  .row.thirds .column .learning-goals > li > ol li,
+  .row.thirds .column .graduation-requirements > li > ol li,
+  .row.quarters .column .learning-goals > li > p,
+  .row.quarters .column .graduation-requirements > li > p,
+  .row.quarters .column .learning-goals > li > ul li,
+  .row.quarters .column .graduation-requirements > li > ul li,
+  .row.quarters .column .learning-goals > li > ol li,
+  .row.quarters .column .graduation-requirements > li > ol li {
     font-size: 0.82529367em;
   }
 }
-ul.learning-goals > li > ul,
-ul.learning-goals > li > ol {
+.learning-goals > li > ul,
+.graduation-requirements > li > ul,
+.learning-goals > li > ol,
+.graduation-requirements > li > ol {
   padding-left: 3rem;
 }
-ul.learning-goals > li > p > em {
+.learning-goals > li > p > em,
+.graduation-requirements > li > p > em {
   font-family: 'PT Serif', 'Palatino', serif;
 }
-ul.learning-goals > li img {
+.learning-goals > li img,
+.graduation-requirements > li img {
   float: right;
   width: 150px;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
 }
-ul.learning-goals > li + li {
+.learning-goals > li + li,
+.graduation-requirements > li + li {
   margin-top: 0;
 }
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
