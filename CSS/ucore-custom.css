@@ -11,7 +11,7 @@ div.column h3,
 div.column h4,
 div.column,
 header.main-header,
-div.column,
+.column,
 .gform_heading h3.gform_title {
   font-family: 'Open Sans', 'Lucida Sans', sans-serif;
 }
@@ -7140,42 +7140,42 @@ div.column aside.article-sidebar.bluish-gray {
  *  ║  ╘═» Customized here for use on the UCORE Assessment website.                                          ║
  *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-div.column div.bluish-gray-acrylic-sidebar p,
-div.column div.green-marble-sidebar p,
-div.column div.gray-acrylic-sidebar p {
+.column .bluish-gray-acrylic-sidebar p,
+.column .green-marble-sidebar p,
+.column .gray-acrylic-sidebar p {
   font-size: .75rem;
 }
-div.column div.bluish-gray-acrylic-sidebar h2 + hr,
-div.column div.green-marble-sidebar h2 + hr,
-div.column div.gray-acrylic-sidebar h2 + hr {
+.column .bluish-gray-acrylic-sidebar h2 + hr,
+.column .green-marble-sidebar h2 + hr,
+.column .gray-acrylic-sidebar h2 + hr {
   margin-top: .25rem;
   background-color: rgba(70, 78, 84, 0.75);
 }
-div.column div.bluish-gray-acrylic-sidebar h3,
-div.column div.green-marble-sidebar h3,
-div.column div.gray-acrylic-sidebar h3 {
+.column .bluish-gray-acrylic-sidebar h3,
+.column .green-marble-sidebar h3,
+.column .gray-acrylic-sidebar h3 {
   font-size: 1.275rem;
 }
-div.column div.bluish-gray-acrylic-sidebar h4,
-div.column div.green-marble-sidebar h4,
-div.column div.gray-acrylic-sidebar h4 {
+.column .bluish-gray-acrylic-sidebar h4,
+.column .green-marble-sidebar h4,
+.column .gray-acrylic-sidebar h4 {
   font-size: 1.05rem;
 }
-div.column .widget_rss a {
+.column .widget_rss a {
   border-bottom: none;
   box-shadow: none;
 }
-div.column .widget_rss a:hover {
+.column .widget_rss a:hover {
   border-bottom: none;
   box-shadow: none;
 }
-div.column .widget_rss a.rsswidget img {
+.column .widget_rss a.rsswidget img {
   display: none;
 }
-div.column .widget_rss ul li {
+.column .widget_rss ul li {
   list-style-type: disc;
 }
-div.column section.header-newsEvents {
+.column section.header-newsEvents {
   background: url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/1303/2016/11/wpbg-news-events-v2.png) no-repeat center;
 }
 div.recent-posts {
@@ -7350,16 +7350,6 @@ div.recent-posts + div.recent-posts {
   .graduation-requirements > li {
     overflow-x: auto;
   }
-}
-.learning-goals > li:first-child,
-.graduation-requirements > li:first-child {
-  width: 98%;
-  min-height: 0;
-  padding-bottom: 21.058%;
-  background: #fff url(/wp-content/uploads/sites/1303/2017/02/graphic_university-building-trace-v2.png) center bottom / 100% auto no-repeat;
-  overflow: hidden;
-  /*& > :first-child {
-			}*/
 }
 .learning-goals > li > :not(ol):not(ul),
 .graduation-requirements > li > :not(ol):not(ul) {
@@ -7809,6 +7799,15 @@ div.recent-posts + div.recent-posts {
 .learning-goals > li + li,
 .graduation-requirements > li + li {
   margin-top: 0;
+}
+.graduation-requirements li {
+  min-height: 0;
+}
+.graduation-requirements li:first-child {
+  width: 98%;
+  padding-bottom: 21.058%;
+  background: #fff url(/wp-content/uploads/sites/1303/2017/02/graphic_university-building-trace-v2.png) center bottom / 100% auto no-repeat;
+  overflow: hidden;
 }
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### TABLE layouts ################################################################################### ║
