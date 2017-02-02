@@ -7353,11 +7353,12 @@ div.recent-posts + div.recent-posts {
 .learning-goals > li:first-child,
 .graduation-requirements > li:first-child {
   width: 98%;
-}
-.learning-goals > li:first-child > :first-child,
-.graduation-requirements > li:first-child > :first-child {
   padding-bottom: 21.058%;
+  padding-bottom: calc(21.058% + 5px);
   background: #fff url(/wp-content/uploads/sites/50/2017/02/graphic_university-building-trace.png) center bottom / 100% auto no-repeat;
+  overflow: hidden;
+  /*& > :first-child {
+			}*/
 }
 .learning-goals > li > :not(ol):not(ul),
 .graduation-requirements > li > :not(ol):not(ul) {
