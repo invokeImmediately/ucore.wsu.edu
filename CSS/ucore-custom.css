@@ -7370,6 +7370,8 @@ div.recent-posts + div.recent-posts {
   .learning-goals > li,
   .graduation-requirements > li {
     margin-bottom: 0.25rem !important;
+    box-shadow: none;
+    border: 1px solid #000;
   }
 }
 .learning-goals > li > :not(ol):not(ul),
