@@ -7399,8 +7399,12 @@ div.recent-posts + div.recent-posts {
 }
 .learning-goals > li > p + ul,
 .graduation-requirements > li > p + ul,
+.learning-goals > li > h5 + ul,
+.graduation-requirements > li > h5 + ul,
 .learning-goals > li > p + ol,
-.graduation-requirements > li > p + ol {
+.graduation-requirements > li > p + ol,
+.learning-goals > li > h5 + ol,
+.graduation-requirements > li > h5 + ol {
   margin-top: 0.25em;
 }
 @media all {
