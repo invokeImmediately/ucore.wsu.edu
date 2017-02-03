@@ -4646,6 +4646,7 @@ ul.external-links li {
     display: block !important;
     left: 0 !important;
     top: auto !important;
+    width: 100% !important;
     float: left;
   }
 }
