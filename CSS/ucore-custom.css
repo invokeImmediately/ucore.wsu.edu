@@ -7353,20 +7353,20 @@ div.recent-posts + div.recent-posts {
   list-style-type: none;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22), 2px 2px 7px 0 rgba(0, 0, 0, 0.1);
 }
-@media all and (max-width: 693px) {
+@media screen and (max-width: 693px) {
   .learning-goals > li,
   .graduation-requirements > li {
     width: 100%;
     margin-bottom: 4%;
   }
 }
-@media all and (max-width: 1205px) {
+@media screen and (max-width: 1205px) {
   .learning-goals > li,
   .graduation-requirements > li {
     overflow-x: auto;
   }
 }
-@media all and print {
+@media print {
   .learning-goals > li,
   .graduation-requirements > li {
     margin-bottom: 0.25rem !important;
