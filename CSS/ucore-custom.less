@@ -186,8 +186,8 @@ div.column {
  *  ║  ╘═» Customized here for use on the UCORE Assessment website.                                          ║
  *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-div.column {
-	div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-sidebar {
+.column {
+	.bluish-gray-acrylic-sidebar, .green-marble-sidebar, .gray-acrylic-sidebar {
 		p {
 			font-size: .75rem;
 		}
@@ -204,7 +204,7 @@ div.column {
 	}
 }
 
-div.column .widget_rss {
+.column .widget_rss {
 	a {
 		border-bottom: none;
 		box-shadow: none;
@@ -221,7 +221,7 @@ div.column .widget_rss {
 	}
 }
 
-div.column {
+.column {
 	&:extend(.has-dflt-font);
 	section {
 		&.header-newsEvents {
@@ -264,12 +264,13 @@ div.recent-posts {
 //     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
 //     │ ++++ Custom UL selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
 //     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
-ul.course-lists,
-ul.learning-goals {
+.course-lists,
+.learning-goals,
+.graduation-requirements {
 	&:extend(ul.content-boxes all);
 }
 
-ul.course-lists {
+.course-lists {
 	margin-top: @v-btm-mrgns !important;
 	& > li {
 		float: left;
@@ -355,7 +356,8 @@ ul.course-lists {
 	}
 }
 
-ul.learning-goals {
+.learning-goals,
+.graduation-requirements {
 	margin-top: @v-btm-mrgns !important;
 	& > li {
 		float: left;
@@ -363,14 +365,21 @@ ul.learning-goals {
 		width: 49%;
 		margin-bottom: 2%;
 		list-style-type: none;
-        @media all  {
+		box-shadow:	0 1px 2px 0 rgba(red(@hex-black), green(@hex-black), blue(@hex-black), 0.22),
+					2px 2px 7px 0 rgba(red(@hex-black), green(@hex-black), blue(@hex-black), 0.1);
+        @media screen {
 			@media (max-width: @v-rghtclmn-thrshld) {
-				width: 98%;
+				width: 100%;
 				margin-bottom: 4%;
 			}
 			@media (max-width: @v-bckgrnd-thrshld) {
 				overflow-x: auto;
 			}
+		}
+		@media print {
+			margin-bottom: 0.5rem !important;
+			box-shadow: none;
+			border: 1px solid @hex-black;
 		}
 		& > :not(ol):not(ul) {
 			padding-right: 1rem;
@@ -410,6 +419,41 @@ ul.learning-goals {
 		}
 		& + li {
 			margin-top: 0;
+		}
+	}
+}
+
+.graduation-requirements {
+	& > li {
+		min-height: 0;
+		&:first-child {
+			width: 100%;
+			padding-bottom: 21.058%;
+			background: @hex-white url(/wp-content/uploads/sites/1303/2017/02/graphic_university-building-trace-v2.png) center bottom/100% auto no-repeat;
+			overflow: hidden;
+			@media print {
+				background: @hex-white;
+				padding-bottom: 0;
+			}
+		}
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			text-transform: none;
+			strong {
+				color: @hex-black;
+				text-transform: uppercase;
+			}
+		}
+		hr {
+			width: 85%;
+			margin-top: 1em;
+			margin-right: auto;
+			margin-left: auto;
+			margin-bottom: 0.5em;
 		}
 	}
 }
