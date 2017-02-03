@@ -7863,6 +7863,8 @@ div.recent-posts + div.recent-posts {
 .graduation-requirements > li hr {
   width: 85%;
   margin-top: 0.5em;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 0.5em;
 }
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
