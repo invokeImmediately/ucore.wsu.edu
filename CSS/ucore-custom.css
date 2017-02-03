@@ -7365,6 +7365,12 @@ div.recent-posts + div.recent-posts {
     overflow-x: auto;
   }
 }
+@media all and print {
+  .learning-goals > li,
+  .graduation-requirements > li {
+    margin-bottom: 0.5rem !important;
+  }
+}
 .learning-goals > li > :not(ol):not(ul),
 .graduation-requirements > li > :not(ol):not(ul) {
   padding-right: 1rem;
