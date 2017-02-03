@@ -7628,7 +7628,7 @@ div.recent-posts + div.recent-posts {
 .graduation-requirements > li > ul li,
 .learning-goals > li > ol li,
 .graduation-requirements > li > ol li {
-  font-size: inherit;
+  font-size: inherit !important;
 }
 .learning-goals > li > ul,
 .graduation-requirements > li > ul,
