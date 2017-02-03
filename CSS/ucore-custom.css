@@ -5086,6 +5086,11 @@ div.column a {
   -moz-transition: all .3s ease;
   transition: all .3s ease;
 }
+@media print {
+  div.column a {
+    box-shadow: none;
+  }
+}
 div.column a:hover {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
