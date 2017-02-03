@@ -7570,6 +7570,7 @@ div.recent-posts + div.recent-posts {
   min-height: 198px;
   width: 49%;
   margin-bottom: 2%;
+  font-size: inherit;
   list-style-type: none;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22), 2px 2px 7px 0 rgba(0, 0, 0, 0.1);
 }
