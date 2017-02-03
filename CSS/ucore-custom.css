@@ -3477,6 +3477,10 @@ div.column hr.dark-gray {
   border-top: 1px solid rgba(70, 78, 84, 0.6667);
   border-bottom: 1px solid rgba(70, 78, 84, 0.3333);
 }
+div.column hr.light-gray {
+  border-top: 1px dashed rgba(94, 106, 113, 0.25);
+  border-bottom: 1px dashed rgba(160, 160, 160, 0.125);
+}
 div.column hr.no-top-margin {
   margin-top: 0;
 }
