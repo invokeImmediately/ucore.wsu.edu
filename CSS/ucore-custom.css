@@ -7341,7 +7341,7 @@ div.recent-posts + div.recent-posts {
 @media all and (max-width: 693px) {
   .learning-goals > li,
   .graduation-requirements > li {
-    width: 98%;
+    width: 100%;
     margin-bottom: 4%;
   }
 }
@@ -7804,10 +7804,27 @@ div.recent-posts + div.recent-posts {
   min-height: 0;
 }
 .graduation-requirements > li:first-child {
-  width: 98%;
+  width: 100%;
   padding-bottom: 21.058%;
   background: #fff url(/wp-content/uploads/sites/1303/2017/02/graphic_university-building-trace-v2.png) center bottom / 100% auto no-repeat;
   overflow: hidden;
+}
+.graduation-requirements > li h1,
+.graduation-requirements > li h2,
+.graduation-requirements > li h3,
+.graduation-requirements > li h4,
+.graduation-requirements > li h5,
+.graduation-requirements > li h6 {
+  text-transform: none;
+}
+.graduation-requirements > li h1 strong,
+.graduation-requirements > li h2 strong,
+.graduation-requirements > li h3 strong,
+.graduation-requirements > li h4 strong,
+.graduation-requirements > li h5 strong,
+.graduation-requirements > li h6 strong {
+  color: #000;
+  text-transform: uppercase;
 }
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### TABLE layouts ################################################################################### ║
