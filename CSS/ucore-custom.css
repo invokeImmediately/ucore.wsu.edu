@@ -7368,7 +7368,7 @@ div.recent-posts + div.recent-posts {
 @media all and print {
   .learning-goals > li,
   .graduation-requirements > li {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
   }
 }
 .learning-goals > li > :not(ol):not(ul),
