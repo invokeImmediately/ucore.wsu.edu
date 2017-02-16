@@ -1,20 +1,55 @@
+/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### COMMON LAYOUTS ################################################################################## ║
+ *  ╠========================================================================================================╣
+ *  ║ Import layouts common to all OUE websites.                                                             ║
+ *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
 @import "..\WSU-UE---CSS\wp-master-style-sheet.less";
 
-body {
-	background: @hex-bright-gray;
-}
-
-main {
-	background: @hex-white;
-	border-left: 1px solid @hex-bright-gray;
-}
-
+/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### CUSTOM LAYOUTS ################################################################################## ║
+ *  ╠========================================================================================================╣
+ *  ║ The following sections contain layouts specific to ucore.wsu.edu.                                      ║
+ *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+//
+//     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+//     │ ++++ Custom ID-TARGETED layouts +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+//     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+//
 #jacket {
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	background-attachment: fixed;
 }
 
+#spine .spine-actions section,
+#spine .spine-actions-tabs .opened,
+#spine .spine-actions-tabs .opened:hover {
+	background-color: #e5e6e8;
+}
+//
+//     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+//     │ ++++ Custom BODY layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+//     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+//
+body {
+	background: @hex-bright-gray;
+}
+//
+//     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+//     │ ++++ Custom MAIN layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+//     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+//
+main {
+	background: @hex-white;
+	border-left: 1px solid @hex-bright-gray;
+}
+//
+//     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+//     │ ++++ Custom HEADER layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+//     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+//
 header.main-header {
 	&:extend(.has-dflt-font);
 	background: @hex-crimson url(/wp-content/uploads/sites/1303/2016/11/site-header_platinum-background_crimson.jpg) repeat scroll left top;
@@ -32,14 +67,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header {
 	}
 }
 
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### ARTICLE/PAGE-HEADER layouts ##################################################################### ║
- *  ╠========================================================================================================╣
- *  ║ Container designed to hold the header for the article being presented on the current page.             ║
- *  ║  ╘═» Customized here for use on the UCORE Assessment website.                                          ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
-section.row.halves.article-header {
+.row.halves.article-header {
 	position: relative;
 	height: 230px;
 	&.gutter .column:not(.gutterless) {
@@ -96,7 +124,7 @@ section.row.halves.article-header {
 	}
 }
  
-section.row.single.article-header {
+.row.single.article-header {
 	height: 230px;
 	div.column {
 		background: @hex-dark-gray;
@@ -133,20 +161,11 @@ section.row.single.article-header {
 		}
 	}
 }
-
-#spine .spine-actions section,
-#spine .spine-actions-tabs .opened,
-#spine .spine-actions-tabs .opened:hover {
-	background-color: #e5e6e8;
-}
-
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### ASIDE layouts ################################################################################### ║
- *  ╠========================================================================================================╣
- *  ║ Containers designed to be used as custom asides & sidebars within a div.column element.                ║
- *  ║  ╘═» Customized here for use on the UCORE Assessment website.                                          ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+//
+//     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+//     │ ++++ Custom ASIDE layouts +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+//     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+//
 div.column {
 	aside {
 		font-size: .8rem;
@@ -179,13 +198,6 @@ div.column {
 	}
 }
 
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### DIV layouts ##################################################################################### ║
- *  ╠========================================================================================================╣
- *  ║ Containers designed to be used as custom sidebars within a div.column element.                         ║
- *  ║  ╘═» Customized here for use on the UCORE Assessment website.                                          ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
 .column {
 	.bluish-gray-acrylic-sidebar, .green-marble-sidebar, .gray-acrylic-sidebar {
 		p {
@@ -232,7 +244,12 @@ div.column {
 	}
 }
 
-div.recent-posts {
+//
+//     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+//     │ ++++ Custom layouts for RECENT POSTS container & children +++++++++++++++++++++++++++++++++++++ │
+//     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+//
+.recent-posts {
 	padding-bottom: (@v-dflt-spcng / 2);
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -253,17 +270,11 @@ div.recent-posts {
 		margin-top: @v-dflt-spcng;
 	}
 }
-
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### LIST layouts #################################################################################### ║
- *  ╠========================================================================================================╣
- *  ║ Containers designed to be used as custom sidebars within a div.column element.                         ║
- *  ║  ╘═» Customized here for use on the UCORE Assessment website.                                          ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+//
 //     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-//     │ ++++ Custom UL selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+//     │ ++++ Custom UL layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
 //     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+//
 .course-lists,
 .learning-goals,
 .graduation-requirements {
@@ -466,132 +477,11 @@ div.recent-posts {
 		}
 	}
 }
-
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### TABLE layouts ################################################################################### ║
- *  ╠========================================================================================================╣
- *  ║ Containers designed to be used as custom sidebars within a div.column element.                         ║
- *  ║  ╘═» Customized here for use on the UCORE Assessment website.                                          ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+//
 //     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-//     │ ++++ General tables throughout site +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+//     │ ++++ Custom TABLE layouts +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
 //     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
-/*@tbl-elem-slctrs: ~"section:not(.quick-tabs) > div.column > table";
-@tbl-clr-classes: ~"section:not(.quick-tabs) > div.column > table";
-@tbl-header-clrs: @hex-light-gray;
-@tbl-header-txt-clrs: @hex-black;
-@tbl-col1-clrs: @hex-white;
-@tbl-col1-alt-clrs: @hex-bright-yellow;
-@tbl-row-clrs: @hex-white;
-@tbl-row-alt-clrs: @hex-bright-yellow;
-
-@niloa-table-rules: {
-	border-collapse: separate;
-	border-spacing: 0;
-	border: 1px solid @hex-lighter-gray;
-	thead > tr > th {
-		.has-responsive-font((@v-p-sz * 0.88), @v-p-lnhght);
-		padding-right: 0.5em;
-		padding-left: 0.5em;
-        @media all {
-            @media (max-width: @v-mbl-thrshld) {
-                text-align: left;
-            }
-        }
-	}
-	tbody > tr > td {
-		&:not(.no-padding) {
-			padding-right: 0.5em;
-			padding-left: 0.5em;
-		}
-		&.no-padding {
-			padding: 0;
-		}
-		p,
-		ul,
-		ol {
-			font-size: inherit;
-		}
-		.has-responsive-font((@v-p-sz * 0.88), @v-p-lnhght);
-        @media all {
-            @media (max-width: @v-mbl-thrshld) {
-                text-align: left;
-            }
-        }
-	}
-};
-.apply-ruleset-to-selector-list(@tbl-elem-slctrs, @niloa-table-rules);
-
-.create-table-clr-classes(@i: 1) when(@i <= length(@tbl-clr-classes)) {
-	@slctr: extract(@tbl-clr-classes, @i);
-	@{slctr} {
-		thead th {
-			background-color: extract(@tbl-header-clrs, @i);
-			color: extract(@tbl-header-txt-clrs, @i);
-			border-bottom: 1px solid saturate(darken(extract(@tbl-header-clrs, @i), 30%), 5%);
-			&:not(:last-child) {
-				border-right: 1px solid darken(extract(@tbl-header-clrs, @i), 30%);
-			}
-			&:not(:first-child) {
-				border-top: 1px solid saturate(lighten(extract(@tbl-header-clrs, @i), 5%), 5%);
-				border-left: 1px solid lighten(extract(@tbl-header-clrs, @i), 5%);
-			}
-		}
-		& > tbody {
-			& > tr {
-				& > td {
-					background-color: extract(@tbl-row-clrs, @i);
-					&:not(:last-child) {
-						border-right: 1px solid darken(extract(@tbl-row-clrs, @i), 30%);
-					}
-					&:not(:first-child) {
-						border-left: 1px solid lighten(extract(@tbl-row-clrs, @i), 5%);
-					}
-					&:first-child {
-						background-color: extract(@tbl-col1-clrs, @i);
-						border-right: 1px solid darken(extract(@tbl-col1-clrs, @i), 30%);
-					}
-				}
-				&:nth-child(even) > td {
-					background-color: extract(@tbl-row-alt-clrs, @i);
-					&:not(:last-child) {
-						border-right: 1px solid darken(extract(@tbl-row-alt-clrs, @i), 30%);
-					}
-					&:not(:first-child) {
-						border-left: 1px solid lighten(extract(@tbl-row-alt-clrs, @i), 5%);
-					}
-					&:first-child {
-						background-color: extract(@tbl-col1-alt-clrs, @i);
-						border-right: 1px solid darken(extract(@tbl-col1-alt-clrs, @i), 30%);
-					}
-				}
-				&:not(:first-child) {
-					& > td {
-						border-top: 1px solid saturate(lighten(extract(@tbl-row-clrs, @i), 5%), 5%);
-					}
-					&:nth-child(even) > td {
-						border-top: 1px solid saturate(lighten(extract(@tbl-row-alt-clrs, @i), 5%), 5%);
-					}
-				}
-				&:not(:last-child) {
-					& > td {
-						border-bottom: 1px solid saturate(darken(extract(@tbl-row-clrs, @i), 30%), 5%);
-					}
-					&:nth-child(even) > td {
-						border-bottom: 1px solid saturate(darken(extract(@tbl-row-alt-clrs, @i), 30%), 5%);
-					}
-				}
-			}
-		}
-	}
-	.create-table-clr-classes((@i + 1));
-}
-.create-table-clr-classes();*/
-
-//     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-//     │ ++++ TablePress tables ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
-//     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+//
 @dflt-tbl-hdr-clr: #c4e3f3;
 @dflt-tbl-hdr-txt-clr: @hex-black;
 @dflt-tbl-col1-clr: @hex-white;
@@ -734,17 +624,18 @@ div.column h2.tablepress-table-name {
 }
 
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### CUSTOM layouts ################################################################################## ║
+ *  ║ #### MIXIN-TOGGLED layouts ########################################################################### ║
  *  ╠========================================================================================================╣
  *  ║ Mixins are used here to pull in optional layouts that can be used as desired on OUE sites.             ║
  *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 .include-quick-tabs-layout(true);
+.use-linked-columns();
 
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CSS Added by Others ############################################################################# ║
  *  ╠========================================================================================================╣
- *  ║ Mixins are used here to pull in optional layouts that can be used as desired on OUE sites.             ║
+ *  ║ Layouts authored by users other than daniel.rieck.                                                     ║
  *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 .wsuwp-content-syndicate-wrapper {
