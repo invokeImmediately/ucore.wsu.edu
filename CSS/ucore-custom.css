@@ -6576,7 +6576,7 @@ main {
   border-left: 1px solid #eff0f1;
 }
 header.main-header {
-  background: #981e32 url(/wp-content/uploads/sites/1303/2016/11/site-header_platinum-background_crimson.jpg) repeat scroll left top;
+  background: #981e32 url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top;
   color: #fff !important;
 }
 .main-header sub:not(.unset),
@@ -8125,7 +8125,7 @@ body.blog main > footer:after {
   width: auto;
   height: 100vh;
   padding: 0.25rem 1rem;
-  background: #981e32 url(/wp-content/uploads/sites/1303/2016/11/site-header_platinum-background_crimson.jpg) repeat scroll left top;
+  background: #981e32 url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top;
   visibility: visible;
   -webkit-transform: translateY(-2rem);
   -moz-transform: translateY(-2rem);
