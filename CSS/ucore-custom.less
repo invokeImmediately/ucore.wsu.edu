@@ -52,7 +52,7 @@ main {
 //
 header.main-header {
 	&:extend(.has-dflt-font);
-	background: @hex-crimson url(/wp-content/uploads/sites/1303/2016/11/site-header_platinum-background_crimson.jpg) repeat scroll left top;
+	background: @hex-crimson url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top;
 	color: @hex-white !important;
 }
 
@@ -631,6 +631,8 @@ div.column h2.tablepress-table-name {
  */
 .include-quick-tabs-layout(true);
 .use-linked-columns();
+@pseudo-footer-bg: { background: @hex-crimson url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top; };
+.use-main-pseudo-footer(@pseudo-footer-bg);
 
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CSS Added by Others ############################################################################# ║
