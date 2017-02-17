@@ -8114,7 +8114,7 @@ body.blog main > footer {
 main > .page > section:last-child {
   padding-bottom: 2rem;
 }
-main:after {
+main > .page:after {
   content: "";
   position: absolute;
   left: 0;
