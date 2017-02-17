@@ -8105,16 +8105,18 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
     border-left: 10px solid #ffffff !important;
   }
 }
-main {
+main > .page {
   position: relative;
 }
 body.blog main > footer {
+  position: relative;
   padding-bottom: 3rem;
 }
 main > .page > section:last-child {
   padding-bottom: 2rem;
 }
-main > .page:after {
+main > .page:after,
+body.blog main > footer:after {
   content: "";
   position: absolute;
   left: 0;
