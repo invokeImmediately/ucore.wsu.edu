@@ -8090,7 +8090,7 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
 }
 .row.has-linked-columns:not(.gutter).thirds .column:hover,
 .row.has-linked-columns:not(.gutter).quarters .column:hover {
-  background-size: auto 110%;
+  background-size: 110% auto;
 }
 .row.has-linked-columns:not(.gutter).thirds .column.has-crimson-bg:after,
 .row.has-linked-columns:not(.gutter).quarters .column.has-crimson-bg:after {
@@ -8190,6 +8190,11 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
 .row.has-linked-columns:not(.gutter).quarters .column.has-cyan-bg:before {
   background: linear-gradient(to top, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4 80%);
 }
+@media all and (max-width: 480px) {
+  .row.has-linked-columns:not(.gutter).thirds {
+    padding-bottom: calc(40% - 2rem) !important;
+  }
+}
 .row.has-linked-columns:not(.gutter).has-title {
   margin-top: 3rem;
 }
@@ -8222,6 +8227,32 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
   .row.has-linked-columns:not(.gutter).has-title.halves .column:first-child > header:first-child {
     width: 100%;
   }
+}
+@media all and (min-width: 694px) {
+  .row.has-linked-columns:not(.gutter).has-title.thirds .column:first-child > header:first-child {
+    width: 300%;
+  }
+}
+@media all and (max-width: 693px) {
+  .row.has-linked-columns:not(.gutter).has-title.thirds .column:first-child > header:first-child {
+    width: 100%;
+  }
+}
+@media all and (min-width: 694px) {
+  .row.has-linked-columns:not(.gutter).has-title.quarters .column:first-child > header:first-child {
+    width: 400%;
+  }
+}
+@media all and (max-width: 693px) {
+  .row.has-linked-columns:not(.gutter).has-title.quarters .column:first-child > header:first-child {
+    width: 200%;
+  }
+}
+.row.has-linked-columns:not(.gutter).for-faculty.has-title.quarters {
+  margin-top: calc( 3rem  + 10px);
+}
+.row.has-linked-columns:not(.gutter).for-faculty.has-title.quarters .column:first-child > header:first-child {
+  border-bottom: 10px solid #ffffff;
 }
 @media all and (min-width: 694px) {
   .row.has-linked-columns:not(.gutter).for-faculty .column:not(:first-child) {
@@ -8274,6 +8305,13 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
 }
 main > .page {
   position: relative;
+  overflow-y: hidden;
+}
+body.page.home main > .page {
+  min-height: calc(100vh - 142px);
+}
+body.page:not(.home) main > .page {
+  min-height: calc(100vh - 85px);
 }
 body.blog main > footer {
   position: relative;
@@ -8290,7 +8328,7 @@ body.blog main > footer:after {
   right: 0;
   top: 100%;
   width: auto;
-  height: 100vh;
+  height: 1.5rem;
   padding: 0.25rem 1rem;
   background: #981e32 url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top;
   visibility: visible;
