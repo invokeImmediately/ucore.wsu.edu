@@ -1072,7 +1072,6 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 			var $parent = $this.parents(".column").first();
 			var $parentSection = $parent.parent(".row");
 			var fontSz = $this.css("font-size");
-			console.log("Font size is: " + fontSz);
 			var maxWidth = $parent.css("max-width");
 			var scalingAmt;
 			if (maxWidth == "none") {
@@ -1109,7 +1108,11 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 			else {
 				scalingAmt = parseFloat(maxWidth) / (parseFloat(fontSz) * 10);
 			}
-			$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0})
+			if ($this.hasClass("has-max-size")) {
+				$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
+			} else {
+				$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0});
+			}
 		});
 	}
 	
