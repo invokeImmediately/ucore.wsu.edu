@@ -1086,7 +1086,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 			function setupTextResizing() {
 				if ($.isJQueryObj($jqObj)) {
 					var fontSz = parseFloat($jqObj.css("font-size"));
-					var scalingAmt = calculateScalingAmount();
+					var scalingAmt = calculateScalingAmount(fontSz);
 					if ($jqObj.hasClass("has-max-size")) {
 						$jqObj.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
 					} else {
@@ -1095,7 +1095,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 				}
 			}
 			
-			function calculateScalingAmount($jqObj) {
+			function calculateScalingAmount(fontSz) {
 				var maxColumnWidth = findMaxColumnWidth();
 				return maxColumnWidth / (fontSz * 10);
 			}
