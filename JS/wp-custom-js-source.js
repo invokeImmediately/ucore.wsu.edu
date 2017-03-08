@@ -1011,7 +1011,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
  */
 (function($){
 	var clmnWidth = 926; // px - default column width
-	var spineWidth = 198; // px - default width of spine
+	var dfltSpineWidth = 198; // px - default width of spine
 	var $autoTextResizers;
 	
     $.fn.textResize = function( scalingFactor, options ) {
@@ -1067,30 +1067,31 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 	}
 	
 	function initAutoTextResizing(cssClass) {
-		$autoTextResizers = new AutoTextResizers(cssClass);
+		$autoTextResizers = new AutoTextResizers(cssClass, dfltSpineWidth);
 		$autoTextResizers.InitializeTextResizing();
 	}
 	
-	function AutoTextResizers(cssClass) {	
+	function AutoTextResizers(cssClass, spineWidth) {	
 		var $resizers = $(cssClass);
 		
 		this.InitializeTextResizing = function () {
 			$resizers.each(function() {
-				var autoTextResizingElem = new AutoTextResizingElem($(this));
+				var autoTextResizingElem = new AutoTextResizingElem($(this), spineWidth);
 			});
 		}		
 		
-		function AutoTextResizingElem($jqObj, spineWidth) {		
+		function AutoTextResizingElem($jqObj, spineWidth) {
+			var $this = $jqObj;
 			setupTextResizing();
 			
 			function setupTextResizing() {
-				if ($.isJQueryObj($jqObj)) {
-					var fontSz = parseFloat($jqObj.css("font-size"));
+				if ($.isJQueryObj($this)) {
+					var fontSz = parseFloat($this.css("font-size"));
 					var scalingAmt = calculateScalingAmount(fontSz);
-					if ($jqObj.hasClass("has-max-size")) {
-						$jqObj.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
+					if ($this.hasClass("has-max-size")) {
+						$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
 					} else {
-						$jqObj.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0});
+						$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0});
 					}					
 				}
 			}
@@ -1101,34 +1102,32 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 			}
 			
 			function findMaxColumnWidth() {
-				var $parent = $jqObj.parents(".column").first();
-				var maxWidth = $parent.css("max-width");
-				if (maxWidth == "none") {
-					maxWidth = findMaxColWidthFromSection($parent);
-				} else {
-					maxWidth = parseFloat(maxWidth);
-				}
+				var $parentCol = $this.parents(".column").first();
+				var maxWidth = chooseMaxWidthFromColOrRow($parentCol);
 				return maxWidth;
 			}
 			
-			function findMaxColWidthFromSection($parent) {
+			function chooseMaxWidthFromColOrRow($parentCol) {
 				var maxClmnWidth = 990;
-				var maxCssWidth = findMaxCssWidth($parent);
+				var maxCssWidth = $parentCol.css("max-width");
 				if (maxCssWidth != "none") {
 					maxClmnWidth = parseFloat(maxCssWidth);
+				} else {
+					maxClmnWidth = findMaxWidthFromBinder(maxClmnWidth);
 				}
-				return divideUpMaxWidth(maxClmnWidth, $parent);
+				return divideUpMaxWidth(maxClmnWidth, $parentCol);
 			}
 			
-			function findMaxCssWidth($parent) {
-				var maxCssWidth = $parent.css("max-width");
-				if (maxCssWidth == "none") {
-					maxCssWidth = findMaxCssWidthFromRow();
+			function findMaxWidthFromBinder(dfltMaxClmnWidth) {
+				var maxClmnWidth = dfltMaxClmnWidth;
+				var maxCssWidth = findMaxCssWidthFromBinder();
+				if (maxCssWidth != "none") {
+					maxClmnWidth = parseFloat(maxCssWidth) - spineWidth;
 				}
-				return maxCssWidth;
+				return maxClmnWidth;
 			}
 			
-			function findMaxCssWidthFromRow() {
+			function findMaxCssWidthFromBinder() {
 				var maxCssWidth = "none";
 				var $binder = $("#binder");
 				if ($binder.length == 1) {
@@ -1147,14 +1146,14 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 				return maxCssWidth;
 			}
 			
-			function divideUpMaxWidth(maxClmnWidth, $parentObj) {
-				var $parentsSection = ($.isJQueryObj($parentObj)) ? $parentObj.parent(".row") : undefined;
-				if ($.isJQueryObj($parentsSection)) {
-					if ($parentsSection.hasClass("halves")) {
+			function divideUpMaxWidth(maxClmnWidth, $parentCol) {
+				var $parentRow = ($.isJQueryObj($parentCol)) ? $parentCol.parent(".row") : undefined;
+				if ($.isJQueryObj($parentRow)) {
+					if ($parentRow.hasClass("halves")) {
 						maxClmnWidth /= 2;
-					} else if ($parentsSection.hasClass("thirds")) {
+					} else if ($parentRow.hasClass("thirds")) {
 						maxClmnWidth /= 3;
-					} else if ($parentsSection.hasClass("quarters")) {
+					} else if ($parentRow.hasClass("quarters")) {
 						maxClmnWidth /= 4;
 					}
 				}
