@@ -1012,7 +1012,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 (function($){
 	var clmnWidth = 926; // px - default column width
 	var spineWidth = 198; // px - default width of spine
-	var $autoTextResizingElems;
+	var $autoTextResizers;
 	
     $.fn.textResize = function( scalingFactor, options ) {
         // Set up default options in case the caller passed no attributes
@@ -1050,7 +1050,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
     // Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the following statement if you are going to utilize this plugin on your own site).
     $(document).ready(function () {
 		initArticleHeaderText();
-		initAutoTextResizingElems(".auto-fits-text");
+		initAutoTextResizing(".auto-fits-text");
     });
 
 	function initArticleHeaderText() {
@@ -1066,19 +1066,19 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
         });
 	}
 	
-	function initAutoTextResizingElems(cssClass) {
-		$autoTextResizingElems = new AutoTextResizingCollection(cssClass);
+	function initAutoTextResizing(cssClass) {
+		$autoTextResizers = new AutoTextResizers(cssClass);
+		$autoTextResizers.InitializeTextResizing();
 	}
 	
-	function AutoTextResizingCollection(cssClass) {
-		var $resizingElems = $(cssClass);
-		InitTextResizingElems($resizingElems);
+	function AutoTextResizers(cssClass) {	
+		var $resizers = $(cssClass);
 		
-		function InitTextResizingElems($resizingElems) {
+		this.InitializeTextResizing = function () {
 			$resizingElems.each(function() {
 				var autoTextResizingElem = new AutoTextResizingElem($(this));
 			});
-		}
+		}		
 		
 		function AutoTextResizingElem($jqObj, spineWidth) {		
 			setupTextResizing();
