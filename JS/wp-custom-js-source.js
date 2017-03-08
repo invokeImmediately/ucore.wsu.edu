@@ -1075,7 +1075,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 		var $resizers = $(cssClass);
 		
 		this.InitializeTextResizing = function () {
-			$resizingElems.each(function() {
+			$resizers.each(function() {
 				var autoTextResizingElem = new AutoTextResizingElem($(this));
 			});
 		}		
