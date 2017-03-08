@@ -1012,6 +1012,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 (function($){
 	var clmnWidth = 926; // px - default column width
 	var spineWidth = 198; // px - default width of spine
+	var $autoTextResizingElems;
 	
     $.fn.textResize = function( scalingFactor, options ) {
         // Set up default options in case the caller passed no attributes
@@ -1049,7 +1050,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
     // Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the following statement if you are going to utilize this plugin on your own site).
     $(document).ready(function () {
 		initArticleHeaderText();
-		initAutoFittedElems();
+		initAutoTextResizingElems(".auto-fits-text");
     });
 
 	function initArticleHeaderText() {
@@ -1065,57 +1066,102 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
         });
 	}
 	
-	function initAutoFittedElems() {
-		var $fittedElems = $(".auto-fits-text");
-		$fittedElems.each(function() {
-			var $this = $(this);
-			var $parent = $this.parents(".column").first();
-			var $parentSection = $parent.parent(".row");
-			var fontSz = $this.css("font-size");
-			var maxWidth = $parent.css("max-width");
-			var scalingAmt;
-			if (maxWidth == "none") {
+	function initAutoTextResizingElems(cssClass) {
+		$autoTextResizingElems = new AutoTextResizingCollection(cssClass);
+	}
+	
+	function AutoTextResizingCollection(cssClass) {
+		var $resizingElems = $(cssClass);
+		InitTextResizingElems($resizingElems);
+		
+		function InitTextResizingElems($resizingElems) {
+			$resizingElems.each(function() {
+				var autoTextResizingElem = new AutoTextResizingElem($(this));
+			});
+		}
+		
+		function AutoTextResizingElem($jqObj, spineWidth) {		
+			setupTextResizing();
+			
+			function setupTextResizing() {
+				if ($.isJQueryObj($jqObj)) {
+					var fontSz = parseFloat($this.css("font-size"));
+					var scalingAmt = calculateScalingAmount();
+					if ($jqObj.hasClass("has-max-size")) {
+						$jqObj.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
+					} else {
+						$jqObj.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0});
+					}					
+				}
+			}
+			
+			function calculateScalingAmount() {
+				var maxColumnWidth = findMaxColumnWidth();
+				return maxColumnWidth / (fontSz * 10);
+			}
+			
+			function findMaxColumnWidth() {
+				var $parent = $this.parents(".column").first();
+				var maxWidth = $parent.css("max-width");
+				if (maxWidth == "none") {
+					maxWidth = findMaxColWidthFromSection($parent);
+				} else {
+					maxWidth = parseFloat(maxWidth);
+				}
+				return maxWidth;
+			}
+			
+			function findMaxColWidthFromSection($parent) {
+				var maxClmnWidth = 990;
+				var maxCssWidth = findMaxCssWidth($parent);
+				if (maxCssWidth != "none") {
+					maxClmnWidth = parseFloat(maxCssWidth);
+				}
+				return divideUpMaxWidth(maxClmnWidth, $parent);
+			}
+			
+			function findMaxCssWidth($parent) {
+				var maxCssWidth = $parent.css("max-width");
+				if (maxCssWidth == "none") {
+					maxCssWidth = findMaxCssWidthFromRow();
+				}
+				return maxCssWidth;
+			}
+			
+			function findMaxCssWidthFromRow() {
+				var maxCssWidth = "none";
 				var $binder = $("#binder");
 				if ($binder.length == 1) {
 					if ($binder.hasClass("max-1188")) {
-						maxWidth = "1188";
+						maxCssWidth = "1188";
 					} else if ($binder.hasClass("max-1386")) {
-						maxWidth = "1386";						
+						maxCssWidth = "1386";						
 					} else if ($binder.hasClass("max-1584")) {
-						maxWidth = "1584";						
+						maxCssWidth = "1584";						
 					} else if ($binder.hasClass("max-1782")) {
-						maxWidth = "1782";						
+						maxCssWidth = "1782";						
 					} else if ($binder.hasClass("max-1980")) {
-						maxWidth = "1980";						
-					}
-					if (maxWidth != "none") {
-						clmnWidth = parseFloat(maxWidth) - spineWidth;
-					} else {
-						clmnWidth = 990;
-					}
-					if ($.isJQueryObj($parentSection)) {
-						if ($parentSection.hasClass("halves")) {
-							clmnWidth /= 2;
-						} else if ($parentSection.hasClass("thirds")) {
-							clmnWidth /= 3;
-						} else if ($parentSection.hasClass("quarters")) {
-							clmnWidth /= 4;
-						}
+						maxCssWidth = "1980";						
 					}
 				}
-				scalingAmt = clmnWidth / (parseFloat(fontSz) * 10);
+				return maxCssWidth;
 			}
-			else {
-				scalingAmt = parseFloat(maxWidth) / (parseFloat(fontSz) * 10);
+			
+			function divideUpMaxWidth(maxClmnWidth, $parentObj) {
+				var $parentsSection = ($.isJQueryObj($parentObj)) ? $parentObj.parent(".row") : undefined;
+				if ($.isJQueryObj($parentsSection)) {
+					if ($parentsSection.hasClass("halves")) {
+						maxClmnWidth /= 2;
+					} else if ($parentsSection.hasClass("thirds")) {
+						maxClmnWidth /= 3;
+					} else if ($parentsSection.hasClass("quarters")) {
+						maxClmnWidth /= 4;
+					}
+				}
+				return maxClmnWidth;
 			}
-			if ($this.hasClass("has-max-size")) {
-				$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
-			} else {
-				$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0});
-			}
-		});
+		}
 	}
-	
 // TODO: write function for fitting text.
 //	$.fn.fitText = function(  )
 
