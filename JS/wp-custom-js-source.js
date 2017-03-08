@@ -1085,7 +1085,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 			
 			function setupTextResizing() {
 				if ($.isJQueryObj($jqObj)) {
-					var fontSz = parseFloat($this.css("font-size"));
+					var fontSz = parseFloat($jqObj.css("font-size"));
 					var scalingAmt = calculateScalingAmount();
 					if ($jqObj.hasClass("has-max-size")) {
 						$jqObj.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
@@ -1095,13 +1095,13 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 				}
 			}
 			
-			function calculateScalingAmount() {
+			function calculateScalingAmount($jqObj) {
 				var maxColumnWidth = findMaxColumnWidth();
 				return maxColumnWidth / (fontSz * 10);
 			}
 			
 			function findMaxColumnWidth() {
-				var $parent = $this.parents(".column").first();
+				var $parent = $jqObj.parents(".column").first();
 				var maxWidth = $parent.css("max-width");
 				if (maxWidth == "none") {
 					maxWidth = findMaxColWidthFromSection($parent);
