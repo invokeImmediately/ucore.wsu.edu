@@ -129,19 +129,19 @@ img.shift-to-center {
 }
 .spaces-top-none,
 .column .spaces-top-none {
-  margin-top: 0rem;
+  margin-top: 0rem !important;
 }
 .spaces-rgt-none,
 .column .spaces-rgt-none {
-  margin-right: 0rem;
+  margin-right: 0rem !important;
 }
 .spaces-btm-none,
 .column .spaces-btm-none {
-  margin-bottom: 0rem;
+  margin-bottom: 0rem !important;
 }
 .spaces-lft-none,
 .column .spaces-lft-none {
-  margin-left: 0rem;
+  margin-left: 0rem !important;
 }
 .pads-top-nrml,
 .column .pads-top-nrml {
