@@ -586,15 +586,28 @@
 				$prntNxt.delay(400).animate({height: $parent.css('height')}, animHghtDrtn);
 			}
 		});
-        $(slctrDefList + " dd").removeClass(ddRevealingClass); // TODO: change implementation to height + overflow based approach
+        $(slctrDefList + " dd").removeClass(ddRevealingClass);
     }
     
     function initDropDownToggles(slctrToggle, slctrWhatsToggled, activatingClass, animDuration) {
-        $(slctrToggle).click(function () {
+		var $toggles =  $(slctrToggle);
+		$toggles.attr("tabindex", 0);
+		//TODO: Check localStorage for previous setting of collapsible
+        $toggles.click(function () {
             var $this = $(this);
             $this.toggleClass(activatingClass);
-            $this.next(slctrWhatsToggled).toggle(animDuration)
-        });
+            $this.next(slctrWhatsToggled).toggle(animDuration);
+			//TODO: Update localStorage with state of collapsible
+        }); // TODO: change implementation to height + overflow based hiding approach
+		$toggles.on("keydown", function(e) {
+			var regExMask = /Enter| /g;
+			if (regExMask.exec(e.key) != null) {
+				e.preventDefault();
+				var $this = $(this);
+				$this.toggleClass(activatingClass);
+				$this.next(slctrWhatsToggled).toggle(animDuration);
+			}
+		});
     }
     
     function initFancyHrH2Motif(slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn) {
