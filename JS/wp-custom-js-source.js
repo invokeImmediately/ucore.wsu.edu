@@ -18,8 +18,6 @@
 		return ($obj && ($obj instanceof $ || $obj.constructor.prototype.jquery));
 	}
 	
-	
-
 	/**
 	 * jQuery.logError
 	 * DESCRIPTION: Log an error using the browser console in JSON notation.
@@ -39,7 +37,7 @@
 		bitMask = (typeof fnctnDesc === "string") | (bitMask << 1);
 		bitMask = (typeof errorMsg === "string") | (bitMask << 1);
 		if (bitMask === 15) {
-			console.log("error = {\n\tfile: '" + fileName + "',\n\tfunctionName: '" + functionName + "'\n\terrorMessage: '" + functionName + "'\n\terrorMessage: '" + errorMsg + "'\n\t};");
+			console.log("error = {\n\tfile: '" + fileName + "',\n\tfunctionName: '" + fnctnName + "'\n\terrorMessage: '" + fnctnDesc + "'\n\terrorMessage: '" + errorMsg + "'\n\t};");
 		} else {
 			var incorrectTypings;
 			var bitMaskCopy;
