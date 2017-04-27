@@ -7566,7 +7566,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid #d7dadb;
-  width: 100%;
+  width: 100% !important;
 }
 .tablepress thead th {
   padding-right: .5em;
