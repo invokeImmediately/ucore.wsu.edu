@@ -7569,10 +7569,10 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   width: 100% !important;
 }
 .dataTables_scrollBody > .tablepress {
-  border-top: 0 none;
+  border-top: 0;
 }
-.dataTables_scrollBody > .tablepress {
-  border: 0 none;
+.dataTables_scrollFoot > .tablepress {
+  border: 0;
 }
 .tablepress thead th {
   padding-right: .5em;
