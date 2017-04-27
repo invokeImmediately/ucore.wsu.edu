@@ -1,9 +1,8 @@
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### COMMON LAYOUTS ################################################################################## ║
- *  ╠========================================================================================================╣
- *  ║ Import layouts common to all OUE websites.                                                             ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*   ║ OUE-WIDE CUSTOM LAYOUTS ############################################################################################# ║
+*   ║ #### Authored by Daniel C. Rieck, Ph.D. | daniel.rieck@wsu.edu | https://github.com/invokeImmediately ############### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif);
 .has-mono-font {
   font-family: 'Roboto Mono', monospace, sans-serif;
@@ -6858,12 +6857,18 @@ div.auto-scroller ul li {
   list-style-type: none;
   list-style-image: none;
 }
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### CUSTOM LAYOUTS ################################################################################## ║
- *  ╠========================================================================================================╣
- *  ║ The following sections contain layouts specific to ucore.wsu.edu.                                      ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*   ║ LAYOUTS SPECIFIC TO THE UCORE WEBSITE ############################################################################### ║
+*   ║ #### Authored by D. Rieck ########################################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 1.1) Sections: Body & Page Level ############################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
+body {
+  background: #eff0f1;
+}
 #jacket {
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -6874,13 +6879,14 @@ div.auto-scroller ul li {
 #spine .spine-actions-tabs .opened:hover {
   background-color: #e5e6e8;
 }
-body {
-  background: #eff0f1;
-}
 main {
   background: #fff;
   border-left: 1px solid #eff0f1;
 }
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 1.2) Sections: Headers ######################################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 header.main-header {
   background: #981e32 url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top;
   color: #fff !important;
@@ -6906,7 +6912,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .row.halves.article-header.pad-top .column {
   padding-top: 0;
 }
-.row.halves.article-header div.column.one {
+.row.halves.article-header .column.one {
   position: absolute;
   right: 40%;
   left: 0;
@@ -6916,7 +6922,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   padding-right: 0;
   background: #5e6a71;
 }
-.row.halves.article-header div.column.one > h1 {
+.row.halves.article-header .column.one > h1 {
   position: absolute;
   top: 50%;
   right: 2rem;
@@ -6928,16 +6934,16 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   transform: translateY(-50%);
 }
 @media (max-width: 693px) {
-  .row.halves.article-header div.column.one > h1 {
+  .row.halves.article-header .column.one > h1 {
     font-size: 6.5vw;
     right: 1rem;
     left: 1rem;
   }
 }
-.row.halves.article-header div.column.one > :not(h1) {
+.row.halves.article-header .column.one > :not(h1) {
   display: none;
 }
-.row.halves.article-header div.column.two {
+.row.halves.article-header .column.two {
   position: absolute;
   right: 0;
   left: 60%;
@@ -6948,8 +6954,8 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   background-size: cover;
 }
 @media (max-width: 693px) {
-  .row.halves.article-header div.column.one,
-  .row.halves.article-header div.column.two {
+  .row.halves.article-header .column.one,
+  .row.halves.article-header .column.two {
     float: left;
     clear: none;
   }
@@ -6957,7 +6963,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .row.single.article-header {
   height: 230px;
 }
-.row.single.article-header div.column {
+.row.single.article-header .column {
   background: #5e6a71;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(173, 164, 0, 0) 60%, #ada400 60%, #ada400), linear-gradient(#5e6a71, #5e6a71);
   position: relative;
@@ -6966,7 +6972,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   width: 100%;
   height: 100%;
 }
-.row.single.article-header div.column > h1 {
+.row.single.article-header .column > h1 {
   position: absolute;
   top: 50%;
   left: 2rem;
@@ -6978,10 +6984,10 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   -moz-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.row.single.article-header div.column > :not(h1) {
+.row.single.article-header .column > :not(h1) {
   display: none;
 }
-.row.single.article-header div.column:before {
+.row.single.article-header .column:before {
   content: "";
   position: absolute;
   top: 1rem;
@@ -6989,33 +6995,40 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   width: 10%;
   height: 0;
 }
-div.column aside {
+.column section.header-newsEvents {
+  background: url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/1303/2016/11/wpbg-news-events-v2.png) no-repeat center;
+}
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 1.3) Sections: Asides ########################################################################################## ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
+.column aside {
   font-size: .8rem;
 }
-div.column aside + aside {
+.column aside + aside {
   margin-top: 2rem;
 }
-div.column aside p,
-div.column aside ul {
+.column aside p,
+.column aside ul {
   font-size: inherit;
 }
-div.column aside p:not(:last-child),
-div.column aside ul:not(:last-child) {
+.column aside p:not(:last-child),
+.column aside ul:not(:last-child) {
   margin-bottom: 0.8rem;
 }
-div.column aside p:last-child:not(.no-bottom-pad),
-div.column aside ul:last-child:not(.no-bottom-pad) {
+.column aside p:last-child:not(.no-bottom-pad),
+.column aside ul:last-child:not(.no-bottom-pad) {
   padding-bottom: 0;
 }
-div.column aside.article-sidebar {
+.column aside.article-sidebar {
   background: #f8f1eb url(/wp-content/uploads/sites/1303/2016/11/tileable-concrete-texture_128x128.png) left top repeat;
 }
-div.column aside.article-sidebar.green-marble {
+.column aside.article-sidebar.green-marble {
   background: #e3dfcd url(/wp-content/uploads/sites/1303/2016/11/seamless-marble-texture_528x528.png) left top repeat;
   border: 1px solid #afa370;
   box-shadow: 3px 3px 3px rgba(57, 50, 21, 0.3333);
 }
-div.column aside.article-sidebar.bluish-gray {
+.column aside.article-sidebar.bluish-gray {
   background: #edf3f4 url(/wp-content/uploads/sites/1303/2016/11/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
   background-size: 100% auto;
   border: 1px solid #464e54;
@@ -7055,9 +7068,6 @@ div.column aside.article-sidebar.bluish-gray {
 }
 .column .widget_rss ul li {
   list-style-type: disc;
-}
-.column section.header-newsEvents {
-  background: url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/1303/2016/11/wpbg-news-events-v2.png) no-repeat center;
 }
 .recent-posts {
   padding-bottom: 1rem;
@@ -7112,6 +7122,10 @@ div.column aside.article-sidebar.bluish-gray {
 .recent-posts + .recent-posts {
   margin-top: 2rem;
 }
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 2.1) Content Grouping: Lists ################################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 .course-lists {
   margin-top: 1rem !important;
 }
@@ -7544,10 +7558,15 @@ div.column aside.article-sidebar.bluish-gray {
   margin-left: auto;
   margin-bottom: 0.5em;
 }
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 3.1) Tabular Data ############################################################################################## ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 .tablepress {
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid #d7dadb;
+  width: 100%;
 }
 .tablepress thead th {
   padding-right: .5em;
@@ -7716,7 +7735,7 @@ div.column aside.article-sidebar.bluish-gray {
   width: 30%;
   min-width: 255px;
 }
-div.column h2.tablepress-table-name {
+.column h2.tablepress-table-name {
   padding: 8px 0.5em;
   margin-bottom: 0;
   margin-left: 0;
@@ -7726,15 +7745,13 @@ div.column h2.tablepress-table-name {
   text-align: center;
   text-transform: none;
 }
-div.column h2.tablepress-table-name + table.tablepress {
+.column h2.tablepress-table-name + table.tablepress {
   border-top: 1px solid #3fa8df;
 }
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### MIXIN-TOGGLED layouts ########################################################################### ║
- *  ╠========================================================================================================╣
- *  ║ Mixins are used here to pull in optional layouts that can be used as desired on OUE sites.             ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 4.1) Layouts included via LESS mixins ########################################################################## ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 section.row.single.quick-tabs > div.column > h3:first-child {
   display: none;
 }
@@ -8531,12 +8548,15 @@ body.blog main > footer:after {
   -moz-transform: translateY(-2rem);
   transform: translateY(-2rem);
 }
-/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### CSS Added by Others ############################################################################# ║
- *  ╠========================================================================================================╣
- *  ║ Layouts authored by users other than daniel.rieck.                                                     ║
- *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+/*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*   ║ MORE LAYOUTS SPECIFIC TO THE UCORE WEBSITE ########################################################################## ║
+*   ║ #### Written by other authors ####################################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### A.1) Layouts written by Lindsey Kimble | lindsey_kimble@wsu.edu ################################################ ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 .wsuwp-content-syndicate-wrapper .content-item-byline-author {
   display: none;
 }
@@ -8546,3 +8566,5 @@ body.blog main > footer:after {
 .wsuwp-content-syndicate-wrapper .content-item-read-story {
   display: none;
 }
+/*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
