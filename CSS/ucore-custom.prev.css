@@ -1,6 +1,11 @@
 ﻿@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
 
 /* Built with the LESS CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/ucore.wsu.edu] for a repository of source code. */
+/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*   ║ OUE-WIDE CUSTOM LAYOUTS ############################################################################################# ║
+*   ║ #### Authored by Daniel C. Rieck, Ph.D. | daniel.rieck@wsu.edu | https://github.com/invokeImmediately ############### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 .has-mono-font {
 	font-family: 'Roboto Mono', monospace, sans-serif;
 	font-weight: 300;
@@ -666,17 +671,17 @@ div.column article.post+article.post {
 	margin-top: 1.5em;
 }
 
-/*!  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-*    â”‚ ++++++++ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ â”‚
-*    â”œ------------------------------------------------------------------------------------------------------------------â”¤
-*    â”‚ Rule-sets for styling section elements within OUE pages built using the Builder template within the Spine theme  â”‚
-*    â”‚ for WordPress.                                                                                                   â”‚
-*    â”‚  â•˜â•Â» This file assumes the following LESS files have been imported upstream:                                     â”‚
-*    â”‚        â€¢ //github.com/invokeImmediately/WSU-UE---CSS/animations.less                                             â”‚
-*    â”‚        â€¢ //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                                          â”‚
-*    â”‚        â€¢ //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                                  â”‚
-*    â”‚        â€¢ //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                                 â”‚
-*    â”œ------------------------------------------------------------------------------------------------------------------â”¤
+/*!  ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*    │ ++++++++ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*    ├------------------------------------------------------------------------------------------------------------------┤
+*    │ Rule-sets for styling section elements within OUE pages built using the Builder template within the Spine theme  │
+*    │ for WordPress.                                                                                                   │
+*    │  ╘═» This file assumes the following LESS files have been imported upstream:                                     │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/animations.less                                             │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                                          │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                                  │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                                 │
+*    ├------------------------------------------------------------------------------------------------------------------┤
 */
 section.column-one-with-bottom-margin>.column.one {
 	margin-bottom: 2rem;
@@ -1057,7 +1062,7 @@ main section.row>.column table>tbody>tr>td>div>ol:last-child,main section.row>.c
 	}
 }
 
-/*!  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+/*!  └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 aside.widget {
 	box-shadow: 0 0 0 1px rgba(255,255,255,.9), 0 0 0 2px rgba(0,0,0,.2), 3px 4px 4px rgba(0,0,0,.25) !important;
@@ -4968,7 +4973,7 @@ div.recent-updates p.recent-update-3 {
 	background-color: #c60c30;
 }
 
-.column a img {
+.column a img:not(.no-border) {
 	border: .0625em solid rgba(94,106,113,.5);
 	box-shadow: 2px 2px 2px rgba(94,106,113,.25);
 	text-decoration: none;
@@ -4977,7 +4982,7 @@ div.recent-updates p.recent-update-3 {
 	transition: border .4s linear, box-shadow .4s ease-in;
 }
 
-.column a img:hover {
+.column a img:not(.no-border):hover {
 	border: .0625em solid #981e32;
 	box-shadow: 2px 2px 2px rgba(152,30,50,.3333);
 }
@@ -7082,6 +7087,19 @@ div.auto-scroller ul li {
 	list-style-image: none;
 }
 
+/*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*   ║ LAYOUTS SPECIFIC TO THE UCORE WEBSITE ############################################################################### ║
+*   ║ #### Authored by D. Rieck ########################################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 1.1) Sections: Body & Page Level ############################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
+body {
+	background: #eff0f1;
+}
+
 #jacket {
 	background-repeat: no-repeat;
 	background-position: right bottom;
@@ -7092,15 +7110,15 @@ div.auto-scroller ul li {
 	background-color: #e5e6e8;
 }
 
-body {
-	background: #eff0f1;
-}
-
 main {
 	background: #fff;
 	border-left: 1px solid #eff0f1;
 }
 
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 1.2) Sections: Headers ######################################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 header.main-header {
 	background: #981e32 url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top;
 	color: #fff !important;
@@ -7132,7 +7150,7 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 	padding-top: 0;
 }
 
-.row.halves.article-header div.column.one {
+.row.halves.article-header .column.one {
 	position: absolute;
 	right: 40%;
 	left: 0;
@@ -7143,7 +7161,7 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 	background: #5e6a71;
 }
 
-.row.halves.article-header div.column.one>h1 {
+.row.halves.article-header .column.one>h1 {
 	position: absolute;
 	top: 50%;
 	right: 2rem;
@@ -7156,18 +7174,18 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 }
 
 @media (max-width:693px) {
-	.row.halves.article-header div.column.one>h1 {
+	.row.halves.article-header .column.one>h1 {
 		font-size: 6.5vw;
 		right: 1rem;
 		left: 1rem;
 	}
 }
 
-.row.halves.article-header div.column.one>:not(h1) {
+.row.halves.article-header .column.one>:not(h1) {
 	display: none;
 }
 
-.row.halves.article-header div.column.two {
+.row.halves.article-header .column.two {
 	position: absolute;
 	right: 0;
 	left: 60%;
@@ -7179,7 +7197,7 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 }
 
 @media (max-width:693px) {
-	.row.halves.article-header div.column.one,.row.halves.article-header div.column.two {
+	.row.halves.article-header .column.one,.row.halves.article-header .column.two {
 		float: left;
 		clear: none;
 	}
@@ -7189,7 +7207,7 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 	height: 230px;
 }
 
-.row.single.article-header div.column {
+.row.single.article-header .column {
 	background: #5e6a71;
 	background: linear-gradient(to right,rgba(255,255,255,0),rgba(173,164,0,0) 60%,#ada400 60%,#ada400), linear-gradient(#5e6a71,#5e6a71);
 	position: relative;
@@ -7199,7 +7217,7 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 	height: 100%;
 }
 
-.row.single.article-header div.column>h1 {
+.row.single.article-header .column>h1 {
 	position: absolute;
 	top: 50%;
 	left: 2rem;
@@ -7212,11 +7230,11 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 	transform: translateY(-50%);
 }
 
-.row.single.article-header div.column>:not(h1) {
+.row.single.article-header .column>:not(h1) {
 	display: none;
 }
 
-.row.single.article-header div.column:before {
+.row.single.article-header .column:before {
 	content: "";
 	position: absolute;
 	top: 1rem;
@@ -7225,37 +7243,45 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 	height: 0;
 }
 
-div.column aside {
+.column section.header-newsEvents {
+	background: url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/1303/2016/11/wpbg-news-events-v2.png) no-repeat center;
+}
+
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 1.3) Sections: Asides ########################################################################################## ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
+.column aside {
 	font-size: .8rem;
 }
 
-div.column aside+aside {
+.column aside+aside {
 	margin-top: 2rem;
 }
 
-div.column aside p,div.column aside ul {
+.column aside p,.column aside ul {
 	font-size: inherit;
 }
 
-div.column aside p:not(:last-child),div.column aside ul:not(:last-child) {
+.column aside p:not(:last-child),.column aside ul:not(:last-child) {
 	margin-bottom: .8rem;
 }
 
-div.column aside p:last-child:not(.no-bottom-pad),div.column aside ul:last-child:not(.no-bottom-pad) {
+.column aside p:last-child:not(.no-bottom-pad),.column aside ul:last-child:not(.no-bottom-pad) {
 	padding-bottom: 0;
 }
 
-div.column aside.article-sidebar {
+.column aside.article-sidebar {
 	background: #f8f1eb url(/wp-content/uploads/sites/1303/2016/11/tileable-concrete-texture_128x128.png) left top repeat;
 }
 
-div.column aside.article-sidebar.green-marble {
+.column aside.article-sidebar.green-marble {
 	background: #e3dfcd url(/wp-content/uploads/sites/1303/2016/11/seamless-marble-texture_528x528.png) left top repeat;
 	border: 1px solid #afa370;
 	box-shadow: 3px 3px 3px rgba(57,50,21,.3333);
 }
 
-div.column aside.article-sidebar.bluish-gray {
+.column aside.article-sidebar.bluish-gray {
 	background: #edf3f4 url(/wp-content/uploads/sites/1303/2016/11/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
 	background-size: 100% auto;
 	border: 1px solid #464e54;
@@ -7295,10 +7321,6 @@ div.column aside.article-sidebar.bluish-gray {
 
 .column .widget_rss ul li {
 	list-style-type: disc;
-}
-
-.column section.header-newsEvents {
-	background: url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/1303/2016/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/1303/2016/11/wpbg-news-events-v2.png) no-repeat center;
 }
 
 .recent-posts {
@@ -7365,6 +7387,10 @@ div.column aside.article-sidebar.bluish-gray {
 	margin-top: 2rem;
 }
 
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 2.1) Content Grouping: Lists ################################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 .course-lists {
 	margin-top: 1rem !important;
 }
@@ -7754,10 +7780,23 @@ div.column aside.article-sidebar.bluish-gray {
 	margin-bottom: .5em;
 }
 
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 3.1) Tabular Data ############################################################################################## ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 .tablepress {
 	border-collapse: separate;
 	border-spacing: 0;
 	border: 1px solid #d7dadb;
+	width: 100% !important;
+}
+
+.dataTables_scrollBody .tablepress {
+	border-top: 0;
+}
+
+.dataTables_scrollFoot .tablepress {
+	border: 0;
 }
 
 .tablepress thead th {
@@ -7965,7 +8004,7 @@ div.column aside.article-sidebar.bluish-gray {
 	min-width: 255px;
 }
 
-div.column h2.tablepress-table-name {
+.column h2.tablepress-table-name {
 	padding: 8px .5em;
 	margin-bottom: 0;
 	margin-left: 0;
@@ -7976,10 +8015,14 @@ div.column h2.tablepress-table-name {
 	text-transform: none;
 }
 
-div.column h2.tablepress-table-name+table.tablepress {
+.column h2.tablepress-table-name+table.tablepress {
 	border-top: 1px solid #3fa8df;
 }
 
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 4.1) Layouts included via LESS mixins ########################################################################## ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 section.row.single.quick-tabs>div.column>h3:first-child {
 	display: none;
 }
@@ -8824,6 +8867,15 @@ body.blog main>footer:after,main>.page:after {
 	transform: translateY(-2rem);
 }
 
+/*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*   ║ MORE LAYOUTS SPECIFIC TO THE UCORE WEBSITE ########################################################################## ║
+*   ║ #### Written by other authors ####################################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### A.1) Layouts written by Lindsey Kimble | lindsey_kimble@wsu.edu ################################################ ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
 .wsuwp-content-syndicate-wrapper .content-item-byline-author {
 	display: none;
 }
@@ -8835,3 +8887,6 @@ body.blog main>footer:after,main>.page:after {
 .wsuwp-content-syndicate-wrapper .content-item-read-story {
 	display: none;
 }
+
+/*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
