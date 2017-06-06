@@ -1,6 +1,6 @@
 /*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
 *   ║ OUE-WIDE CUSTOM LAYOUTS ############################################################################################# ║
-*   ║ #### Authored by Daniel C. Rieck, Ph.D. | daniel.rieck@wsu.edu | https://github.com/invokeImmediately ############### ║
+*   ║ #### Authored by Daniel C. Rieck, Ph.D. <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately) ############### ║
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif);
@@ -8805,42 +8805,55 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
     border-left: 10px solid #ffffff !important;
   }
 }
-main > .page {
-  position: relative;
-  overflow-y: hidden;
+main {
+  padding-bottom: 34px;
+  background: #fff url(/wp-content/uploads/sites/1303/2017/06/site-footer_platinum-background_crimson-tileable_990x34.jpg) left bottom repeat-x;
 }
-body.blog:not(.home) main > .page {
-  min-height: calc(100vh - 85px);
-}
-body.page.home main > .page {
-  min-height: calc(100vh - 142px);
-}
-body.page:not(.home) main > .page {
-  min-height: calc(100vh - 85px);
-}
-body.blog main > footer {
-  position: relative;
-  padding-bottom: 3rem;
-}
-main > .page > section:last-child {
-  padding-bottom: 2rem;
-}
-main > .page:after,
-body.blog main > footer:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  width: auto;
-  height: 1.5rem;
-  padding: 0.25rem 1rem;
-  background: #981e32 url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top;
-  visibility: visible;
-  -webkit-transform: translateY(-2rem);
-  -moz-transform: translateY(-2rem);
-  transform: translateY(-2rem);
-}
+/*main > .page {
+			position: relative;
+			overflow-y: hidden;
+		}
+		
+		//TODO: deal with mobile screen profiles better.
+		body {
+			&.blog {
+				&:not(.home) main > .page {
+					min-height: ~"calc(100vh - 85px)";
+				}
+			}
+			&.page {
+				&.home main > .page {
+					min-height: ~"calc(100vh - 142px)";
+				}
+				&:not(.home) main > .page {
+					min-height: ~"calc(100vh - 85px)";
+				}
+			}
+		}
+		
+		body.blog main > footer {
+			position: relative;
+			padding-bottom: 3rem;
+		}
+
+		main > .page > section:last-child {
+			padding-bottom: 2rem;
+		}
+
+		main > .page:after,
+		body.blog main > footer:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 100%;
+			width: auto;
+			height: 1.5rem;
+			padding: 0.25rem 1rem;
+			@background-ruleset();
+			visibility: visible;
+			.transform(translateY(-2rem));
+		}*/
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
 /*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
