@@ -8363,7 +8363,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .tablepress tbody td:first-child:not(:last-child) {
   border-right: 1px solid #b3b3b3;
 }
-.tablepress tbody td[colspan] {
+.tablepress tbody td[colspan]:first-child {
   font-weight: bold;
 }
 @media all {
@@ -8415,7 +8415,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .tablepress tbody .odd td:not(:first-child) {
   border-left: 1px solid #ffffff;
 }
-.tablepress tbody .odd td[colspan] {
+.tablepress tbody .odd td[colspan]:first-child {
   background-color: #d9edf7;
 }
 .tablepress tbody .odd:not(:first-child) td {
@@ -8427,7 +8427,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .tablepress tbody .even td {
   background-color: #fff;
 }
-.tablepress tbody .even td[colspan] {
+.tablepress tbody .even td[colspan]:first-child {
   background-color: #d9edf7;
 }
 .tablepress tbody .even:not(:first-child) td {
