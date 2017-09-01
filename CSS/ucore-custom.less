@@ -34,7 +34,6 @@ body {
 
 main {
 	background: @hex-white;
-	border-left: 1px solid @hex-bright-gray;
 }
 
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
@@ -523,7 +522,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header {
 			&:first-child:not(:last-child) {
 				border-right: 1px solid darken(@dflt-tbl-col1-clr, 30%);
 			}
-			&[colspan] {
+			&[colspan]:first-child {
 				font-weight: bold;
 			}
 			.has-responsive-font((@v-p-sz * 0.88), @v-p-lnhght);
@@ -543,7 +542,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header {
 				&:not(:first-child) {
 					border-left: 1px solid lighten(@dflt-tbl-row-alt-clr, 5%);
 				}
-				&[colspan] {
+				&[colspan]:first-child {
 					background-color: @dflt-tbl-colspan-clr;
 				}
 				//&:first-child {
@@ -564,7 +563,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header {
 				//&:first-child {
 				//	background-color: @dflt-tbl-col1-clr;
 				//}
-				&[colspan] {
+				&[colspan]:first-child {
 					background-color: @dflt-tbl-colspan-clr;
 				}
 			}
