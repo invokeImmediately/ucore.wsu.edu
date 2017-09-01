@@ -9077,7 +9077,7 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
 }
 @media all and (min-width: 1205px) {
   #binder.max-1386 .row.has-linked-columns:not(.gutter).halves {
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
     height: 327px;
   }
 }
@@ -9234,13 +9234,13 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
 }
 @media all and (min-width: 1205px) {
   #binder.max-1386 .row.has-linked-columns:not(.gutter).thirds .column {
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
     height: 330px;
   }
 }
 @media all and (min-width: 1205px) {
   #binder.max-1386 .row.has-linked-columns:not(.gutter).quarters .column {
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
     height: 293px;
   }
 }
