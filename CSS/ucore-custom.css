@@ -7997,7 +7997,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   margin-top: 0.5rem;
 }
 .course-lists > li > h3 + h5 {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 .course-lists > li > h5 {
   padding-right: 0.5rem;
