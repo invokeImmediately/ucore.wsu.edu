@@ -8026,6 +8026,54 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .course-lists > li > *:last-child {
   padding-bottom: 0.5rem;
 }
+.course-lists > li.foundational-competencies > h3 {
+  background-color: rgba(211, 130, 53, 0.5);
+  color: #925b29;
+}
+.course-lists > li.foundational-competencies > h3.broad-category {
+  background-color: rgba(211, 130, 53, 0.75);
+  color: #f8f1eb;
+}
+.course-lists > li.foundational-competencies > h5 {
+  background-color: rgba(211, 130, 53, 0.33);
+  color: #925b29;
+}
+.course-lists > li.ways-of-knowing > h3 {
+  background-color: rgba(0, 165, 189, 0.5);
+  color: #3f6b72;
+}
+.course-lists > li.ways-of-knowing > h3.broad-category {
+  background-color: rgba(0, 165, 189, 0.75);
+  color: #edf3f4;
+}
+.course-lists > li.ways-of-knowing > h5 {
+  background-color: rgba(0, 165, 189, 0.33);
+  color: #3f6b72;
+}
+.course-lists > li.diversity > h3 {
+  background-color: rgba(255, 184, 28, 0.5);
+  color: #9e7510;
+}
+.course-lists > li.diversity > h3.broad-category {
+  background-color: rgba(255, 184, 28, 0.75);
+  color: #f9f4e7;
+}
+.course-lists > li.diversity > h5 {
+  background-color: rgba(255, 184, 28, 0.33);
+  color: #9e7510;
+}
+.course-lists > li.integrative-learning > h3 {
+  background-color: rgba(219, 120, 121, 0.5);
+  color: #981e32;
+}
+.course-lists > li.integrative-learning > h3.broad-category {
+  background-color: rgba(219, 120, 121, 0.75);
+  color: #fff;
+}
+.course-lists > li.integrative-learning > h5 {
+  background-color: rgba(219, 120, 121, 0.33);
+  color: #981e32;
+}
 .learning-goals,
 .graduation-requirements {
   margin-top: 1rem !important;
