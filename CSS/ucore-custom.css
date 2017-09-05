@@ -7934,10 +7934,11 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 */
 .course-list-wrapper {
   margin-top: 1rem !important;
+  padding: 2%;
   border-top: 1px solid #8d959a;
   border-left: 1px solid #8d959a;
   border-radius: 4px;
-  padding: 2%;
+  background-color: #eff0f1;
   box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 .course-lists > li {
