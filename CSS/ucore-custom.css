@@ -7695,7 +7695,7 @@ main {
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
 header.main-header {
-  background: #981e32 url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) repeat scroll left top;
+  background: #981e32 url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) left top / cover no-repeat scroll;
   color: #fff !important;
 }
 .main-header sub:not(.unset),
