@@ -7996,6 +7996,9 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .course-lists > li > h3:nth-child(2) + * {
   margin-top: 0.5rem;
 }
+.course-lists > li > h3 + h5 {
+  margin-top: 0;
+}
 .course-lists > li > h5 {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
