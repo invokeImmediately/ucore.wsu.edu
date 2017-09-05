@@ -53,7 +53,7 @@ header.main-header,
 .has-alt-font,
 .column p.article-tagline.sans,
 span.accentuated-text,
-.course-lists > li > h4:nth-child(2) {
+.course-lists > li > h3.broad-category {
   font-family: 'Open Sans Condensed', 'Lucida Sans', sans-serif;
 }
 .has-subst-font {
@@ -7967,20 +7967,20 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .course-lists > li.gutter-sizer {
   width: 2%;
 }
-.course-lists > li > h3:first-child {
+.course-lists > li > h3 {
   padding: 0.5rem;
   margin: 0;
   background-color: rgba(173, 164, 0, 0.5);
-  border-top: 1px solid rgba(173, 164, 0, 0);
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
   color: #72652a;
   text-transform: none;
 }
-.course-lists > li > h3:first-child strong {
+.course-lists > li > h3 strong {
   text-transform: uppercase;
 }
-.course-lists > li > h4:nth-child(2) {
+.course-lists > li > h3.broad-category {
+  border-top: 1px solid rgba(173, 164, 0, 0);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   padding: 0.3rem 0.5rem;
   margin-top: 0;
   margin-bottom: 0;
@@ -7988,8 +7988,9 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   font-size: 1.1em;
   font-weight: 700;
   color: #f4f2eb;
+  text-transform: uppercase;
 }
-.course-lists > li > h4:nth-child(2) + * {
+.course-lists > li > h3:nth-child(2) + * {
   margin-top: 0.5rem;
 }
 .course-lists > li > h5 {
