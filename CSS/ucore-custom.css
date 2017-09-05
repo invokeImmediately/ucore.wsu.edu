@@ -7946,7 +7946,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   width: 49%;
   min-height: 198px;
   margin-bottom: 2%;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
 }
 @media all and (max-width: 693px) {
   .course-lists > li {
