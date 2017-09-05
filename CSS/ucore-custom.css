@@ -7938,7 +7938,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   border-top: 1px solid #8d959a;
   border-left: 1px solid #8d959a;
   border-radius: 4px;
-  background-color: #eff0f1;
+  background-color: #e5e6e8;
   box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 .course-lists > li {
