@@ -7990,6 +7990,9 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   color: #f4f2eb;
   text-transform: uppercase;
 }
+.course-lists > li > h3:nth-child(2) {
+  margin-top: 0;
+}
 .course-lists > li > h3:nth-child(2) + * {
   margin-top: 0.5rem;
 }
