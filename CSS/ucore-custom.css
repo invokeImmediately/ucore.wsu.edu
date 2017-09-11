@@ -5562,6 +5562,10 @@ div.recent-updates p.recent-update-3 {
   line-height: calc(1.05em * 1.05);
   color: #f6861f;
 }
+.column a.learn-more {
+  font-weight: bold;
+  font-size: 0.925em;
+}
 .column a.dark-red-button {
   display: block;
   padding: .5em 1em;
