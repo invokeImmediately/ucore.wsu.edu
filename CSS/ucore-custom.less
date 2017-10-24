@@ -34,6 +34,7 @@ body {
 
 main {
 	background: @hex-white;
+	border-left: 1px solid @hex-bright-gray;
 }
 
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
@@ -50,14 +51,7 @@ header.main-header {
 	color: @hex-white !important;
 }
 
-body.page:not(.home) main.spine-blank-template > header.main-header {
-	height: 85px;
-	& > div.header-group {
-		padding-bottom: 1em !important;
-	}
-}
-
-.row.halves.article-header {
+/*.row.halves.article-header {
 	position: relative;
 	height: 230px;
 	&.gutter .column:not(.gutterless) {
@@ -161,7 +155,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header {
 				url(/wp-content/uploads/sites/1303/2016/11/wpbg-news-events-v2.png) no-repeat center;
 		}
 	}
-}
+}*/
 
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 *   ║ #### 1.3) Sections: Asides ########################################################################################## ║
@@ -697,6 +691,8 @@ body.page:not(.home) main.spine-blank-template > header.main-header {
 .use-linked-columns();
 @pseudo-footer-bg: { background: @hex-white url(/wp-content/uploads/sites/1303/2017/09/site-footer_platinum-background_crimson-tileable_1188x34.jpg) left bottom repeat-x; };
 .use-main-pseudo-footer(@pseudo-footer-bg, 34px);
+.use-sectional-article-headers();
+.use-short-main-header-on-pages();
 
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
