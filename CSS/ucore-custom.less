@@ -423,7 +423,7 @@ header.main-header {
 .learning-goals,
 .graduation-requirements {
 	margin-top: @v-btm-mrgns !important;
-	.has-sectionally-responsive-font((@v-p-sz * @v-scl-dwn), @v-p-lnhght);
+	.has-sectionally-responsive-font((@v-p-sz * @v-scl-dwn), @body-text--lHeight);
 	& > li {
 		float: left;
 		min-height: 198px;
@@ -570,7 +570,7 @@ header.main-header {
 			border-top: 1px solid saturate(lighten(@dflt-tbl-hdr-clr, 5%), 5%);
 			border-left: 1px solid lighten(@dflt-tbl-hdr-clr, 5%);
 		}
-		.has-responsive-font((@v-p-sz * 0.88), @v-p-lnhght);
+		.has-responsive-font((@v-p-sz * 0.88), @body-text--lHeight);
 	}
 	tbody {
 		td {
@@ -593,7 +593,7 @@ header.main-header {
 			&[colspan]:first-child {
 				font-weight: bold;
 			}
-			.has-responsive-font((@v-p-sz * 0.88), @v-p-lnhght);
+			.has-responsive-font((@v-p-sz * 0.88), @body-text--lHeight);
 			.transition(~"all 0.3s ease");
 			p,
 			ul,
