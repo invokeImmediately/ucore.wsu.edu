@@ -8399,10 +8399,12 @@ header.main-header {
   box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 .course-lists > li {
+  background-color: #fff;
+  border-radius: 4px;
   float: left;
-  width: 49%;
-  min-height: 198px;
   margin-bottom: 2%;
+  min-height: 198px;
+  width: 49%;
   box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
 }
 @media all and (max-width: 693px) {
@@ -8464,16 +8466,16 @@ header.main-header {
   margin-top: 0 !important;
 }
 .course-lists > li > h5 {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
   background-color: rgba(173, 164, 0, 0.33);
   color: #72652a;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .course-lists > li > p {
   font-size: inherit !important;
-  text-align: left;
-  padding-right: 0.5rem;
   padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: left;
 }
 .course-lists > li > p + ul,
 .course-lists > li > p + ol {
