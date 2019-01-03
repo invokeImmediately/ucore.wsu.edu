@@ -4743,7 +4743,6 @@ body.user-is-tabbing .column a:focus {
   position: relative;
 }
 body.user-is-tabbing .column a:focus::after {
-  border-left-color: blue;
   border: 9px solid transparent;
   content: "";
   left: 0;
@@ -4752,6 +4751,7 @@ body.user-is-tabbing .column a:focus::after {
   -webkit-transform: translateX(-50%) translateX(-4px);
   -moz-transform: translateX(-50%) translateX(-4px);
   transform: translateX(-50%) translateX(-4px);
+  border-left-color: blue;
 }
 .column a.non-text-link {
   border: none;
