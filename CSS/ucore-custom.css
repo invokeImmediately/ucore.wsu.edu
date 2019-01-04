@@ -9892,34 +9892,34 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
 .wsuwp-content-syndicate-wrapper .content-item-read-story {
   display: none;
 }
-.page.proposing-and-revising-courses .selected-content {
+.page.proposing-and-renewing-courses .selected-content {
   margin-left: auto;
   margin-right: auto;
   max-width: 640px;
   white-space: nowrap;
   width: 100%;
 }
-.page.proposing-and-revising-courses .selected-content__choice {
+.page.proposing-and-renewing-courses .selected-content__choice {
   height: 0;
   opacity: 0;
   position: absolute;
   width: 0;
 }
-.page.proposing-and-revising-courses .selected-content__choice:checked ~ .selected-content__label {
+.page.proposing-and-renewing-courses .selected-content__choice:checked ~ .selected-content__label {
   background-color: #6d1624;
   color: white;
 }
-.page.proposing-and-revising-courses .selected-content__control {
+.page.proposing-and-renewing-courses .selected-content__control {
   box-sizing: border-box;
   display: inline-block;
   height: 6em;
   line-height: 6em;
   width: calc(50% - 0.5em);
 }
-.page.proposing-and-revising-courses .selected-content__control + .selected-content__control {
+.page.proposing-and-renewing-courses .selected-content__control + .selected-content__control {
   margin-left: 1em;
 }
-.page.proposing-and-revising-courses .selected-content__label {
+.page.proposing-and-renewing-courses .selected-content__label {
   border: 1px solid black;
   box-sizing: border-box;
   cursor: pointer;
