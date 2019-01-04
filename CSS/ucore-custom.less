@@ -12,19 +12,21 @@
 /*    ──────────────────────────────────────────────────────────────────────────────────────────────
 **    TABLE OF CONTENTS:
 **    ───────────────────────────────────────────────────────────────────────────────────────────
-**    §1: Settings for global Less variables...................................................32
-**    §2: Import of OUE-wide style rules.......................................................39
-**    §3: Styling at body & page level.........................................................53
-**    §4: Styling at the section level.........................................................78
-**      >>> §4.1: Headers......................................................................82
-**         →→→ §4.1.1: Main header.............................................................86
-**      >>> §4.2: Asides......................................................................100
-**    §5: Styling at the content grouping level...............................................193
-**      >>> §5.1: Lists.......................................................................197
-**    §6: Styling at the embedded content level...............................................481
-**      >>> §6.1: Tabular data................................................................485
-**    §7: Styling included via Less mixins....................................................637
-**    §8: Site-specific semantic CSS styling..................................................648
+**    §1: Settings for global Less variables...................................................34
+**    §2: Import of OUE-wide style rules.......................................................41
+**    §3: Styling at body & page level.........................................................55
+**    §4: Styling at the section level.........................................................80
+**      >>> §4.1: Headers......................................................................84
+**         →→→ §4.1.1: Main header.............................................................88
+**      >>> §4.2: Asides......................................................................102
+**    §5: Styling at the content grouping level...............................................195
+**      >>> §5.1: Lists.......................................................................199
+**    §6: Styling at the embedded content level...............................................483
+**      >>> §6.1: Tabular data................................................................487
+**    §7: Styling included via Less mixins....................................................639
+**    §8: Site-specific semantic CSS styling..................................................650
+**    §9: Page-specific styles................................................................668
+**      >>> §9.1: Proposing and renewing UCORE courses........................................672
 **    ──────────────────────────────────────────────────────────────────────────────────────────────
 */
 
@@ -659,5 +661,61 @@ header.main-header {
 
 	.content-item-read-story {
 	display: none;
+	}
+}
+
+/*  ================================================================================================
+**  §9: Page-specific styles
+*/ 
+
+/*    ----------------------------------------------------------------------------------------------
+**    >>> §9.1: Proposing and renewing UCORE courses
+*/ 
+
+.page.proposing-and-revising-courses {
+	.selected-content {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 640px;
+		white-space: nowrap;
+		width: 100%;
+	}
+
+	.selected-content__choice {
+		height: 0;
+		opacity: 0;
+		position: absolute;
+		width: 0;
+
+		&:checked ~ .selected-content__label {
+			background-color: extract(@colors--crimsons__hex, @colors__darker);
+			color: white;
+		}
+	}
+
+	.selected-content__control {
+		box-sizing: border-box;
+		display: inline-block;
+		height: 6em;
+		line-height: 6em;
+		width: calc(50% - .5em);
+	}
+
+	.selected-content__control + .selected-content__control {
+		margin-left: 1em;
+	}
+
+	.selected-content__label {
+		border: 1px solid black;
+		box-sizing: border-box;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 1.25em;
+		line-height: normal;
+		padding: .5em;
+		padding-top: .4em;
+		text-align: center;
+		vertical-align: middle;
+		white-space: normal;
 	}
 }
