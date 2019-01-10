@@ -674,10 +674,12 @@ header.main-header {
 
 .page.proposing-and-renewing-courses {
 	.selected-content {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 640px;
-		white-space: nowrap;
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: -1em;
+		margin-left: -0.5em;
 		width: 100%;
 	}
 
@@ -696,12 +698,7 @@ header.main-header {
 	.selected-content__control {
 		box-sizing: border-box;
 		display: inline-block;
-		height: 6em;
-		line-height: 6em;
-		width: calc(50% - .5em);
-	}
-
-	.selected-content__control + .selected-content__control {
+		margin-bottom: 1em;
 		margin-left: 1em;
 	}
 
