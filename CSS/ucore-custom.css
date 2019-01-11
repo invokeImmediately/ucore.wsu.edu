@@ -10113,6 +10113,7 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   cursor: pointer;
   display: inline-block;
   font-size: 1.25em;
+  font-weight: normal;
   line-height: normal;
   padding: 0.5em;
   padding-top: 0.4em;
