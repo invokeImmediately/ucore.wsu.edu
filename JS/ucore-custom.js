@@ -19,6 +19,38 @@
 	// §2: FUNCTION DECLARATIONS
 
 
+	function bindContentFocusHandler( $contentContainers, $containers, selectors ) {
+		$contentContainers.on( 'focusin', '*', function() {
+			var $inputs;
+			var $this;
+			var $thisInput;
+			var $thisParent;
+			var inputId;
+			var thisId;
+			var idFound;
+
+			$this = $( this );
+			$thisParent = $this.parents( selectors.content );
+			if ( $thisParent.hasClass( 'for-screen-readers' ) ) {
+				thisId = $thisParent[0].id;
+				$inputs = $containers.find( 'input' );
+				idFound = false;
+				$inputs.each( function() {
+					if ( !idFound ) {
+						$thisInput = $( this );
+						inputId = $thisInput.val();
+						if ( inputId == thisId ) {
+							idFound = true;
+						}
+					}
+				} );
+				if ( idFound ) {
+					$thisInput.prop( 'checked', true).trigger( 'change' );
+				}
+			}
+		} );
+	}
+
 	/**
 	 * Handle content selection changes on the Proposing and Renewing a UCORE course page.
 	 */
@@ -52,12 +84,13 @@
 		proceed = $page.length;
 		if ( proceed ) {
 			$containers = $page.find( selectors.container );
+			$contentContainers = $( selectors.content );
 			$containers.on( 'change', selectors.inputs, function ( e ) {
 				$this = $( this );
-				$contentContainers = $( selectors.content );
 				$contentContainers.addClass( 'for-screen-readers' );
 				handleContentSelectionChange( $this );
 			} );
+			bindContentFocusHandler( $contentContainers, $containers, selectors );
 		}
 	}
 
