@@ -1257,6 +1257,41 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 	// §2: FUNCTION DECLARATIONS
 
 
+	function bindContentFocusHandler( $contentContainers, $containers, selectors ) {
+		$contentContainers.on( 'focusin', '*', function() {
+			var $inputs;
+			var $this;
+			var $thisInput;
+			var $thisParent;
+			var inputId;
+			var thisId;
+			var idFound;
+
+			$this = $( this );
+			$thisParent = $this.parents( selectors.content );
+			if ( $thisParent.hasClass( 'for-screen-readers' ) ) {
+				thisId = $thisParent[0].id;
+				console.log( 'thisId = ' + thisId );
+				$inputs = $containers.find( 'input' );
+				idFound = false;
+				$inputs.each( function() {
+					if ( !idFound ) {
+						$thisInput = $( this );
+						inputId = $thisInput.val();
+						console.log( 'inputId = ' + thisId );
+						if ( inputId == thisId ) {
+							console.log( 'inputId == thisId' );
+							idFound = true;
+						}						
+					}
+				} );
+				if ( idFound ) {
+					$thisInput.prop( 'checked', true).trigger( 'change' );
+				}
+			}
+		} );
+	}
+
 	/**
 	 * Handle content selection changes on the Proposing and Renewing a UCORE course page.
 	 */
@@ -1290,12 +1325,13 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 		proceed = $page.length;
 		if ( proceed ) {
 			$containers = $page.find( selectors.container );
+			$contentContainers = $( selectors.content );
 			$containers.on( 'change', selectors.inputs, function ( e ) {
 				$this = $( this );
-				$contentContainers = $( selectors.content );
 				$contentContainers.addClass( 'for-screen-readers' );
 				handleContentSelectionChange( $this );
 			} );
+			bindContentFocusHandler( $contentContainers, $containers, selectors );
 		}
 	}
 
