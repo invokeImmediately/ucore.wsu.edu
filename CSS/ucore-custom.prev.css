@@ -1,4 +1,4 @@
-﻿@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
+﻿@import  "https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif";
 
 /*! Built with the LESS CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/ucore.wsu.edu] for a repository of fully documented source code. */
 /*! ================================================================================================
@@ -7146,7 +7146,7 @@ header.main-header {
 	border: 0;
 }
 
-.tablepress thead th {
+:not(.dataTables_scroll) .tablepress thead th {
 	padding-right: .5em;
 	padding-left: .5em;
 	background-color: #c4e3f3;
@@ -7194,7 +7194,7 @@ header.main-header {
 	font-weight: 700;
 }
 
-.tablepress tbody td ol,.tablepress tbody td p,.tablepress tbody td ul {
+.tablepress tbody td ol, :not(.dataTables_scroll) .tablepress tbody td p, :not(.dataTables_scroll) .tablepress tbody td ul {
 	font-size: inherit;
 }
 
