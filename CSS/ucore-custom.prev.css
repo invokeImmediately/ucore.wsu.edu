@@ -9998,3 +9998,39 @@ body.page:not(.home) main.spine-blank-template>header.main-header>div.header-gro
 		transform: none;
 	}
 }
+
+/* New print styles added 2019-05-23. */
+@media print {
+	#fund-announcement {
+		display: none;
+	}
+	
+	body.blog .row.side-right .column.one {
+		width: 100% !important;
+	}
+	
+	body.blog .row.side-right .column.two {
+		width: 100% !important;
+	}
+	
+	body.blog .row.side-right p {
+		max-width: none;
+	}
+	
+	body.blog .row.side-right .article-thumbnail {
+		margin-left: 1em;
+	}
+	
+	body.home #wsuwp-main {
+		width: calc(100% - 198px) !important;
+		margin-left: 198px;
+	}
+	
+	body.home #spine {
+		display: block !important;
+	}
+	
+	body.home #spine nav ul ul li {
+		display: block !important;
+	}
+}
