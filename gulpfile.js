@@ -54,8 +54,6 @@ function getJsBuildSettings() {
 			'./WSU-UE---JS/jQuery.qTip.js',
 			'./WSU-UE---JS/jQuery.textResize.js',
 			'./WSU-UE---JS/jQuery.cookieObjs.js',
-			'../imagesloaded/imagesloaded.pkgd.min.js',
-			'../masonry/dist/masonry.pkgd.min.js',
 			'./WSU-UE---JS/jQuery.masonry-custom.js'
 		],
 		commentNeedle: /^(\/\*)(?!!)/g,
