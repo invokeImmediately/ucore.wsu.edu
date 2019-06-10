@@ -8132,3 +8132,10 @@ body.page:not(.home) main.spine-blank-template > header.main-header > div.header
   vertical-align: middle;
   white-space: normal;
 }
+.recent-posts {
+  background-color: #edf3f4;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.33);
+  padding-bottom: 1rem;
+}
