@@ -7,58 +7,76 @@
 *** │   is built using the builder template of the Spine parent theme of WSUWP. Styles are         │
 *** │   designed to accompany or supersede styling associated with the theme.                      │
 *** └──────────────────────────────────────────────────────────────────────────────────────────────┘
-**/
-
-/**  ───────────────────────────────────────────────────────────────────────────────────────────────
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Settings for global Less variables....................................................35
-***  §2: Import of OUE-wide style rules........................................................42
-***  §3: Styling at body & page level..........................................................57
-***  §4: Styling at the section level..........................................................82
-***    >>> §4.1: Headers.......................................................................86
-***       →→→ §4.1.1: Main header..............................................................90
-***       →→→ §4.1.2: Article headers.........................................................104
-***    >>> §4.2: Asides.......................................................................112
-***  §5: Styling at the content grouping level................................................205
-***    >>> §5.1: Lists........................................................................209
-***  §6: Styling at the embedded content level................................................493
-***    >>> §6.1: Tabular data.................................................................497
-***  §7: Styling included via Less mixins.....................................................649
-***  §8: Site-specific semantic CSS styling...................................................660
-***  §9: Page-specific styles.................................................................678
-***    >>> §9.1: Proposing and renewing UCORE courses.........................................682
+***  §1: Build entry point from DAESA's CSS development project................................34
+***  §2: Persistent section header comment for unit specific styling...........................43
+***  §3: Styling at body & page level..........................................................74
+***  §4: Styling at the section level.........................................................100
+***    >>> §4.1: Headers......................................................................104
+***       →→→ §4.1.1: Main header.............................................................108
+***       →→→ §4.1.2: Article headers.........................................................122
+***    >>> §4.2: Asides.......................................................................130
+***  §5: Styling at the content grouping level................................................223
+***    >>> §5.1: Lists........................................................................227
+***  §6: Styling at the embedded content level................................................515
+***    >>> §6.1: Tabular data.................................................................519
+***  §7: Styling included via Less mixins.....................................................671
+***  §8: Site-specific semantic CSS styling...................................................682
+***  §9: Page-specific styles.................................................................700
+***    >>> §9.1: Proposing and renewing UCORE courses.........................................704
+***  §10: Component-based styling.............................................................754
+***  §11: Provost style main header...........................................................766
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
 /**   ----------------------------------------------------------------------------------------------
-***   §1: Settings for global Less variables
+***   §1: Build entry point from DAESA's CSS development project
 **/
 
 @grid-behavior: "hybrid";
 @oue-rules-wrapper: ~"";
+@import "..\WSU-UE---CSS\variables.less";
+@import "..\WSU-UE---CSS\css-build-entry-point.less";
 
-/**   ----------------------------------------------------------------------------------------------
-***   §2: Import of OUE-wide style rules
+/** ================================================================================================
+*** §2: Persistent section header comment for unit specific styling
 **/
 
-@import "..\WSU-UE---CSS\variables.less";
-@import "..\WSU-UE---CSS\wp-master-style-sheet.less";
-
 /*! ================================================================================================
-****STYLE RULES SPECIFIC TO THE UCORE WEBSITE
-****================================================================================================
-****  GIT REPOSITORY: https://github.com/invokeImmediately/ucore.wsu.edu/
-****    (Please see above git repository for fully documented, precompiled source code.)
-****================================================================================================
-***/
+*** UCORE Styling Section
+*** ================================================================================================
+*** SUMMARY: The following section consists of CSS code designed for use on the WSU UCORE website
+***   website that was built from precompiled CSS written in the Less language extension of CSS.
+***
+*** DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
+***   stylesheet was built is developed and maintained on the following GitHub project:
+***   https://github.com/invokeImmediately/ucore.wsu.edu/
+***
+*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+***
+*** LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+***
+***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***   without fee is hereby granted, provided that the above copyright notice and this permission
+***   notice appear in all copies.
+***
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+***   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+***   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+***   PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
+**/
 
 /**   ----------------------------------------------------------------------------------------------
 ***   §3: Styling at body & page level
 **/
 
-body {
-	background: @hex-bright-gray;
+body.home:not(.has-background-image) #jacket, #jacket {
+	background: #e5e5e5 url(https://s3.wp.wsu.edu/uploads/sites/1368/2017/03/bg-jacket-4.jpg) no-repeat right top;
+	background-attachment: fixed;
 }
 
 #jacket {
@@ -67,10 +85,10 @@ body {
 	background-attachment: fixed;
 }
 
-#spine .spine-actions section,
-#spine .spine-actions-tabs .opened,
-#spine .spine-actions-tabs .opened:hover {
-	background-color: #e5e6e8;
+#spine #glue:before {
+	border-right: 1px solid #e5e5e5;
+	background: #fff url(https://s3.wp.wsu.edu/uploads/sites/1368/2017/02/bg-spine.png) no-repeat left bottom;
+	background-attachment: fixed;
 }
 
 main {
@@ -90,11 +108,11 @@ main {
 ***        →→→ §4.1.1: Main header
 **/
 
-header.main-header {
-	&:extend(.has-dflt-font);
-	background: @hex-crimson url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) left top/cover no-repeat scroll;
-	color: @hex-white !important;
-}
+// header.main-header {
+// 	&:extend(.has-dflt-font);
+// 	background: @hex-crimson url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) left top/cover no-repeat scroll;
+// 	color: @hex-white !important;
+// }
 
 .main-header sub:not(.unset), .main-header sup:not(.unset) {
 	color: @hex-white !important;
@@ -217,16 +235,18 @@ header.main-header {
 
 .course-list-wrapper,
  {
-	margin-top: @v-btm-mrgns !important;
-	padding: 2%;
-	border-top: 1px solid @hex-gray;
+	background-color: #e5e6e8;
 	border-left: 1px solid @hex-gray;
 	border-radius: 4px;
-	background-color: #e5e6e8;
+	border-top: 1px solid @hex-gray;
 	& { box-shadow: inset 2px 2px 8px @rgba; .getRgbaStr(@hex-black, 0.5); }
+	margin-top: @v-btm-mrgns !important;
+	padding: 2%;
 }
 
 .course-lists {
+	padding-left: 0 !important;
+
 	& > li {
 		background-color: @hex-white;
 		border-radius: 4px;
@@ -380,17 +400,18 @@ header.main-header {
 
 .learning-goals,
 .graduation-requirements {
+	padding-left: 0 !important;
 	margin-top: @v-btm-mrgns !important;
 	.has-sectionally-responsive-font((@v-p-sz * @v-scl-dwn), @body-text--lHeight);
+
 	& > li {
+		box-shadow:	1px 2px 8px rgba(red(@hex-black), green(@hex-black), blue(@hex-black), 0.1);
 		float: left;
-		min-height: 198px;
-		width: 49%;
-		margin-bottom: 2%;
 		font-size: inherit;
 		list-style-type: none;
-		box-shadow:	0 1px 2px 0 rgba(red(@hex-black), green(@hex-black), blue(@hex-black), 0.22),
-					2px 2px 7px 0 rgba(red(@hex-black), green(@hex-black), blue(@hex-black), 0.1);
+		min-height: 198px;
+		margin-bottom: 2%;
+		width: 49%;
 		@media screen {
 			@media (max-width: @column-floating-threshold) {
 				width: 100%;
@@ -435,6 +456,7 @@ header.main-header {
 		& > ul,
 		& > ol {
 			padding-left: 3rem;
+			padding-right: 1rem;
 		}
 		& > p {
 			& > em {
@@ -651,10 +673,10 @@ header.main-header {
 
 .include-quick-tabs-layout(true);
 .use-linked-columns();
-@pseudo-footer-bg: { background: @hex-white url(/wp-content/uploads/sites/1303/2017/09/site-footer_platinum-background_crimson-tileable_1188x34.jpg) left bottom repeat-x; };
-.use-main-pseudo-footer(@pseudo-footer-bg, 34px);
+// @pseudo-footer-bg: { background: @hex-white url(/wp-content/uploads/sites/1303/2017/09/site-footer_platinum-background_crimson-tileable_1188x34.jpg) left bottom repeat-x; };
+// .use-main-pseudo-footer(@pseudo-footer-bg, 34px);
 .use-sectional-article-headers();
-.use-short-main-header-on-pages();
+// .use-short-main-header-on-pages();
 
 /**   ----------------------------------------------------------------------------------------------
 ***   §8: Site-specific semantic CSS styling
@@ -739,3 +761,66 @@ header.main-header {
 	box-shadow: 0 1px 2px rgba(0,0,0,.33);
 	padding-bottom: 1rem;
 }
+
+/** ================================================================================================
+*** §11: Provost-style main header
+*/
+
+.main-header {
+	background: rgb(130,12,35,1);
+	background: -moz-linear-gradient(left,rgba(130,12,35,1) 0%,rgba(166,15,45,1) 100%);
+	background: -webkit-linear-gradient(left,rgba(130,12,35,1) 0%,rgba(166,15,45,1) 100%);
+	background: linear-gradient(to right,rgba(130,12,35,1) 0%,rgba(166,15,45,1) 100%);
+	color: @hex-white !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#820c23',endColorstr='#a60f2d',GradientType=1);
+	padding: 1rem 0;
+	position: relative;
+
+	.header-group:not(.unset) {
+		font-size: 13px;
+		line-height: 1em;
+		padding: .7em 2rem;
+		position: relative;
+	}
+
+	.sub-header,
+	.sup-header {
+		display: inline-block;
+
+		@media screen and (max-width: @spine-threshold) {
+			display: block;
+		}
+	}
+
+	.sub-header,
+	.sup-header,
+	.sub-header-default,
+	.sup-header-default {
+		font-size: inherit !important;
+	}
+
+	.sub-header-default {
+		border-left: 1px solid #fff;
+		font-weight: 300;
+		margin-left: 1em;
+		padding-left: 1.25em;
+		color: #fff;
+
+		@media screen and (max-width: @spine-threshold) {
+			border-left: 0;
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
+
+	.sub-header-default,
+	.sup-header-default {
+		text-transform: uppercase;
+		width: auto;
+	}
+
+	.sup-header-default {
+		font-weight: bold;
+	}
+}
+
