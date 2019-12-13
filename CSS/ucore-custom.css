@@ -6889,13 +6889,14 @@ main {
 }
 .learning-goals > li,
 .graduation-requirements > li {
+  border: 1px solid #eaeaea;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
   float: left;
-  min-height: 198px;
-  width: 49%;
-  margin-bottom: 2%;
   font-size: inherit;
   list-style-type: none;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22), 2px 2px 7px 0 rgba(0, 0, 0, 0.1);
+  min-height: 198px;
+  margin-bottom: 2%;
+  width: 49%;
 }
 @media screen and (max-width: 693px) {
   .learning-goals > li,
@@ -6958,6 +6959,7 @@ main {
 .learning-goals > li > ol,
 .graduation-requirements > li > ol {
   padding-left: 3rem;
+  padding-right: 1rem;
 }
 .learning-goals > li > p > em,
 .graduation-requirements > li > p > em {
