@@ -2269,6 +2269,7 @@ main>.page>.row:last-child>.column:last-child {
 	border-left: 0;
 	border-right: 0;
 	box-shadow: inset 0 -1px 0 rgba(152,30,50,.25);
+	font-weight: 400;
 	text-decoration: none;
 	transition: color .4s, background .4s, border .1s;
 }
@@ -6118,6 +6119,10 @@ main {
 	margin-top: 2rem;
 }
 
+h1,h2,h3,h4,h5,h6 {
+	text-transform: uppercase;
+}
+
 .course-list-wrapper {
 	background-color: #e5e6e8;
 	border-left: 1px solid #8d959a;
@@ -7256,6 +7261,85 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	font-weight: 700;
 }
 
+.footersection {
+	height: auto;
+	position: relative;
+}
+
+.column .footer {
+	align-items: center;
+	background: #262626;
+	bottom: 0;
+	color: #fff;
+	display: flex;
+	height: auto;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+}
+
+.column .footer a {
+	border-width: 0;
+	color: #fff;
+}
+
+.column .footer a:hover {
+	background-color: transparent;
+	border-bottom-width: 3px;
+	color: #ca1237;
+}
+
+.column .footer ul {
+	color: #b7b7b7;
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0 2em 0 2.6em;
+	width: 100%;
+}
+
+.column .footer ul li {
+	display: inline;
+	font-size: .65em;
+	font-weight: 400;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.column .footer ul li::before {
+	content: "";
+	display: none;
+	list-style-type: none;
+}
+
+.column .footer ul li::after {
+	content: ",";
+	margin: 0;
+	list-style-type: none;
+}
+
+.column .footer ul li:last-child::after {
+	content: "";
+	list-style-type: none;
+}
+
+.globalbar {
+	background: #820c23;
+	background: -moz-linear-gradient(left,#820c23 0,#a60f2d 100%);
+	background: -webkit-linear-gradient(left,#820c23 0,#a60f2d 100%);
+	background: linear-gradient(to right,#820c23 0,#a60f2d 100%);
+	width: 1188px;
+	top: 0;
+	height: 4px;
+	z-index: 99;
+	position: fixed;
+}
+
 /*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
 *   ║ MEDIA QUERIES ####################################################################################################### ║
 *   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -7560,6 +7644,10 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 		margin-left: 0;
 		padding-left: 0;
 	}
+	
+	.globalbar {
+		top: 49px;
+	}
 }
 
 @media all and (max-width:989px) {
@@ -7732,6 +7820,15 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	
 	.row.article-header .column.one .parent-page {
 		font-size: 3.25vw;
+	}
+	
+	.column .footer {
+		position: absolute;
+	}
+	
+	.column .footer ul {
+		white-space: nowrap;
+		overflow-x: auto;
 	}
 }
 
