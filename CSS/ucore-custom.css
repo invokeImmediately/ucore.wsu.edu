@@ -4793,6 +4793,7 @@ div.auto-scroller ul li {
 .on-this-page__menu-item a:hover {
   background-color: #23272a;
   border-color: #ffffff;
+  border-width: 1px;
   text-decoration: underline;
 }
 @media all and (max-width: 791px) {
