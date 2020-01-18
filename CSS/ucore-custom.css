@@ -1625,7 +1625,7 @@ ul li {
   position: relative;
 }
 .column dl.faq dt {
-  background-color: #d7dadb;
+  background-color: #e4e6e7;
   border: 1px solid #afb5b7;
   cursor: pointer;
   font-size: 1em;
@@ -1662,7 +1662,7 @@ ul li {
   border-left: 8px solid transparent;
 }
 .column dl.faq dt.activated {
-  background-color: #d3b0b8;
+  background-color: #e7d4d9;
   color: #3b4042;
   border-color: #b87f8c;
 }
@@ -1683,14 +1683,14 @@ ul li {
   border-left: 8px solid transparent;
 }
 .column dl.faq.blue dt {
-  background-color: #d8ecf3;
+  background-color: #ecf6f9;
   border-color: #9ed0e1;
 }
 .column dl.faq.blue dt:hover {
   background-color: #3f6b72;
 }
 .column dl.faq.blue dt.activated {
-  background-color: #d3b0b8;
+  background-color: #e7d4d9;
   border-color: #b87f8c;
 }
 .column dl.faq.blue dt.activated:hover {
@@ -1725,7 +1725,7 @@ ul li {
   top: 0;
   padding: 5px;
   border: 1px solid #afb5b7;
-  background-color: #d7dadb;
+  background-color: #e4e6e7;
   font-family: 'Roboto Mono', monospace, sans-serif;
   cursor: pointer;
   transform: translateY(-100%) translateY(-5px);
@@ -1780,7 +1780,7 @@ ul li {
 }
 .column dl.faq.blue > .expand-all-button,
 .column dl.faq.blue > .collapse-all-button {
-  background-color: #d8ecf3;
+  background-color: #ecf6f9;
   border-color: #9ed0e1;
 }
 .column dl.faq.blue > .expand-all-button:hover,
