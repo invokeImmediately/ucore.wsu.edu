@@ -44,6 +44,7 @@
 @grid-behavior: "hybrid";
 @oue-rules-wrapper: ~"";
 @import "..\WSU-UE---CSS\variables.less";
+@use-design__daesa-footers: true;
 @import "..\WSU-UE---CSS\css-build-entry-point.less";
 
 /** ================================================================================================
@@ -708,6 +709,27 @@ h6 {
 */ 
 
 .use-linked-columns();
+
+.tiles--governance {
+	.row.has-linked-columns:not(.gutter)& {
+		.column {
+			padding-bottom: ~"calc(23% - @{v-dflt-spcng}) !important";
+
+			@media all {
+				@media (max-width: (@large-mobile-screen-width)) {
+					padding-bottom: ~"calc(40% - @{v-dflt-spcng}) !important";
+				}
+			}
+
+			#binder.max-1386 & {
+				@media all and (min-width: 1205px) {
+					padding-bottom: 0 !important;
+					height: 160px;
+				}
+			}
+		}
+	}
+}
 
 /**   ----------------------------------------------------------------------------------------------
 ***   >>> §7.3: Sectional article headers
