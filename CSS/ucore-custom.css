@@ -4797,6 +4797,7 @@ div.auto-scroller ul li {
 .hero-container {
   background-color: #ca1237;
   background-position: center;
+  position: relative;
 }
 .hero-container:after,
 .hero-container:before {
