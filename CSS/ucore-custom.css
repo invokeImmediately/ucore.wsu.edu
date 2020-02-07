@@ -4618,7 +4618,7 @@ div.auto-scroller ul li {
   padding: 0.5rem 1rem;
   word-spacing: 1px;
 }
-.style-card__title + .style--card__sub-title {
+.style--card__title + .style--card__sub-title {
   margin-top: 0em;
 }
 .page-header {
@@ -4793,6 +4793,36 @@ div.auto-scroller ul li {
   left: -3px;
   height: 0.9rem;
   background: url(https://s3.wp.wsu.edu/uploads/sites/50/2017/10/micon_returnKey_rotated-90-deg-cw_54x64.png) center center / auto 100% no-repeat;
+}
+.hero-container {
+  background-color: #ca1237;
+  background-position: center;
+}
+.hero-container:after,
+.hero-container:before {
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.hero-container:after {
+  background: linear-gradient(to right, #ca1237 0%, rgba(125, 185, 232, 0) 100%);
+}
+.hero-container:before {
+  background: url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-dots.png) top left repeat;
+}
+.hero-container__content {
+  align-items: center;
+  color: white;
+  display: flex;
+  padding: 2rem;
+  position: relative;
+  text-shadow: 1px 2px 2px black;
+  z-index: 3;
 }
 .w--5pct {
   width: 5%;
