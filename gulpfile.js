@@ -39,9 +39,7 @@ function getCssBuildSettings() {
 			'stopAfterFirstMatch': true
 		},
 		minCssFileExtension: '.min.css',
-		minCssFileHeaderStr: '/*! Built with the LESS CSS preprocessor [http://lesscss.org/]. Pleas\
-e see [https://github.com/invokeImmediately/ucore.wsu.edu] for a repository of fully documented sou\
-rce code. */\r\n',
+		minCssFileHeaderStr: '',
 		sourceFile: './CSS/ucore-custom.less'
 	};
 }
