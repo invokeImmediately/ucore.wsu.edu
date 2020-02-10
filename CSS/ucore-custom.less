@@ -83,7 +83,7 @@
 **/
 
 body.home:not(.has-background-image) #jacket, #jacket {
-	background: #e5e5e5 url(https://s3.wp.wsu.edu/uploads/sites/1368/2017/03/bg-jacket-4.jpg) no-repeat right top;
+	background: #e5e5e5 url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-jacket-4.jpg) no-repeat right top;
 	background-attachment: fixed;
 }
 
@@ -95,7 +95,7 @@ body.home:not(.has-background-image) #jacket, #jacket {
 
 #spine #glue:before {
 	border-right: 1px solid #e5e5e5;
-	background: #fff url(https://s3.wp.wsu.edu/uploads/sites/1368/2017/02/bg-spine.png) no-repeat left bottom;
+	background: #fff url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-spine_daesa.png) no-repeat left bottom;
 	background-attachment: fixed;
 
 	@media only screen and (max-width: 1544px) {
@@ -1005,3 +1005,54 @@ h6 {
 };
 
 @ucore-global-top-bar-rs();
+
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §11.4: Navigation tiles
+*/
+
+@ucore-nav-tiles: {
+	.nav-tile-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		list-style-type: none;
+		max-width: none;
+		padding-left: 0;
+	}
+
+	.nav-tile-list__tile {
+		list-style-type: none;
+		margin-bottom: 1rem;
+		margin-left: .5rem;
+		margin-right: .5rem;
+		width: 22%;
+		width: ~"calc(25% - 1rem)";
+
+		@media screen and (max-width: @tablet-screen-width) {
+			width: 47%;
+			width: ~"calc(50% - 1rem)";
+		}
+
+		// Fix for style conflict with spine.min.css
+		.nav-tile-list & {
+			padding: 0;
+		}
+
+		.nav-tile-list--3-col & {
+			width: 30%;
+			width: ~"calc(33% - 1rem)";
+		}
+
+		.nav-tile-list--cougar-head & {
+			background: url(https://s3.wp.wsu.edu/uploads/sites/1303/2020/02/bg-jacket-4_scaled_dark.jpg) center center/100% auto;
+		}
+	}
+
+	.nav-tile-list__tile-content {
+		height: 0;
+		padding: 50% 1rem 50%;
+	}
+};
+
+@ucore-nav-tiles();

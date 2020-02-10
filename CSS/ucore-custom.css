@@ -4578,14 +4578,12 @@ div.auto-scroller ul li {
   list-style-image: none;
 }
 .style--card {
-  background-color: #ffffff;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 2px 0 rgba(0, 0, 0, 0.22);
   border-radius: 4px;
   box-sizing: border-box;
   padding: 1rem;
 }
 .style--card--raised {
-  background-color: #ffffff;
   border: 1px solid #3b4042;
   box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.22);
   border-radius: 4px;
@@ -4593,7 +4591,6 @@ div.auto-scroller ul li {
   padding: 1rem;
 }
 .style--card__title {
-  background-color: #d7dadb;
   color: #2a3033;
   margin-left: -1rem;
   margin-right: -1rem;
@@ -4795,7 +4792,7 @@ div.auto-scroller ul li {
   background: url(https://s3.wp.wsu.edu/uploads/sites/50/2017/10/micon_returnKey_rotated-90-deg-cw_54x64.png) center center / auto 100% no-repeat;
 }
 .hero-container {
-  background-color: #ca1237;
+  background-color: #a60e2d;
   background-position: center;
   position: relative;
 }
@@ -4811,10 +4808,13 @@ div.auto-scroller ul li {
   z-index: 1;
 }
 .hero-container:after {
-  background: linear-gradient(to right, #ca1237 0%, rgba(125, 185, 232, 0) 100%);
+  background: linear-gradient(to right, #a60e2d 0%, rgba(125, 185, 232, 0) 100%);
 }
 .hero-container:before {
   background: url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-dots.png) top left repeat;
+}
+.hero-container--faded:after {
+  background: linear-gradient(to right, rgba(166, 14, 45, 0.5) 0%, rgba(125, 185, 232, 0) 100%);
 }
 .hero-container__content {
   align-items: center;
@@ -4824,6 +4824,35 @@ div.auto-scroller ul li {
   position: relative;
   text-shadow: 1px 2px 2px black;
   z-index: 3;
+}
+.hero-container__content:after,
+.hero-container__content:before {
+  opacity: 0;
+  position: absolute;
+  transition: opacity .4s;
+}
+.hero-container__content:after {
+  content: "»";
+  color: white;
+  font-size: 4rem;
+  left: 100%;
+  line-height: 1em;
+  top: 100%;
+  transform: translate(-100%,-100%) translate(-1rem, -.6rem);
+}
+.hero-container__content:before {
+  background: white;
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.hero-container-link:hover .hero-container__content:before {
+  opacity: 0.25;
+}
+.hero-container-link:hover .hero-container__content:after {
+  opacity: 0.75;
 }
 .w--5pct {
   width: 5%;
@@ -6359,7 +6388,7 @@ div.auto-scroller ul li {
 **/
 body.home:not(.has-background-image) #jacket,
 #jacket {
-  background: #e5e5e5 url(https://s3.wp.wsu.edu/uploads/sites/1368/2017/03/bg-jacket-4.jpg) no-repeat right top;
+  background: #e5e5e5 url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-jacket-4.jpg) no-repeat right top;
   background-attachment: fixed;
 }
 #jacket {
@@ -6369,7 +6398,7 @@ body.home:not(.has-background-image) #jacket,
 }
 #spine #glue:before {
   border-right: 1px solid #e5e5e5;
-  background: #fff url(https://s3.wp.wsu.edu/uploads/sites/1368/2017/02/bg-spine.png) no-repeat left bottom;
+  background: #fff url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-spine_daesa.png) no-repeat left bottom;
   background-attachment: fixed;
 }
 @media only screen and (max-width: 1544px) {
@@ -8336,4 +8365,40 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
   .globalbar {
     top: 49px;
   }
+}
+.nav-tile-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  max-width: none;
+  padding-left: 0;
+}
+.nav-tile-list__tile {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 22%;
+  width: calc(25% - 1rem);
+}
+@media screen and (max-width: 791px) {
+  .nav-tile-list__tile {
+    width: 47%;
+    width: calc(50% - 1rem);
+  }
+}
+.nav-tile-list .nav-tile-list__tile {
+  padding: 0;
+}
+.nav-tile-list--3-col .nav-tile-list__tile {
+  width: 30%;
+  width: calc(33% - 1rem);
+}
+.nav-tile-list--cougar-head .nav-tile-list__tile {
+  background: url(https://s3.wp.wsu.edu/uploads/sites/1303/2020/02/bg-jacket-4_scaled_dark.jpg) center center / 100% auto;
+}
+.nav-tile-list__tile-content {
+  height: 0;
+  padding: 50% 1rem 50%;
 }
