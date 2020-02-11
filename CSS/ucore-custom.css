@@ -3054,6 +3054,9 @@ main > .page > .row:last-child > .column:last-child {
     text-decoration: underline;
   }
 }
+.column strong a {
+  font-weight: bold;
+}
 .column a.pop-out-link {
   transition: color .4s linear, background .4s ease-in, font-size .25s linear;
 }
@@ -4812,9 +4815,6 @@ div.auto-scroller ul li {
 }
 .hero-container:before {
   background: url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-dots.png) top left repeat;
-}
-.hero-container--faded:after {
-  background: linear-gradient(to right, rgba(166, 14, 45, 0.5) 0%, rgba(125, 185, 232, 0) 100%);
 }
 .hero-container__content {
   align-items: center;
