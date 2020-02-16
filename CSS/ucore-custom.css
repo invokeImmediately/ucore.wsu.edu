@@ -8256,6 +8256,105 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.33);
   padding-bottom: 1rem;
 }
+.nav-tile-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  max-width: none;
+  padding-left: 0;
+}
+.nav-tile-list--vertical {
+  flex-direction: column;
+}
+.nav-tile-list__tile {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 22%;
+  width: calc(25% - 1rem);
+}
+@media screen and (max-width: 791px) {
+  .nav-tile-list__tile {
+    width: 47%;
+    width: calc(50% - 1rem);
+  }
+}
+.nav-tile-list .nav-tile-list__tile {
+  padding: 0;
+}
+.nav-tile-list--2-col .nav-tile-list__tile {
+  width: 47%;
+  width: calc(50% - 1rem);
+}
+.nav-tile-list--3-col .nav-tile-list__tile {
+  width: 30%;
+  width: calc(33% - 1rem);
+}
+@media screen and (max-width: 791px) {
+  .nav-tile-list--3-col .nav-tile-list__tile {
+    width: 47%;
+    width: calc(50% - 1rem);
+  }
+}
+.nav-tile-list--5-col .nav-tile-list__tile {
+  width: 18%;
+  width: calc(20% - 1rem);
+}
+@media screen and (max-width: 791px) {
+  .nav-tile-list--5-col .nav-tile-list__tile {
+    width: 47%;
+    width: calc(50% - 1rem);
+  }
+}
+.nav-tile-list--vertical .nav-tile-list__tile {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+@media screen and (max-width: 791px) {
+  .nav-tile-list--vertical .nav-tile-list__tile {
+    width: 100%;
+  }
+}
+.nav-tile-list--cougar-head .nav-tile-list__tile {
+  background: url(https://s3.wp.wsu.edu/uploads/sites/1303/2020/02/bg-jacket-4_scaled_dark.jpg) center center / 100% auto;
+}
+.nav-tile-list__tile-content {
+  height: 0;
+  padding: 50% 1rem 50%;
+}
+.nav-tile-list--shorter .nav-tile-list__tile-content {
+  padding: 33% 1rem 33%;
+}
+.ucore-area-title {
+  display: block;
+  height: 4.62em;
+  position: relative;
+  width: 100%;
+}
+.ucore-area-title__text {
+  bottom: 0;
+  font-size: 1.4em;
+  position: absolute;
+  width: 100%;
+}
+.hero-container--first-year-experience:after {
+  background: linear-gradient(to right, rgba(0, 165, 189, 0.5) 0%, rgba(125, 185, 232, 0) 100%);
+}
+.hero-container--foundational-competencies:after {
+  background: linear-gradient(to right, rgba(255, 184, 28, 0.5) 0%, rgba(125, 185, 232, 0) 100%);
+}
+.hero-container--diversity:after {
+  background: linear-gradient(to right, rgba(246, 134, 31, 0.5) 0%, rgba(125, 185, 232, 0) 100%);
+}
+.hero-container--integrative-learning:after {
+  background: linear-gradient(to right, rgba(173, 164, 0, 0.5) 0%, rgba(125, 185, 232, 0) 100%);
+}
+.hero-container--gray:after {
+  background: linear-gradient(to right, rgba(215, 218, 219, 0.5) 0%, rgba(125, 185, 232, 0) 100%);
+}
 .main-header {
   background: #820c23;
   background: -moz-linear-gradient(left, #820c23 0%, #a60f2d 100%);
@@ -8393,88 +8492,4 @@ section.row.single.quick-tabs > div.column > h3:first-child + h4 + ul + h4 + tab
   .globalbar {
     top: 49px;
   }
-}
-.nav-tile-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style-type: none;
-  max-width: none;
-  padding-left: 0;
-}
-.nav-tile-list--vertical {
-  flex-direction: column;
-}
-.nav-tile-list__tile {
-  list-style-type: none;
-  margin-bottom: 1rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  width: 22%;
-  width: calc(25% - 1rem);
-}
-@media screen and (max-width: 791px) {
-  .nav-tile-list__tile {
-    width: 47%;
-    width: calc(50% - 1rem);
-  }
-}
-.nav-tile-list .nav-tile-list__tile {
-  padding: 0;
-}
-.nav-tile-list--2-col .nav-tile-list__tile {
-  width: 47%;
-  width: calc(50% - 1rem);
-}
-.nav-tile-list--3-col .nav-tile-list__tile {
-  width: 30%;
-  width: calc(33% - 1rem);
-}
-@media screen and (max-width: 791px) {
-  .nav-tile-list--3-col .nav-tile-list__tile {
-    width: 47%;
-    width: calc(50% - 1rem);
-  }
-}
-.nav-tile-list--5-col .nav-tile-list__tile {
-  width: 18%;
-  width: calc(20% - 1rem);
-}
-@media screen and (max-width: 791px) {
-  .nav-tile-list--5-col .nav-tile-list__tile {
-    width: 47%;
-    width: calc(50% - 1rem);
-  }
-}
-.nav-tile-list--vertical .nav-tile-list__tile {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-}
-@media screen and (max-width: 791px) {
-  .nav-tile-list--vertical .nav-tile-list__tile {
-    width: 100%;
-  }
-}
-.nav-tile-list--cougar-head .nav-tile-list__tile {
-  background: url(https://s3.wp.wsu.edu/uploads/sites/1303/2020/02/bg-jacket-4_scaled_dark.jpg) center center / 100% auto;
-}
-.nav-tile-list__tile-content {
-  height: 0;
-  padding: 50% 1rem 50%;
-}
-.nav-tile-list--shorter .nav-tile-list__tile-content {
-  padding: 33% 1rem 33%;
-}
-.ucore-area-title {
-  display: block;
-  height: 4.62em;
-  position: relative;
-  width: 100%;
-}
-.ucore-area-title__text {
-  bottom: 0;
-  font-size: 1.4em;
-  position: absolute;
-  width: 100%;
 }

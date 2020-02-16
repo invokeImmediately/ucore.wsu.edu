@@ -9,32 +9,35 @@
 *** └──────────────────────────────────────────────────────────────────────────────────────────────┘
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Build entry point from DAESA's CSS development project................................41
-***  §2: Persistent section header comment for unit specific styling...........................50
-***  §3: Styling at body & page level..........................................................81
-***  §4: Styling at the section level.........................................................111
-***     §4.1: Headers.........................................................................115
-***        §4.1.1: Main header................................................................119
-***        §4.1.2: Article headers............................................................133
-***     §4.2: Asides..........................................................................141
-***     §4.3: Headings........................................................................234
-***  §5: Styling at the content grouping level................................................247
-***     §5.1: Lists...........................................................................251
-***  §6: Styling at the embedded content level................................................541
-***     §6.1: Tabular data....................................................................545
-***  §7: Styling included via Less mixins.....................................................697
-***     §7.1: Quick tabs......................................................................701
-***     §7.2: Linked columns..................................................................707
-***     §7.3: Sectional article headers.......................................................713
-***  §8: Site-specific semantic CSS styling...................................................723
-***  §9: Page-specific styles.................................................................741
-***     §9.1: Proposing and renewing UCORE courses............................................745
-***  §10: Component-based styling.............................................................795
-***  §11: Provost style site components.......................................................807
-***     §11.1: Main header....................................................................811
-***     §11.2: Main footer....................................................................877
-***     §11.3: Global top bar.................................................................963
-***     §11.3: Navigation tiles...............................................................963
+***  §1: Build entry point from DAESA's CSS development project................................45
+***  §2: Persistent section header comment for unit specific styling...........................55
+***  §3: Styling at body & page level..........................................................86
+***  §4: Styling at the section level.........................................................116
+***     §4.1: Headers.........................................................................120
+***        §4.1.1: Main header................................................................124
+***        §4.1.2: Article headers............................................................138
+***     §4.2: Asides..........................................................................146
+***     §4.3: Headings........................................................................239
+***  §5: Styling at the content grouping level................................................252
+***     §5.1: Lists...........................................................................256
+***  §6: Styling at the embedded content level................................................546
+***     §6.1: Tabular data....................................................................550
+***  §7: Styling included via Less mixins.....................................................702
+***     §7.1: Quick tabs......................................................................706
+***     §7.2: Linked columns..................................................................712
+***     §7.3: Sectional article headers.......................................................739
+***  §8: Site-specific semantic CSS styling...................................................749
+***  §9: Page-specific styles.................................................................767
+***     §9.1: Proposing and renewing UCORE courses............................................771
+***  §10: Component-based styling.............................................................821
+***     §10.1: Recent posts...................................................................825
+***     §10.2: Navigation tiles...............................................................838
+***     §10.3: UCORE area titles..............................................................925
+***     §10.4: Hero container modifiers.......................................................947
+***  §11: Provost style site components.......................................................982
+***     §11.1: Main header....................................................................986
+***     §11.2: Main footer...................................................................1052
+***     §11.3: Global top bar................................................................1138
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -818,6 +821,11 @@ h6 {
 *** §10: Component-based styling
 */
 
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §10.1: Recent posts
+*/
+
+
 .recent-posts {
 	background-color: #edf3f4;
 	border-bottom-left-radius: 10px;
@@ -826,9 +834,159 @@ h6 {
 	padding-bottom: 1rem;
 }
 
-/** ================================================================================================
-*** §11: Provost-style site components
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §10.2: Navigation tiles
 */
+
+@ucore-nav-tiles: {
+	.nav-tile-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		list-style-type: none;
+		max-width: none;
+		padding-left: 0;
+	}
+
+	.nav-tile-list--vertical {
+		flex-direction: column;
+	}
+
+	.nav-tile-list__tile {
+		list-style-type: none;
+		margin-bottom: 1rem;
+		margin-left: .5rem;
+		margin-right: .5rem;
+		width: 22%;
+		width: ~"calc(25% - 1rem)";
+
+		@media screen and (max-width: @tablet-screen-width) {
+			width: 47%;
+			width: ~"calc(50% - 1rem)";
+		}
+
+		// Fix for style conflict with spine.min.css
+		.nav-tile-list & {
+			padding: 0;
+		}
+
+		.nav-tile-list--2-col & {
+			width: 47%;
+			width: ~"calc(50% - 1rem)";
+		}
+
+		.nav-tile-list--3-col & {
+			width: 30%;
+			width: ~"calc(33% - 1rem)";
+
+			@media screen and (max-width: @tablet-screen-width) {
+				width: 47%;
+				width: ~"calc(50% - 1rem)";
+			}
+		}
+
+		.nav-tile-list--5-col & {
+			width: 18%;
+			width: ~"calc(20% - 1rem)";
+
+			@media screen and (max-width: @tablet-screen-width) {
+				width: 47%;
+				width: ~"calc(50% - 1rem)";
+			}
+		}
+
+		.nav-tile-list--vertical & {
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+
+			@media screen and (max-width: @tablet-screen-width) {
+				width: 100%;
+			}
+		}
+
+		.nav-tile-list--cougar-head & {
+			background: url(https://s3.wp.wsu.edu/uploads/sites/1303/2020/02/bg-jacket-4_scaled_dark.jpg) center center/100% auto;
+		}
+	}
+
+	.nav-tile-list__tile-content {
+		height: 0;
+		padding: 50% 1rem 50%;
+
+		.nav-tile-list--shorter & {
+			padding: 33% 1rem 33%;
+		}
+	}
+};
+@ucore-nav-tiles();
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §10.3: UCORE Area Titles
+*/
+
+@ucore-area-titles: {
+	.ucore-area-title {
+		display: block;
+		height: 1.4em * 1.1 * 3;
+		position: relative;
+		width: 100%;
+	}
+
+	.ucore-area-title__text {
+		bottom: 0;
+		.fs--h6;
+		position: absolute;
+		width: 100%;
+	}
+};
+@ucore-area-titles();
+
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §10.4: Hero container modifiers
+*/
+
+@hero-container-mods-rs: {
+	.hero-container {
+		@grad-clr-end: #7db9e8;
+
+		&--first-year-experience {
+			&:after {
+				background: linear-gradient(to right, rgba(0,165,189,.5) 0%, rgba(red(@grad-clr-end),green(@grad-clr-end),blue(@grad-clr-end),0) 100%);
+			}
+		}
+
+		&--foundational-competencies {
+			&:after {
+				background: linear-gradient(to right, rgba(255,184,28,.5) 0%, rgba(red(@grad-clr-end),green(@grad-clr-end),blue(@grad-clr-end),0) 100%);
+			}
+		}
+
+		&--diversity {
+			&:after {
+				background: linear-gradient(to right, rgba(246,134,31,.5) 0%, rgba(red(@grad-clr-end),green(@grad-clr-end),blue(@grad-clr-end),0) 100%);
+			}
+		}
+
+		&--integrative-learning {
+			&:after {
+				background: linear-gradient(to right, rgba(173,164,0,.5) 0%, rgba(red(@grad-clr-end),green(@grad-clr-end),blue(@grad-clr-end),0) 100%);
+			}
+		}
+
+		&--gray {
+			&:after {
+				background: linear-gradient(to right, rgba(215,218,219,.5) 0%, rgba(red(@grad-clr-end),green(@grad-clr-end),blue(@grad-clr-end),0) 100%);
+			}
+		}
+	}
+};
+@hero-container-mods-rs();
+
+/** ================================================================================================
+*** §11: Provost style site components
+**/
 
 /**   ----------------------------------------------------------------------------------------------
 ***   >>> §11.1: Main header
@@ -1005,112 +1163,3 @@ h6 {
 	}
 };
 @ucore-global-top-bar-rs();
-
-
-/**   ----------------------------------------------------------------------------------------------
-***   >>> §11.4: Navigation tiles
-*/
-
-@ucore-nav-tiles: {
-	.nav-tile-list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		list-style-type: none;
-		max-width: none;
-		padding-left: 0;
-	}
-
-	.nav-tile-list--vertical {
-		flex-direction: column;
-	}
-
-	.nav-tile-list__tile {
-		list-style-type: none;
-		margin-bottom: 1rem;
-		margin-left: .5rem;
-		margin-right: .5rem;
-		width: 22%;
-		width: ~"calc(25% - 1rem)";
-
-		@media screen and (max-width: @tablet-screen-width) {
-			width: 47%;
-			width: ~"calc(50% - 1rem)";
-		}
-
-		// Fix for style conflict with spine.min.css
-		.nav-tile-list & {
-			padding: 0;
-		}
-
-		.nav-tile-list--2-col & {
-			width: 47%;
-			width: ~"calc(50% - 1rem)";
-		}
-
-		.nav-tile-list--3-col & {
-			width: 30%;
-			width: ~"calc(33% - 1rem)";
-
-			@media screen and (max-width: @tablet-screen-width) {
-				width: 47%;
-				width: ~"calc(50% - 1rem)";
-			}
-		}
-
-		.nav-tile-list--5-col & {
-			width: 18%;
-			width: ~"calc(20% - 1rem)";
-
-			@media screen and (max-width: @tablet-screen-width) {
-				width: 47%;
-				width: ~"calc(50% - 1rem)";
-			}
-		}
-
-		.nav-tile-list--vertical & {
-			margin-left: 0;
-			margin-right: 0;
-			width: 100%;
-
-			@media screen and (max-width: @tablet-screen-width) {
-				width: 100%;
-			}
-		}
-
-		.nav-tile-list--cougar-head & {
-			background: url(https://s3.wp.wsu.edu/uploads/sites/1303/2020/02/bg-jacket-4_scaled_dark.jpg) center center/100% auto;
-		}
-	}
-
-	.nav-tile-list__tile-content {
-		height: 0;
-		padding: 50% 1rem 50%;
-
-		.nav-tile-list--shorter & {
-			padding: 33% 1rem 33%;
-		}
-	}
-};
-@ucore-nav-tiles();
-
-/**   ----------------------------------------------------------------------------------------------
-***   >>> §11.6: UCORE Area Titles
-*/
-
-@ucore-area-titles: {
-	.ucore-area-title {
-		display: block;
-		height: 1.4em * 1.1 * 3;
-		position: relative;
-		width: 100%;
-	}
-
-	.ucore-area-title__text {
-		bottom: 0;
-		.fs--h6;
-		position: absolute;
-		width: 100%;
-	}
-};
-@ucore-area-titles();
