@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono:400,400i,700,700i&display=swap');
 /*! ================================================================================================
 *** WSU DAESA Styling Section
 *** ================================================================================================
@@ -3144,6 +3144,9 @@ strong.opening-line {
 strong.stands-out {
   font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
   font-size: 1.2em;
+}
+strong:not([class*="fw--"]) {
+  font-weight: 600;
 }
 mark.highlight {
   background-color: transparent;
