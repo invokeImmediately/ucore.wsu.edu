@@ -1,4 +1,4 @@
-﻿@import  'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono:400,400i,700,700i&display=swap';
+﻿@import  'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono:400,400i,700,700i&display=swap';
 
 /*! ================================================================================================
 *** WSU DAESA Styling Section
@@ -2323,6 +2323,10 @@ strong.opening-line {
 strong.stands-out {
 	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
 	font-size: 1.2em;
+}
+
+strong:not([class*=fw--]) {
+	font-weight: 600;
 }
 
 mark.highlight {
@@ -7516,10 +7520,34 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	position: fixed;
 }
 
-/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-*   ║ MEDIA QUERIES ####################################################################################################### ║
-*   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-*/
+/*! ================================================================================================
+*** Media queries section
+*** ================================================================================================
+*** SUMMARY: Media queries built from precompiled CSS written in the Less language extension of
+***   CSS. Queries in this section are a combination of those designed for use on all websites
+***   managed by WSU DAESA and those intended specifically for use on the UCORE website.
+***
+*** DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
+***   stylesheet was built is developed and maintained on the following two GitHub projects:
+***     https://github.com/invokeImmediately/WSU-UE---CSS/
+***     https://github.com/invokeImmediately/ucore.wsu.edu/
+***
+*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+***
+*** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
+***
+***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***   without fee is hereby granted, provided that the above copyright notice and this permission
+***   notice appear in all copies.
+***
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***   OR PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
+**/
 @media all and (min-width:481px) {
 	.interactively-flipped-panels .container .panel-wrapper:hover .panel .front {
 		transition-property: opacity, z-index;
