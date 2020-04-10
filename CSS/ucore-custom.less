@@ -714,26 +714,29 @@ h6 {
 
 .use-linked-columns();
 
-.tiles--governance {
-	.row.has-linked-columns:not(.gutter)& {
-		.column {
-			padding-bottom: ~"calc(23% - @{v-dflt-spcng}) !important";
+@addl-linked-column-rs: {
+	.tiles--governance {
+		.row.has-linked-columns:not(.gutter)& {
+			.column {
+				padding-bottom: ~"calc(23% - @{v-dflt-spcng}) !important";
 
-			@media all {
-				@media (max-width: (@large-mobile-screen-width)) {
-					padding-bottom: ~"calc(40% - @{v-dflt-spcng}) !important";
+				@media all {
+					@media (max-width: (@large-mobile-screen-width)) {
+						padding-bottom: ~"calc(40% - @{v-dflt-spcng}) !important";
+					}
 				}
-			}
 
-			#binder.max-1386 & {
-				@media all and (min-width: 1205px) {
-					padding-bottom: 0 !important;
-					height: 160px;
+				#binder.max-1386 & {
+					@media all and (min-width: 1205px) {
+						padding-bottom: 0 !important;
+						height: 160px;
+					}
 				}
 			}
 		}
 	}
-}
+};
+@addl-linked-column-rs();
 
 /**   ----------------------------------------------------------------------------------------------
 ***   >>> §7.3: Sectional article headers
@@ -741,27 +744,33 @@ h6 {
 
 .use-sectional-article-headers();
 
-.article-header .one > div {
-	.animation(fade-in; 2s; linear; 0s; 1);
-}
+@addl-sctnl-article-header-rs: {
+	.article-header .one > * {
+		.animation(fade-in; 2s; linear; 0s; 1);
+	}
+};
+@addl-sctnl-article-header-rs();
 
 /** ================================================================================================
 *** §8: Site-specific semantic CSS styling
 **/
 
-.wsuwp-content-syndicate-wrapper {
-	.content-item-byline-author {
-	display: none;
-	}
+@addl-content-syndicate-rs: {
+	.wsuwp-content-syndicate-wrapper {
+		.content-item-byline-author {
+		display: none;
+		}
 
-	.content-item-byline-date {
-	display: none;
-	}
+		.content-item-byline-date {
+		display: none;
+		}
 
-	.content-item-read-story {
-	display: none;
+		.content-item-read-story {
+		display: none;
+		}
 	}
-}
+};
+@addl-content-syndicate-rs();
 
 /** ================================================================================================
 *** §9: Page-specific styles
@@ -771,51 +780,54 @@ h6 {
 ***   >>> §9.1: Proposing and renewing UCORE courses
 */ 
 
-.page.proposing-and-renewing-courses {
-	.selected-content {
-		align-items: center;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		margin-bottom: -1em;
-		margin-left: -0.5em;
-		width: 100%;
-	}
+@pg-specific-rs: {
+	.page.proposing-and-renewing-courses {
+		.selected-content {
+			align-items: center;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-bottom: -1em;
+			margin-left: -0.5em;
+			width: 100%;
+		}
 
-	.selected-content__choice {
-		height: 0;
-		opacity: 0;
-		position: absolute;
-		width: 0;
+		.selected-content__choice {
+			height: 0;
+			opacity: 0;
+			position: absolute;
+			width: 0;
 
-		&:checked ~ .selected-content__label {
-			background-color: extract(@colors--crimsons__hex, @colors__darker);
-			color: white;
+			&:checked ~ .selected-content__label {
+				background-color: extract(@colors--crimsons__hex, @colors__darker);
+				color: white;
+			}
+		}
+
+		.selected-content__control {
+			box-sizing: border-box;
+			display: inline-block;
+			margin-bottom: 1em;
+			margin-left: 1em;
+		}
+
+		.selected-content__label {
+			border: 1px solid black;
+			box-sizing: border-box;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 1.25em;
+			font-weight: normal;
+			line-height: normal;
+			padding: .5em;
+			padding-top: .4em;
+			text-align: center;
+			vertical-align: middle;
+			white-space: normal;
 		}
 	}
-
-	.selected-content__control {
-		box-sizing: border-box;
-		display: inline-block;
-		margin-bottom: 1em;
-		margin-left: 1em;
-	}
-
-	.selected-content__label {
-		border: 1px solid black;
-		box-sizing: border-box;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 1.25em;
-		font-weight: normal;
-		line-height: normal;
-		padding: .5em;
-		padding-top: .4em;
-		text-align: center;
-		vertical-align: middle;
-		white-space: normal;
-	}
-}
+};
+@pg-specific-rs();
 
 /** ================================================================================================
 *** §10: Component-based styling
