@@ -1,11 +1,13 @@
 /** ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
 *** │ FILENAME: ucore-custom.less                                                                  │
 *** │                                                                                              │
-*** │ AUTHOR: Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)           │
-*** │                                                                                              │
 *** │ SUMMARY: Style rules for presenting content on the website for the WSU UCORE website, which  │
 *** │   is built using the builder template of the Spine parent theme of WSUWP. Styles are         │
 *** │   designed to accompany or supersede styling associated with the theme.                      │
+*** │                                                                                              │
+*** │ AUTHOR: Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)           │
+*** │                                                                                              │
+*** │ LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck. (See §2 for full license text.)           │
 *** └──────────────────────────────────────────────────────────────────────────────────────────────┘
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
@@ -15,29 +17,27 @@
 ***  §4: Styling at the section level.........................................................116
 ***     §4.1: Headers.........................................................................120
 ***        §4.1.1: Main header................................................................124
-***        §4.1.2: Article headers............................................................138
-***     §4.2: Asides..........................................................................146
-***     §4.3: Headings........................................................................239
-***  §5: Styling at the content grouping level................................................252
-***     §5.1: Lists...........................................................................256
-***  §6: Styling at the embedded content level................................................546
-***     §6.1: Tabular data....................................................................550
-***  §7: Styling included via Less mixins.....................................................702
-***     §7.1: Quick tabs......................................................................706
-***     §7.2: Linked columns..................................................................712
-***     §7.3: Sectional article headers.......................................................739
-***  §8: Site-specific semantic CSS styling...................................................749
-***  §9: Page-specific styles.................................................................767
-***     §9.1: Proposing and renewing UCORE courses............................................771
-***  §10: Component-based styling.............................................................821
-***     §10.1: Recent posts...................................................................825
-***     §10.2: Navigation tiles...............................................................838
-***     §10.3: UCORE area titles..............................................................925
-***     §10.4: Hero container modifiers.......................................................947
-***  §11: Provost style site components.......................................................982
-***     §11.1: Main header....................................................................986
-***     §11.2: Main footer...................................................................1052
-***     §11.3: Global top bar................................................................1138
+***        §4.1.2: Article headers............................................................132
+***     §4.2: Asides..........................................................................140
+***     §4.3: Headings........................................................................233
+***  §5: Styling at the content grouping level................................................246
+***     §5.1: Lists...........................................................................250
+***  §6: Styling included via Less mixins.....................................................540
+***     §6.1: Quick tabs......................................................................544
+***     §6.2: Linked columns..................................................................550
+***     §6.3: Sectional article headers.......................................................580
+***  §7: Site-specific semantic CSS styling...................................................593
+***  §8: Page-specific styles.................................................................614
+***     §8.1: Proposing and renewing UCORE courses............................................618
+***  §9: Component-based styling..............................................................671
+***     §9.1: Recent posts....................................................................675
+***     §9.2: Navigation tiles................................................................688
+***     §9.3: UCORE area titles...............................................................775
+***     §9.4: Hero container modifiers........................................................797
+***  §10: Provost style site components.......................................................838
+***     §10.1: Main header....................................................................842
+***     §10.2: Main footer....................................................................908
+***     §10.3: Global top bar.................................................................994
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -67,16 +67,16 @@
 ***
 *** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
 ***
-*** LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+*** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
 ***
 ***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
 ***   without fee is hereby granted, provided that the above copyright notice and this permission
 ***   notice appear in all copies.
 ***
-***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
-***   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
-***   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
-***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
 ***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 ***   PERFORMANCE OF THIS SOFTWARE.
 *** ================================================================================================
@@ -123,12 +123,6 @@ main {
 /**     ····························································································
 ***      └> §4.1.1: Main header
 **/
-
-// header.main-header {
-// 	&:extend(.has-dflt-font);
-// 	background: @hex-crimson url(/wp-content/uploads/sites/1303/2017/02/site-header_platinum-background_crimson-tileable.jpg) left top/cover no-repeat scroll;
-// 	color: @hex-white !important;
-// }
 
 .main-header sub:not(.unset), .main-header sup:not(.unset) {
 	color: @hex-white !important;
@@ -543,173 +537,17 @@ h6 {
 }
 
 /** ================================================================================================
-*** §6: Styling at the embedded content level
+*** §6: Styling included via Less mixins
 **/
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §6.1: Tabular data
-**/
-
-@dflt-tbl-hdr-clr: #c4e3f3;
-@dflt-tbl-hdr-txt-clr: @hex-black;
-@dflt-tbl-col1-clr: @hex-white;
-@dflt-tbl-col1-alt-clr: @hex-bright-yellow;
-@dflt-tbl-row-clr: @hex-white;
-@dflt-tbl-row-alt-clr: #eef7fb;
-@dflt-tbl-colspan-clr: #d9edf7;
-@dflt-tbl-sub-row-clr: @hex-lightest-yellow;
-//@dflt-hvr-mix-clr: #ffff00;
-@dflt-hvr-mix-clr: @hex-accent-yellow;
-.tablepress {
-	border-collapse: separate;
-	border-spacing: 0;
-	//box-shadow: 2px 2px 7px rgba(0,0,0,0.5);
-	border: 1px solid @hex-lighter-gray;
-	.dataTables_scrollBody & {
-		border-top: 0;
-	}
-	.dataTables_scrollFoot & {
-		border: 0;
-	}
-	width: 100% !important;
-	thead th {
-		padding-right: .5em;
-		padding-left: .5em;
-		background-color: @dflt-tbl-hdr-clr;
-		color: @dflt-tbl-hdr-txt-clr;
-		border-bottom: 1px solid saturate(darken(@dflt-tbl-hdr-clr, 30%), 5%);
-		&:not(:last-child) {
-			border-right: 1px solid darken(@dflt-tbl-hdr-clr, 30%);
-		}
-		&:not(:first-child) {
-			border-top: 1px solid saturate(lighten(@dflt-tbl-hdr-clr, 5%), 5%);
-			border-left: 1px solid lighten(@dflt-tbl-hdr-clr, 5%);
-		}
-		.has-responsive-font((@v-p-sz * 0.88), @body-text--lHeight);
-	}
-	tbody {
-		td {
-			&:not(.no-padding) {
-				padding-right: 0.5em;
-				padding-left: 0.5em;
-			}
-			&.no-padding {
-				padding: 0;
-			}
-			&:not(:last-child) {
-				border-right: 1px solid darken(@dflt-tbl-row-clr, 30%);
-			}
-			&:not(:first-child) {
-				border-left: 1px solid lighten(@dflt-tbl-row-clr, 5%);
-			}
-			&:first-child:not(:last-child) {
-				border-right: 1px solid darken(@dflt-tbl-col1-clr, 30%);
-			}
-			&[colspan]:first-child {
-				font-weight: bold;
-			}
-			.has-responsive-font((@v-p-sz * 0.88), @body-text--lHeight);
-			.transition(~"all 0.3s ease");
-			p,
-			ul,
-			ol {
-				font-size: inherit;
-			}
-		}
-		.odd {
-			td {
-				background-color: @dflt-tbl-row-alt-clr;
-				&:not(:last-child) {
-					border-right: 1px solid darken(@dflt-tbl-row-alt-clr, 30%);
-				}
-				&:not(:first-child) {
-					border-left: 1px solid lighten(@dflt-tbl-row-alt-clr, 5%);
-				}
-				&[colspan]:first-child {
-					background-color: @dflt-tbl-colspan-clr;
-				}
-				//&:first-child {
-				//	background-color: @dflt-tbl-col1-alt-clr;
-				//	border-right: 1px solid darken(@dflt-tbl-col1-alt-clr, 30%);
-				//}
-			}
-			&:not(:first-child) td {
-				border-top: 1px solid saturate(lighten(@dflt-tbl-row-alt-clr, 5%), 5%);
-			}
-			&:not(:last-child) td {
-				border-bottom: 1px solid saturate(darken(@dflt-tbl-row-alt-clr, 30%), 5%);
-			}
-		}
-		.even {
-			td {
-				background-color: @dflt-tbl-row-clr;
-				//&:first-child {
-				//	background-color: @dflt-tbl-col1-clr;
-				//}
-				&[colspan]:first-child {
-					background-color: @dflt-tbl-colspan-clr;
-				}
-			}
-			&:not(:first-child) td {
-				border-top: 1px solid saturate(lighten(@dflt-tbl-row-clr, 5%), 5%);
-			}
-			&:not(:last-child) td {
-				border-bottom: 1px solid saturate(darken(@dflt-tbl-row-clr, 30%), 5%);
-			}
-		}
-	}
-	.row-hover tr {
-		&:hover td {
-			background-color: lighten(mix(@dflt-tbl-row-clr, @dflt-hvr-mix-clr, 87%), 3%);
-			&:first-child {
-				background-color: lighten(mix(@dflt-tbl-col1-clr, @dflt-hvr-mix-clr, 87%), 3%);
-			}
-		}
-		&.odd:hover td {
-			background-color: lighten(mix(@dflt-tbl-row-alt-clr, @dflt-hvr-mix-clr, 87%), 3%);
-			&:first-child {
-				background-color: lighten(mix(@dflt-tbl-col1-alt-clr, @dflt-hvr-mix-clr, 87%), 3%);
-			}			
-		}
-	}
-	.sorting {
-		.transition(~"all 0.3s ease");
-	}
-	&.learning-goals {
-		thead th:first-child,
-		tbody td:first-child {
-			width: 30%;
-			min-width: 255px;
-		}
-	}
-}
-
-.column h2.tablepress-table-name {
-	padding: 8px 0.5em;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	background-color: @hex-lighter-gray;
-	font-size: 1.3em;
-	text-align: center;
-	text-transform: none;
-	& + table.tablepress {
-		border-top: 1px solid saturate(darken(@dflt-tbl-hdr-clr, 30%), 5%);
-	}
-}
-
-/** ================================================================================================
-*** §7: Styling included via Less mixins
-**/
-
-/**   ----------------------------------------------------------------------------------------------
-***   >>> §7.1: Quick tabs
+***   >>> §6.1: Quick tabs
 */ 
 
 .include-quick-tabs-layout(true);
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §7.2: Linked columns
+***   >>> §6.2: Linked columns
 */ 
 
 .use-linked-columns();
@@ -739,7 +577,7 @@ h6 {
 @addl-linked-column-rs();
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §7.3: Sectional article headers
+***   >>> §6.3: Sectional article headers
 */ 
 
 .use-sectional-article-headers();
@@ -752,7 +590,7 @@ h6 {
 @addl-sctnl-article-header-rs();
 
 /** ================================================================================================
-*** §8: Site-specific semantic CSS styling
+*** §7: Site-specific semantic CSS styling
 **/
 
 @addl-content-syndicate-rs: {
@@ -773,11 +611,11 @@ h6 {
 @addl-content-syndicate-rs();
 
 /** ================================================================================================
-*** §9: Page-specific styles
+*** §8: Page-specific styles
 */ 
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §9.1: Proposing and renewing UCORE courses
+***   >>> §8.1: Proposing and renewing UCORE courses
 */ 
 
 @pg-specific-rs: {
@@ -830,11 +668,11 @@ h6 {
 @pg-specific-rs();
 
 /** ================================================================================================
-*** §10: Component-based styling
+*** §9: Component-based styling
 */
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §10.1: Recent posts
+***   >>> §9.1: Recent posts
 */
 
 
@@ -847,7 +685,7 @@ h6 {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §10.2: Navigation tiles
+***   >>> §9.2: Navigation tiles
 */
 
 @ucore-nav-tiles: {
@@ -934,7 +772,7 @@ h6 {
 @ucore-nav-tiles();
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §10.3: UCORE Area Titles
+***   >>> §9.3: UCORE Area Titles
 */
 
 @ucore-area-titles: {
@@ -956,7 +794,7 @@ h6 {
 
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §10.4: Hero container modifiers
+***   >>> §9.4: Hero container modifiers
 */
 
 @hero-container-mods-rs: {
@@ -997,11 +835,11 @@ h6 {
 @hero-container-mods-rs();
 
 /** ================================================================================================
-*** §11: Provost style site components
+*** §10: Provost style site components
 **/
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §11.1: Main header
+***   >>> §10.1: Main header
 */
 
 @ucore-main-header-rs: {
@@ -1067,7 +905,7 @@ h6 {
 @ucore-main-header-rs();
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §11.2: Main footer
+***   >>> §10.2: Main footer
 */
 
 @ucore-main-footer-rs: {
@@ -1153,7 +991,7 @@ h6 {
 @ucore-main-footer-rs();
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §11.3: Global top bar
+***   >>> §10.3: Global top bar
 */
 
 @ucore-global-top-bar-rs: {
