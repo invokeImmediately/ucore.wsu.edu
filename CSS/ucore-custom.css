@@ -3348,31 +3348,16 @@ figure figcaption {
 .column .video-wrapper {
   padding-bottom: 56.25%;
 }
-.tablepress {
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 1px solid #d7dadb;
-  width: 100% !important;
+.tablepress tfoot th,
+.tablepress thead th {
+  font-weight: 600;
 }
-.dataTables_scrollBody .tablepress {
-  border-top: 0;
-}
-.dataTables_scrollFoot .tablepress {
-  border: 0;
+.tablepress thead {
+  border-top: 4px solid #a60f2d;
 }
 .tablepress thead th {
-  padding-right: 0.5em;
-  padding-left: 0.5em;
-  background-color: #c4e3f3;
-  color: #000;
-  border-bottom: 1px solid #3fa8df;
-}
-.tablepress thead th:not(:last-child) {
-  border-right: 1px solid #45a7d9;
-}
-.tablepress thead th:not(:first-child) {
-  border-top: 1px solid #d8edf8;
-  border-left: 1px solid #d9edf7;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #a60f2d;
 }
 @media all {
   .tablepress thead th {
@@ -3408,131 +3393,16 @@ figure figcaption {
   .tablepress thead th {
     font-size: 0.77616em;
   }
-}
-.tablepress tbody td {
-  transition: all 0.3s ease;
-}
-.tablepress tbody td:not(.no-padding) {
-  padding-right: 0.5em;
-  padding-left: 0.5em;
-}
-.tablepress tbody td.no-padding {
-  padding: 0;
-}
-.tablepress tbody td:not(:last-child) {
-  border-right: 1px solid #b3b3b3;
-}
-.tablepress tbody td:not(:first-child) {
-  border-left: 1px solid #ffffff;
-}
-.tablepress tbody td:first-child:not(:last-child) {
-  border-right: 1px solid #b3b3b3;
-}
-.tablepress tbody td[colspan]:first-child {
-  font-weight: bold;
-}
-@media all {
-  .tablepress tbody td {
-    line-height: 1.5em;
-  }
-}
-@media all and (min-width: 1073px) {
-  .tablepress tbody td {
-    font-size: 0.98384em;
-  }
-}
-@media all and (min-width: 990px) and (max-width: 1072px) {
-  .tablepress tbody td {
-    font-size: 0.88em;
-  }
-}
-@media all and (min-width: 694px) and (max-width: 989px) {
-  .tablepress tbody td {
-    font-size: 0.98384em;
-  }
-}
-@media all and (min-width: 481px) and (max-width: 693px) {
-  .tablepress tbody td {
-    font-size: 0.88em;
-  }
-}
-@media all and (min-width: 361px) and (max-width: 480px) {
-  .tablepress tbody td {
-    font-size: 0.82808em;
-  }
-}
-@media all and (max-width: 360px) {
-  .tablepress tbody td {
-    font-size: 0.77616em;
-  }
-}
-.tablepress tbody td p,
-.tablepress tbody td ul,
-.tablepress tbody td ol {
-  font-size: inherit;
-}
-.tablepress tbody .odd td {
-  background-color: #eef7fb;
-}
-.tablepress tbody .odd td:not(:last-child) {
-  border-right: 1px solid #72bdde;
-}
-.tablepress tbody .odd td:not(:first-child) {
-  border-left: 1px solid #ffffff;
-}
-.tablepress tbody .odd td[colspan]:first-child {
-  background-color: #d9edf7;
-}
-.tablepress tbody .odd:not(:first-child) td {
-  border-top: 1px solid #ffffff;
-}
-.tablepress tbody .odd:not(:last-child) td {
-  border-bottom: 1px solid #6ebee2;
-}
-.tablepress tbody .even td {
-  background-color: #fff;
-}
-.tablepress tbody .even td[colspan]:first-child {
-  background-color: #d9edf7;
-}
-.tablepress tbody .even:not(:first-child) td {
-  border-top: 1px solid #ffffff;
-}
-.tablepress tbody .even:not(:last-child) td {
-  border-bottom: 1px solid #b6afaf;
-}
-.tablepress .row-hover tr:hover td {
-  background-color: #fffbf1;
-}
-.tablepress .row-hover tr:hover td:first-child {
-  background-color: #fffbf1;
-}
-.tablepress .row-hover tr.odd:hover td {
-  background-color: #f5f4e9;
-}
-.tablepress .row-hover tr.odd:hover td:first-child {
-  background-color: #fbf1da;
 }
 .tablepress .sorting {
   transition: all 0.3s ease;
 }
-.tablepress.learning-goals thead th:first-child,
-.tablepress.learning-goals tbody td:first-child {
-  width: 30%;
-  min-width: 255px;
+.tablepress .sorting:hover {
+  background-color: #049cdb;
 }
-.column h2.tablepress-table-name {
-  padding: 8px 0.5em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  background-color: #d7dadb;
-  font-size: 1.3em;
-  text-align: center;
-  text-transform: none;
-}
-.column h2.tablepress-table-name + table.tablepress {
-  border-top: 1px solid #3fa8df;
+.tablepress .tablepress .sorting_asc,
+.tablepress .tablepress .sorting_desc {
+  background-color: #049cdb;
 }
 input.read-more-state {
   display: none;
