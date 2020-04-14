@@ -2346,8 +2346,8 @@ ul.cascaded-layout.blank > li.gutter-sizer {
 .column section {
   position: relative;
 }
-.column section + section:not(.no-top-margin) {
-  margin-top: 2rem;
+* + .column section {
+  margin-top: 1em;
 }
 .column .larger-text,
 .column .has-larger-text {
