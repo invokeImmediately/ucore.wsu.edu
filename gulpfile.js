@@ -119,7 +119,7 @@ function getJsBuildSettings() {
 			'./WSU-UE---JS/jQuery.masonry-custom.js'
 		],
 		commentNeedle: /^(\/\*)(?!!)/g,
-		compiledJsFileName: 'ta-build.js',
+		compiledJsFileName: 'ucore-build.js',
 		destFolder: './JS/',
 		minJsFileExtension: '.min.js',
 		replaceCallback: gulpBuilder.fixFileHeaderComments
