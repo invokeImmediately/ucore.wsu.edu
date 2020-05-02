@@ -1,43 +1,62 @@
-/*!************************************************************************************************
- * jQuery.oue-custom.js: custom JS code common to all WSU Undergraduate Education websites        *
+/*!*************************************************************************************************
+ * https://github.com/invokeImmediately/WSU-UE---JS/jQuery.oue-custom.js ↓↓↓
+ * -------------------------------------------------------------------------------------------------
+ * SUMMARY: Custom JS code common to all websites of the WSU Division of Academic Engagement and
+ *   Student Achievement (DAESA) in the Provost's Office.
+ *
+ * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *
+ * LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
+ *
+ *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+ *   without fee is hereby granted, provided that the above copyright notice and this permission
+ *   notice appear in all copies.
+ *
+ *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+ *   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+ *   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+ *   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+ *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ *   PERFORMANCE OF THIS SOFTWARE.
  **************************************************************************************************/
 
-/**************************************************************************************************
- * TABLE OF CONTENTS                                                                              *
- * -----------------                                                                              *
- *   §1: Addition of functions to jQuery......................................................47  *
- *     §1.1: jQuery.isCssClass................................................................50  *
- *     §1.2: jQuery.isJQueryObj...............................................................68  *
- *     §1.3: jQuery.logError..................................................................80  *
- *   §2: OUE website initilization modules...................................................151  *
- *     §2.1: OueDropDownToggle class.........................................................154  *
- *   §3: After dom is ready excution section.................................................358  *
- *   §4: After window loaded event bindings..................................................517  *
- *   §5: Window resize event bindings........................................................563  *
- *   §6: Function declarations...............................................................571  *
- *     §6.1: addA11yTabPressListener.........................................................574  *
- *     §6.2: addBlankTargetAttributes........................................................588  *
- *     §6.3: addDefinitionListButtons........................................................640  *
- *     §6.4: checkForLrgFrmtSingle...........................................................754  *
- *     §6.5: finalizeLrgFrmtSideRight........................................................771  *
- *     §6.6: fixDogears......................................................................791  *
- *     §6.7: handleMouseClickForA11y.........................................................816  *
- *     §6.8: handleTabPressForA11y...........................................................825  *
- *     §6.9: initContentFlippers.............................................................836  *
- *     §6.10: initDefinitionLists............................................................852  *
- *     §6.11: initDropDownToggles............................................................902  *
- *     §6.12: initFancyHrH2Motif.............................................................924  *
- *     §6.13: initFancyHrH3Motif.............................................................933  *
- *     §6.14: initHrH2Motif..................................................................942  *
- *     §6.15: initHrH3Motif..................................................................957  *
- *     §6.16: initQuickTabs..................................................................966  *
- *     §6.17: initReadMoreToggles...........................................................1030  *
- *     §6.18: initTocFloating...............................................................1050  *
- *     §6.19: initTriggeredByHover..........................................................1127  *
- *     §6.20: initWelcomeMessage............................................................1146  *
- *     §6.21: resizeLrgFrmtSideRight........................................................1156  *
- *     §6.22: showDefinitionListButtons.....................................................1164  *
- **************************************************************************************************/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// TABLE OF CONTENTS
+// -----------------
+//   §1: Addition of functions to jQuery......................................................66
+//     §1.1: jQuery.isCssClass................................................................69
+//     §1.2: jQuery.isJQueryObj...............................................................87
+//     §1.3: jQuery.logError..................................................................99
+//   §2: OUE website initilization modules...................................................174
+//     §2.1: OueDropDownToggle class.........................................................177
+//     §2.2: OueEventCalendarFixer class.....................................................423
+//       §2.2.1: Constructor.................................................................434
+//       §2.2.2: Public members..............................................................452
+//       §2.2.3: Lexically scoped supporting functions.......................................502
+//     §2.3: OuePrintThisPage class..........................................................523
+//       §2.3.1: Constructor.................................................................534
+//       §2.3.2: Public members..............................................................550
+//       §2.3.3: Lexically scoped supporting functions.......................................596
+//   §3: DOM-Ready execution sequence........................................................610
+//   §4: Window-loaded event binding.........................................................736
+//   §5: Window-resized event binding........................................................774
+//   §6: Function declarations...............................................................781
+//     §6.1: addDefinitionListButtons........................................................784
+//     §6.2: fixDogears......................................................................900
+//     §6.3: fixEventCalendars...............................................................925
+//     §6.4: initContentFlippers.............................................................934
+//     §6.5: initDefinitionLists.............................................................950
+//     §6.6: initDropDownToggles.............................................................994
+//     §6.7: initFancyHrH2Motif.............................................................1017
+//     §6.8: initFancyHrH3Motif.............................................................1026
+//     §6.9: initPrintThisPageLinks.........................................................1035
+//     §6.10: initQuickTabs.................................................................1044
+//     §6.11: initReadMoreToggles...........................................................1108
+//     §6.12: initTocFloating...............................................................1128
+//     §6.13: initTriggeredByHover..........................................................1205
+//     §6.14: initWelcomeMessage............................................................1224
+//     §6.15: showDefinitionListButtons.....................................................1234
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function ( $, thisFileName ) {
 
@@ -90,59 +109,63 @@ $.isJQueryObj = function ( $obj ) {
 $.logError = function ( fileName, fnctnName, fnctnDesc, errorMsg ) {
 	var thisFuncName = "jQuery.logError";
 	var thisFuncDesc = "Log an error using the browser console in JSON notation.";
-	var bitMask;
-	
-	bitMask = typeof fileName === "string";
+	var bitMask = typeof fileName === "string";
 	bitMask = ( typeof fnctnName === "string" ) | ( bitMask << 1 );
 	bitMask = ( typeof fnctnDesc === "string" ) | ( bitMask << 1 );
 	bitMask = ( typeof errorMsg === "string" || typeof errorMsg === "object" ) | ( bitMask << 1 );
-	if ( bitMask === 15 ) {
+
+	// Output a properly formed error message.
+	if ( bitMask === 15 && typeof errorMsg === "string" ) {
 		console.log( "error = {\n\tfile: '" + fileName + "',\n\tfunctionName: '" + fnctnName +
 			"'\n\tfunctionDesc: '" + fnctnDesc + "'\n\terrorMessage: '" + errorMsg + "'\n\t};" );
-		if (typeof errorMsg === "object") {
-			console.log( errorMsg );
-		}
-	} else {
-		var incorrectTypings;
-		var bitMaskCopy;
-		var newErrorMsg;
-		
-		// Determine how many incorrectly typed arguments were encountered
-		for ( var i=0, incorrectTypings = 0, bitMaskCopy = bitMask; i < 4; i++ ) {
-			incorrectTypings += bitMaskCopy & 1;
-			bitMaskCopy = bitMaskCopy >> 1;
-		}
-		
-		// Construct a new error message
-		if ( incorrectTypings == 1 ) {
-			newErrorMsg = "Unfortunately, a call to jQuery.error was made with an incorrectly typed\
- argument.\n"
-		} else {
-			newErrorMsg = "Unfortunately, a call to jQuery.error was made with incorrectly typed ar\
-guments.\n"
-		}
-		newErrorMsg += "Here are the arguments that were passed to jQuery.logError:\n";
-		newErrorMsg += "\t\tfileName = " + fileName + "\n";
-		if ( !( ( bitMask & 8 ) >> 3 ) ) {
-			newErrorMsg += "\t\ttypeof filename = " + ( typeof fileName ) + "\n";
-			fileName = thisFileName;
-		}
-		newErrorMsg += "\t\tfnctnName = " + fnctnName + "\n";
-		if( !( ( bitMask & 4 ) >> 2 ) ) {
-			newErrorMsg += "\t\ttypeof fnctnName = " + ( typeof fnctnName ) + "\n";
-			fnctnName = thisFuncName;
-		}
-		newErrorMsg += "\t\tfnctnDesc = " + fnctnDesc + "\n";
-		if( !( ( bitMask & 2 ) >> 1 ) ) {
-			newErrorMsg += "\t\ttypeof fnctnDesc = " + ( typeof fnctnDesc ) + "\n";
-			fnctnDesc = thisFuncDesc;
-		}
-		newErrorMsg += "\t\terrorMsg = " + errorMsg + "\n";
-		if( !( bitMask & 1 ) ) {
-			newErrorMsg += "\t\ttypeof errorMsg = " + ( typeof errorMsg ) + "\n";
-		}
-		console.log(newErrorMsg);
+		return;
+	} else if ( bitMask === 15 ) {
+		console.log( "error = {\n\tfile: '" + fileName + "',\n\tfunctionName: '" + fnctnName +
+			"'\n\tfunctionDesc: '" + fnctnDesc + "'\n\terror object: See following.'\n\t};" );
+		console.log( errorMsg );
+		return;
 	}
+
+	// Handle the case where
+	var incorrectTypings;
+	var bitMaskCopy;
+	var newErrorMsg;
+		
+	// Determine how many incorrectly typed arguments were encountered
+	for ( var i=0, incorrectTypings = 0, bitMaskCopy = bitMask; i < 4; i++ ) {
+		incorrectTypings += bitMaskCopy & 1;
+		bitMaskCopy = bitMaskCopy >> 1;
+	}
+		
+	// Construct a new error message
+	if ( incorrectTypings == 1 ) {
+		newErrorMsg = "Unfortunately, a call to jQuery.error was made with an incorrectly typed" +
+			" argument.\n"
+	} else {
+		newErrorMsg = "Unfortunately, a call to jQuery.error was made with incorrectly typed" +
+			" arguments.\n"
+	}
+	newErrorMsg += "Here are the arguments that were passed to jQuery.logError:\n" +
+		"\t\tfileName = " + fileName + "\n";
+	if ( !( ( bitMask & 8 ) >> 3 ) ) {
+		newErrorMsg += "\t\ttypeof filename = " + ( typeof fileName ) + "\n";
+		fileName = thisFileName;
+	}
+	newErrorMsg += "\t\tfnctnName = " + fnctnName + "\n";
+	if( !( ( bitMask & 4 ) >> 2 ) ) {
+		newErrorMsg += "\t\ttypeof fnctnName = " + ( typeof fnctnName ) + "\n";
+		fnctnName = thisFuncName;
+	}
+	newErrorMsg += "\t\tfnctnDesc = " + fnctnDesc + "\n";
+	if( !( ( bitMask & 2 ) >> 1 ) ) {
+		newErrorMsg += "\t\ttypeof fnctnDesc = " + ( typeof fnctnDesc ) + "\n";
+		fnctnDesc = thisFuncDesc;
+	}
+	newErrorMsg += "\t\terrorMsg = " + errorMsg + "\n";
+	if( !( bitMask & 1 ) ) {
+		newErrorMsg += "\t\ttypeof errorMsg = " + ( typeof errorMsg ) + "\n";
+	}
+	console.log(newErrorMsg);
 }
 
 } )( jQuery, 'jQuery.oue-custom.js' );
@@ -162,7 +185,7 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	'use strict';
 
 	/**
-	 * Constructor for EmailConfirmations.
+	 * Constructor for OueDropDownToggles.
 	 *
 	 * @param {object} sels - Collection of selectors to drop down toggles and their components.
 	 * @param {string} sels.toggles - Selector for isolating drop down toggle elements.
@@ -396,8 +419,195 @@ age to later effect permanence.';
 	return OueDropDownToggles;
 } )( jQuery, 'jQuery.oue-custom.js' );
 
+////////
+// §2.2: OueEventCalendarFixer class
+
+/**
+ * Module for fixing event calendar pages on OUE websites.
+ *
+ * @class
+ */
+var OueEventCalendarFixer = ( function( $, thisFileName ) {
+	'use strict';
+
+	////////
+	// §2.2.1: Constructor
+
+	/**
+	 * Constructor for OueEventCalendarFixer.
+	 *
+	 * @param {object} sels - Collection of selectors to event calendar pages and their elements.
+	 * @param {string} sels.singleEventPage - Selector for isolating a tribe events single event
+	 *     viewing page.
+	 * @param {string} sels.sepLocationText - Selector for isolating the text describing the
+	 *     location of an event on a single event page.
+	 * @param {string} sels.sepEventSchedule - Selector for isolating the schedule for an event on a
+	 *     SEP single event page.
+	 */
+	function OueEventCalendarFixer( sels ) {
+		this.sels = sels;
+	}
+
+	////////
+	// §2.2.2: Public members
+
+	/**
+	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
+	 * appropriately constructed.
+	 *
+	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
+	 *     typed and appropriately set arguments.
+	 */
+	OueEventCalendarFixer.prototype.fixSingleEventPage = function () {
+		var $elemWithLocation;
+		var $page;
+
+		if ( this.isValid() ) {
+			$page = $( this.sels.singleEventPage );
+			if ( $page.length === 1 ) {
+				copyLocationIntoEventTitle( $page, this.sels.sepLocationText,
+					this.sels.sepEventSchedule );
+			}
+		}
+	}
+
+	/**
+	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
+	 * appropriately constructed.
+	 *
+	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
+	 *     typed and appropriately set arguments.
+	 */
+	OueEventCalendarFixer.prototype.isValid = function () {
+		var stillValid;
+		var props;
+
+		// Check the integrity of the sels member.
+		stillValid = typeof this.sels === 'object';
+		if ( stillValid ) {
+			props = Object.getOwnPropertyNames( this.sels );
+			stillValid = props.length === 3 && props.find ( function( elem ) {
+				return elem === 'singleEventPage';
+			} ) && props.find ( function( elem ) {
+				return elem === 'sepLocationText';
+			} ) && props.find ( function( elem ) {
+				return elem === 'sepEventSchedule';
+			} );
+		}
+
+		return stillValid;
+	}
+
+	////////
+	// §2.2.3: Lexically scoped supporting functions
+
+	function copyLocationIntoEventTitle( $page, selLocationText, selSchedule ) {
+		var $location;
+		var $schedule;
+		var locationText;
+		var newHtml;
+
+		$location = $page.find( selLocationText );
+		locationText = $location.text();
+		if ( locationText != '' ) {
+			$schedule = $page.find( selSchedule );
+			newHtml = '<span class="tribe-event-location"> / ' + locationText + '</span>';
+			$schedule.append( newHtml );
+		}
+	}
+
+	return OueEventCalendarFixer;
+} )( jQuery, 'jQuery.oue-custom.js' );
+
+////////
+// §2.3: OuePrintThisPage class
+
+/**
+ * Module for fixing event calendar pages on OUE websites.
+ *
+ * @class
+ */
+var OuePrintThisPage = ( function( $, thisFileName ) {
+	'use strict';
+
+	////////
+	// §2.3.1: Constructor
+
+	/**
+	 * Constructor for OueEventCalendarFixer.
+	 *
+	 * @param {object} sels - Collection of selectors to event calendar pages and their elements.
+	 * @param {string} sels.container - Selector for isolating a tribe events single event
+	 *     viewing page.
+	 * @param {string} sels.identifier - Selector by which 'print this page' shortcuts are
+	 *     identified.
+	 */
+	function OuePrintThisPage( sels ) {
+		this.sels = sels;
+	}
+
+	////////
+	// §2.3.2: Public members
+
+	/**
+	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
+	 * appropriately constructed.
+	 *
+	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
+	 *     typed and appropriately set arguments.
+	 */
+	OuePrintThisPage.prototype.initOnThisPageLinks = function () {
+		var $containers;
+
+		if ( this.isValid() ) {
+			$containers = $( this.sels.container );
+			$containers.on( 'click', this.sels.identifier, function() {
+				window.print();
+			} );
+		}
+	}
+
+	/**
+	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
+	 * appropriately constructed.
+	 *
+	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
+	 *     typed and appropriately set arguments.
+	 */
+	OuePrintThisPage.prototype.isValid = function () {
+		var stillValid;
+		var props;
+
+		// Check the integrity of the sels member.
+		stillValid = typeof this.sels === 'object';
+		if ( stillValid ) {
+			props = Object.getOwnPropertyNames( this.sels );
+			stillValid = props.length === 2 && props.find ( function( elem ) {
+				return elem === 'container';
+			} ) && props.find ( function( elem ) {
+				return elem === 'identifier';
+			} );
+		}
+
+		return stillValid;
+	}
+
+	////////
+	// §2.3.3: Lexically scoped supporting functions
+
+	function pageHasLinks( selector ) {
+		var $links;
+
+		$links = $( selector );
+
+		return $links.length > 0;
+	}
+
+	return OuePrintThisPage;
+} )( jQuery, 'jQuery.oue-custom.js' );
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §3: AFTER DOM IS READY excution section
+// §3: DOM-Ready execution sequence
 
 ( function( $, thisFileName ) {
 
@@ -415,33 +625,11 @@ $( function () {
 	args = argsList.fixDogears;
 	fixDogears( args.slctrSiteNav, args.slctrDogeared, args.removedClasses );
 
-	argsList.addBlankTargetAttributes = {
-		slctrSpine: "#spine",
-		slctrExternalLinks: "a.external"
-	};
-	args = argsList.addBlankTargetAttributes;
-	addBlankTargetAttributes( args.slctrSpine, args.slctrExternalLinks );
-
-	argsList.checkForLrgFrmtSingle = {
-		slctrSingle: ".single.large-format-friendly",
-		slctrMainHdr: "header.main-header",
-		slctrHdrGroup: ".header-group",
-		centeringClass: "centered"
-	};
-	args = argsList.checkForLrgFrmtSingle;
-	checkForLrgFrmtSingle( args.slctrSingle, args.slctrMainHdr, args.slctrHdrGroup, 
-		args.centeringClass );
-
-	argsList.initHrH2Motif = {
-		slctrStandardH2: ".column > h2:not(.fancy), .column > section > h2:not(.fancy)",
-		slctrPrevHr: "hr:not(.subSection)",
-		h2ClassesAdded: "no-top-margin",
-		hrClassesAdded: "narrow-bottom-margin dark-gray thicker",
-		animAddDrtn: 250
-	};
-	args = argsList.initHrH2Motif;
-	initHrH2Motif( args.slctrStandardH2, args.slctrPrevHr, args.h2ClassesAdded, 
-		args.hrClassesAdded, args.animAddDrtn );
+	fixEventCalendars( {
+		singleEventPage: 'body.single-tribe_events',
+		sepLocationText: '.tribe-events-meta-group-venue .tribe-venue a',
+		sepEventSchedule: '.tribe-events-schedule h2'
+	} );
 
 	argsList.initFancyHrH2Motif = {
 		slctrFancyH2: ".column > h2.fancy, .column > section > h2.fancy",
@@ -452,15 +640,6 @@ $( function () {
 	args = argsList.initFancyHrH2Motif;
 	initFancyHrH2Motif( args.slctrFancyH2, args.slctrPrevHr, args.hrClassesAdded, 
 		args.animAddDrtn );
-
-	argsList.initHrH3Motif = {
-		slctrStandardH3: ".column > h3:not(.fancy), .column > section > h3:not(.fancy)",
-		slctrPrevHr: "hr:not(.subSection)",
-		hrClassesAdded: "narrow-bottom-margin crimson",
-		animAddDrtn: 250
-	};
-	args = argsList.initHrH3Motif;
-	initHrH3Motif( args.slctrStandardH3, args.slctrPrevHr, args.hrClassesAdded, args.animAddDrtn );
 
 	argsList.initFancyHrH3Motif = {
 		slctrFancyH3: ".column > h3.fancy, .column > section > h3.fancy",
@@ -504,18 +683,14 @@ $( function () {
 
 	argsList.initDefinitionLists = {
 		slctrDefList: "dl.toggled",
-		slctrLrgFrmtSection: ".large-format-friendly",
-		slctrColOne: ".column.one",
-		slctrColTwo: ".column.two",
 		dtActivatingClass: "activated",
 		ddRevealingClass: "revealed",
 		animSldDrtn: 400,
 		animHghtDrtn: 100
 	};
 	args = argsList.initDefinitionLists;
-	initDefinitionLists( args.slctrDefList, args.slctrLrgFrmtSection, args.slctrColOne, 
-		args.slctrColTwo, args.dtActivatingClass, args.ddRevealingClass, args.animSldDrtn, 
-		args.animHghtDrtn );
+	initDefinitionLists( args.slctrDefList, args.dtActivatingClass, args.ddRevealingClass,
+		args.animSldDrtn, args.animHghtDrtn );
 
 	argsList.addDefinitionListButtons = {
 		slctrDefList: argsList.initDefinitionLists.slctrDefList,
@@ -558,22 +733,11 @@ $( function () {
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §4: AFTER WINDOW LOADED event bindings
+// §4: Window-loaded event binding
 
 $( window ).on( "load", function () {
 	var argsList = new Object();
 	var args;
-
-	argsList.finalizeLrgFrmtSideRight = {
-		slctrSideRight: ".side-right.large-format-friendly",
-		slctrColOne: ".column.one",
-		slctrColTwo: ".column.two",
-		trggrWidth: 1051,
-		animDuration: 100
-	};
-	args = argsList.finalizeLrgFrmtSideRight;
-	finalizeLrgFrmtSideRight( args.slctrSideRight, args.slctrColOne, args.slctrColTwo, 
-		args.trggrWidth, args.animDuration );
 
 	argsList.showDefinitionListButtons = {
 		slctrDefList: "dl.toggled",
@@ -585,6 +749,15 @@ $( window ).on( "load", function () {
 	showDefinitionListButtons( args.slctrDefList, args.expandAllClass, args.collapseAllClass,
 		args.animFadeInDrtn );
 
+	argsList.initPrintThisPageLinks = {
+		sels: {
+			container: '.column',
+			identifier: '.link__print-this-page'
+		}
+	};
+	args = argsList.initPrintThisPageLinks;
+	initPrintThisPageLinks( args.sels );
+
 	argsList.initWelcomeMessage = {
 		slctrWlcmMsg: "#welcome-message",
 		slctrPostWlcmMsg: "#post-welcome-message",
@@ -595,93 +768,20 @@ $( window ).on( "load", function () {
 	args = argsList.initWelcomeMessage;
 	initWelcomeMessage( args.slctrWlcmMsg, args.slctrPostWlcmMsg, args.msgDelay, 
 		args.fadeOutDuration, args.fadeInDuration );
-
-	argsList.addA11yTabPressListener = {
-		listenerCallback: handleTabPressForA11y
-	}
-	args = argsList.addA11yTabPressListener;
-	addA11yTabPressListener( args.listenerCallback );
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §5: WINDOW RESIZE event bindings
+// §5: Window-resized event binding
 
 $( window ).resize( function () {
-	resizeLrgFrmtSideRight( ".side-right.large-format-friendly", "div.column.one",
-		"div.column.two", 1051, 100 );
+	// TODO: Add code as needed.
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §6: FUNCTION DECLARATIONS
+// §6: Function declarations
 
 ////////
-// §6.1: addA11yTabPressListener
-
-/**
- * Add an event listener to handle for keyboard navigation implied by tab presses. 
- *
- * Intended to support accessibility design.
- *
- * @param {function} listenerCallback - Function callback triggered on keydown event.
- */
-function addA11yTabPressListener( listenerCallback ) {
-	window.addEventListener( "keydown", listenerCallback );
-}
-
-////////
-// §6.2: addBlankTargetAttributes
-
-/**
- * Adds missing blank target attributes to links within the WSU Spine as needed.
- * 
- * @param {string} slctrSpine - Selector string for locating the spine object within the DOM.
- * @param {string} slctrExternalLinks - Selector string for locating links within the spine that
- *     lead to destination external to the domain.
- */
-function addBlankTargetAttributes( slctrSpine, slctrExternalLinks ) {
-	var thisFnctnName = "addBlankTargetAttributes";
-	var thisFnctnDesc = "Adds missing blank target attributes to links within the WSU Spine as \
-needed.";
-	if ( typeof slctrSpine === "string" && typeof slctrExternalLinks === "string" ) {
-		var $spine = $( slctrSpine );
-		if ( $spine.length === 1 ) {
-			var $links = $spine.find( slctrExternalLinks );
-			$links.each( function () {
-				var $thisLink = $( this );
-				if ( $thisLink.attr( "target" ) != "_blank" ) {
-					$thisLink.attr( "target", "_blank" );
-					var relStr = $thisLink.attr( "rel" );
-					if ( relStr == undefined ) {
-						$thisLink.attr( "rel", "noopener noreferrer" );
-					} else {
-						if ( relStr.search( /noopener/i ) < 0 ) {
-							relStr += " noopener";
-						}
-						if ( relStr.search( /noreferrer/i ) < 0 ) {
-							relStr += " noreferrer";
-						}
-						$thisLink.attr( "rel", relStr );
-					}
-				}
-			} );
-		} else {
-			$.logError( 
-				thisFileName, thisFnctnName, thisFnctnDesc,
-				"I could not locate the WSU Spine element within the DOM."
-			);
-		}
-	} else {
-		$.logError( 
-			thisFileName, thisFnctnName, thisFnctnDesc,
-			"I was passed one or more incorrectly typed parameters. Here's what I was \
-passed:\n\ttypeof slctrSpine = " + ( typeof slctrSpine ) + "\n\ttypeof slctrExternalLinks = " +
-				( typeof slctrExternalLinks )
-		);
-	}
-}
-
-////////
-// §6.3: addDefinitionListButtons
+// §6.1: addDefinitionListButtons
 
 /**
  * Automatically creates and binds events to expand/collapse all buttons designed for improving UX
@@ -700,8 +800,8 @@ passed:\n\ttypeof slctrSpine = " + ( typeof slctrSpine ) + "\n\ttypeof slctrExte
 function addDefinitionListButtons( slctrDefList, expandAllClass, collapseAllClass, 
 		btnDisablingClass, dtActivatingClass, ddRevealingClass, animSldDrtn ) {
 	var thisFuncName = "addDefinitionListButtons";
-	var thisFuncDesc = "Automatically creates and binds events to expand/collapse all buttons \
-designed for improving UX of OUE site definition lists";
+	var thisFuncDesc = "Automatically creates and binds events to expand/collapse all buttons "
+		+ "designed for improving UX of OUE site definition lists";
 	
 	// Find and remove any pre-existing expand/collapse all buttons
 	var $lists = $( slctrDefList );
@@ -711,22 +811,24 @@ designed for improving UX of OUE site definition lists";
 		$existingExpandAlls.remove();
 		$.logError( 
 			thisFileName, thisFuncName, thisFuncDesc,
-			"Expand all buttons were already discovered in the DOM upon document initialization; \
-please remove all buttons from the HTML source code to avoid wasting computational resources."
+			"Expand all buttons were already discovered in the DOM upon document initialization; "
+				+ "please remove all buttons from the HTML source code to avoid wasting "
+				+ "computational resources."
 		);
 	}
 	if ( $existingCollapseAlls.length > 0 ) {
 		$existingCollapseAlls.remove();
 		$.logError( 
 			thisFileName, thisFuncName, thisFuncDesc,
-			"Collapse all buttons were already discovered in the DOM upon document initialization; \
-please remove all buttons from the HTML source code to avoid wasting computational resources."
+			"Collapse all buttons were already discovered in the DOM upon document initialization; "
+				+ "please remove all buttons from the HTML source code to avoid wasting "
+				+ "computational resources."
 		);
 	}
 	
 	// Add initially hidden ( via CSS ) expand/collapse all buttons to definition lists
-	$lists.prepend( '<div class="collapse-all-button">[-] Collapse All</div>' );
-	$lists.prepend( '<div class="expand-all-button">[+] Expand All</div>' );
+	$lists.prepend( '<button type="button" class="collapse-all-button">Collapse All -</button>' );
+	$lists.prepend( '<button type="button" class="expand-all-button">Expand All +</button>' );
 	var slctrExpandAll = slctrDefList + " > ." + expandAllClass;
 	var $expandAlls = $( slctrExpandAll );
 	var slctrCollapseAll = slctrDefList + " > ." + collapseAllClass;
@@ -795,44 +897,7 @@ parental definition list within the DOM."
 }
 
 ////////
-// §6.4: checkForLrgFrmtSingle
-
-function checkForLrgFrmtSingle( slctrSingle, slctrMainHdr, slctrHdrGroup, centeringClass ) {
-	var $lrgFrmtSnglSctns;
-	var $mainHeader;
-	var $mnHdrChldDiv;
-
-	$lrgFrmtSnglSctns = $( slctrSingle );
-	if ( $lrgFrmtSnglSctns.length > 0 ) {
-		$mainHeader = $( slctrMainHdr );
-		$mainHeader.addClass( centeringClass );
-		$mnHdrChldDiv = $mainHeader.find( slctrHdrGroup );
-		$mnHdrChldDiv.addClass( centeringClass );
-	}
-}
-
-////////
-// §6.5: finalizeLrgFrmtSideRight
-
-function finalizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, 
-		animDuration ) {
-	if( $( window ).width() >= trggrWidth ) {
-		$( slctrSideRight + ">" + slctrColTwo ).each( function () {
-			var $this = $( this );
-			var $thisPrev = $this.prev( slctrColOne );
-			if( $this.height() != $thisPrev.height() ) {
-				$this.height( $thisPrev.height() );
-			}
-			var crrntOpacity = $this.css( "opacity" );
-			if ( crrntOpacity == 0 ) {
-				$this.animate( {opacity: 1.0}, animDuration );
-			}
-		} );
-	}
-}
-
-////////
-// §6.6: fixDogears
+// §6.2: fixDogears
 
 function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 	// Fix bug wherein the wrong items in the spine become dogeared
@@ -857,27 +922,16 @@ function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 }
 
 ////////
-// §6.7: handleMouseClickForA11y
+// §6.3: fixEventCalendars
 
-function handleMouseClickForA11y( e ) {
-	$( "body" ).removeClass( "user-is-tabbing" )
-	window.removeEventListener( "mousedown", handleMouseClickForA11y )
-	window.addEventListener( "keydown", handleTabPressForA11y )
+function fixEventCalendars( sels ) {
+	var fixer = new OueEventCalendarFixer( sels );
+
+	fixer.fixSingleEventPage();
 }
 
 ////////
-// §6.8: handleTabPressForA11y
-
-function handleTabPressForA11y( e ) {
-	if ( e.keyCode === 9 ) {
-		$( "body" ).addClass( "user-is-tabbing" )
-		window.removeEventListener( "keydown", handleTabPressForA11y )
-		window.addEventListener( "mousedown", handleMouseClickForA11y )
-	}
-}
-
-////////
-// §6.9: initContentFlippers
+// §6.4: initContentFlippers
 
 function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, animDuration ) {
 	$( slctrCntntFlppr ).click( function () {
@@ -893,10 +947,10 @@ function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, 
 }
 
 ////////
-// §6.10: initDefinitionLists
+// §6.5: initDefinitionLists
 
-function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo,
- dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
+// TODO: Add inline documentation in JSDoc3 format.
+function initDefinitionLists( slctrDefList, dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
 	var $listDts = $( slctrDefList + " dt" );
 	$listDts.attr( "tabindex", 0 );
 	$listDts.click( function() {
@@ -913,9 +967,6 @@ function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, sl
 				maxHeight: 0
 			} );
 		}
-		var $parent = $this.parents( slctrLrgFrmtSection + ">" + slctrColOne );
-		var $prntNxt = $parent.next( slctrColTwo );
-		$prntNxt.delay( 400 ).animate( {height: $parent.css( 'height' )}, animHghtDrtn );
 	} );
 	$listDts.on( "keydown", function( e ) {
 		var regExMask = /Enter| /g; // TODO: Divide and conquer
@@ -934,16 +985,13 @@ function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, sl
 					maxHeight: 0
 				} );
 			}
-			var $parent = $this.parents( slctrLrgFrmtSection + ">" + slctrColOne );
-			var $prntNxt = $parent.next( slctrColTwo );
-			$prntNxt.delay( 400 ).animate( {height: $parent.css( 'height' )}, animHghtDrtn );
 		}
 	} );
 	$( slctrDefList + " dd" ).removeClass( ddRevealingClass );
 }
 
 ////////
-// §6.11: initDropDownToggles
+// §6.6: initDropDownToggles
 
 /**
  * Initialize drop down toggle elements to respond to user interaction.
@@ -966,7 +1014,7 @@ function initDropDownToggles( selToggles, selContainers, selTargets, activatingC
 }
 
 ////////
-// §6.12: initFancyHrH2Motif
+// §6.7: initFancyHrH2Motif
 
 function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH2 ).each( function () {
@@ -975,7 +1023,7 @@ function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddD
 }
 
 ////////
-// §6.13: initFancyHrH3Motif
+// §6.8: initFancyHrH3Motif
 
 function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH3 ).each( function () {
@@ -984,31 +1032,16 @@ function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddD
 }
 
 ////////
-// §6.14: initHrH2Motif
+// §6.9: initPrintThisPageLinks
 
-function initHrH2Motif( slctrStandardH2, slctrPrevHr, h2ClassesAdded, hrClassesAdded,
-		animAddDrtn ) {
-	$( slctrStandardH2 ).each( function () {
-			var $this = $( this );
-			var $prevElem = $this.prev( slctrPrevHr );
-			if ( $prevElem.length > 0 ) {
-				$this.addClass( h2ClassesAdded );
-				$prevElem.addClass( hrClassesAdded, animAddDrtn );
-			}
-	} );
+function initPrintThisPageLinks( sels ) {
+	var printThisPageLinks = new OuePrintThisPage( sels );
+
+	printThisPageLinks.initOnThisPageLinks();
 }
 
 ////////
-// §6.15: initHrH3Motif
-
-function initHrH3Motif( slctrStandardH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
-	$( slctrStandardH3 ).each( function () {
-		$( this ).prev( slctrPrevHr ).addClass( hrClassesAdded, animAddDrtn );
-	} );
-}
-
-////////
-// §6.16: initQuickTabs
+// §6.10: initQuickTabs
 
 // TODO: Convert to a class-based initialization module
 function initQuickTabs( slctrQtSctn ) {
@@ -1072,7 +1105,7 @@ function initQuickTabs( slctrQtSctn ) {
 }
 
 ////////
-// §6.17: initReadMoreToggles
+// §6.11: initReadMoreToggles
 
 function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDuration ) {
 	$( slctrToggleIn ).click( function () {
@@ -1092,7 +1125,7 @@ function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDur
 }
 
 ////////
-// §6.18: initTocFloating
+// §6.12: initTocFloating
 
 function initTocFloating( slctrToc, slctrBackToToc ) {
 	var thisFuncName = "initTocFloating";
@@ -1169,7 +1202,7 @@ contents elements; this function only works with one table of contents.' }" );
 }
 
 ////////
-// §6.19: initTriggeredByHover
+// §6.13: initTriggeredByHover
 
 function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration ) {
 	$( slctrTrggrdOnHvr ).mouseenter( function () {
@@ -1188,7 +1221,7 @@ function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn,
 }
 
 ////////
-// §6.20: initWelcomeMessage
+// §6.14: initWelcomeMessage
 
 function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration, 
 		fadeInDuration ) {
@@ -1198,15 +1231,7 @@ function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDu
 }
 
 ////////
-// §6.21: resizeLrgFrmtSideRight
-
-function resizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth,
-		animDuration ) {
-	finalizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration );
-}
-
-////////
-// §6.22: showDefinitionListButtons
+// §6.15: showDefinitionListButtons
 
 /**
  * Display expand/collapse all buttons, which were initially hidden
@@ -1235,6 +1260,11 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 }
 	
 } )( jQuery, 'jQuery.oue-custom.js' );
+
+/*!
+ * ↑↑↑ jQuery.oue-custom.js
+ * -------------------------------------------------------------------------------------------------
+ */
 
 // See [https://github.com/invokeImmediately/distinguishedscholarships.wsu.edu] for repository of
 // source code
@@ -1567,169 +1597,294 @@ function QTipContent( $qTipSlctr ) {
 }
 
 } )( jQuery );
-/*!*
+/*!
  * jQuery.textResize.js
- * Released under GNU GPLv2
  *
- * Based on FitText.js 1.2 (https://github.com/davatron5000/FitText.js) by Dave Rupert
- *  (http://daverupert.com).
+ * SUMMARY: Automatically scale the font size of an element based on either its own width or the
+ * width of one of its parents.
+ *
+ * DESCRIPTION: Adapted from FitText.js 1.2 (https://github.com/davatron5000/FitText.js) by Dave
+ * Rupert (http://daverupert.com).
+ *
+ * AUTHOR: Daniel Rieck <danielcrieck@gmail.com> (https://github.com/invokeImmediately)
+ *
+ * LICENSE: Released under GNU GPLv2
  */
-(function($){
-    $.fn.textResize = function( scalingFactor, options ) {
-        // Set up default options in case the caller passed no attributes
-        var scalingAmount = scalingFactor || 1,
-            settings = $.extend({
-                "minFontSize" : Number.NEGATIVE_INFINITY,
-                "maxFontSize" : Number.POSITIVE_INFINITY,
-				"againstSelf" : true
-            }, options);
-        return this.each(function () {
-            var $this = $(this);
+( function( $, dfltBasisSlctr, fileName ) {
+	// TODO: Modify with enhancement by adding an option to specify the selector for the basis of
+	// the resizing, such as a parent column.
+	$.fn.textResize = function( scalingFactor, options ) {
+		// Set up default options in case the caller passed no attributes
+		var scalingAmount = scalingFactor || 1,
+			settings = $.extend( {
+				'minFontSize' : Number.NEGATIVE_INFINITY,
+				'maxFontSize' : Number.POSITIVE_INFINITY,
+				'againstSelf' : true,
+				'basisSelector' : dfltBasisSlctr
+			}, options );
+
+		return this.each( function () {
+			var $this = $( this );
 			var $parent = undefined;
-			if (!settings.againstSelf) {
-				$parent = $this.parents(".column").first();
+
+			if ( !settings.againstSelf ) {
+				$parent = $this.parents( settings.basisSelector ).first();
+				if ( !$parent.length ) {
+					settings.againstSelf = true;
+					console.log( 'Error in ' + fileName + ': I was unable to select the basis for t\
+ext resizing from the DOM. Defaulting to resizing the font of the element represented by the follow\
+ing jQuery object against its own width.' );
+					console.log( 'Basis selector: ' + settings.basisSelector );
+					console.log( $this );
+				}
 			}
-          
-            // Resizer() keeps font-size proportional to object width as constrainted by the user
-            var resizer = function () {
-				if(!settings.againstSelf) {
-					$this.css("font-size", Math.max(Math.min($parent.innerWidth() / (scalingAmount*10),
-						parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+
+			// Resizer() keeps font-size proportional to object width as constrainted by the user
+			var resizer = function () {
+				if( !settings.againstSelf ) {
+					$this.css('font-size', Math.max(
+						Math.min(
+							$parent.innerWidth() / ( scalingAmount * 10 ),
+							parseFloat( settings.maxFontSize )
+						),
+						parseFloat( settings.minFontSize ) ) );
 				}
 				else {
-					$this.css("font-size", Math.max(Math.min($this.width() / (scalingAmount*10),
-						parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+					$this.css('font-size', Math.max(
+						Math.min(
+							$this.width() / ( scalingAmount * 10 ),
+							parseFloat( settings.maxFontSize )
+						),
+						parseFloat( settings.minFontSize ) ) );
 				}
-            };
-          
-            // Call once to set the object's font size based on current window size, then call as resize or orientation-change events are triggered.
-            resizer();
-            $(window).on("resize.textresize orientationchange.textresize", resizer);
-        });
-    };
-})(jQuery);
+			};
 
-// Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the following statement if you are going to utilize this plugin on your own site).
-(function($){
-	var clmnWidth = 926; // px - default column width
-	var dfltSpineWidth = 198; // px - default width of spine
-	
-    $(document).ready(function () {
-		initArticleHeaderText();
-		initTextAutoResizers(".auto-fits-text");
-    });
+			// Call once to set the object's font size based on current window size, then call as
+			// resize or orientation-change events are triggered.
+			resizer();
+			$( window ).on( 'resize.textresize orientationchange.textresize' , resizer );
+		} );
+	};
+} )( jQuery, '.column', 'jQuery.textResize.js' );
 
-	function initArticleHeaderText() {
-		//TODO: Refactor to rely on auto
-		var $columns = $(".column");
-        $columns.find(".article-header .header-content h1").each(function () {
-            $(this).textResize(1.277142857142857, {"minFontSize" : "34.8"});
-        });
-        $columns.find(".article-header .header-content h2").each(function () {
-            $(this).textResize(1.847840465639262, {"minFontSize" : "24.0"});
-        });
-        $columns.find(".article-header .header-content h3").each(function () {
-            $(this).textResize(4.110097222222222, {"minFontSize" : "10.7"});
-        });
-	}
-	
-	function initTextAutoResizers(cssClass) {
-		var $textAutoResizers = new TextAutoResizers(cssClass, dfltSpineWidth);
-		$textAutoResizers.initTextAutoResizing();
-	}
-	
-	function TextAutoResizers(cssClass, spineWidth) {	
-		var $resizers = $(cssClass);
+var TextAutoResizers = ( function( $ ) {
+
+	// TODO: Refactor class design for improved efficiency, lower overhead
+	function TextAutoResizers( cssClass, spineWidth, dfltBasisSlctr ) {	
+		var $resizers = $( cssClass );
 		
 		this.initTextAutoResizing = function () {
-			$resizers.each(function() {
-				var textAutoResizer = new TextAutoResizingElem($(this), spineWidth);
-			});
+			if ( $.isJQueryObj( $resizers ) && $resizers.length > 0 ) {
+				$resizers.each( function() {
+					var textAutoResizer = new TextAutoResizingElem( $( this ), spineWidth );
+				} );				
+			}
 		}		
 		
-		function TextAutoResizingElem($jqObj, spineWidth) {
+		function TextAutoResizingElem( $jqObj, spineWidth ) {
 			var $this = $jqObj;
+
 			initTextAutoResizing();
 			
 			function initTextAutoResizing() {
-				if ($.isJQueryObj($this)) {
-					var fontSz = parseFloat($this.css("font-size"));
-					var scalingAmt = calculateScalingAmount(fontSz);
-					if ($this.hasClass("has-max-size")) {
-						$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "maxFontSize" : fontSz, "againstSelf" : 0});
+				if ( $.isJQueryObj( $this ) ) {
+					var basisSlctr;
+					var cssData;
+					var fontSz;
+					var minFontSz;
+					var minFontSzNeedle = new RegExp( '^[0-9]+|[0-9]+pt[0-9]$' );
+					var resizeOptions;
+					var scalingAmt;
+
+					resizeOptions = {
+						minFontSize: '14',
+						againstSelf: false,
+						basisSelector: dfltBasisSlctr
+					};
+					fontSz = parseFloat( $this.css( 'font-size' ) );
+					if ( $this.hasClass( 'has-max-size' ) )  {
+						resizeOptions.maxFontSize = fontSz;
+					}
+					if ( $this.hasClass( 'resize-against-self' ) ) {
+						resizeOptions.againstSelf = true;
+					}
+					cssData = new CssData( $this );
+					minFontSz = cssData.getData('min-fs');
+					if ( typeof minFontSz === 'string' && minFontSz !== '' &&
+							minFontSzNeedle.exec( minFontSz ) ) {
+					 	resizeOptions.minFontSize = minFontSz.replace( 'pt', '.' );
+					}
+					basisSlctr = cssData.getData('resize-against')
+					if ( typeof basisSlctr === 'string' && basisSlctr !== '' ) {
+						basisSlctr = '.' + basisSlctr;
+						resizeOptions.basisSelector = basisSlctr;
 					} else {
-						$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0});
-					}					
+						basisSlctr = dfltBasisSlctr;
+					}
+					scalingAmt = calculateScalingAmount( fontSz, basisSlctr );
+					$this.textResize( scalingAmt, resizeOptions );
 				}
 			}
 			
-			function calculateScalingAmount(fontSz) {
-				var maxColumnWidth = findMaxColumnWidth();
-				return maxColumnWidth / (fontSz * 10);
+			function calculateScalingAmount( fontSz, basisSlctr ) {
+				var maxColumnWidth = findMaxColumnWidth( basisSlctr );
+
+				return maxColumnWidth / ( fontSz * 10 );
 			}
 			
-			function findMaxColumnWidth() {
-				var $parentCol = $this.parents(".column").first();
-				var maxColWidth = findMaxColWidth($parentCol);
+			function findMaxColumnWidth( basisSlctr ) {
+				var $parentCol = $this.parents( basisSlctr ).first();
+				if ( $parentCol.length === 0 ) {
+					$parentCol = $this.parents( dfltBasisSlctr ).first();
+				}
+				var maxColWidth = findMaxColWidth( $parentCol );
+
 				return maxColWidth;
 			}
 			
-			function findMaxColWidth($parentCol) {
-				var maxRowWidth = 990; // Sets the default max row width.
-				var maxWidthCss = $parentCol.css("max-width"); // In case the max width was explicitly set for the parental column...
-				if (maxWidthCss != "none") {
-					maxRowWidth = parseFloat(maxWidthCss);
+			function findMaxColWidth( $parentCol ) {
+				var maxRowWidth;
+				var maxWidthCss;
+
+				// Set the default max row width to the lowest possible amount based on the
+				// WordPress theme. It will be overwitten below if appropriate.
+				maxRowWidth = 990;
+
+				// Use the max width for parental column if it was explicitly set
+				maxWidthCss = $parentCol.css( 'max-width' );
+				if ( maxWidthCss != 'none' ) {
+					maxRowWidth = parseFloat( maxWidthCss );
 				} else {
-					maxRowWidth = findMaxRowWidthFromBinder(maxRowWidth); // In case the max width was implicitly set...
+					// Calculate maximum column width if it can be implied from a maximum row width
+					maxRowWidth = findMaxRowWidthFromBinder( maxRowWidth );
 				}
-				return divideUpMaxRowWidth(maxRowWidth, $parentCol); // Return the max column width by dividing up the max row width as needed.
+
+				// Return the max column width by dividing up the max row width as needed
+				return divideUpMaxRowWidth( maxRowWidth, $parentCol );
 			}
 			
-			function findMaxRowWidthFromBinder(dfltMaxRowWidth) {
+			function findMaxRowWidthFromBinder( dfltMaxRowWidth ) {
 				var maxRowWidth = dfltMaxRowWidth;
 				var maxCssWidth = findBindersMaxWidthCss();
-				if (maxCssWidth != "none") {
-					maxRowWidth = parseFloat(maxCssWidth) - spineWidth; // The binder's max width includes the spine's fixed width, so subtract it off to achieve actual max width of row.
+
+				if ( maxCssWidth != 'none' ) {
+					// The binder's max width includes the spine's fixed width, so subtract it off
+					// to achieve actual max width of row
+					maxRowWidth = parseFloat( maxCssWidth ) - spineWidth;
 				}
-				return maxRowWidth; // i.e., returns the max width in numerical form.
+
+				// Return the max width in numerical form
+				return maxRowWidth;
 			}
 			
 			function findBindersMaxWidthCss() {
-				var maxWidthCss = "none";
-				var $binder = $("#binder");
+				var maxWidthCss = 'none';
+				var $binder = $( '#binder' );
+
 				if ($binder.length == 1) {
-					if ($binder.hasClass("max-1188")) {
-						maxWidthCss = "1188";
-					} else if ($binder.hasClass("max-1386")) {
-						maxWidthCss = "1386";						
-					} else if ($binder.hasClass("max-1584")) {
-						maxWidthCss = "1584";						
-					} else if ($binder.hasClass("max-1782")) {
-						maxWidthCss = "1782";						
-					} else if ($binder.hasClass("max-1980")) {
-						maxWidthCss = "1980";						
+					if ( $binder.hasClass( 'max-1188' ) ) {
+						maxWidthCss = '1188';
+					} else if ( $binder.hasClass( 'max-1386' ) ) {
+						maxWidthCss = '1386';
+					} else if ( $binder.hasClass( 'max-1584' ) ) {
+						maxWidthCss = '1584';
+					} else if ( $binder.hasClass( 'max-1782' ) ) {
+						maxWidthCss = '1782';
+					} else if ( $binder.hasClass( 'max-1980' ) ) {
+						maxWidthCss = '1980';
 					}
 				}
-				return maxWidthCss; // i.e., returns a string containing the parental binder's max width as specified in CSS
+
+				// Return a string containing the parental binder's max width as specified in CSS
+				return maxWidthCss;
 			}
 			
-			function divideUpMaxRowWidth(maxRowWidth, $parentCol) {
+			function divideUpMaxRowWidth( maxRowWidth, $parentCol ) {
 				var maxColWidth = maxRowWidth;
-				var $parentRow = ($.isJQueryObj($parentCol)) ? $parentCol.parent(".row") : undefined;
-				if ($parentCol.css("max-width") == "none" && $.isJQueryObj($parentRow)) {
-					if ($parentRow.hasClass("halves")) {
+				var $parentRow = ( $.isJQueryObj( $parentCol ) ) ?
+					$parentCol.parent( '.row' ) :
+					undefined;
+
+				if ( $parentCol.css( 'max-width' ) == 'none' && $.isJQueryObj( $parentRow ) ) {
+					if ( $parentRow.hasClass( 'halves' ) ) {
 						maxColWidth /= 2;
-					} else if ($parentRow.hasClass("thirds")) {
+					} else if ($parentRow.hasClass( 'thirds' ) ) {
 						maxColWidth /= 3;
-					} else if ($parentRow.hasClass("quarters")) {
+					} else if ($parentRow.hasClass( 'quarters' ) ) {
 						maxColWidth /= 4;
 					}
 				}
+
 				return maxColWidth;
 			}
 		}
 	}
-})(jQuery);
+
+	return TextAutoResizers;
+} )( jQuery );
+
+// Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the
+// following statement if you are going to utilize this plugin on your own site).
+// TODO: Pass in default maximum column, spine widths
+( function( $, themeMinColumnWidth, themeSpineWidth, resizersClass, dfltBasisSlctr, fileName ) {
+
+try {
+	var clmnWidth;
+	var dfltSpineWidth; // px - default width of spine
+
+	if ( typeof themeMinColumnWidth !== 'number' || typeof themeSpineWidth !== 'number' ||
+			typeof resizersClass !== 'string' ) {
+		throw 'I was not set up with properly typed initialization parameters and am unable to proc\
+eed.';
+	}
+
+	// Set the default column width in pixels (passed in based on the theme)
+	clmnWidth = themeMinColumnWidth;
+
+	// Set the default width of the Spine in pixels (passed in based on the theme)
+	dfltSpineWidth = themeSpineWidth;
+
+	$( function () {
+		initArticleHeaderText( resizersClass );
+		initTextAutoResizers( '.' + resizersClass );
+	} );
+
+	function initArticleHeaderText( resizersClass ) {
+		//TODO: Refactor to prefer relying on functionality mediated by auto-fits-text class
+		var $columns = $( '.column' );
+		var $this;
+
+		$columns.find( '.article-header .header-content h1' ).each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 1.277142857142857, {'minFontSize' : '34.8' } );
+			}
+		} );
+		$columns.find( '.article-header .header-content h2').each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 1.847840465639262, { 'minFontSize' : '28' } );
+			}
+		} );
+		$columns.find( '.article-header .header-content h3').each( function () {
+			$this = $( this );
+			if ( !$this.hasClass( resizersClass ) ) {
+				$this.textResize( 4.110097222222222, {'minFontSize' : '16' } );
+			}
+		} );
+	}
+
+	function initTextAutoResizers( cssClass ) {
+		var $textAutoResizers = new TextAutoResizers( cssClass, dfltSpineWidth, dfltBasisSlctr );
+
+		$textAutoResizers.initTextAutoResizing();
+	}
+} catch ( errMsg ) {
+	console.log( 'Error in ' + fileName + ':' );
+	console.log( errMsg );
+}
+
+} )( jQuery, 990, 198, 'auto-fits-text', '.column', 'jQuery.textResize.js' );
 
 /*! jQuery Cookie Plugin v1.4.1
  * --> https://github.com/carhartl/jquery-cookie
