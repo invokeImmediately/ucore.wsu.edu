@@ -26,8 +26,8 @@
 ***   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
 ***   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
 ***   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
-***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
-***   OR PERFORMANCE OF THIS SOFTWARE.
+***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+***   PERFORMANCE OF THIS SOFTWARE.
 *** ================================================================================================
 **/
 .ff--sans,.has-dflt-font,body {
@@ -1641,8 +1641,8 @@ ul.cascaded-layout.blank>li.gutter-sizer {
 	position: relative;
 }
 
-.column section+section:not(.no-top-margin) {
-	margin-top: 2rem;
+*+.column section {
+	margin-top: 1em;
 }
 
 .column .has-larger-text,.column .larger-text {
@@ -2485,191 +2485,29 @@ figure figcaption {
 	padding-bottom: 56.25%;
 }
 
-.column table.plain {
-	background: #fff url(/wp-content/uploads/sites/906/2015/08/bg-dark.jpg) repeat fixed left top;
-	border-collapse: separate;
-	border-spacing: 0;
-	border-top: 1px solid #5e5e5e;
-	border-bottom: 1px solid #5e5e5e;
+.tablepress tfoot th,.tablepress thead th {
+	font-weight: 600;
 }
 
-.column table.plain thead tr th {
-	padding-top: .25rem;
-	padding-left: .25rem;
-	padding-bottom: .25rem;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #b6bcbf;
-	text-align: inherit;
+.tablepress thead {
+	border-top: 4px solid #a60f2d;
 }
 
-.column table.plain tbody tr td {
-	padding-top: .25rem;
-	padding-left: .25rem;
-	padding-bottom: .25rem;
-	background-color: #eff0f1;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #b5babe;
-	text-align: inherit;
-	vertical-align: top;
+.tablepress thead th {
+	background-color: #f3f3f3;
+	border-bottom: 1px solid #a60f2d;
 }
 
-.column table.plain tbody tr:nth-of-type(2n) td {
-	padding-top: .25rem;
-	padding-left: .25rem;
-	padding-bottom: .25rem;
-	background-color: #fff;
-	border-top: 1px solid #eff0f1;
-	border-bottom: 1px solid #d7dadb;
-	text-align: inherit;
-	vertical-align: top;
+.tablepress .sorting {
+	transition: all .3s ease;
 }
 
-.column table.peopleList {
-	background: #fff;
-	border-collapse: separate;
-	border-spacing: 0;
-	border-top: 1px solid #e5e5e5;
-	width: 100%;
+.tablepress .sorting:hover {
+	background-color: #049cdb;
 }
 
-.column table.peopleList tbody td {
-	border-bottom: 1px solid #e5e5e5;
-	padding-bottom: 3pt;
-	padding-top: 3pt;
-	vertical-align: top;
-	width: 80%;
-}
-
-.column table.peopleList tbody td:first-of-type {
-	text-align: center;
-	width: 20%;
-}
-
-.column table.peopleList tbody td:not(:first-of-type) {
-	padding-top: .5em;
-}
-
-.column table.wsu-blue-theme {
-	width: 100%;
-	border-collapse: separate;
-	border-spacing: 0;
-	border-top: 1px solid #3f6b72;
-}
-
-.column table.wsu-blue-theme:not(.no-bottom-border) {
-	border-bottom: 1px solid #3f6b72;
-}
-
-.column table.wsu-blue-theme>thead>tr>th {
-	background-color: #2f5055;
-	color: #fff;
-	padding: 3px;
-	vertical-align: bottom;
-}
-
-.column table.wsu-blue-theme>thead>tr.supra-header-row>th {
-	padding-top: .6em;
-	padding-right: .5em;
-	padding-bottom: .4em;
-	padding-left: 1.5em;
-	background-color: #203639;
-	vertical-align: bottom;
-	text-indent: -1em;
-	font-variant: small-caps;
-	font-weight: 700;
-	color: #fff;
-	font-size: 1.4em;
-}
-
-.column table.wsu-blue-theme:not(.has-row-spans)>tbody>tr:nth-child(2n)>td {
-	background-color: #fff;
-	line-height: normal;
-	padding-bottom: .5em;
-	padding-left: 1.5em;
-	padding-right: .5em;
-	padding-top: 3px;
-	text-indent: -1em;
-	vertical-align: top;
-}
-
-.column table.wsu-blue-theme:not(.has-row-spans)>tbody>tr:nth-child(2n+1)>td {
-	background-color: #d3e1e3;
-	line-height: normal;
-	padding-bottom: .5em;
-	padding-left: 1.5em;
-	padding-right: .5em;
-	padding-top: 3px;
-	text-indent: -1em;
-	vertical-align: top;
-}
-
-.column table.wsu-blue-theme.has-row-spans>tbody:nth-child(2n)>tr>td {
-	background-color: #fff;
-	line-height: normal;
-	padding-bottom: .5em;
-	padding-left: 1.5em;
-	padding-right: .5em;
-	padding-top: 3px;
-	text-indent: -1em;
-	vertical-align: top;
-}
-
-.column table.wsu-blue-theme.has-row-spans>tbody:nth-child(2n)>tr.alt>td {
-	background-color: #f2f2f2;
-}
-
-.column table.wsu-blue-theme.has-row-spans>tbody:nth-child(2n+1)>tr>td {
-	background-color: #d3e1e3;
-	line-height: normal;
-	padding-bottom: .5em;
-	padding-left: 1.5em;
-	padding-right: .5em;
-	padding-top: 3px;
-	text-indent: -1em;
-	vertical-align: top;
-}
-
-.column table.wsu-blue-theme.has-row-spans>tbody:nth-child(2n+1)>tr.alt>td {
-	background-color: #c3d6d9;
-}
-
-.column table.wsu-gray-theme {
-	border-bottom: 1px solid #3b4042;
-	border-collapse: separate;
-	border-spacing: 0;
-	border-top: 1px solid #3b4042;
-	vertical-align: top;
-	width: 100%;
-}
-
-.column table.wsu-gray-theme>thead>tr>th {
-	background-color: #5e5e5e;
-	color: #fff;
-	padding: 3px;
-	vertical-align: top;
-}
-
-.column table.wsu-gray-theme>thead>tr.sub-heading-row>th {
-	background-color: #000;
-	color: #fff;
-	font-weight: 700;
-	padding: 3px;
-	text-indent: -1em;
-	vertical-align: bottom;
-}
-
-.column table.wsu-gray-theme>tbody>tr:nth-child(2n)>td {
-	background-color: #fff;
-	line-height: normal;
-	padding: 3px;
-	vertical-align: top;
-}
-
-.column table.wsu-gray-theme>tbody>tr:nth-child(2n+1)>td {
-	background-color: #d7dadb;
-	line-height: normal;
-	padding: 3px;
-	vertical-align: top;
+.tablepress .tablepress .sorting_asc,.tablepress .tablepress .sorting_desc {
+	background-color: #049cdb;
 }
 
 input.read-more-state {
@@ -6093,16 +5931,16 @@ div.auto-scroller ul li {
 ***
 *** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
 ***
-*** LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+*** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
 ***
 ***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
 ***   without fee is hereby granted, provided that the above copyright notice and this permission
 ***   notice appear in all copies.
 ***
-***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
-***   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
-***   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
-***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
 ***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 ***   PERFORMANCE OF THIS SOFTWARE.
 *** ================================================================================================
@@ -6494,151 +6332,6 @@ h1,h2,h3,h4,h5,h6 {
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: .5em;
-}
-
-.tablepress {
-	border-collapse: separate;
-	border-spacing: 0;
-	border: 1px solid #d7dadb;
-	width: 100% !important;
-}
-
-.dataTables_scrollBody .tablepress {
-	border-top: 0;
-}
-
-.dataTables_scrollFoot .tablepress {
-	border: 0;
-}
-
-.tablepress thead th {
-	padding-right: .5em;
-	padding-left: .5em;
-	background-color: #c4e3f3;
-	color: #000;
-	border-bottom: 1px solid #3fa8df;
-}
-
-.tablepress thead th:not(:last-child) {
-	border-right: 1px solid #45a7d9;
-}
-
-.tablepress thead th:not(:first-child) {
-	border-top: 1px solid #d8edf8;
-	border-left: 1px solid #d9edf7;
-}
-
-.tablepress tbody td {
-	transition: all .3s ease;
-}
-
-.tablepress tbody td:not(.no-padding) {
-	padding-right: .5em;
-	padding-left: .5em;
-}
-
-.tablepress tbody td.no-padding {
-	padding: 0;
-}
-
-.tablepress tbody td:not(:last-child) {
-	border-right: 1px solid #b3b3b3;
-}
-
-.tablepress tbody td:not(:first-child) {
-	border-left: 1px solid #fff;
-}
-
-.tablepress tbody td:first-child:not(:last-child) {
-	border-right: 1px solid #b3b3b3;
-}
-
-.tablepress tbody td[colspan]:first-child {
-	font-weight: 700;
-}
-
-.tablepress tbody td ol,.tablepress tbody td p,.tablepress tbody td ul {
-	font-size: inherit;
-}
-
-.tablepress tbody .odd td {
-	background-color: #eef7fb;
-}
-
-.tablepress tbody .odd td:not(:last-child) {
-	border-right: 1px solid #72bdde;
-}
-
-.tablepress tbody .odd td:not(:first-child) {
-	border-left: 1px solid #fff;
-}
-
-.tablepress tbody .odd td[colspan]:first-child {
-	background-color: #d9edf7;
-}
-
-.tablepress tbody .odd:not(:first-child) td {
-	border-top: 1px solid #fff;
-}
-
-.tablepress tbody .odd:not(:last-child) td {
-	border-bottom: 1px solid #6ebee2;
-}
-
-.tablepress tbody .even td {
-	background-color: #fff;
-}
-
-.tablepress tbody .even td[colspan]:first-child {
-	background-color: #d9edf7;
-}
-
-.tablepress tbody .even:not(:first-child) td {
-	border-top: 1px solid #fff;
-}
-
-.tablepress tbody .even:not(:last-child) td {
-	border-bottom: 1px solid #b6afaf;
-}
-
-.tablepress .row-hover tr:hover td {
-	background-color: #fffbf1;
-}
-
-.tablepress .row-hover tr:hover td:first-child {
-	background-color: #fffbf1;
-}
-
-.tablepress .row-hover tr.odd:hover td {
-	background-color: #f5f4e9;
-}
-
-.tablepress .row-hover tr.odd:hover td:first-child {
-	background-color: #fbf1da;
-}
-
-.tablepress .sorting {
-	transition: all .3s ease;
-}
-
-.tablepress.learning-goals tbody td:first-child,.tablepress.learning-goals thead th:first-child {
-	width: 30%;
-	min-width: 255px;
-}
-
-.column h2.tablepress-table-name {
-	padding: 8px .5em;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	background-color: #d7dadb;
-	font-size: 1.3em;
-	text-align: center;
-	text-transform: none;
-}
-
-.column h2.tablepress-table-name+table.tablepress {
-	border-top: 1px solid #3fa8df;
 }
 
 section.row.single.quick-tabs>div.column>h3:first-child {
@@ -7700,16 +7393,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	}
 }
 
-@media all and (min-width:891px) {
-	.column table.wsu-blue-theme {
-		font-size: 14px;
-	}
-	
-	.column table.wsu-gray-theme {
-		font-size: 14px;
-	}
-}
-
 @media only screen and (min-width:990px) {
 	body.use-max-width-1386 #binder.max-1188 {
 		max-width: 1386px;
@@ -7775,6 +7458,10 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 		font-size: .941em;
 	}
 	
+	.tablepress thead th {
+		font-size: .98384em;
+	}
+	
 	.recent-posts>h4.fancy.with-top-border:first-child {
 		font-size: 1.38179539em;
 	}
@@ -7793,14 +7480,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	
 	.quarters .graduation-requirements,.quarters .learning-goals {
 		font-size: .882658em;
-	}
-	
-	.tablepress thead th {
-		font-size: .98384em;
-	}
-	
-	.tablepress tbody td {
-		font-size: .98384em;
 	}
 	
 	section.row.single.quick-tabs>div.column>h3:first-child+h4+ul {
@@ -7892,16 +7571,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	
 	.globalbar {
 		top: 49px;
-	}
-}
-
-@media all and (max-width:890px) {
-	.column table.wsu-blue-theme {
-		font-size: 12px;
-	}
-	
-	.column table.wsu-gray-theme {
-		font-size: 12px;
 	}
 }
 
@@ -8401,6 +8070,10 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 		font-size: .824em;
 	}
 	
+	.tablepress thead th {
+		font-size: .77616em;
+	}
+	
 	.recent-posts>h4.fancy.with-top-border:first-child {
 		font-size: 1.09011049em;
 	}
@@ -8419,14 +8092,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	
 	.quarters .graduation-requirements,.quarters .learning-goals {
 		font-size: .772912em;
-	}
-	
-	.tablepress thead th {
-		font-size: .77616em;
-	}
-	
-	.tablepress tbody td {
-		font-size: .77616em;
 	}
 	
 	section.row.single.quick-tabs>div.column>h3:first-child+h4+ul {
@@ -8517,6 +8182,10 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 		font-size: .882em;
 	}
 	
+	.tablepress thead th {
+		font-size: .88em;
+	}
+	
 	.recent-posts>h4.fancy.with-top-border:first-child {
 		font-size: 1.23595294em;
 	}
@@ -8535,14 +8204,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	
 	.quarters .graduation-requirements,.quarters .learning-goals {
 		font-size: .827316em;
-	}
-	
-	.tablepress thead th {
-		font-size: .88em;
-	}
-	
-	.tablepress tbody td {
-		font-size: .88em;
 	}
 	
 	section.row.single.quick-tabs>div.column>h3:first-child+h4+ul {
@@ -8595,6 +8256,10 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 		font-size: .882em;
 	}
 	
+	.tablepress thead th {
+		font-size: .98384em;
+	}
+	
 	.recent-posts>h4.fancy.with-top-border:first-child {
 		font-size: 1.38179539em;
 	}
@@ -8613,14 +8278,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	
 	.quarters .graduation-requirements,.quarters .learning-goals {
 		font-size: .827316em;
-	}
-	
-	.tablepress thead th {
-		font-size: .98384em;
-	}
-	
-	.tablepress tbody td {
-		font-size: .98384em;
 	}
 	
 	section.row.single.quick-tabs>div.column>h3:first-child+h4+ul {
@@ -8673,6 +8330,10 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 		font-size: .941em;
 	}
 	
+	.tablepress thead th {
+		font-size: .88em;
+	}
+	
 	.recent-posts>h4.fancy.with-top-border:first-child {
 		font-size: 1.23595294em;
 	}
@@ -8691,14 +8352,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	
 	.quarters .graduation-requirements,.quarters .learning-goals {
 		font-size: .882658em;
-	}
-	
-	.tablepress thead th {
-		font-size: .88em;
-	}
-	
-	.tablepress tbody td {
-		font-size: .88em;
 	}
 	
 	section.row.single.quick-tabs>div.column>h3:first-child+h4+ul {
@@ -8764,6 +8417,10 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 		font-size: .882em;
 	}
 	
+	.tablepress thead th {
+		font-size: .82808em;
+	}
+	
 	.recent-posts>h4.fancy.with-top-border:first-child {
 		font-size: 1.16303172em;
 	}
@@ -8782,14 +8439,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	
 	.quarters .graduation-requirements,.quarters .learning-goals {
 		font-size: .827316em;
-	}
-	
-	.tablepress thead th {
-		font-size: .82808em;
-	}
-	
-	.tablepress tbody td {
-		font-size: .82808em;
 	}
 	
 	section.row.single.quick-tabs>div.column>h3:first-child+h4+ul {
@@ -9038,6 +8687,10 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 		width: 30%;
 	}
 	
+	.tablepress thead th {
+		line-height: 1.5em;
+	}
+	
 	.recent-posts>h4.fancy.with-top-border:first-child {
 		line-height: 1.1em;
 	}
@@ -9055,14 +8708,6 @@ section.row.single.quick-tabs>div.column>h3:first-child+h4+ul+h4+table>tbody tr 
 	}
 	
 	.quarters .graduation-requirements,.quarters .learning-goals {
-		line-height: 1.5em;
-	}
-	
-	.tablepress thead th {
-		line-height: 1.5em;
-	}
-	
-	.tablepress tbody td {
 		line-height: 1.5em;
 	}
 	
