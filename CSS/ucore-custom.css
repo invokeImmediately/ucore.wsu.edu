@@ -3237,6 +3237,42 @@ main > .page > .row:last-child > .column:last-child {
   border-color: #f45372;
   box-shadow: 0 3px #f45372;
 }
+.column a.overlay-link {
+  border: none;
+  box-shadow: none;
+  position: relative;
+}
+.overlay-link:after,
+.overlay-link:before {
+  opacity: 0;
+  position: absolute;
+  transition: opacity .4s;
+}
+.overlay-link:after {
+  content: "»";
+  color: white;
+  font-size: 4rem;
+  left: 100%;
+  line-height: 1em;
+  top: 100%;
+  transform: translate(-100%,-100%) translate(-1rem, -.6rem);
+}
+.overlay-link:before {
+  background: white;
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.overlay-link:hover:before,
+.overlay-link:focus:before {
+  opacity: 0.25;
+}
+.overlay-link:hover:after,
+.overlay-link:focus:after {
+  opacity: 0.75;
+}
 .column a.non-text-link.--not-baseline::before,
 .column .article-thumbnail a::before {
   transform: translate(-50%, -100%) translateY(8px);
