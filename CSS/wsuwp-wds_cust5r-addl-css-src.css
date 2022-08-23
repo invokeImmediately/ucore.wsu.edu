@@ -1,0 +1,760 @@
+/*!***************************************
+ * ▄▀▀▄ █▀▀▄ █▀▀▄ ▀█ █      ▄▀▀▀ ▄▀▀▀ ▄▀▀▀
+ * █▄▄█ █  █ █  █    █  ▄   █    ▀▀▀█ ▀▀▀█
+ * █  ▀ ▀▀▀  ▀▀▀     ▀▀▀     ▀▀▀ ▀▀▀  ▀▀▀
+ * FOR WDS-THEMED DAESA WEBSITES
+ * ---------------------------------------
+ * @version 0.3.0
+ * @author Daniel Rieck
+ *  [daniel.rieck@wsu.edu]
+ *  (https://github.com/invokeImmediately)
+ * @license MIT - Copyright © 2022
+ *   Washington State University
+ *   https://mit-license.org/
+ ****************************************/
+
+/*! —» Fix fuzzy downsampled images on Chrome «— */
+
+body {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/*! —» ISSUE FIXES FOR WDS GLOBAL HEADER «— */
+
+.wsu-header-global:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc((100vw - 100%)/ -2);
+    right: calc((100vw - 100%)/ -2);
+    top: 100%;
+    /* top: calc(100% - 3px); */
+    width: auto;
+    height: 3px;
+    background-color: #e6e6e6;
+    /* bottom: 0; */
+}
+
+/*! —» ISSUE FIXES FOR WDS PRIMARY NAV «— */
+
+.wsu-navigation-site-vertical--color-dark .wsu-navigation-site-vertical__panel {
+  border: 0;
+}
+
+.wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical__open-button:focus, .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical__open-button:hover {
+    border-right: 0;
+  color: black;
+}
+
+.wsu-navigation-site-vertical__open-button {
+  border: 0;
+}
+
+.wsu-navigation-site-vertical .wsu-menu a+button:focus::before, .wsu-navigation-site-vertical .wsu-menu a+button:hover::before, .wsu-navigation-site-vertical .wsu-menu button:first-child:focus::before, .wsu-navigation-site-vertical .wsu-menu button:first-child:hover::before {
+    bottom: 50%;
+    transform: translateY(0.65rem);
+}
+
+.wsu-navigation-site-vertical .wsu-menu button:first-child {
+    padding-right: 50px;
+}
+
+/*! —» ISSUE FIXES FOR WDS WRAPPERS «— */
+
+.wsu-wrapper-content::after {
+    bottom: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc((100vw - 100%)/ -2);
+    right: calc((100vw - 100%)/ -2);
+    width: auto;
+    height: 3px;
+    background-color: #e6e6e6;
+}
+
+@media screen and (min-width: 99rem) {
+  .wsu-wrapper-site {
+    background-image: repeating-linear-gradient(-45deg, #f2f2f2 0, white 1px, white 8px, #f2f2f2 9px, #f2f2f2 10px);
+  }
+  
+  .wsu-wrapper-content {
+    background: white;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+  }
+
+  .wsu-hero:not([class*="-hero--style-"])::after {
+    left: calc(((100vw - 1200px) - 278px) / 2);
+    right: calc(((100vw - 1200px) - 278px) / 2);
+  }
+
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-hero:not([class*="-hero--style-"])::after {
+    left: calc(((100vw - 1200px) - 58px) / 2);
+    right: calc(((100vw - 1200px) - 58px) / 2);   
+  }
+
+  .wsu-hero:not([class*="-hero--style-"]) .wsu-image-frame {
+    background-color: transparent;
+  }
+
+  .wsu-hero .wsu-image-frame img {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 83.3333%, calc(100% - ((100vw - 1200px) - 277px) / 2) 83.3333%, calc(100% - ((100vw - 1200px) - 277px) / 2) 100%, calc(((100vw - 1200px) - 277px) / 2) 100%, calc(((100vw - 1200px) - 277px) / 2) 83.3333%, 0% 83.3333%);
+  }
+
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-hero .wsu-image-frame img {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 83.3333%, calc(100% - ((100vw - 1200px) - 59px) / 2) 83.3333%, calc(100% - ((100vw - 1200px) - 59px) / 2) 100%, calc(((100vw - 1200px) - 57px) / 2) 100%, calc(((100vw - 1200px) - 57px) / 2) 83.3333%, 0% 83.3333%);
+  }
+}
+
+/*! —» ISSUE FIXES FOR BREADCRUMBS «— */
+
+.breadcrumbs .wsu-i-home {
+  margin-right: .5rem;
+}
+
+/*! —» ISSUE FIXES FOR LISTS «— */
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  font-size: inherit;
+}
+
+/*! --»  Improve styling of nested ordered lists.  «-- */
+
+ol li li li {
+  list-style-type: lower-roman;
+}
+
+/*! —» ISSUE FIXES FOR LINKS «— */
+
+.wsu-color-background--gray-85 a,
+.wsu-color-background--gray-95 a {
+  color: white;
+  text-decoration-color: white;
+}
+
+.wsu-footer-site a {
+    outline-color: white;
+}
+
+.wsu-footer-site__offsite-menu li a:before {
+    background-color: white;
+}
+
+.wsu-footer-site__offsite-menu li a:focus::before {
+  height: 0;
+}
+
+.wsu-meta-address a {
+  text-decoration-color: white;
+}
+
+h1 a::after,
+h2 a::after,
+h3 a::after,
+h4 a::after,
+h5 a::after,
+h6 a::after {
+    /*display: inline;*/
+  font-size: .65em;
+    margin-left: .5em;
+}
+
+/*TODO: ↓ Remove soon; code is being covered by a change to the WDS system. ↓ */
+
+/*a:hover {
+  text-decoration-color: transparent;
+}
+
+@media not all and (prefers-reduced-motion) {
+  a {
+    transition: color .01s linear, text-decoration .01s linear;
+  }
+  
+  a:hover {
+    transition: color .2s ease, text-decoration .1s ease;
+  }
+}*/
+
+/*TODO: ↑ Remove soon; code is being covered by a change to the WDS system. ↑ */
+
+.wsu-footer-site__offsite-menu a,
+.wsu-menu-deep-links a {
+   border-bottom-color: transparent;
+}
+
+.wsu-menu-deep-links a:after {
+  background-color: white;
+}
+
+/*! —» SHARPER PAGE HEADERS ENHANCEMENT «— */
+
+.breadcrumbs {
+    border-bottom: 1px solid #e6e6e6;
+    box-sizing: border-box;
+    margin-bottom: 1.125rem;
+    padding-bottom: .625rem;
+}
+
+h1::after {
+    background: repeating-linear-gradient(-45deg, #999 -1px, white 0, white 2px, #999 3px, #999 4px);
+  background: linear-gradient(315deg, transparent 0, transparent calc(100% - 4.95rem), white calc(100% - 4.95rem), white 100%), repeating-linear-gradient(-45deg, #d0d0d0 -1px, white 0, white 2px, #d0d0d0 3px, #d0d0d0 4px);
+  width: 100%
+}
+
+h1::before {
+  box-sizing: border-box;
+  border-right: .375rem solid transparent;  
+  border-top: .375rem solid #a60f2d;
+    bottom: 0;
+    box-sizing: border-box;
+    content: '';
+    display: inline-block;
+    height: .375rem;
+    position: absolute;
+    width: 6.87rem;
+}
+
+.wsu-hero__caption h1::before {
+  content: none;
+}
+
+/*! —» HX STYLE LINKS «— */
+
+.hx-style-link:not(:hover) {
+  color: inherit;
+  text-decoration-color: transparent;
+}
+
+.hx-style-link:hover {
+  text-decoration-color: inherit;
+}
+
+.hx-style-link::after {
+    content: '\F126';
+    font-family: wsu-icons;
+    font-size: .7em;
+  color: inherit;
+    margin-left: .5em;
+    text-decoration: none;
+}
+
+/*! —» CUSTOMIZE APPEARANCE OF SITE HEADER «— */
+
+.wsu-header-site {
+    background-color: #333;
+    color: #fff;
+}
+
+.wsu-header-site__title {
+    color: inherit;
+}
+
+/*! —» ISSUE FIXES FOR HOME PAGE «— */
+
+@media only screen and (min-width: 993px) {
+  .home .wsu-hero .wsu-title,
+  .page-id-3252 .wsu-hero .wsu-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+
+  .home .wsu-hero .wsu-caption {
+    font-weight: 500;
+    margin-top: 2.25rem;
+  }
+}
+
+.home .breadcrumbs {
+  display: none;
+}
+
+.home h1 {
+  font-size: 2.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  .home h1 {
+    font-size: 2rem;
+  }
+}
+
+/*! —» HEADING TAIL TEXT «— */
+
+.hX-tail-text {
+  display: block;
+  font-size: 1rem;
+}
+
+/*! —» ISSUE FIXES FOR WDS CARDS «— */
+
+.wsu-card.wsu-color-background--white {
+  border-bottom: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+
+.wsu-card[class*=wsu-color-background] {
+  border-radius: 4px;
+}
+
+.wsu-card-wrapper--univ-courses .wsu-card p + p {
+  margin-top: 1.675rem;
+}
+
+.wsu-card-wrapper--univ-courses h3 {
+  font-size: 1.5rem;
+}
+
+/*! —» MORE PROGRAM HEADLINES DESIGN «— */
+
+.more-news__associated-unit {
+  color: #5a5a5a;
+  display: block;
+}
+
+.wsu-color-background--gray-85 .more-news__associated-unit, .wsu-color-background--gray-95 .more-news__associated-unit {
+  color: #f2f2f2;
+}
+
+/*! —» FULL BLEED ROW DESIGN «— */
+
+.wsu-row.wsu-row--full-bleed:after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.wsu-row--full-bleed > .wsu-column {
+  z-index: 1;
+}
+
+.wsu-wrapper-site .wsu-row.wsu-row--full-bleed:after {
+  margin-left: calc((100vw - 100%)/ -2);
+  margin-right: calc((100vw - 100%)/ -2);
+}
+
+@media screen and (min-width: 1260px) {
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-row.wsu-row--full-bleed:after {
+    margin-left: calc(((100vw - 100%) - 60px)/ -2);
+    margin-right: calc(((100vw - 100%) - 60px)/ -2);
+  }
+}
+
+@media screen and (min-width: 1260px) {
+  .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-row.wsu-row--full-bleed:after {
+    margin-left: calc(((100vw - 100%) - 280px)/ -2);
+    margin-right: calc(((100vw - 100%) - 280px)/ -2);
+  }
+  
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-row.wsu-row--full-bleed:after {
+    margin-left: calc(((100vw - 100%) - 60px)/ -2);
+    margin-right: calc(((100vw - 100%) - 60px)/ -2);
+  }
+}
+
+/*! —» FULL BLEED ROW COLORING «— */
+
+.wsu-row--full-bleed.wsu-color-background--gray-0:after {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e7e7e7;
+  border-top: 1px solid #e7e7e7;
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-5:after {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #e2e2e2;
+  border-top: 1px solid #e2e2e2;
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-10:after {
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #d6d6d6;
+  border-top: 1px solid #d6d6d6;
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-85:after {
+  background-color: #262626;
+  border-bottom: 1px solid #161616;
+  border-top: 1px solid #161616;
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-95:after {
+  background-color: #080808;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+}
+
+/*! —» FULL BLEED ROW COLORING «— */
+
+.wsu-menu-deep-links > li:first-child {
+    width: 100%;
+}
+
+@media all and (min-width: 769px) {
+  .wsu-menu-deep-links > li:first-child > .sub-menu {
+    display: flex;
+    flex-wrap: wrap
+  }
+
+  .wsu-menu-deep-links > li:first-child > .sub-menu > li:not(:last-child):after {
+    content: ", ";
+    white-space: pre;
+  }
+
+  .wsu-menu-deep-links > li:first-child > .sub-menu > li:not(:last-child) a {
+    display: inline;
+  }
+}
+
+/*! —» BANNER DESIGN VARIANTS «— */
+
+.wsu-hero--hide-tail {
+  overflow-y: hidden;
+}
+
+.wsu-hero--shadow-text .wsu-title {
+  text-shadow: 0 0 1px #000, 0 0 3px rgb(0 0 0 / 50%), 0 0 5px  rgb(0 0 0 / 50%), 0 0 16px #000, 0 0 24px #000, 0 0 32px #000;
+}
+
+.wsu-hero--box-bg .wsu-hero__caption:before {
+  background: rgb(0 0 0 / 65%);
+}
+
+.wsu-hero--box-bg-darker .wsu-hero__caption:before {
+  background: rgb(0 0 0 / 85%);
+}
+
+.wsu-hero--invert-axis .wsu-hero__caption {
+  margin-left: auto;
+}
+
+.wsu-hero--invert-axis .wsu-hero__caption:before {
+  clip-path: polygon(100% 0, 100% 100%, 80px 100%, 0 calc(100% - 100px), 0 0);
+}
+
+/*! —» TABLEPRESS «— */
+.tablepress thead th,
+.dataTables_wrapper .tablepress.dataTable thead th:not(:hover):not(:focus) {
+  background: #f0f0f0!important;
+}
+
+.tablepress:not(.dataTable) {
+    border-top: 4px solid #a60f2d;
+}
+
+.tablepress thead th {
+  border-bottom-color: #bbb;
+}
+
+/*! —» ACCORDION ENHANCEMENTS «— */
+
+.wsu-accordion__content {
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.wsu-accordion--open .wsu-accordion__title:hover + .wsu-accordion__content {
+  border-color: #ccc;
+}
+
+/*! —» TRIBE EVENTS PAGES «— */
+
+#tribe-events {
+  padding-top: 0;
+}
+
+.post-type-archive-tribe_events .wsu-article-header,
+.single-tribe_events .wsu-article-header {
+  display: none;
+}
+
+.post-type-archive-tribe_events h3 a::after {
+  margin-left: 0.1em;
+}
+
+.tribe-events-notices li {
+  color: #767676;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.tribe-events-notices li:before {
+  content: "\F123";
+  display: inline-block;
+  position: absolute;
+  font-family: wsu-icons;
+  left: 0;
+  top: 48%;
+  transform: translateY(-50%);
+}
+
+/*! —» ICON VARIANTS «— */
+.wsu-i-arrow-right--offsite {
+  margin-right: 0;
+  position: relative;
+}
+
+.wsu-i-arrow-right--offsite:before {
+  display: inline-block;
+    font-size: .6em;
+    transform: translate(-15%, 40%) rotate(-45deg);
+    margin-left: .5em;
+}
+
+@media not all and (prefers-reduced-motion) {
+  a:hover .wsu-i-arrow-right--offsite:before {
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+  }
+}
+
+/*! —» IMAGE VARIANTS «— */
+
+.wp-block-image.img--capped-resize img {
+  max-width: attr(width);
+  max-width: attr(width px);
+}
+
+/*! —» SEPARATOR VARIANTS «— */
+
+hr:not([class*=separator--style-]) {
+  background-color: #f7f7f7;
+    border: 1px solid #e7e7e7;
+  box-sizing: border-box;
+  height: .375rem;
+    margin: 3.125rem 0;
+}
+
+.wsu-separator--subtle {
+  border: 1px solid #e7e7e7 !important;
+}
+
+/*! —» PEOPLE CARD COLUMN «— */
+
+.wsu-column--auto-aligns-people-card {
+  display: grid;
+  grid-template-rows: auto auto auto auto 1fr;
+}
+
+.wsu-column--auto-aligns-people-card .wsu-card {
+  align-self: end;
+}
+
+/*! —» WIDTH UTILITY CLASSES «— */
+
+.mw-1x {
+  max-width: 900px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/*! —» GRID UTILITY CLASSES «— */
+
+.dy-gr {
+  display: grid;
+}
+
+.alni-start {
+  align-items: start;
+}
+
+.alns-end {
+  align-self: end;
+}
+
+/*! —» TYPOGRAPHIC UTILITY CLASSES «— */
+
+.fw-lb {
+  font-weight: 300;
+}
+
+.fw-nb {
+  font-weight: 400;
+}
+
+.fw-sb {
+  font-weight: 600;
+}
+
+.fw-b {
+  font-weight: 700;
+}
+
+.fw-eb {
+  font-weight: 800;
+}
+
+/*! —» RESPONSIVE DESIGN UTILITY CLASSES «— */
+
+@media (max-width: 768px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-on-tablet {
+    display: none !important;
+  }
+}
+
+/*! —» NEWS PAGES «— */
+
+.archive .wsu-meta-byline {
+  display: none;
+}
+
+.archive .wsu-wrapper-sidebar p,
+.archive .wsu-wrapper-sidebar ol,
+.archive .wsu-wrapper-sidebar ul,
+.blog .wsu-wrapper-sidebar p,
+.blog .wsu-wrapper-sidebar ol,
+.blog .wsu-wrapper-sidebar ul,
+.single-post .wsu-wrapper-sidebar p,
+.single-post .wsu-wrapper-sidebar ol,
+.single-post .wsu-wrapper-sidebar ul {
+  font-size: .875rem;
+}
+
+.single-post .wsu-article p,
+.single-post .wsu-article ol,
+.single-post .wsu-article ul {
+  font-size: .95rem;
+}
+
+.single-post .wsu-article > p:first-of-type {
+  margin-top: 1.75rem;
+  font-size: 1.125rem;
+}
+
+.single-post .wsu-article-hero {
+  margin-top: .3rem;
+}
+
+.archive .wsu-widget + .wsu-widget,
+.blog .wsu-widget + .wsu-widget,
+.single-post .wsu-widget + .wsu-widget {
+  border-top: 1px solid #e7e7e7;
+  padding-top: 1.5rem;
+}
+
+.archive .wsu-article + .wsu-article,
+.blog .wsu-article + .wsu-article {
+  border-top: 1px solid #e7e7e7;
+  margin-top: -2.25rem;
+  padding-top: .5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .archive .wsu-article-header__title,
+  .blog .wsu-article-header__title,
+  .single-post .wsu-article-header__title {
+    font-size: 2.4rem;
+  }
+  
+  .single-post .wsu-article > h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/*! ---»  GRAVITY FORMS SELECT FIX  «--- */
+
+select.gfield_select:not([multiple]) {
+background-position: calc(100% - 1.22rem) .975em, calc(100% - .91rem) .975em,calc(100% - .5rem) .35em;
+  padding-right:2.5rem;
+}
+
+select.gfield_select:not([multiple]):hover {
+background-image: linear-gradient(45deg,transparent 50%,#606060 50%),linear-gradient(135deg,#606060 50%,transparent 50%),radial-gradient(#c0c0c0 70%,transparent 75%);
+}
+
+select.gfield_select:not([multiple]):focus {
+background-image: linear-gradient(45deg,transparent 50%,#d0d0d0 50%),linear-gradient(135deg,#d0d0d0 50%,transparent 50%),radial-gradient(#303030 70%,transparent 75%);
+}
+
+select.gfield_select:not([multiple]):active {
+background-image: linear-gradient(45deg,transparent 50%,white 50%),linear-gradient(135deg,white 50%,transparent 50%),radial-gradient(black 70%,transparent 75%);
+}
+
+/*! ---»  GRAVITY FORMS INPUT FIX  «--- */
+
+.gform_wrapper.gravity-theme .gfield-choice-input+label {
+  max-width: calc(100% - 32px - 1.8em);
+}
+
+/*! ---»  GRAVITY FORMS GRID GAP FIX  «--- */
+
+.gform_wrapper.gravity-theme .gform_fields {
+  grid-row-gap: 1.75rem;
+}
+
+/*! ---»  NESTED GRAVITY FORMS FIXES  «--- */
+
+.gpnf-nested-entries,
+.gpnf-row-actions > ul {
+  margin-bottom: 0;
+}
+
+.gpnf-nested-entries .gfield_list {
+  margin-bottom: 0;
+}
+
+/*! --»  Font sizing of WSUWP Content Syndicate lists.  «-- */
+
+.wsuwp-content-syndicate-list {
+  font-size: inherit;
+}
+
+/*! ---»  ATOMIC CSS  «--- */
+
+.dy-blck {
+  display: block;
+}
+
+.mrgn-lft-xxsmall {
+  margin-left: .6875rem;
+}
+
+/*! ---»  WSU Learning Goals  «--- */
+
+.wsu-card-wrapper--wsu-learning-goals  .wsu-image-frame.wsu-image--ratio-1-1 {
+  background-color: #333;
+}
+
+.wsu-card-wrapper--wsu-learning-goals  .wsu-image-frame.wsu-image--ratio-1-1::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 163.87 108'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;stroke:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon stroke='%23fff' fill='none' points='64.91 1.24 53.35 33.66 42.93 1.24 33.95 1.24 23.49 33.7 12.04 1.57 11.94 1.24 0.71 1.24 18.38 50.89 29.23 50.89 38.42 22.21 47.64 50.89 58.44 50.89 76.16 1.24 64.91 1.24'/%3E%3Cpath stroke='%23fff' fill='none' d='M86.63,14.71c0-3,2.53-5,7.07-5a21.29,21.29,0,0,1,14.43,5.43L114,7.42C109.1,2.88,102.55.5,94.67.5,83,.5,75.84,7.35,75.84,15.61c0,18.67,28.57,12.65,28.57,21.43,0,2.83-2.82,5.5-8.63,5.5A21.77,21.77,0,0,1,80,35.85l-5.73,8c4.61,4.69,11.46,7.89,21,7.89,13.4,0,19.87-6.85,19.87-15.92C115.13,17.32,86.63,22.6,86.63,14.71Z'/%3E%3Cpath stroke='%23fff' fill='none' d='M118.37,31.08V1.24h10.71V30.71c0,6.92,4,11.68,11.68,11.68s11.61-4.76,11.61-11.68V1.24h10.79V31c0,12.35-7.29,20.76-22.4,20.76S118.37,43.29,118.37,31.08Z'/%3E%3Cpolygon stroke='%23fff' fill='none' points='98.96 105.3 110.52 72.88 120.94 105.3 129.91 105.3 140.38 72.84 151.83 104.97 151.93 105.3 163.16 105.3 145.49 55.66 134.64 55.66 125.45 84.33 116.23 55.66 105.43 55.66 87.72 105.3 98.96 105.3'/%3E%3Cpath stroke='%23fff' fill='none' d='M77.24,91.83c0,3-2.53,5-7.07,5a21.3,21.3,0,0,1-14.43-5.44l-5.88,7.74C54.77,103.66,61.32,106,69.2,106,80.89,106,88,99.2,88,90.94c0-18.68-28.57-12.65-28.57-21.43,0-2.83,2.82-5.51,8.63-5.51a21.71,21.71,0,0,1,15.77,6.7l5.73-8C85,58,78.13,54.77,68.61,54.77c-13.4,0-19.87,6.85-19.87,15.93C48.74,89.23,77.24,83.94,77.24,91.83Z'/%3E%3Cpath stroke='%23fff' fill='none' d='M45.51,75.46V105.3H34.79V75.83c0-6.92-4-11.68-11.68-11.68S11.5,68.91,11.5,75.83V105.3H.71V75.53C.71,63.18,8,54.77,23.11,54.77S45.51,63.26,45.51,75.46Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100px;
+  background-position: center center;
+  opacity: .2;
+  padding-top: 198px;
+}
+
+.wsu-card-wrapper--wsu-learning-goals .wsu-image-frame[class*=wsu-image--ratio] img {
+  left: 50%;
+  height: 198px;
+  transform: translateX( -50%);
+  width: 198px;
+}
+
+/*! —» Fix broken accordion nesting «— */
+
+.wsu-accordion--open .wsu-accordion:not(.wsu-accordion--open) .wsu-accordion__content {
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height cubic-bezier(0,0,.03,1) .3s,visibility 0s .4s;
+}
+
+.wsu-accordion--open .wsu-accordion:not(.wsu-accordion--open) .wsu-accordion__title::before {
+  content: "\F137";
+}
